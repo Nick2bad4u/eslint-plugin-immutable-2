@@ -5,23 +5,17 @@ description: Preset reference and selection guide for eslint-plugin-immutable-2.
 
 # Presets
 
-Use one of these presets based on how aggressively you want to enforce immutable and functional patterns.
+Use one of these presets based on how strongly you want to enforce immutable and functional patterns.
 
-| Preset          | Config key                             | Use when                                                              |
-| --------------- | -------------------------------------- | --------------------------------------------------------------------- |
-| Functional Lite | `immutable.configs["functional-lite"]` | You want functional constraints with a lower migration burden.        |
-| Functional      | `immutable.configs.functional`         | You want strong functional constraints across the codebase.           |
-| Immutable       | `immutable.configs.immutable`          | You want immutable-data defaults without the full functional surface. |
-| Recommended     | `immutable.configs.recommended`        | Alias of `immutable` for a familiar default key.                      |
-| All             | `immutable.configs.all`                | You want every rule in this plugin enabled.                           |
+| Preset | Config key | Use when |
+| --- | --- | --- |
+| Functional Lite | `immutable.configs["functional-lite"]` | You want functional constraints with lower migration cost. |
+| Functional | `immutable.configs.functional` | You want strong functional-style constraints across most code. |
+| Immutable | `immutable.configs.immutable` | You want immutable defaults without the full functional surface. |
+| Recommended | `immutable.configs.recommended` | Alias of `immutable` for a familiar default key. |
+| All | `immutable.configs.all` | You want every rule in this plugin enabled. |
 
-Each preset page in this section includes:
-
-- when to use it
-- exact config key
-- copy/paste Flat Config snippet
-
-See detailed preset pages for exact rule sets:
+See detailed pages:
 
 - [Functional Lite](./functional-lite.md)
 - [Functional](./functional.md)
