@@ -3,39 +3,38 @@
  * Type-level contract tests for public plugin exports.
  */
 import type {
-    TypefestConfigName,
-    TypefestConfigs,
-    TypefestPlugin,
-    TypefestPresetConfig,
-    TypefestRuleId,
-    TypefestRuleName,
+    ImmutableConfigs,
+    ImmutablePlugin,
+    ImmutablePresetConfig,
+    ImmutableRuleId,
+    ImmutableRuleName,
 } from "eslint-plugin-typefest";
 
 import { assertType } from "vitest";
 
-const validConfigName = "recommended-type-checked";
+const validConfigName = "recommended";
 
-assertType<TypefestConfigName>(validConfigName);
-// @ts-expect-error Invalid preset key must not satisfy TypefestConfigName.
-assertType<TypefestConfigName>("recommendedTypeChecked");
+assertType<keyof ImmutableConfigs>(validConfigName);
+// @ts-expect-error Invalid preset key must not satisfy immutable config key union.
+assertType<keyof ImmutableConfigs>("recommendedTypeChecked");
 
-const validRuleId = "typefest/prefer-type-fest-arrayable";
+const validRuleId = "immutable/immutable-data";
 
-assertType<TypefestRuleId>(validRuleId);
-// @ts-expect-error Rule ids must include the `typefest/` namespace prefix.
-assertType<TypefestRuleId>("prefer-type-fest-arrayable");
+assertType<ImmutableRuleId>(validRuleId);
+// @ts-expect-error Rule ids must include the `immutable/` namespace prefix.
+assertType<ImmutableRuleId>("immutable-data");
 
-type RuleNameFromRuleId = TypefestRuleId extends `typefest/${infer RuleName}`
+type RuleNameFromRuleId = ImmutableRuleId extends `immutable/${infer RuleName}`
     ? RuleName
     : never;
 
-declare const pluginContract: TypefestPlugin;
+declare const pluginContract: ImmutablePlugin;
 
-assertType<TypefestRuleName>(
-    "prefer-type-fest-arrayable" satisfies RuleNameFromRuleId
+assertType<ImmutableRuleName>(
+    "immutable-data" satisfies RuleNameFromRuleId
 );
-assertType<TypefestPresetConfig>(pluginContract.configs.recommended);
-assertType<TypefestPresetConfig>(pluginContract.configs.all);
-assertType<TypefestConfigs>(pluginContract.configs);
+assertType<ImmutablePresetConfig>(pluginContract.configs.recommended);
+assertType<ImmutablePresetConfig>(pluginContract.configs.all);
+assertType<ImmutableConfigs>(pluginContract.configs);
 assertType<string>(pluginContract.meta.name);
 assertType<string>(pluginContract.meta.namespace);

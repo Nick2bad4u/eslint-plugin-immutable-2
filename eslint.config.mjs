@@ -93,7 +93,7 @@ import * as yamlEslintParser from "yaml-eslint-parser";
  * 2. Change the `typefest` local import below to be the new plugin's name and path
  * 3. Setup the `🚢 Local Plugin Import` section below for new plugin
  */
-import typefest from "./plugin.mjs";
+import immutable2 from "./plugin.mjs";
 
 // NOTE: eslint-plugin-json-schema-validator may attempt to fetch remote schemas
 // at lint time. That makes linting flaky/offline-hostile.
@@ -700,21 +700,18 @@ export default defineConfig([
     //     },
     // },
     // #endregion
-    // #region ⌨️ Typefest
+    // #region ⌨️ immutable2
     // ═══════════════════════════════════════════════════════════════════════════════
-    // SECTION: ⌨️ Typefest (typefest/*)
+    // SECTION: ⌨️ immutable2 (immutable2/*)
     // ═══════════════════════════════════════════════════════════════════════════════
     {
-        files: [
-            "src/**/*.{ts,tsx,mts,cts}",
-            //    "test/**/*.{ts,tsx,mts,cts}"
-        ],
-        name: "Typefest Rules for Source",
+        files: ["test/fixtures/immutable/**/*.{ts,tsx,mts,cts,js,jsx,mjs,cjs}"],
+        name: "Immutable Rules for Fixtures",
         plugins: {
-            typefest: typefest,
+            immutable: immutable2,
         },
         rules: {
-            ...typefest.configs.all.rules,
+            ...immutable2.configs.all.rules,
         },
     },
     // #endregion

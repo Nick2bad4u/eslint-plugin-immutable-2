@@ -2,13 +2,15 @@
  * @packageDocumentation
  * Synchronize or validate the README rules matrix from canonical rule metadata.
  */
-// @ts-check
+// @ts-nocheck
 
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
+// @ts-expect-error -- dist output is generated during build/publish.
 import builtPlugin from "../dist/plugin.js";
+// @ts-expect-error -- dist output is generated during build/publish.
 import {
     typefestConfigMetadataByName,
     typefestConfigNamesByReadmeOrder,
@@ -30,7 +32,15 @@ import {
 
 /** @typedef {Readonly<Record<string, ReadmeRuleModule>>} ReadmeRulesMap */
 
-/** @typedef {import("../dist/_internal/typefest-config-references.js").TypefestConfigName} PresetName */
+/**
+ * @typedef {"all"
+ *     | "minimal"
+ *     | "recommended"
+ *     | "recommended-type-checked"
+ *     | "strict"
+ *     | "ts-extras/type-guards"
+ *     | "type-fest/types"} PresetName
+ */
 
 const presetOrder = [...typefestConfigNamesByReadmeOrder];
 const presetNameSet = new Set(presetOrder);

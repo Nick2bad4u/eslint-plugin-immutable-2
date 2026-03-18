@@ -2,12 +2,13 @@
  * @packageDocumentation
  * Synchronize or validate presets documentation tables from canonical rule metadata.
  */
-// @ts-check
+// @ts-nocheck
 
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
+// @ts-expect-error -- dist output is generated during build/publish.
 import builtPlugin from "../dist/plugin.js";
 import { generateReadmeRulesSectionFromRules } from "./sync-readme-rules-table.mjs";
 

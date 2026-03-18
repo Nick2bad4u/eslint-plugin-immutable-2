@@ -1,15 +1,10 @@
 /**
  * @packageDocumentation
- * Integration coverage for source-level plugin preset wiring.
+ * Integration coverage for source-level immutable plugin preset wiring.
  */
 import type { AsyncReturnType } from "type-fest";
 
 import { describe, expect, it, vi } from "vitest";
-
-import {
-    typefestConfigMetadataByName,
-    typefestConfigNames,
-} from "../src/_internal/typefest-config-references";
 
 /** Import `src/plugin` fresh for each assertion set. */
 const loadSourcePlugin = async () => {
@@ -28,86 +23,49 @@ const getRuleEntries = (
     config: Readonly<PluginConfig>
 ): (readonly [string, unknown])[] => Object.entries(config.rules ?? {});
 
+const immutableConfigNames = [
+    "all",
+    "recommended",
+    "immutable",
+    "functional",
+    "functional-lite",
+] as const;
+
 describe("source plugin config wiring", () => {
-    it("builds non-empty layered rule presets from src/plugin", async () => {
+    it("builds immutable presets from src/plugin", async () => {
         const plugin = await loadSourcePlugin();
-        const minimal = plugin.configs.minimal;
-        const recommended = plugin.configs.recommended;
-        const recommendedTypeChecked =
-            plugin.configs["recommended-type-checked"];
-        const strict = plugin.configs.strict;
         const all = plugin.configs.all;
-        const expectedQualifiedRuleIds = Object.keys(plugin.rules).map(
-            (ruleName) => `typefest/${ruleName}`
-        );
+        const recommended = plugin.configs.recommended;
+        const immutable = plugin.configs.immutable;
+        const functional = plugin.configs.functional;
+        const functionalLite = plugin.configs["functional-lite"];
 
-        expect(getRuleEntries(minimal).length).toBeGreaterThan(0);
-        expect(getRuleEntries(recommended).length).toBeGreaterThan(0);
-        expect(getRuleEntries(recommendedTypeChecked).length).toBeGreaterThan(
-            0
-        );
-        expect(getRuleEntries(strict).length).toBeGreaterThan(0);
         expect(getRuleEntries(all).length).toBeGreaterThan(0);
+        expect(getRuleEntries(recommended).length).toBeGreaterThan(0);
+        expect(getRuleEntries(immutable).length).toBeGreaterThan(0);
+        expect(getRuleEntries(functional).length).toBeGreaterThan(0);
+        expect(getRuleEntries(functionalLite).length).toBeGreaterThan(0);
 
-        expect(Object.keys(all.rules)).toEqual(
-            expect.arrayContaining(expectedQualifiedRuleIds)
-        );
-        expect(Object.keys(recommended.rules)).toContain(
-            "typefest/prefer-type-fest-arrayable"
-        );
-        expect(Object.keys(recommended.rules)).toContain(
-            "typefest/prefer-ts-extras-is-defined"
-        );
-        expect(Object.keys(recommended.rules)).not.toContain(
-            "typefest/prefer-ts-extras-set-has"
-        );
-        expect(Object.keys(recommendedTypeChecked.rules)).toContain(
-            "typefest/prefer-ts-extras-set-has"
-        );
-        expect(Object.keys(strict.rules)).toContain(
-            "typefest/prefer-ts-extras-set-has"
-        );
-        expect(Object.keys(strict.rules)).toContain(
-            "typefest/prefer-ts-extras-array-at"
-        );
-        expect(Object.keys(all.rules)).toContain(
-            "typefest/prefer-ts-extras-array-find"
-        );
-        expect(Object.keys(strict.rules)).not.toContain(
-            "typefest/prefer-ts-extras-array-find"
+        expect(Object.keys(all.rules)).toContain("immutable/immutable-data");
+        expect(Object.keys(all.rules)).toContain("immutable/no-expression-statement");
+        expect(Object.keys(all.rules)).toContain("immutable/readonly-array");
+
+        expect(Object.keys(recommended.rules)).toEqual(
+            expect.arrayContaining([
+                "immutable/immutable-data",
+                "immutable/no-let",
+                "immutable/readonly-array",
+                "immutable/readonly-keyword",
+            ])
         );
 
-        expect(recommended.rules).toHaveProperty(
-            "typefest/prefer-type-fest-arrayable",
-            "error"
+        expect(functionalLite.rules).toHaveProperty(
+            "immutable/no-conditional-statement"
         );
-        expect(recommended.rules).toHaveProperty(
-            "typefest/prefer-ts-extras-is-defined",
-            "error"
-        );
-        expect(recommendedTypeChecked.rules).toHaveProperty(
-            "typefest/prefer-ts-extras-set-has",
-            "error"
-        );
-        expect(strict.rules).toHaveProperty(
-            "typefest/prefer-ts-extras-array-at",
-            "error"
-        );
-        expect(all.rules).toHaveProperty(
-            "typefest/prefer-ts-extras-array-find",
-            "error"
-        );
-        expect(strict.rules).not.toHaveProperty(
-            "typefest/prefer-ts-extras-array-find"
-        );
+        expect(functional.rules).toHaveProperty("immutable/no-expression-statement");
+        expect(functional.rules).toHaveProperty("immutable/no-try", "error");
 
-        for (const configName of typefestConfigNames) {
-            expect(plugin.configs[configName].name).toBe(
-                typefestConfigMetadataByName[configName].presetName
-            );
-        }
-
-        expect(plugin.meta.name).toBe("eslint-plugin-typefest");
+        expect(plugin.meta.name).toBe("eslint-plugin-immutable");
     });
 
     it("registers parser defaults, files, and plugin namespace", async () => {
@@ -115,10 +73,10 @@ describe("source plugin config wiring", () => {
         const recommendedConfig = plugin.configs.recommended;
 
         expect(recommendedConfig.files).toStrictEqual([
-            "**/*.{ts,tsx,mts,cts}",
+            "**/*.{js,cjs,mjs,jsx,ts,tsx,mts,cts}",
         ]);
-        expect(recommendedConfig.plugins).toHaveProperty("typefest");
-        expect(recommendedConfig.plugins?.["typefest"]).toHaveProperty("rules");
+        expect(recommendedConfig.plugins).toHaveProperty("immutable");
+        expect(recommendedConfig.plugins?.["immutable"]).toHaveProperty("rules");
         expect(recommendedConfig.languageOptions).toHaveProperty("parser");
         expect(recommendedConfig.languageOptions).toHaveProperty(
             "parserOptions"
@@ -128,7 +86,7 @@ describe("source plugin config wiring", () => {
             sourceType: "module",
         });
 
-        for (const configName of typefestConfigNames) {
+        for (const configName of immutableConfigNames) {
             const parserOptions =
                 plugin.configs[configName].languageOptions?.["parserOptions"];
 
@@ -138,20 +96,6 @@ describe("source plugin config wiring", () => {
                     sourceType: "module",
                 })
             );
-
-            if (typefestConfigMetadataByName[configName].requiresTypeChecking) {
-                expect(parserOptions).toEqual(
-                    expect.objectContaining({
-                        projectService: true,
-                    })
-                );
-            } else {
-                expect(parserOptions).toEqual(
-                    expect.not.objectContaining({
-                        projectService: true,
-                    })
-                );
-            }
         }
     });
 });
