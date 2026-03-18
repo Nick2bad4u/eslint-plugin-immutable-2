@@ -19,6 +19,9 @@ const canonicalRuleHeadings = [
     "Why this rule exists",
     "❌ Incorrect",
     "✅ Correct",
+    "Additional examples",
+    "ESLint flat config example",
+    "When not to use it",
     "Further reading",
 ] as const;
 
@@ -41,9 +44,10 @@ describe("rule docs heading snapshots", () => {
             const markdown = fs.readFileSync(docsFilePath, "utf8");
             const headings = parseH2Headings(markdown);
 
-            expect(headings, `Unexpected heading sequence for ${ruleName}`).toEqual(
-                canonicalRuleHeadings
-            );
+            expect(
+                headings,
+                `Unexpected heading sequence for ${ruleName}`
+            ).toEqual(canonicalRuleHeadings);
             expect(
                 markdown,
                 `Missing rule catalog id marker for ${ruleName}`

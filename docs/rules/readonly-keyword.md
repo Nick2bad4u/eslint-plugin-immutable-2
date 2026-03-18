@@ -32,6 +32,48 @@ interface State {
 }
 ```
 
+## Additional examples
+
+```ts
+// ❌ Mutable class field and index signature
+class Settings {
+  theme = "dark";
+}
+
+interface Cache {
+  [key: string]: string;
+}
+
+// ✅ Readonly members communicate intent
+class Settings {
+  readonly theme = "dark";
+}
+
+interface Cache {
+  readonly [key: string]: string;
+}
+```
+
+## ESLint flat config example
+
+```ts
+import immutable from "eslint-plugin-immutable-2";
+
+export default [
+  {
+    files: ["**/*.{ts,tsx,mts,cts}"],
+    plugins: { immutable },
+    rules: {
+      "immutable/readonly-keyword": "error",
+    },
+  },
+];
+```
+
+## When not to use it
+
+Avoid this rule in models that are intentionally mutable during their lifecycle (for example form-draft objects, active-record entities, or mutable adapter DTOs). Enforcing readonly in those domains can push developers toward unnecessary type assertions.
+
 > **Rule catalog ID:** R914
 
 ## Further reading

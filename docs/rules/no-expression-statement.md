@@ -26,6 +26,41 @@ doWork();
 const result = compute(input);
 ```
 
+## Additional examples
+
+```ts
+// ❌ Side-effect expression statement
+analytics.track("checkout_started");
+
+// ✅ Explicit command collection
+const event = {
+    name: "checkout_started",
+    timestamp: Date.now(),
+};
+
+return publishAnalytics(event);
+```
+
+## ESLint flat config example
+
+```ts
+import immutable from "eslint-plugin-immutable-2";
+
+export default [
+    {
+        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+        plugins: { immutable },
+        rules: {
+            "immutable/no-expression-statement": "error",
+        },
+    },
+];
+```
+
+## When not to use it
+
+Disable this rule for side-effect-centric entry points such as CLI bootstrap files, telemetry initializers, or test setup scripts. Those files are intentionally imperative, and forcing expression-only style there usually adds ceremony without real safety gains.
+
 > **Rule catalog ID:** R904
 
 ## Further reading

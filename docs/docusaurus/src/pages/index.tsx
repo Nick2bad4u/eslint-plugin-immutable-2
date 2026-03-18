@@ -141,7 +141,7 @@ export default function Home() {
                                 </Link>{" "}
                                 and pick a preset from{" "}
                                 <Link
-                                    className={`${styles.heroInlineLink} ${styles.heroInlineLinkTsExtras}`}
+                                    className={`${styles.heroInlineLink} ${styles.heroInlineLinkPresets}`}
                                     to="/docs/rules/presets"
                                 >
                                     the presets guide

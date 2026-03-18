@@ -30,6 +30,37 @@ type Items = readonly string[];
 const values: readonly unknown[] = [1, 2, 3];
 ```
 
+## Additional examples
+
+```ts
+// ❌ Mutable function parameter
+const total = (values: number[]) => values.reduce((sum, value) => sum + value, 0);
+
+// ✅ Readonly parameter prevents accidental writes
+const total = (values: readonly number[]) =>
+    values.reduce((sum, value) => sum + value, 0);
+```
+
+## ESLint flat config example
+
+```ts
+import immutable from "eslint-plugin-immutable-2";
+
+export default [
+    {
+        files: ["**/*.{ts,tsx,mts,cts}"],
+        plugins: { immutable },
+        rules: {
+            "immutable/readonly-array": "error",
+        },
+    },
+];
+```
+
+## When not to use it
+
+If your code intentionally mutates arrays as part of low-level algorithms or performance-critical buffers, mandatory readonly annotations can add friction. In those locations, disable the rule locally and keep mutation constrained to well-documented utility modules.
+
 > **Rule catalog ID:** R913
 
 ## Further reading

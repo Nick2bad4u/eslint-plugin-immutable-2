@@ -34,6 +34,45 @@ const nextItems = [...items, newItem];
 const merged = { ...existing, ...patch };
 ```
 
+## Additional examples
+
+```ts
+// ❌ Mutates nested state in place
+state.user.preferences.theme = "dark";
+
+// ✅ Builds a new nested object graph
+const nextState = {
+    ...state,
+    user: {
+        ...state.user,
+        preferences: {
+            ...state.user.preferences,
+            theme: "dark",
+        },
+    },
+};
+```
+
+## ESLint flat config example
+
+```ts
+import immutable from "eslint-plugin-immutable-2";
+
+export default [
+    {
+        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+        plugins: { immutable },
+        rules: {
+            "immutable/immutable-data": "error",
+        },
+    },
+];
+```
+
+## When not to use it
+
+Skip or soften this rule when a boundary intentionally uses controlled mutation (for example an Immer reducer, a perf-critical numeric buffer, or framework internals that require in-place updates). In those cases, isolate mutable zones and keep immutable rules enabled for the rest of the codebase.
+
 > **Rule catalog ID:** R901
 
 ## Further reading
