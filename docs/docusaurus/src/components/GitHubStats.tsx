@@ -15,38 +15,38 @@ type LiveBadge = {
 const liveBadges = [
     {
         alt: "npm license",
-        href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/blob/main/LICENSE",
-        src: "https://flat.badgen.net/npm/license/eslint-plugin-typefest?color=purple",
+        href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/blob/main/LICENSE",
+        src: "https://flat.badgen.net/npm/license/eslint-plugin-immutable-2?color=purple",
     },
     {
         alt: "npm total downloads",
-        href: "https://www.npmjs.com/package/eslint-plugin-typefest",
-        src: "https://flat.badgen.net/npm/dt/eslint-plugin-typefest?color=pink",
+        href: "https://www.npmjs.com/package/eslint-plugin-immutable-2",
+        src: "https://flat.badgen.net/npm/dt/eslint-plugin-immutable-2?color=pink",
     },
     {
         alt: "latest GitHub release",
-        href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/releases",
-        src: "https://flat.badgen.net/github/release/Nick2bad4u/eslint-plugin-typefest?color=cyan",
+        href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/releases",
+        src: "https://flat.badgen.net/github/release/Nick2bad4u/eslint-plugin-immutable-2?color=cyan",
     },
     {
         alt: "GitHub stars",
-        href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/stargazers",
-        src: "https://flat.badgen.net/github/stars/Nick2bad4u/eslint-plugin-typefest?color=yellow",
+        href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/stargazers",
+        src: "https://flat.badgen.net/github/stars/Nick2bad4u/eslint-plugin-immutable-2?color=yellow",
     },
     {
         alt: "GitHub forks",
-        href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/forks",
-        src: "https://flat.badgen.net/github/forks/Nick2bad4u/eslint-plugin-typefest?color=green",
+        href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/forks",
+        src: "https://flat.badgen.net/github/forks/Nick2bad4u/eslint-plugin-immutable-2?color=green",
     },
     {
         alt: "GitHub open issues",
-        href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/issues",
-        src: "https://flat.badgen.net/github/open-issues/Nick2bad4u/eslint-plugin-typefest?color=red",
+        href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues",
+        src: "https://flat.badgen.net/github/open-issues/Nick2bad4u/eslint-plugin-immutable-2?color=red",
     },
     {
         alt: "mutation testing badge",
-        href: "https://dashboard.stryker-mutator.io/reports/github.com/Nick2bad4u/eslint-plugin-typefest/main",
-        src: "https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FNick2bad4u%2Feslint-plugin-typefest%2Fmain",
+        href: "https://dashboard.stryker-mutator.io/reports/github.com/Nick2bad4u/eslint-plugin-immutable-2/main",
+        src: "https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FNick2bad4u%2Feslint-plugin-immutable-2%2Fmain",
     },
 ] as const satisfies readonly LiveBadge[];
 

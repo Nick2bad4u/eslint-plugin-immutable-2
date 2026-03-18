@@ -1,6 +1,6 @@
 ---
 title: ADR 0005 - Runtime vs Type-Level Rule Families
-description: Decision record for keeping ts-extras and type-fest rules as distinct families with distinct migration semantics.
+description: Decision record for keeping immutable and immutable rules as distinct families with distinct migration semantics.
 sidebar_position: 5
 ---
 
@@ -13,8 +13,8 @@ sidebar_position: 5
 
 The plugin enforces two different migration categories:
 
-1. **Runtime helper migrations** (`prefer-ts-extras-*`): code-emitting changes such as `Object.keys` -> `objectKeys`.
-2. **Type utility migrations** (`prefer-type-fest-*`): compile-time-only alias/type-shape normalization.
+1. **Runtime helper migrations** (`prefer-immutable-*`): code-emitting changes such as `Object.keys` -> `objectKeys`.
+2. **Type utility migrations** (`prefer-immutable-*`): compile-time-only alias/type-shape normalization.
 
 Mixing these categories into one conceptual family created confusion in documentation and rollout planning because runtime and type-level migrations have different review risk profiles.
 
@@ -22,8 +22,8 @@ Mixing these categories into one conceptual family created confusion in document
 
 Keep two explicit rule families and document them as separate design tracks:
 
-- `prefer-ts-extras-*` is treated as runtime behavior standardization.
-- `prefer-type-fest-*` is treated as type-level expressiveness and consistency standardization.
+- `prefer-immutable-*` is treated as runtime behavior standardization.
+- `prefer-immutable-*` is treated as type-level expressiveness and consistency standardization.
 
 Rule docs, release notes, and migration guidance should continue to preserve this split.
 

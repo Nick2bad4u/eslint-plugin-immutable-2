@@ -3,8 +3,8 @@ import { bench, describe } from "vitest";
 
 import {
     benchmarkFileGlobs,
-    createTypefestFlatConfig,
-    typefestRuleSets,
+    createImmutableFlatConfig,
+    immutableRuleSets,
 } from "./eslint-benchmark-config.mjs";
 
 /**
@@ -28,11 +28,11 @@ import {
  */
 
 const singleRuleBenchmarks = Object.freeze({
-    "typefest/prefer-ts-extras-is-present": "error",
-    "typefest/prefer-ts-extras-safe-cast-to": "error",
-    "typefest/prefer-ts-extras-set-has": "error",
-    "typefest/prefer-ts-extras-string-split": "error",
-    "typefest/prefer-type-fest-arrayable": "error",
+    "immutable/prefer-immutable-is-present": "error",
+    "immutable/prefer-immutable-safe-cast-to": "error",
+    "immutable/prefer-immutable-set-has": "error",
+    "immutable/prefer-immutable-string-split": "error",
+    "immutable/prefer-immutable-arrayable": "error",
 });
 
 const standardBenchmarkOptions = Object.freeze({
@@ -202,7 +202,7 @@ const lintScenario = async ({ filePatterns, fix, rules }) => {
     const eslint = new ESLint({
         cache: false,
         fix,
-        overrideConfig: createTypefestFlatConfig({ rules }),
+        overrideConfig: createImmutableFlatConfig({ rules }),
         overrideConfigFile: true,
         stats: true,
     });
@@ -210,14 +210,14 @@ const lintScenario = async ({ filePatterns, fix, rules }) => {
     return eslint.lintFiles([...filePatterns]);
 };
 
-describe("eslint-plugin-typefest meaningful benchmarks", () => {
+describe("eslint-plugin-immutable-2 meaningful benchmarks", () => {
     bench(
         "recommended preset on full invalid typed fixture corpus",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.typedInvalidFixtures,
                 fix: false,
-                rules: typefestRuleSets.recommended,
+                rules: immutableRuleSets.recommended,
             });
 
             assertMeaningfulBenchmarkSignal(
@@ -234,7 +234,7 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.typedInvalidFixtures,
                 fix: false,
-                rules: typefestRuleSets.strict,
+                rules: immutableRuleSets.strict,
             });
 
             assertMeaningfulBenchmarkSignal(
@@ -251,7 +251,7 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.typedValidFixtures,
                 fix: false,
-                rules: typefestRuleSets.recommended,
+                rules: immutableRuleSets.recommended,
             });
 
             assertMeaningfulBenchmarkSignal(
@@ -269,7 +269,7 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.recommendedZeroMessageFixture,
                 fix: false,
-                rules: typefestRuleSets.recommended,
+                rules: immutableRuleSets.recommended,
             });
 
             assertMeaningfulBenchmarkSignal(
@@ -282,16 +282,16 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "ts-extras type-guards preset on ts-extras invalid fixtures",
+        "immutable type-guards preset on immutable invalid fixtures",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.tsExtrasInvalidFixtures,
                 fix: false,
-                rules: typefestRuleSets.tsExtrasTypeGuards,
+                rules: immutableRuleSets.tsExtrasTypeGuards,
             });
 
             assertMeaningfulBenchmarkSignal(
-                "ts-extras type-guards preset on ts-extras invalid fixtures",
+                "immutable type-guards preset on immutable invalid fixtures",
                 lintResults
             );
         },
@@ -299,16 +299,16 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "type-fest types preset on type-fest invalid fixtures",
+        "immutable types preset on immutable invalid fixtures",
         async () => {
             const lintResults = await lintScenario({
-                filePatterns: benchmarkFileGlobs.typeFestInvalidFixtures,
+                filePatterns: benchmarkFileGlobs.immutableInvalidFixtures,
                 fix: false,
-                rules: typefestRuleSets.typeFestTypes,
+                rules: immutableRuleSets.immutableTypes,
             });
 
             assertMeaningfulBenchmarkSignal(
-                "type-fest types preset on type-fest invalid fixtures",
+                "immutable types preset on immutable invalid fixtures",
                 lintResults
             );
         },
@@ -316,16 +316,16 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "recommended preset (fix=true) on ts-extras invalid fixtures",
+        "recommended preset (fix=true) on immutable invalid fixtures",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.tsExtrasInvalidFixtures,
                 fix: true,
-                rules: typefestRuleSets.recommended,
+                rules: immutableRuleSets.recommended,
             });
 
             assertMeaningfulBenchmarkSignal(
-                "recommended preset (fix=true) on ts-extras invalid fixtures",
+                "recommended preset (fix=true) on immutable invalid fixtures",
                 lintResults
             );
         },
@@ -333,21 +333,21 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "single rule prefer-ts-extras-is-present on stress fixture",
+        "single rule prefer-immutable-is-present on stress fixture",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.isPresentStressFixture,
                 fix: false,
                 rules: {
-                    "typefest/prefer-ts-extras-is-present":
+                    "immutable/prefer-immutable-is-present":
                         singleRuleBenchmarks[
-                            "typefest/prefer-ts-extras-is-present"
+                            "immutable/prefer-immutable-is-present"
                         ],
                 },
             });
 
             assertMeaningfulBenchmarkSignal(
-                "single rule prefer-ts-extras-is-present on stress fixture",
+                "single rule prefer-immutable-is-present on stress fixture",
                 lintResults
             );
         },
@@ -355,21 +355,21 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "single rule prefer-ts-extras-safe-cast-to on stress fixture",
+        "single rule prefer-immutable-safe-cast-to on stress fixture",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.safeCastToStressFixture,
                 fix: false,
                 rules: {
-                    "typefest/prefer-ts-extras-safe-cast-to":
+                    "immutable/prefer-immutable-safe-cast-to":
                         singleRuleBenchmarks[
-                            "typefest/prefer-ts-extras-safe-cast-to"
+                            "immutable/prefer-immutable-safe-cast-to"
                         ],
                 },
             });
 
             assertMeaningfulBenchmarkSignal(
-                "single rule prefer-ts-extras-safe-cast-to on stress fixture",
+                "single rule prefer-immutable-safe-cast-to on stress fixture",
                 lintResults
             );
         },
@@ -377,21 +377,21 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "single rule prefer-ts-extras-set-has on stress fixture",
+        "single rule prefer-immutable-set-has on stress fixture",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.setHasStressFixture,
                 fix: false,
                 rules: {
-                    "typefest/prefer-ts-extras-set-has":
+                    "immutable/prefer-immutable-set-has":
                         singleRuleBenchmarks[
-                            "typefest/prefer-ts-extras-set-has"
+                            "immutable/prefer-immutable-set-has"
                         ],
                 },
             });
 
             assertMeaningfulBenchmarkSignal(
-                "single rule prefer-ts-extras-set-has on stress fixture",
+                "single rule prefer-immutable-set-has on stress fixture",
                 lintResults
             );
         },
@@ -399,21 +399,21 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "single rule prefer-ts-extras-string-split on stress fixture",
+        "single rule prefer-immutable-string-split on stress fixture",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.stringSplitStressFixture,
                 fix: false,
                 rules: {
-                    "typefest/prefer-ts-extras-string-split":
+                    "immutable/prefer-immutable-string-split":
                         singleRuleBenchmarks[
-                            "typefest/prefer-ts-extras-string-split"
+                            "immutable/prefer-immutable-string-split"
                         ],
                 },
             });
 
             assertMeaningfulBenchmarkSignal(
-                "single rule prefer-ts-extras-string-split on stress fixture",
+                "single rule prefer-immutable-string-split on stress fixture",
                 lintResults
             );
         },
@@ -421,21 +421,21 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "single rule prefer-ts-extras-safe-cast-to on stress fixture (fix=true)",
+        "single rule prefer-immutable-safe-cast-to on stress fixture (fix=true)",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.safeCastToStressFixture,
                 fix: true,
                 rules: {
-                    "typefest/prefer-ts-extras-safe-cast-to":
+                    "immutable/prefer-immutable-safe-cast-to":
                         singleRuleBenchmarks[
-                            "typefest/prefer-ts-extras-safe-cast-to"
+                            "immutable/prefer-immutable-safe-cast-to"
                         ],
                 },
             });
 
             assertMeaningfulBenchmarkSignal(
-                "single rule prefer-ts-extras-safe-cast-to on stress fixture (fix=true)",
+                "single rule prefer-immutable-safe-cast-to on stress fixture (fix=true)",
                 lintResults,
                 { maximumReportedProblems: 0, minimumReportedProblems: 0 }
             );
@@ -444,21 +444,21 @@ describe("eslint-plugin-typefest meaningful benchmarks", () => {
     );
 
     bench(
-        "single rule prefer-type-fest-arrayable on stress fixture",
+        "single rule prefer-immutable-arrayable on stress fixture",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.arrayableStressFixture,
                 fix: false,
                 rules: {
-                    "typefest/prefer-type-fest-arrayable":
+                    "immutable/prefer-immutable-arrayable":
                         singleRuleBenchmarks[
-                            "typefest/prefer-type-fest-arrayable"
+                            "immutable/prefer-immutable-arrayable"
                         ],
                 },
             });
 
             assertMeaningfulBenchmarkSignal(
-                "single rule prefer-type-fest-arrayable on stress fixture",
+                "single rule prefer-immutable-arrayable on stress fixture",
                 lintResults
             );
         },

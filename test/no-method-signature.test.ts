@@ -1,10 +1,14 @@
-import { describe } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { createRuleTester, getPluginRule } from "./_internal/ruleTester";
 
 const tester = createRuleTester();
 
 describe("no-method-signature rule", () => {
+    it("exports no-method-signature rule module", () => {
+        expect(getPluginRule("no-method-signature")).toBeDefined();
+    });
+
     tester.run("no-method-signature", getPluginRule("no-method-signature"), {
         invalid: [
             {

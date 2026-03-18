@@ -22,12 +22,12 @@ import plugin from "../plugin.mjs";
  *     tsExtrasInvalidFixtures: readonly string[];
  *     typedInvalidFixtures: readonly string[];
  *     typedValidFixtures: readonly string[];
- *     typeFestInvalidFixtures: readonly string[];
+ *     immutableInvalidFixtures: readonly string[];
  * }} BenchmarkFileGlobs
  */
 
 /**
- * @typedef {{ rules: BenchmarkRules }} CreateTypefestFlatConfigOptions
+ * @typedef {{ rules: BenchmarkRules }} CreateImmutableFlatConfigOptions
  */
 
 /**
@@ -68,12 +68,12 @@ export const benchmarkFileGlobs = Object.freeze({
         "benchmarks/fixtures/string-split.stress.ts",
     ]),
     tsExtrasInvalidFixtures: Object.freeze([
-        "test/fixtures/typed/prefer-ts-extras-*.invalid.ts",
+        "test/fixtures/typed/prefer-immutable-*.invalid.ts",
     ]),
     typedInvalidFixtures: Object.freeze(["test/fixtures/typed/*.invalid.ts"]),
     typedValidFixtures: Object.freeze(["test/fixtures/typed/*.valid.ts"]),
-    typeFestInvalidFixtures: Object.freeze([
-        "test/fixtures/typed/prefer-type-fest-*.invalid.ts",
+    immutableInvalidFixtures: Object.freeze([
+        "test/fixtures/typed/prefer-immutable-*.invalid.ts",
     ]),
 });
 
@@ -135,7 +135,7 @@ const ensureRulesRecord = (value, label) => {
 /**
  * Resolve rules from a plugin preset by name.
  *
- * @param {string} presetName - Key under `typefestPlugin.configs`.
+ * @param {string} presetName - Key under `immutablePlugin.configs`.
  *
  * @returns {Readonly<BenchmarkRules>} Frozen rule map suitable for flat config.
  */
@@ -156,25 +156,25 @@ const resolveRuleSet = (presetName) => {
 /**
  * Plugin rule sets used by benchmark scenarios.
  */
-export const typefestRuleSets = Object.freeze({
+export const immutableRuleSets = Object.freeze({
     all: resolveRuleSet("all"),
     minimal: resolveRuleSet("minimal"),
     recommended: resolveRuleSet("recommended"),
     strict: resolveRuleSet("strict"),
-    tsExtrasTypeGuards: resolveRuleSet("ts-extras/type-guards"),
-    typeFestTypes: resolveRuleSet("type-fest/types"),
+    tsExtrasTypeGuards: resolveRuleSet("immutable/type-guards"),
+    immutableTypes: resolveRuleSet("immutable/types"),
 });
 
 /**
- * Create a flat ESLint config array for typefest benchmark scenarios.
+ * Create a flat ESLint config array for immutable benchmark scenarios.
  *
- * @param {CreateTypefestFlatConfigOptions} options - Config creation options.
+ * @param {CreateImmutableFlatConfigOptions} options - Config creation options.
  *
  * @returns {import("eslint").Linter.Config[]} Flat config array for ESLint Node
  *   API / CLI usage.
  */
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types -- This .mjs module relies on JSDoc contracts instead of TS syntax.
-export function createTypefestFlatConfig(options) {
+export function createImmutableFlatConfig(options) {
     const { rules } = options;
 
     return [
@@ -189,9 +189,9 @@ export function createTypefestFlatConfig(options) {
                     tsconfigRootDir: repositoryRoot,
                 },
             },
-            name: "benchmark:typefest",
+            name: "benchmark:immutable",
             plugins: {
-                typefest: plugin,
+                immutable: plugin,
             },
             rules,
         },

@@ -1,11 +1,17 @@
-import { describe, it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { createRuleTester, getPluginRule } from "./_internal/ruleTester";
 
 const tester = createRuleTester();
 
 describe("readonly-array rule", () => {
+    it("exports readonly-array rule module", () => {
+        expect(getPluginRule("readonly-array")).toBeDefined();
+    });
+
     it("enforces readonly array annotations", () => {
+        expect(getPluginRule("readonly-array")).toBeDefined();
+
         tester.run("readonly-array", getPluginRule("readonly-array"), {
             invalid: [
                 {

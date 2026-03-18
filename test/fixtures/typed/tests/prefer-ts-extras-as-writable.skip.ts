@@ -1,4 +1,4 @@
-import type { Writable } from "type-fest";
+import type { Writable } from "immutable";
 
 type ReadonlyRecord = {
     readonly id: number;

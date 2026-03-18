@@ -3,7 +3,7 @@ export interface ReadmeRuleModule {
         | {
               readonly docs?:
                   | {
-                        readonly typefestConfigs?:
+                        readonly immutableConfigs?:
                             | readonly string[]
                             | string
                             | undefined;

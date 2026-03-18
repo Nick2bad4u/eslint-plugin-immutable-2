@@ -1,6 +1,6 @@
 ---
 title: Preset selection strategy
-description: Choose the right eslint-plugin-typefest preset and roll it out with minimal migration risk.
+description: Choose the right eslint-plugin-immutable-2 preset and roll it out with minimal migration risk.
 ---
 
 # Preset selection strategy
@@ -14,37 +14,30 @@ Use these checkpoints before choosing a preset:
 1. **Type information availability**: Do you run ESLint with project-aware type services in CI/local workflows?
 2. **Migration bandwidth**: Can the team handle broad replacement churn this quarter?
 3. **Runtime sensitivity**: Do you need to review behavior-sensitive changes manually before broad adoption?
-4. **Convergence target**: Do you intend to land on `strict`/`all`, or stay at a stable baseline?
+4. **Convergence target**: Do you intend to land on `functional`/`all`, or stay at an immutable baseline?
 
 ## Recommended starting points
 
-### `minimal`
+### `recommended` (alias of `immutable`)
 
 Choose this when:
 
-- You need the lowest-friction baseline.
-- You want immediate value with minimal code churn.
+- You need a low-friction baseline with practical immutable constraints.
+- You want immediate value with low code churn.
 
-### `recommended`
+### `functional-lite`
 
 Choose this when:
 
-- You want broader coverage but still pragmatic defaults.
+- You want stronger functional enforcement with limited branching exceptions.
 - You can absorb moderate migration effort.
 
-### `recommended-type-checked`
+### `functional`
 
 Choose this when:
 
-- Type services are already stable in your lint pipeline.
-- You want stronger guidance on typed guard/helper patterns.
-
-### `strict`
-
-Choose this when:
-
-- Your codebase already enforces high lint/type discipline.
-- You prefer stronger consistency constraints over minimal churn.
+- You want strict functional style without enabling every possible rule.
+- Your team is ready for higher migration effort.
 
 ### `all`
 
@@ -52,13 +45,6 @@ Choose this when:
 
 - You want full plugin coverage and can manage incremental cleanup.
 - You actively maintain migration and suppression hygiene.
-
-### Domain overlays
-
-Layer these when they match your codebase goals:
-
-- `type-fest/types`
-- `ts-extras/type-guards`
 
 ## Rollout playbook
 

@@ -30,11 +30,11 @@ const scriptsDirectoryPath = fileURLToPath(new URL(".", import.meta.url));
 const repositoryRootPath = path.resolve(scriptsDirectoryPath, "..");
 const typedFixturePath = path.resolve(
     repositoryRootPath,
-    "test/fixtures/typed/prefer-ts-extras-safe-cast-to.invalid.ts"
+    "test/fixtures/typed/prefer-immutable-safe-cast-to.invalid.ts"
 );
 const arrayableFixturePath = path.resolve(
     repositoryRootPath,
-    "test/fixtures/typed/prefer-type-fest-arrayable.invalid.ts"
+    "test/fixtures/typed/prefer-immutable-arrayable.invalid.ts"
 );
 
 const expectedEslintMajorArgumentPrefix = "--expect-eslint-major=";
@@ -219,7 +219,7 @@ const createCompatibilityConfig = (ruleId, typed, fixturePath) => {
             },
             name: `compat-smoke:${ruleId}`,
             plugins: {
-                typefest: plugin,
+                immutable: plugin,
             },
             rules: {
                 [ruleId]: "error",
@@ -315,7 +315,7 @@ const scenarios = /** @type {const} */ ([
         fix: false,
         fixturePath: typedFixturePath,
         name: "typed-detection",
-        ruleId: "typefest/prefer-ts-extras-safe-cast-to",
+        ruleId: "immutable/prefer-immutable-safe-cast-to",
         typed: true,
     },
     {
@@ -325,7 +325,7 @@ const scenarios = /** @type {const} */ ([
         fix: true,
         fixturePath: typedFixturePath,
         name: "typed-autofix",
-        ruleId: "typefest/prefer-ts-extras-safe-cast-to",
+        ruleId: "immutable/prefer-immutable-safe-cast-to",
         typed: true,
     },
     {
@@ -333,7 +333,7 @@ const scenarios = /** @type {const} */ ([
         fix: false,
         fixturePath: arrayableFixturePath,
         name: "non-typed-detection",
-        ruleId: "typefest/prefer-type-fest-arrayable",
+        ruleId: "immutable/prefer-immutable-arrayable",
         typed: false,
     },
 ]);

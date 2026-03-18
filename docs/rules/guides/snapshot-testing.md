@@ -1,6 +1,6 @@
 ---
 title: Snapshot testing guidance
-description: How to use Vitest snapshots safely and effectively in eslint-plugin-typefest.
+description: How to use Vitest snapshots safely and effectively in eslint-plugin-immutable-2.
 ---
 
 # Snapshot testing guidance

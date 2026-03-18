@@ -16,7 +16,7 @@ import { generateReadmeRulesSectionFromRules } from "./sync-readme-rules-table.m
  * @typedef {Readonly<{
  *     meta?: {
  *         docs?: {
- *             typefestConfigs?: readonly string[] | string;
+ *             immutableConfigs?: readonly string[] | string;
  *             url?: string;
  *         };
  *         fixable?: string;
@@ -33,8 +33,8 @@ import { generateReadmeRulesSectionFromRules } from "./sync-readme-rules-table.m
  *     | "recommended"
  *     | "recommended-type-checked"
  *     | "strict"
- *     | "ts-extras/type-guards"
- *     | "type-fest/types"} PresetConfigName
+ *     | "immutable/type-guards"
+ *     | "immutable/types"} PresetConfigName
  */
 
 const matrixSectionHeading = "## Rule matrix";
@@ -50,8 +50,8 @@ const presetDocSlugByConfigName = {
     recommended: "recommended",
     "recommended-type-checked": "recommended-type-checked",
     strict: "strict",
-    "ts-extras/type-guards": "ts-extras-type-guards",
-    "type-fest/types": "type-fest-types",
+    "immutable/type-guards": "immutable-type-guards",
+    "immutable/types": "immutable-types",
 };
 
 /** @type {readonly PresetConfigName[]} */
@@ -60,8 +60,8 @@ const standardPresetConfigNames = [
     "minimal",
     "recommended",
     "strict",
-    "ts-extras/type-guards",
-    "type-fest/types",
+    "immutable/type-guards",
+    "immutable/types",
 ];
 
 /**
@@ -86,11 +86,11 @@ const sortStrings = (values) =>
  * @returns {null | string}
  */
 const toPluginRuleName = (configRuleKey) => {
-    if (!configRuleKey.startsWith("typefest/")) {
+    if (!configRuleKey.startsWith("immutable/")) {
         return null;
     }
 
-    return configRuleKey.slice("typefest/".length);
+    return configRuleKey.slice("immutable/".length);
 };
 
 /**

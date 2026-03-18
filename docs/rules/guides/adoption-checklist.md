@@ -1,6 +1,6 @@
 ---
 title: Rule adoption checklist
-description: Practical checklist for adopting eslint-plugin-typefest rules with low risk.
+description: Practical checklist for adopting eslint-plugin-immutable-2 rules with low risk.
 ---
 
 # Rule adoption checklist

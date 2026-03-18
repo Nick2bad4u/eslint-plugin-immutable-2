@@ -2,8 +2,6 @@
  * @packageDocumentation
  * Integration coverage for source-level immutable plugin preset wiring.
  */
-import type { AsyncReturnType } from "type-fest";
-
 import { describe, expect, it, vi } from "vitest";
 
 /** Import `src/plugin` fresh for each assertion set. */
@@ -16,7 +14,7 @@ const loadSourcePlugin = async () => {
 /** Plugin config object shape inferred from the loaded source plugin. */
 type PluginConfig = PluginType["configs"][keyof PluginType["configs"]];
 /** Resolved plugin module type for async source import helper. */
-type PluginType = AsyncReturnType<typeof loadSourcePlugin>;
+type PluginType = Awaited<ReturnType<typeof loadSourcePlugin>>;
 
 /** Convert a preset rules object into deterministic `[ruleId, level]` entries. */
 const getRuleEntries = (
@@ -47,7 +45,9 @@ describe("source plugin config wiring", () => {
         expect(getRuleEntries(functionalLite).length).toBeGreaterThan(0);
 
         expect(Object.keys(all.rules)).toContain("immutable/immutable-data");
-        expect(Object.keys(all.rules)).toContain("immutable/no-expression-statement");
+        expect(Object.keys(all.rules)).toContain(
+            "immutable/no-expression-statement"
+        );
         expect(Object.keys(all.rules)).toContain("immutable/readonly-array");
 
         expect(Object.keys(recommended.rules)).toEqual(
@@ -62,7 +62,9 @@ describe("source plugin config wiring", () => {
         expect(functionalLite.rules).toHaveProperty(
             "immutable/no-conditional-statement"
         );
-        expect(functional.rules).toHaveProperty("immutable/no-expression-statement");
+        expect(functional.rules).toHaveProperty(
+            "immutable/no-expression-statement"
+        );
         expect(functional.rules).toHaveProperty("immutable/no-try", "error");
 
         expect(plugin.meta.name).toBe("eslint-plugin-immutable");
@@ -76,7 +78,9 @@ describe("source plugin config wiring", () => {
             "**/*.{js,cjs,mjs,jsx,ts,tsx,mts,cts}",
         ]);
         expect(recommendedConfig.plugins).toHaveProperty("immutable");
-        expect(recommendedConfig.plugins?.["immutable"]).toHaveProperty("rules");
+        expect(recommendedConfig.plugins?.["immutable"]).toHaveProperty(
+            "rules"
+        );
         expect(recommendedConfig.languageOptions).toHaveProperty("parser");
         expect(recommendedConfig.languageOptions).toHaveProperty(
             "parserOptions"

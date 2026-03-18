@@ -1,21 +1,18 @@
 ---
 title: Overview
-description: README-style overview for eslint-plugin-typefest.
+description: README-style overview for eslint-plugin-immutable-2.
 ---
 
-# eslint-plugin-typefest
+# eslint-plugin-immutable-2
 
-ESLint plugin for teams that want consistent TypeScript-first conventions based on:
+ESLint plugin for teams that want consistent immutable and functional TypeScript conventions.
 
-- [`type-fest`](https://github.com/sindresorhus/type-fest)
-- [`ts-extras`](https://github.com/sindresorhus/ts-extras)
-
-The plugin ships focused rule sets for modern Flat Config usage, with parser setup included in each preset.
+The plugin ships focused presets for modern Flat Config usage.
 
 ## Installation
 
 ```bash
-npm install --save-dev eslint-plugin-typefest typescript
+npm install --save-dev eslint-plugin-immutable-2 typescript
 ```
 
 > `@typescript-eslint/parser` is loaded automatically by plugin presets.
@@ -23,24 +20,22 @@ npm install --save-dev eslint-plugin-typefest typescript
 ## Quick start (Flat Config)
 
 ```ts
-import typefest from "eslint-plugin-typefest";
+import immutable from "eslint-plugin-immutable-2";
 
-export default [typefest.configs.recommended];
+export default [immutable.configs.recommended];
 ```
 
-That is enough for TypeScript files (`**/*.{ts,tsx,mts,cts}`).
+`recommended` maps to the `immutable` baseline preset.
 
 ## Presets
 
-| Preset                                            | Preset page                                                         |
-| ------------------------------------------------- | ------------------------------------------------------------------- |
-| 🟢 `typefest.configs.minimal`                     | [Minimal](./presets/minimal.md)                                     |
-| 🟡 `typefest.configs.recommended`                 | [Recommended](./presets/recommended.md)                             |
-| 🟠 `typefest.configs["recommended-type-checked"]` | [Recommended (type-checked)](./presets/recommended-type-checked.md) |
-| 🔴 `typefest.configs.strict`                      | [Strict](./presets/strict.md)                                       |
-| 🟣 `typefest.configs.all`                         | [All](./presets/all.md)                                             |
-| 💠 `typefest.configs["type-fest/types"]`          | [type-fest/types](./presets/type-fest-types.md)                     |
-| ✴️ `typefest.configs["ts-extras/type-guards"]`    | [ts-extras/type-guards](./presets/ts-extras-type-guards.md)         |
+| Preset                                    | Preset page                                     |
+| ----------------------------------------- | ----------------------------------------------- |
+| 🟢 `immutable.configs["functional-lite"]` | [Functional Lite](./presets/functional-lite.md) |
+| 🟡 `immutable.configs.functional`         | [Functional](./presets/functional.md)           |
+| 🟠 `immutable.configs.immutable`          | [Immutable](./presets/immutable.md)             |
+| 🔵 `immutable.configs.recommended`        | [Recommended](./presets/recommended.md)         |
+| 🟣 `immutable.configs.all`                | [All](./presets/all.md)                         |
 
 ## Next steps
 

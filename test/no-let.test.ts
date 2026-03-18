@@ -1,10 +1,14 @@
-import { describe } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { createRuleTester, getPluginRule } from "./_internal/ruleTester";
 
 const tester = createRuleTester();
 
 describe("no-let rule", () => {
+    it("exports no-let rule module", () => {
+        expect(getPluginRule("no-let")).toBeDefined();
+    });
+
     tester.run("no-let", getPluginRule("no-let"), {
         invalid: [
             {

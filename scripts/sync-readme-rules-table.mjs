@@ -12,16 +12,16 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import builtPlugin from "../dist/plugin.js";
 // @ts-expect-error -- dist output is generated during build/publish.
 import {
-    typefestConfigMetadataByName,
-    typefestConfigNamesByReadmeOrder,
-    typefestConfigReferenceToName,
-} from "../dist/_internal/typefest-config-references.js";
+    immutableConfigMetadataByName,
+    immutableConfigNamesByReadmeOrder,
+    immutableConfigReferenceToName,
+} from "../dist/_internal/immutable-config-references.js";
 
 /**
  * @typedef {Readonly<{
  *     meta?: {
  *         docs?: {
- *             typefestConfigs?: readonly string[] | string;
+ *             immutableConfigs?: readonly string[] | string;
  *             url?: string;
  *         };
  *         fixable?: string;
@@ -38,16 +38,16 @@ import {
  *     | "recommended"
  *     | "recommended-type-checked"
  *     | "strict"
- *     | "ts-extras/type-guards"
- *     | "type-fest/types"} PresetName
+ *     | "immutable/type-guards"
+ *     | "immutable/types"} PresetName
  */
 
-const presetOrder = [...typefestConfigNamesByReadmeOrder];
+const presetOrder = [...immutableConfigNamesByReadmeOrder];
 const presetNameSet = new Set(presetOrder);
 
 const rulesSectionHeading = "## Rules";
 const PRESET_DOCS_URL_BASE =
-    "https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/presets";
+    "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets";
 
 /**
  * Locate the rules section bounds within README markdown.
@@ -147,19 +147,19 @@ const presetDocsSlugByName = {
     recommended: "recommended",
     "recommended-type-checked": "recommended-type-checked",
     strict: "strict",
-    "ts-extras/type-guards": "ts-extras-type-guards",
-    "type-fest/types": "type-fest-types",
+    "immutable/type-guards": "immutable-type-guards",
+    "immutable/types": "immutable-types",
 };
 
 /** @type {Readonly<Record<PresetName, string>>} */
 const presetConfigReferenceByName = {
-    all: "typefest.configs.all",
-    minimal: "typefest.configs.minimal",
-    recommended: "typefest.configs.recommended",
-    "recommended-type-checked": 'typefest.configs["recommended-type-checked"]',
-    strict: "typefest.configs.strict",
-    "ts-extras/type-guards": 'typefest.configs["ts-extras/type-guards"]',
-    "type-fest/types": 'typefest.configs["type-fest/types"]',
+    all: "immutable.configs.all",
+    minimal: "immutable.configs.minimal",
+    recommended: "immutable.configs.recommended",
+    "recommended-type-checked": 'immutable.configs["recommended-type-checked"]',
+    strict: "immutable.configs.strict",
+    "immutable/type-guards": 'immutable.configs["immutable/type-guards"]',
+    "immutable/types": 'immutable.configs["immutable/types"]',
 };
 
 /**
@@ -176,7 +176,7 @@ const createPresetDocsUrl = (presetName) =>
 const createPresetLegendLines = () =>
     presetOrder.map((presetName) => {
         const docsUrl = createPresetDocsUrl(presetName);
-        const presetIcon = typefestConfigMetadataByName[presetName].icon;
+        const presetIcon = immutableConfigMetadataByName[presetName].icon;
         const configReference = presetConfigReferenceByName[presetName];
 
         return `  - [${presetIcon}](${docsUrl}) — [\`${configReference}\`](${docsUrl})`;
@@ -187,14 +187,14 @@ const createPresetLegendLines = () =>
  *
  * @returns {null | PresetName}
  */
-const normalizeTypefestConfigName = (reference) => {
-    if (Object.hasOwn(typefestConfigReferenceToName, reference)) {
+const normalizeImmutableConfigName = (reference) => {
+    if (Object.hasOwn(immutableConfigReferenceToName, reference)) {
         const referenceKey =
-            /** @type {keyof typeof typefestConfigReferenceToName} */ (
+            /** @type {keyof typeof immutableConfigReferenceToName} */ (
                 reference
             );
 
-        return typefestConfigReferenceToName[referenceKey];
+        return immutableConfigReferenceToName[referenceKey];
     }
 
     const presetName = /** @type {PresetName} */ (reference);
@@ -203,14 +203,14 @@ const normalizeTypefestConfigName = (reference) => {
 };
 
 /**
- * @param {readonly string[] | string | undefined} typefestConfigs
+ * @param {readonly string[] | string | undefined} immutableConfigs
  *
  * @returns {readonly PresetName[]}
  */
-const normalizeTypefestConfigNames = (typefestConfigs) => {
-    const references = Array.isArray(typefestConfigs)
-        ? typefestConfigs
-        : [typefestConfigs];
+const normalizeImmutableConfigNames = (immutableConfigs) => {
+    const references = Array.isArray(immutableConfigs)
+        ? immutableConfigs
+        : [immutableConfigs];
 
     /** @type {PresetName[]} */
     const names = [];
@@ -222,7 +222,7 @@ const normalizeTypefestConfigNames = (typefestConfigs) => {
             continue;
         }
 
-        const configName = normalizeTypefestConfigName(reference);
+        const configName = normalizeImmutableConfigName(reference);
 
         if (configName === null) {
             continue;
@@ -271,8 +271,8 @@ const getRuleFixIndicator = (ruleModule) => {
  * @returns {string}
  */
 const getPresetIndicator = (ruleModule) => {
-    const docsTypefestConfigs = ruleModule.meta?.docs?.typefestConfigs;
-    const presetNames = normalizeTypefestConfigNames(docsTypefestConfigs);
+    const docsImmutableConfigs = ruleModule.meta?.docs?.immutableConfigs;
+    const presetNames = normalizeImmutableConfigNames(docsImmutableConfigs);
     const presetNamesSet = new Set(presetNames);
 
     /** @type {string[]} */
@@ -281,7 +281,7 @@ const getPresetIndicator = (ruleModule) => {
     for (const presetName of presetOrder) {
         if (presetNamesSet.has(presetName)) {
             const docsUrl = createPresetDocsUrl(presetName);
-            const presetIcon = typefestConfigMetadataByName[presetName].icon;
+            const presetIcon = immutableConfigMetadataByName[presetName].icon;
 
             icons.push(`[${presetIcon}](${docsUrl})`);
         }

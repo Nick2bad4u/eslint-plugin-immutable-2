@@ -1,19 +1,18 @@
 ---
 title: Type-aware linting readiness
-description: Checklist and rollout playbook for enabling type-aware eslint-plugin-typefest rules safely.
+description: Checklist and rollout playbook for enabling type-aware eslint-plugin-immutable-2 rules safely.
 ---
 
 # Type-aware linting readiness
 
-Use this guide before enabling type-aware presets or rules in a large codebase.
+Use this guide before enabling stricter immutable presets in a large codebase.
 
 ## When this guide applies
 
 Use this checklist when adopting:
 
-- `recommended-type-checked`
-- `strict` or `all` in projects with type-aware rules
-- `ts-extras/type-guards`
+- `functional`
+- `all`
 
 ## Readiness checklist
 
@@ -27,7 +26,7 @@ Confirm the lint runtime can provide full type services:
 
 ### 2) Project graph stability
 
-Before enabling strict typed checks:
+Before enabling stricter checks:
 
 - `npm run typecheck` is green
 - baseline linting is green (or has a controlled known backlog)
@@ -102,4 +101,4 @@ Likely causes:
 - [Rollout and fix safety](./rollout-and-fix-safety.md)
 - [Rule adoption checklist](./adoption-checklist.md)
 - [Preset selection strategy](./preset-selection-strategy.md)
-- [Typed service path inventory](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/developer/typed-paths)
+- [Typed service path inventory](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/developer/typed-paths)

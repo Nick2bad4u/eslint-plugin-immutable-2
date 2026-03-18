@@ -19,8 +19,8 @@ const npmCmd = process.platform === "win32" ? "npm.cmd" : "npm";
 const prodDeps = [
     "@typescript-eslint/parser@latest",
     "@typescript-eslint/utils@latest",
-    "ts-extras@latest",
-    "type-fest@latest",
+    "immutable@latest",
+    "immutable@latest",
 ];
 
 const devDeps = [

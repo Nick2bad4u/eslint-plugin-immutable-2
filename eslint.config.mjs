@@ -89,8 +89,8 @@ import * as yamlEslintParser from "yaml-eslint-parser";
  * @remarks
  * When bootstrapping a new ESLint plugin, do the following:
  *
- * 1. Import `typefest` from the npm package and add it above
- * 2. Change the `typefest` local import below to be the new plugin's name and path
+ * 1. Import `immutable` from the npm package and add it above
+ * 2. Change the `immutable` local import below to be the new plugin's name and path
  * 3. Setup the `🚢 Local Plugin Import` section below for new plugin
  */
 import immutable2 from "./plugin.mjs";
@@ -693,10 +693,10 @@ export default defineConfig([
     //     ],
     //     name: "Local Plugin Rules from Source",
     //     plugins: {
-    //         typefest: typefest,
+    //         immutable: immutable,
     //     },
     //     rules: {
-    //         ...typefest.configs.all.rules,
+    //         ...immutable.configs.all.rules,
     //     },
     // },
     // #endregion

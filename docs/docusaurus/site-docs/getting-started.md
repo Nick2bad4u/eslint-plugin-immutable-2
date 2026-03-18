@@ -7,21 +7,21 @@ sidebar_position: 2
 Install the plugin:
 
 ```bash
-npm install --save-dev eslint-plugin-typefest
+npm install --save-dev eslint-plugin-immutable-2
 ```
 
 Then enable it in your Flat Config:
 
 ```ts
-import typefest from "eslint-plugin-typefest";
+import immutable from "eslint-plugin-immutable-2";
 
 export default [
     {
         plugins: {
-            typefest,
+            immutable,
         },
         rules: {
-            "typefest/prefer-ts-extras-is-defined": "error",
+            "immutable/prefer-immutable-is-defined": "error",
         },
     },
 ];
@@ -29,7 +29,7 @@ export default [
 
 ## Recommended approach
 
-- Start with one ruleset (`typefest.configs.recommended` or `typefest.configs.strict`).
+- Start with one ruleset (`immutable.configs.recommended` or `immutable.configs.strict`).
 - Fix violations in small batches.
 - Promote warnings to errors after stabilization.
 

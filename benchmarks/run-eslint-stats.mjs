@@ -6,9 +6,9 @@ import pc from "picocolors";
 
 import {
     benchmarkFileGlobs,
-    createTypefestFlatConfig,
+    createImmutableFlatConfig,
     repositoryRoot,
-    typefestRuleSets,
+    immutableRuleSets,
 } from "./eslint-benchmark-config.mjs";
 
 /**
@@ -119,15 +119,15 @@ const defaultWarmupIterations = 1;
 const defaultMinimumMessageCount = 1;
 
 const singleRuleSafeCastToBenchmarkRules = Object.freeze({
-    "typefest/prefer-ts-extras-safe-cast-to": "error",
+    "immutable/prefer-immutable-safe-cast-to": "error",
 });
 
 const singleRuleSetHasBenchmarkRules = Object.freeze({
-    "typefest/prefer-ts-extras-set-has": "error",
+    "immutable/prefer-immutable-set-has": "error",
 });
 
 const singleRuleStringSplitBenchmarkRules = Object.freeze({
-    "typefest/prefer-ts-extras-string-split": "error",
+    "immutable/prefer-immutable-string-split": "error",
 });
 
 /**
@@ -183,14 +183,14 @@ const benchmarkScenarios = Object.freeze([
         filePatterns: benchmarkFileGlobs.typedInvalidFixtures,
         fix: false,
         name: "recommended-invalid-corpus",
-        rules: typefestRuleSets.recommended,
+        rules: immutableRuleSets.recommended,
     },
     {
         filePatterns: typedValidFixtureGlobs,
         fix: false,
         minimumMessageCount: 0,
         name: "recommended-valid-corpus",
-        rules: typefestRuleSets.recommended,
+        rules: immutableRuleSets.recommended,
     },
     {
         filePatterns: recommendedZeroMessageFixtureGlobs,
@@ -198,31 +198,31 @@ const benchmarkScenarios = Object.freeze([
         maximumMessageCount: 0,
         minimumMessageCount: 0,
         name: "recommended-zero-message-corpus",
-        rules: typefestRuleSets.recommended,
+        rules: immutableRuleSets.recommended,
     },
     {
         filePatterns: benchmarkFileGlobs.typedInvalidFixtures,
         fix: false,
         name: "strict-invalid-corpus",
-        rules: typefestRuleSets.strict,
+        rules: immutableRuleSets.strict,
     },
     {
         filePatterns: benchmarkFileGlobs.tsExtrasInvalidFixtures,
         fix: false,
-        name: "ts-extras-type-guards-invalid-corpus",
-        rules: typefestRuleSets.tsExtrasTypeGuards,
+        name: "immutable-type-guards-invalid-corpus",
+        rules: immutableRuleSets.tsExtrasTypeGuards,
     },
     {
-        filePatterns: benchmarkFileGlobs.typeFestInvalidFixtures,
+        filePatterns: benchmarkFileGlobs.immutableInvalidFixtures,
         fix: false,
-        name: "type-fest-types-invalid-corpus",
-        rules: typefestRuleSets.typeFestTypes,
+        name: "immutable-types-invalid-corpus",
+        rules: immutableRuleSets.immutableTypes,
     },
     {
         filePatterns: benchmarkFileGlobs.tsExtrasInvalidFixtures,
         fix: true,
-        name: "recommended-fix-on-ts-extras-invalid-corpus",
-        rules: typefestRuleSets.recommended,
+        name: "recommended-fix-on-immutable-invalid-corpus",
+        rules: immutableRuleSets.recommended,
     },
     {
         filePatterns: safeCastToStressFixtureGlobs,
@@ -316,7 +316,7 @@ const createBenchmarkEslint = ({ fix, rules }) =>
     new ESLint({
         cache: false,
         fix,
-        overrideConfig: createTypefestFlatConfig({ rules }),
+        overrideConfig: createImmutableFlatConfig({ rules }),
         overrideConfigFile: true,
         stats: true,
     });

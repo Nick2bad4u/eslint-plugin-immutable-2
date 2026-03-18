@@ -3,7 +3,7 @@ export interface PresetsRuleModule {
         | {
               readonly docs?:
                   | {
-                        readonly typefestConfigs?:
+                        readonly immutableConfigs?:
                             | readonly string[]
                             | string
                             | undefined;

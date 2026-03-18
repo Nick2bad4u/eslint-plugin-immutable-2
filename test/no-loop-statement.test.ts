@@ -1,10 +1,14 @@
-import { describe } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { createRuleTester, getPluginRule } from "./_internal/ruleTester";
 
 const tester = createRuleTester();
 
 describe("no-loop-statement rule", () => {
+    it("exports no-loop-statement rule module", () => {
+        expect(getPluginRule("no-loop-statement")).toBeDefined();
+    });
+
     tester.run("no-loop-statement", getPluginRule("no-loop-statement"), {
         invalid: [
             {

@@ -8,7 +8,7 @@ import type {
     ImmutablePresetConfig,
     ImmutableRuleId,
     ImmutableRuleName,
-} from "eslint-plugin-typefest";
+} from "eslint-plugin-immutable";
 
 import { assertType } from "vitest";
 
@@ -30,9 +30,7 @@ type RuleNameFromRuleId = ImmutableRuleId extends `immutable/${infer RuleName}`
 
 declare const pluginContract: ImmutablePlugin;
 
-assertType<ImmutableRuleName>(
-    "immutable-data" satisfies RuleNameFromRuleId
-);
+assertType<ImmutableRuleName>("immutable-data" satisfies RuleNameFromRuleId);
 assertType<ImmutablePresetConfig>(pluginContract.configs.recommended);
 assertType<ImmutablePresetConfig>(pluginContract.configs.all);
 assertType<ImmutableConfigs>(pluginContract.configs);

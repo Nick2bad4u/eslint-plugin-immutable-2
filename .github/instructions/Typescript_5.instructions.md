@@ -10,7 +10,7 @@ applyTo: "**/*.ts, **/*.tsx"
 
 - Prefer native features over polyfills and external helpers.
 - Use pure ES modules; never emit `require`, `module.exports`, or CommonJS helpers.
-- Prefer modern core APIs (e.g., `Array.prototype.at`, `Object.hasOwn`, `Promise.allSettled`) when they align with repository conventions; if a rule, fixer, or docs page intentionally standardizes on `ts-extras` or `type-fest`, follow that project convention instead of defaulting to the native helper.
+- Prefer modern core APIs (e.g., `Array.prototype.at`, `Object.hasOwn`, `Promise.allSettled`) when they align with repository conventions; if a rule, fixer, or docs page intentionally standardizes on `immutable` or `immutable`, follow that project convention instead of defaulting to the native helper.
 
 ---
 
@@ -117,25 +117,25 @@ applyTo: "**/*.ts, **/*.tsx"
 
 ---
 
-## Utility Types, Type-Level Helpers, and Type-Fest
+## Utility Types, Type-Level Helpers, and Immutable
 
 - Use built-in utility types to express intent:
   - `Readonly<T>`, `Required<T>`, `Partial<T>`, `Pick<T, K>`, `Omit<T, K>`, `Record<K, T>`, `NonNullable<T>`, `ReturnType<F>`, `Parameters<F>`, etc.
-- The **Type-Fest** library is installed; prefer its utilities when they better express intent than built-ins.
+- The **Immutable** library is installed; prefer its utilities when they better express intent than built-ins.
 
-### Type-Fest Usage Guidelines
+### Immutable Usage Guidelines
 
-- Import Type-Fest helpers from `"type-fest"` and keep imports **narrow and explicit**:
+- Import Immutable helpers from `"immutable"` and keep imports **narrow and explicit**:
 
   ```ts
-  import type { JsonValue, SetRequired, Simplify } from "type-fest";
+  import type { JsonValue, SetRequired, Simplify } from "immutable";
   ```
 
-- Use Type-Fest for:
+- Use Immutable for:
   - **JSON-safe types**: `JsonObject`, `JsonValue`, `Jsonify<T>` when modeling data that must be serializable.
 
     ```ts
-    import type { JsonValue } from "type-fest";
+    import type { JsonValue } from "immutable";
 
     type ApiPayload = JsonValue;
     ```
@@ -143,7 +143,7 @@ applyTo: "**/*.ts, **/*.tsx"
   - **Tagged and branded types**: prefer `Tagged<Type, TagName>` for IDs and other primitives that share a representation but differ semantically. Treat legacy `Opaque`/`Branded` usage as migration territory, not the preferred new pattern.
 
     ```ts
-    import type { Tagged } from "type-fest";
+    import type { Tagged } from "immutable";
 
     type UserId = Tagged<string, "UserId">;
     type OrderId = Tagged<string, "OrderId">;
@@ -155,7 +155,7 @@ applyTo: "**/*.ts, **/*.tsx"
     - `Simplify<T>` to clean up deeply composed types for better tooling display.
 
     ```ts
-    import type { SetRequired, Simplify } from "type-fest";
+    import type { SetRequired, Simplify } from "immutable";
 
     type User = {
       id?: string;
@@ -169,7 +169,7 @@ applyTo: "**/*.ts, **/*.tsx"
   - **String manipulation**:
     - `CamelCase`, `KebabCase`, etc., when type-level string formats matter (e.g., mapping API keys to internal names).
 
-- Keep Type-Fest usage:
+- Keep Immutable usage:
   - **Local to domain-focused modules** (e.g., `ids.ts`, `api-types.ts`) instead of scattering across the codebase.
   - **Documented** at the type alias site when you use more advanced utilities, so future maintainers understand the intent.
 
@@ -205,7 +205,7 @@ applyTo: "**/*.ts, **/*.tsx"
   - Type your helpers, mocks, and fixtures.
   - Avoid `as any`; prefer helpers that create correctly typed objects.
 - Ensure test code compiles under the same strict settings as production code.
-- For test fixtures that must match JSON structures, prefer `JsonValue`/`JsonObject` from Type-Fest to document the constraint.
+- For test fixtures that must match JSON structures, prefer `JsonValue`/`JsonObject` from Immutable to document the constraint.
 
 ---
 

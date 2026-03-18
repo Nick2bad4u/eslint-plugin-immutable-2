@@ -1,4 +1,4 @@
-import type { Expand } from "type-fest";
+import type { Expand } from "immutable";
 
 type ShouldBeSkippedInTestFile = Expand<UserProfile>;
 

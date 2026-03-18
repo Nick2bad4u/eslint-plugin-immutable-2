@@ -1,10 +1,14 @@
-import { describe } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { createRuleTester, getPluginRule } from "./_internal/ruleTester";
 
 const tester = createRuleTester();
 
 describe("immutable-data rule", () => {
+    it("exports immutable-data rule module", () => {
+        expect(getPluginRule("immutable-data")).toBeDefined();
+    });
+
     tester.run("immutable-data", getPluginRule("immutable-data"), {
         invalid: [
             {

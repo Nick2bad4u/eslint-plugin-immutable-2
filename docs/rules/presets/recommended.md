@@ -9,27 +9,27 @@ Use as the default baseline for most TypeScript codebases.
 ## Config key
 
 ```ts
-typefest.configs.recommended
+immutable.configs.recommended
 ```
 
 ## Flat Config example
 
 ```ts
-import typefest from "eslint-plugin-typefest";
+import immutable from "eslint-plugin-immutable-2";
 
-export default [typefest.configs.recommended];
+export default [immutable.configs.recommended];
 ```
 
 This preset does **not** require type information.
 
 If you want the same baseline plus type-aware helper rules, use
-`typefest.configs["recommended-type-checked"]`.
+`immutable.configs["recommended-type-checked"]`.
 
 ## Alternative: apply recommended rules in your own scope
 
 ```ts
 import tsParser from "@typescript-eslint/parser";
-import typefest from "eslint-plugin-typefest";
+import immutable from "eslint-plugin-immutable-2";
 
 export default [
     {
@@ -42,10 +42,10 @@ export default [
             },
         },
         plugins: {
-            typefest,
+            immutable,
         },
         rules: {
-            ...typefest.configs.recommended.rules,
+            ...immutable.configs.recommended.rules,
         },
     },
 ];
@@ -62,60 +62,60 @@ This option is useful when you want the recommended rule set, but only for speci
 
 | Rule | Fix |
 | --- | :-: |
-| [`prefer-ts-extras-assert-defined`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-assert-defined) | 🔧 💡 |
-| [`prefer-ts-extras-assert-error`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-assert-error) | 💡 |
-| [`prefer-ts-extras-assert-present`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-assert-present) | 🔧 💡 |
-| [`prefer-ts-extras-is-defined`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-is-defined) | 🔧 |
-| [`prefer-ts-extras-is-defined-filter`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-is-defined-filter) | 🔧 |
-| [`prefer-ts-extras-is-finite`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-is-finite) | 🔧 |
-| [`prefer-ts-extras-is-infinite`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-is-infinite) | 🔧 |
-| [`prefer-ts-extras-is-integer`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-is-integer) | 🔧 |
-| [`prefer-ts-extras-is-present`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-is-present) | 🔧 |
-| [`prefer-ts-extras-is-present-filter`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-is-present-filter) | 🔧 |
-| [`prefer-ts-extras-is-safe-integer`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-is-safe-integer) | 🔧 |
-| [`prefer-ts-extras-key-in`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-key-in) | 🔧 |
-| [`prefer-ts-extras-not`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-not) | 🔧 |
-| [`prefer-ts-extras-object-has-in`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-object-has-in) | 🔧 💡 |
-| [`prefer-ts-extras-object-has-own`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-ts-extras-object-has-own) | 🔧 💡 |
-| [`prefer-type-fest-abstract-constructor`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-abstract-constructor) | 🔧 |
-| [`prefer-type-fest-arrayable`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-arrayable) | 🔧 |
-| [`prefer-type-fest-async-return-type`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-async-return-type) | 🔧 |
-| [`prefer-type-fest-conditional-pick`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-conditional-pick) | 🔧 |
-| [`prefer-type-fest-constructor`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-constructor) | 🔧 |
-| [`prefer-type-fest-except`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-except) | 🔧 |
-| [`prefer-type-fest-if`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-if) | 🔧 |
-| [`prefer-type-fest-iterable-element`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-iterable-element) | 🔧 |
-| [`prefer-type-fest-json-array`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-json-array) | 🔧 |
-| [`prefer-type-fest-json-object`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-json-object) | 🔧 |
-| [`prefer-type-fest-json-primitive`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-json-primitive) | 🔧 |
-| [`prefer-type-fest-json-value`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-json-value) | 💡 |
-| [`prefer-type-fest-keys-of-union`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-keys-of-union) | 🔧 |
-| [`prefer-type-fest-literal-union`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-literal-union) | 🔧 |
-| [`prefer-type-fest-merge-exclusive`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-merge-exclusive) | 🔧 |
-| [`prefer-type-fest-non-empty-tuple`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-non-empty-tuple) | 🔧 |
-| [`prefer-type-fest-omit-index-signature`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-omit-index-signature) | 🔧 |
-| [`prefer-type-fest-partial-deep`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-partial-deep) | 🔧 |
-| [`prefer-type-fest-primitive`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-primitive) | 🔧 |
-| [`prefer-type-fest-promisable`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-promisable) | 🔧 |
-| [`prefer-type-fest-readonly-deep`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-readonly-deep) | 🔧 |
-| [`prefer-type-fest-require-all-or-none`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-require-all-or-none) | 🔧 |
-| [`prefer-type-fest-require-at-least-one`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-require-at-least-one) | 🔧 |
-| [`prefer-type-fest-require-exactly-one`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-require-exactly-one) | 🔧 |
-| [`prefer-type-fest-require-one-or-none`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-require-one-or-none) | 🔧 |
-| [`prefer-type-fest-required-deep`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-required-deep) | 🔧 |
-| [`prefer-type-fest-schema`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-schema) | 🔧 |
-| [`prefer-type-fest-set-non-nullable`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-set-non-nullable) | 🔧 |
-| [`prefer-type-fest-set-optional`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-set-optional) | 🔧 |
-| [`prefer-type-fest-set-readonly`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-set-readonly) | 🔧 |
-| [`prefer-type-fest-set-required`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-set-required) | 🔧 |
-| [`prefer-type-fest-simplify`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-simplify) | 🔧 |
-| [`prefer-type-fest-tagged-brands`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-tagged-brands) | 🔧 |
-| [`prefer-type-fest-tuple-of`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-tuple-of) | 🔧 |
-| [`prefer-type-fest-unknown-array`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-unknown-array) | 🔧 |
-| [`prefer-type-fest-unknown-map`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-unknown-map) | 🔧 |
-| [`prefer-type-fest-unknown-record`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-unknown-record) | 🔧 |
-| [`prefer-type-fest-unknown-set`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-unknown-set) | 🔧 |
-| [`prefer-type-fest-unwrap-tagged`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-unwrap-tagged) | 🔧 |
-| [`prefer-type-fest-value-of`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-value-of) | 🔧 |
-| [`prefer-type-fest-writable`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-writable) | 🔧 |
-| [`prefer-type-fest-writable-deep`](https://nick2bad4u.github.io/eslint-plugin-typefest/docs/rules/prefer-type-fest-writable-deep) | 🔧 |
+| [`prefer-immutable-assert-defined`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-assert-defined) | 🔧 💡 |
+| [`prefer-immutable-assert-error`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-assert-error) | 💡 |
+| [`prefer-immutable-assert-present`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-assert-present) | 🔧 💡 |
+| [`prefer-immutable-is-defined`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-is-defined) | 🔧 |
+| [`prefer-immutable-is-defined-filter`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-is-defined-filter) | 🔧 |
+| [`prefer-immutable-is-finite`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-is-finite) | 🔧 |
+| [`prefer-immutable-is-infinite`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-is-infinite) | 🔧 |
+| [`prefer-immutable-is-integer`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-is-integer) | 🔧 |
+| [`prefer-immutable-is-present`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-is-present) | 🔧 |
+| [`prefer-immutable-is-present-filter`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-is-present-filter) | 🔧 |
+| [`prefer-immutable-is-safe-integer`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-is-safe-integer) | 🔧 |
+| [`prefer-immutable-key-in`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-key-in) | 🔧 |
+| [`prefer-immutable-not`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-not) | 🔧 |
+| [`prefer-immutable-object-has-in`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-object-has-in) | 🔧 💡 |
+| [`prefer-immutable-object-has-own`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-object-has-own) | 🔧 💡 |
+| [`prefer-immutable-abstract-constructor`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-abstract-constructor) | 🔧 |
+| [`prefer-immutable-arrayable`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-arrayable) | 🔧 |
+| [`prefer-immutable-async-return-type`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-async-return-type) | 🔧 |
+| [`prefer-immutable-conditional-pick`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-conditional-pick) | 🔧 |
+| [`prefer-immutable-constructor`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-constructor) | 🔧 |
+| [`prefer-immutable-except`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-except) | 🔧 |
+| [`prefer-immutable-if`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-if) | 🔧 |
+| [`prefer-immutable-iterable-element`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-iterable-element) | 🔧 |
+| [`prefer-immutable-json-array`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-json-array) | 🔧 |
+| [`prefer-immutable-json-object`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-json-object) | 🔧 |
+| [`prefer-immutable-json-primitive`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-json-primitive) | 🔧 |
+| [`prefer-immutable-json-value`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-json-value) | 💡 |
+| [`prefer-immutable-keys-of-union`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-keys-of-union) | 🔧 |
+| [`prefer-immutable-literal-union`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-literal-union) | 🔧 |
+| [`prefer-immutable-merge-exclusive`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-merge-exclusive) | 🔧 |
+| [`prefer-immutable-non-empty-tuple`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-non-empty-tuple) | 🔧 |
+| [`prefer-immutable-omit-index-signature`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-omit-index-signature) | 🔧 |
+| [`prefer-immutable-partial-deep`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-partial-deep) | 🔧 |
+| [`prefer-immutable-primitive`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-primitive) | 🔧 |
+| [`prefer-immutable-promisable`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-promisable) | 🔧 |
+| [`prefer-immutable-readonly-deep`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-readonly-deep) | 🔧 |
+| [`prefer-immutable-require-all-or-none`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-require-all-or-none) | 🔧 |
+| [`prefer-immutable-require-at-least-one`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-require-at-least-one) | 🔧 |
+| [`prefer-immutable-require-exactly-one`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-require-exactly-one) | 🔧 |
+| [`prefer-immutable-require-one-or-none`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-require-one-or-none) | 🔧 |
+| [`prefer-immutable-required-deep`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-required-deep) | 🔧 |
+| [`prefer-immutable-schema`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-schema) | 🔧 |
+| [`prefer-immutable-set-non-nullable`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-set-non-nullable) | 🔧 |
+| [`prefer-immutable-set-optional`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-set-optional) | 🔧 |
+| [`prefer-immutable-set-readonly`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-set-readonly) | 🔧 |
+| [`prefer-immutable-set-required`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-set-required) | 🔧 |
+| [`prefer-immutable-simplify`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-simplify) | 🔧 |
+| [`prefer-immutable-tagged-brands`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-tagged-brands) | 🔧 |
+| [`prefer-immutable-tuple-of`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-tuple-of) | 🔧 |
+| [`prefer-immutable-unknown-array`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-unknown-array) | 🔧 |
+| [`prefer-immutable-unknown-map`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-unknown-map) | 🔧 |
+| [`prefer-immutable-unknown-record`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-unknown-record) | 🔧 |
+| [`prefer-immutable-unknown-set`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-unknown-set) | 🔧 |
+| [`prefer-immutable-unwrap-tagged`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-unwrap-tagged) | 🔧 |
+| [`prefer-immutable-value-of`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-value-of) | 🔧 |
+| [`prefer-immutable-writable`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-writable) | 🔧 |
+| [`prefer-immutable-writable-deep`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/prefer-immutable-writable-deep) | 🔧 |

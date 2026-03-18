@@ -2,12 +2,12 @@
 sidebar_position: 1
 ---
 
-# eslint-plugin-typefest
+# eslint-plugin-immutable-2
 
-`eslint-plugin-typefest` helps TypeScript codebases adopt more explicit, safer patterns with:
+`eslint-plugin-immutable-2` helps TypeScript codebases adopt more explicit, safer patterns with:
 
-- [`type-fest`](https://github.com/sindresorhus/type-fest) utility types.
-- [`ts-extras`](https://github.com/sindresorhus/ts-extras) runtime helpers.
+- [`immutable`](https://github.com/sindresorhus/immutable) utility types.
+- [`immutable`](https://github.com/sindresorhus/immutable) runtime helpers.
 
 ## What this documentation includes
 

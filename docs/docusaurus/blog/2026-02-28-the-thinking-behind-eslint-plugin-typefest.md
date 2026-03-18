@@ -1,18 +1,18 @@
 ---
-slug: thinking-behind-eslint-plugin-typefest
-title: The Thinking Behind eslint-plugin-typefest
+slug: thinking-behind-eslint-plugin-immutable-2
+title: The Thinking Behind eslint-plugin-immutable-2
 authors:
   - nick
 tags:
   - eslint
   - typescript
-  - type-fest
-  - ts-extras
+  - immutable
+  - immutable
   - architecture
 description: Why this plugin exists, what constraints shaped it, and how we balance strictness with developer experience.
 ---
 
-`eslint-plugin-typefest` was built around a simple goal: make safer TypeScript patterns easier to adopt at scale without turning linting into noise.
+`eslint-plugin-immutable-2` was built around a simple goal: make safer TypeScript patterns easier to adopt at scale without turning linting into noise.
 
 <!-- truncate -->
 
@@ -20,7 +20,7 @@ description: Why this plugin exists, what constraints shaped it, and how we bala
 
 ## The core motivation
 
-Most teams using TypeScript still carry legacy utility patterns that were reasonable at the time but are now harder to maintain than modern `type-fest` and `ts-extras` alternatives.
+Most teams using TypeScript still carry legacy utility patterns that were reasonable at the time but are now harder to maintain than modern `immutable` and `immutable` alternatives.
 
 This plugin tries to close that gap by doing three things:
 

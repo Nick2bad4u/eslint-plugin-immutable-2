@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Enable eslint-plugin-typefest quickly in Flat Config.
+description: Enable eslint-plugin-immutable-2 quickly in Flat Config.
 ---
 
 # Getting Started
@@ -8,23 +8,20 @@ description: Enable eslint-plugin-typefest quickly in Flat Config.
 Install the plugin:
 
 ```bash
-npm install --save-dev eslint-plugin-typefest typescript
+npm install --save-dev eslint-plugin-immutable-2 typescript
 ```
 
 Enable one preset in your Flat Config:
 
 ```ts
-import typefest from "eslint-plugin-typefest";
+import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    typefest.configs.recommended,
+    immutable.configs.recommended,
 ];
 ```
 
-`recommended` does not require type information.
-
-If you want the same baseline plus type-aware helper rules, use
-`typefest.configs["recommended-type-checked"]`.
+`recommended` is an alias of `immutable` and does not require type information.
 
 ## Alternative: manual scoped setup
 
@@ -32,7 +29,7 @@ If you prefer to apply plugin rules inside your own file-scoped config object, s
 
 ```ts
 import tsParser from "@typescript-eslint/parser";
-import typefest from "eslint-plugin-typefest";
+import immutable from "eslint-plugin-immutable-2";
 
 export default [
     {
@@ -47,10 +44,10 @@ export default [
             },
         },
         plugins: {
-            typefest,
+            immutable,
         },
         rules: {
-            ...typefest.configs.recommended.rules,
+            ...immutable.configs.recommended.rules,
         },
     },
 ];
@@ -60,15 +57,16 @@ Use this pattern when you only extend rules and want full control over parser se
 
 ## Recommended rollout
 
-1. Start with `recommended` (or `minimal` if you want low initial noise).
+1. Start with `recommended`.
 2. Fix violations in small batches.
-3. Move to `recommended-type-checked` when you are ready for typed rules.
-4. Move to `strict` once your baseline is stable.
-5. Use `all` only when you explicitly want every rule, including experimental rules.
+3. Move to `functional-lite` for broader functional constraints.
+4. Move to `functional` once baseline stability is good.
+5. Use `all` when you want every immutable rule enabled.
 
 ## Need a subset instead of a full preset?
 
-- 💠 `typefest.configs["type-fest/types"]`
-- ✴️ `typefest.configs["ts-extras/type-guards"]`
+- `immutable.configs.immutable`
+- `immutable.configs["functional-lite"]`
+- `immutable.configs.functional`
 
 See the **Presets** section in this sidebar for details and examples.

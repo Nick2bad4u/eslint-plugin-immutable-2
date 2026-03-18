@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * Opt-in smoke test that lints ad-hoc fixture files with `typefest.configs.all`
+ * Opt-in smoke test that lints ad-hoc fixture files with `immutable.configs.all`
  * and executes ESLint autofix in memory (never writes fixes to disk).
  */
 import parser from "@typescript-eslint/parser";
@@ -9,7 +9,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import typefestPlugin from "../src/plugin";
+import immutablePlugin from "../src/plugin";
 
 /** Process environment alias for lint-safe environment access. */
 const processEnvironment = globalThis.process.env;
@@ -19,7 +19,7 @@ const isCiEnvironment = processEnvironment["CI"] === "true";
 
 /** Environment variable gate for this intentionally expensive smoke test. */
 const shouldRunFixtureAutofixSmoke =
-    processEnvironment["TYPEFEST_AUTOFIX_SMOKE"] === "1" && !isCiEnvironment;
+    processEnvironment["IMMUTABLE_AUTOFIX_SMOKE"] === "1" && !isCiEnvironment;
 
 /** Repository root used for path normalization and parser-service config. */
 const repositoryRootPath = process.cwd();
@@ -52,7 +52,7 @@ const isObjectRecord = (
 /** Resolve fixture directory from environment override or default location. */
 const getFixtureDirectoryPath = (): string => {
     const configuredDirectory =
-        processEnvironment["TYPEFEST_AUTOFIX_FIXTURE_DIR"];
+        processEnvironment["IMMUTABLE_AUTOFIX_FIXTURE_DIR"];
 
     if (typeof configuredDirectory !== "string") {
         return defaultFixtureDirectoryPath;
@@ -75,7 +75,7 @@ const getFixtureDirectoryPath = (): string => {
     if (!isInsideFixturesRoot) {
         throw new TypeError(
             [
-                "TYPEFEST_AUTOFIX_FIXTURE_DIR must resolve under test/fixtures.",
+                "IMMUTABLE_AUTOFIX_FIXTURE_DIR must resolve under test/fixtures.",
                 `Received: ${resolvedFixtureDirectoryPath}`,
             ].join(" ")
         );
@@ -169,7 +169,7 @@ const ensureFixtureFilesExist = (
             [
                 "No lintable fixtures were found.",
                 `Add *.ts/*.tsx/*.mts/*.cts files under: ${fixtureDirectoryPath}`,
-                "Then rerun with TYPEFEST_AUTOFIX_SMOKE=1.",
+                "Then rerun with IMMUTABLE_AUTOFIX_SMOKE=1.",
             ].join(" ")
         );
     }
@@ -282,7 +282,7 @@ const collectStringEntries = (value: unknown): readonly string[] => {
 describe.runIf(shouldRunFixtureAutofixSmoke)(
     "all-rules fixture autofix smoke",
     () => {
-        it("runs typefest.configs.all against fixture files and executes in-memory autofix", async () => {
+        it("runs immutable.configs.all against fixture files and executes in-memory autofix", async () => {
             const fixtureDirectoryPath = getFixtureDirectoryPath();
             const fixtureFilePaths =
                 collectLintableFixtureFiles(fixtureDirectoryPath);
@@ -291,7 +291,7 @@ describe.runIf(shouldRunFixtureAutofixSmoke)(
 
             const sourceSnapshotByPath =
                 snapshotFixtureSourceByPath(fixtureFilePaths);
-            const allConfig = typefestPlugin.configs.all;
+            const allConfig = immutablePlugin.configs.all;
             const allowDefaultProject =
                 createAllowDefaultProjectEntries(fixtureFilePaths);
             const parserOptions = isObjectRecord(

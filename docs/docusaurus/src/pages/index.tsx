@@ -54,7 +54,7 @@ const heroBadges = [
  */
 const heroStats = [
     {
-        description: "Type-safe patterns from type-fest and ts-extras.",
+        description: "Type-safe patterns from immutable and immutable.",
         headline: "\uf0ca 70+ Rules",
     },
     {
@@ -90,7 +90,7 @@ const homeCards = [
         icon: "\uf135",
         title: "Get Started",
         description:
-            "Install the plugin, enable a preset, and start enforcing type-safe ts-extras and type-fest patterns.",
+            "Install the plugin, enable a preset, and start enforcing type-safe immutable and immutable patterns.",
         to: "/docs/rules/getting-started",
     },
     {
@@ -114,8 +114,8 @@ export default function Home() {
 
     return (
         <Layout
-            title="eslint-plugin-typefest docs"
-            description="Documentation for eslint-plugin-typefest"
+            title="eslint-plugin-immutable-2 docs"
+            description="Documentation for eslint-plugin-immutable-2"
         >
             <header className={styles.heroBanner}>
                 <div className={`container ${styles.heroContent}`}>
@@ -125,28 +125,28 @@ export default function Home() {
                                 {`${heroKickerIcon} ESLint plugin for modern TypeScript teams ${heroKickerIcon2}`}
                             </p>
                             <Heading as="h1" className={styles.heroTitle}>
-                                eslint-plugin-typefest
+                                eslint-plugin-immutable-2
                             </Heading>
                             <p className={styles.heroSubtitle}>
                                 ESLint rules that recommend safer, clearer
                                 TypeScript types, type guards, and other
                                 patterns by utilizing{" "}
                                 <Link
-                                    className={`${styles.heroInlineLink} ${styles.heroInlineLinkTypeFest}`}
-                                    href="https://github.com/sindresorhus/type-fest"
+                                    className={`${styles.heroInlineLink} ${styles.heroInlineLinkImmutable}`}
+                                    href="https://github.com/sindresorhus/immutable"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    type-fest
+                                    immutable
                                 </Link>{" "}
                                 and{" "}
                                 <Link
                                     className={`${styles.heroInlineLink} ${styles.heroInlineLinkTsExtras}`}
-                                    href="https://github.com/sindresorhus/ts-extras"
+                                    href="https://github.com/sindresorhus/immutable"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    ts-extras
+                                    immutable
                                 </Link>
                             </p>
 
@@ -194,7 +194,7 @@ export default function Home() {
 
                         <aside className={styles.heroPanel}>
                             <img
-                                alt="eslint-plugin-typefest logo"
+                                alt="eslint-plugin-immutable-2 logo"
                                 className={styles.heroPanelLogo}
                                 decoding="async"
                                 height="240"

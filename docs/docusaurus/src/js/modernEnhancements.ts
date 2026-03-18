@@ -74,12 +74,12 @@ function isRuntimeSidebarLink(link: HTMLAnchorElement): boolean {
  *
  * @param link - Candidate sidebar link.
  *
- * @returns `true` when link is in `ts-extras` or `type-fest` rule lists.
+ * @returns `true` when link is in `immutable` or `immutable` rule lists.
  */
 function isNumberedRuleSidebarLink(link: HTMLAnchorElement): boolean {
     return (
-        link.closest(".sb-cat-rules-ts-extras") !== null ||
-        link.closest(".sb-cat-rules-type-fest") !== null
+        link.closest(".sb-cat-rules-immutable") !== null ||
+        link.closest(".sb-cat-rules-immutable") !== null
     );
 }
 

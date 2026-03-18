@@ -1,6 +1,6 @@
 ---
 title: Developer docs
-description: Contributor-oriented architecture, operations, API, and diagnostics references for eslint-plugin-typefest.
+description: Contributor-oriented architecture, operations, API, and diagnostics references for eslint-plugin-immutable-2.
 sidebar_position: 1
 ---
 
@@ -14,8 +14,8 @@ This section is for contributors and advanced users.
 - [🧭 Architecture Decisions (ADR)](./adr/index.md)
 - [📊 Architecture and operations charts](./charts/index.md)
 - [🧬 Typed service path inventory](./typed-paths.md)
-- [🧠 Type aliases reference](./api/plugin/type-aliases/TypefestPlugin.md)
-- [⚙️ Runtime exports reference](./api/plugin/variables/typefestPlugin.md)
+- [🧠 Type aliases reference](./api/plugin/type-aliases/ImmutablePlugin.md)
+- [⚙️ Runtime exports reference](./api/plugin/variables/immutablePlugin.md)
 
 ## Maintainer operations guides
 
@@ -78,15 +78,15 @@ That command loads rule docs directly from `docs/rules`, generates TypeDoc outpu
 
 ## Project and community links
 
-- [Blog posts](https://nick2bad4u.github.io/eslint-plugin-typefest/blog)
-- [The thinking behind eslint-plugin-typefest](https://nick2bad4u.github.io/eslint-plugin-typefest/blog/the-thinking-behind-eslint-plugin-typefest)
-- [Designing safe autofixes for eslint-plugin-typefest](https://nick2bad4u.github.io/eslint-plugin-typefest/blog/designing-safe-autofixes-for-eslint-plugin-typefest)
-- [Type-aware linting without surprises](https://nick2bad4u.github.io/eslint-plugin-typefest/blog/type-aware-linting-without-surprises)
-- [Keeping rule docs and presets in sync](https://nick2bad4u.github.io/eslint-plugin-typefest/blog/keeping-rule-docs-and-presets-in-sync)
-- [Blog archive](https://nick2bad4u.github.io/eslint-plugin-typefest/blog/archive)
-- [Open issues](https://github.com/Nick2bad4u/eslint-plugin-typefest/issues?q=is%3Aissue%20is%3Aopen)
-- [Open bug issues](https://github.com/Nick2bad4u/eslint-plugin-typefest/issues?q=is%3Aissue%20is%3Aopen%20label%3Abug)
-- [Open documentation issues](https://github.com/Nick2bad4u/eslint-plugin-typefest/issues?q=is%3Aissue%20is%3Aopen%20label%3Adocumentation)
-- [Open rules issues](https://github.com/Nick2bad4u/eslint-plugin-typefest/issues?q=is%3Aissue%20is%3Aopen%20label%3Arules)
-- [ts-extras on GitHub](https://github.com/sindresorhus/ts-extras) / [npm](https://www.npmjs.com/package/ts-extras)
-- [type-fest on GitHub](https://github.com/sindresorhus/type-fest) / [npm](https://www.npmjs.com/package/type-fest)
+- [Blog posts](https://nick2bad4u.github.io/eslint-plugin-immutable-2/blog)
+- [The thinking behind eslint-plugin-immutable-2](https://nick2bad4u.github.io/eslint-plugin-immutable-2/blog/the-thinking-behind-eslint-plugin-immutable-2)
+- [Designing safe autofixes for eslint-plugin-immutable-2](https://nick2bad4u.github.io/eslint-plugin-immutable-2/blog/designing-safe-autofixes-for-eslint-plugin-immutable-2)
+- [Type-aware linting without surprises](https://nick2bad4u.github.io/eslint-plugin-immutable-2/blog/type-aware-linting-without-surprises)
+- [Keeping rule docs and presets in sync](https://nick2bad4u.github.io/eslint-plugin-immutable-2/blog/keeping-rule-docs-and-presets-in-sync)
+- [Blog archive](https://nick2bad4u.github.io/eslint-plugin-immutable-2/blog/archive)
+- [Open issues](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen)
+- [Open bug issues](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Abug)
+- [Open documentation issues](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Adocumentation)
+- [Open rules issues](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Arules)
+- [immutable on GitHub](https://github.com/sindresorhus/immutable) / [npm](https://www.npmjs.com/package/immutable)
+- [immutable on GitHub](https://github.com/sindresorhus/immutable) / [npm](https://www.npmjs.com/package/immutable)

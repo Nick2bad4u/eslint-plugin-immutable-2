@@ -37,20 +37,20 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     className: "sb-api-overview-item",
-                    id: "developer/api/plugin/type-aliases/TypefestPlugin",
-                    label: "🧠 Type aliases · TypefestPlugin",
+                    id: "developer/api/plugin/type-aliases/ImmutablePlugin",
+                    label: "🧠 Type aliases · ImmutablePlugin",
                     type: "doc",
                 },
                 {
                     className: "sb-api-overview-item",
-                    id: "developer/api/plugin/variables/typefestPlugin",
-                    label: "⚙️ Runtime exports · typefestPlugin",
+                    id: "developer/api/plugin/variables/immutablePlugin",
+                    label: "⚙️ Runtime exports · immutablePlugin",
                     type: "doc",
                 },
                 {
                     className: "sb-api-overview-item",
-                    id: "developer/api/plugin/variables/typefestConfigs",
-                    label: "⚙️ Runtime exports · typefestConfigs",
+                    id: "developer/api/plugin/variables/immutableConfigs",
+                    label: "⚙️ Runtime exports · immutableConfigs",
                     type: "doc",
                 },
             ],
@@ -152,7 +152,7 @@ const sidebars: SidebarsConfig = {
             label: "🧭 Architecture Decisions",
             collapsible: true,
             description:
-                "Architectural decisions and design rationale for eslint-plugin-typefest.",
+                "Architectural decisions and design rationale for eslint-plugin-immutable-2.",
             link: {
                 id: "developer/adr/index",
                 type: "doc",
@@ -319,7 +319,7 @@ const sidebars: SidebarsConfig = {
             label: "Runtime",
             link: {
                 description:
-                    "Runtime exports and internal utility API references from eslint-plugin-typefest.",
+                    "Runtime exports and internal utility API references from eslint-plugin-immutable-2.",
                 title: "Runtime Exports",
                 type: "generated-index",
             },
@@ -336,23 +336,23 @@ const sidebars: SidebarsConfig = {
                 "External package docs, project blog resources, and issue tracker links.",
             items: [
                 {
-                    href: "https://github.com/sindresorhus/ts-extras",
-                    label: "💠 \ue709 ts-extras",
+                    href: "https://github.com/sindresorhus/immutable",
+                    label: "💠 \ue709 immutable",
                     type: "link",
                 },
                 {
-                    href: "https://www.npmjs.com/package/ts-extras",
-                    label: "💠 \ue616 ts-extras",
+                    href: "https://www.npmjs.com/package/immutable",
+                    label: "💠 \ue616 immutable",
                     type: "link",
                 },
                 {
-                    href: "https://github.com/sindresorhus/type-fest",
-                    label: "✴️ \ue709 type-fest",
+                    href: "https://github.com/sindresorhus/immutable",
+                    label: "✴️ \ue709 immutable",
                     type: "link",
                 },
                 {
-                    href: "https://www.npmjs.com/package/type-fest",
-                    label: "✴️ \ue616 type-fest",
+                    href: "https://www.npmjs.com/package/immutable",
+                    label: "✴️ \ue616 immutable",
                     type: "link",
                 },
                 {
@@ -361,12 +361,12 @@ const sidebars: SidebarsConfig = {
                     type: "link",
                 },
                 {
-                    href: "/blog/the-thinking-behind-eslint-plugin-typefest",
+                    href: "/blog/the-thinking-behind-eslint-plugin-immutable-2",
                     label: "🧠 Blog · Thinking behind plugin",
                     type: "link",
                 },
                 {
-                    href: "/blog/designing-safe-autofixes-for-eslint-plugin-typefest",
+                    href: "/blog/designing-safe-autofixes-for-eslint-plugin-immutable-2",
                     label: "🛡️ Blog · Designing safe autofixes",
                     type: "link",
                 },
@@ -386,22 +386,22 @@ const sidebars: SidebarsConfig = {
                     type: "link",
                 },
                 {
-                    href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/issues?q=is%3Aissue%20is%3Aopen",
+                    href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen",
                     label: "🐛 Open issues",
                     type: "link",
                 },
                 {
-                    href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/issues?q=is%3Aissue%20is%3Aopen%20label%3Abug",
+                    href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Abug",
                     label: "🐞 Issues · bug",
                     type: "link",
                 },
                 {
-                    href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/issues?q=is%3Aissue%20is%3Aopen%20label%3Adocumentation",
+                    href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Adocumentation",
                     label: "📚 Issues · documentation",
                     type: "link",
                 },
                 {
-                    href: "https://github.com/Nick2bad4u/eslint-plugin-typefest/issues?q=is%3Aissue%20is%3Aopen%20label%3Arules",
+                    href: "https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Arules",
                     label: "🧩 Issues · rules",
                     type: "link",
                 },

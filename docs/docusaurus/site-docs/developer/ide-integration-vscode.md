@@ -24,16 +24,16 @@ Recommended checks:
 
 ```js
 // eslint.config.mjs
-import typefest from "eslint-plugin-typefest";
+import immutable from "eslint-plugin-immutable-2";
 
 export default [
   {
     files: ["**/*.{ts,tsx}"],
     plugins: {
-      typefest,
+      immutable,
     },
     rules: {
-      ...typefest.configs.recommended.rules,
+      ...immutable.configs.recommended.rules,
     },
   },
 ];
@@ -41,7 +41,7 @@ export default [
 
 ## Type-aware parser setup notes
 
-`typefest.configs.recommended` already enables `projectService`.
+`immutable.configs.recommended` already enables `projectService`.
 
 If you build a fully manual config block (instead of consuming a preset), configure parser services in the TypeScript-targeted config block:
 

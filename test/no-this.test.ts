@@ -1,10 +1,14 @@
-import { describe } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { createRuleTester, getPluginRule } from "./_internal/ruleTester";
 
 const tester = createRuleTester();
 
 describe("no-this rule", () => {
+    it("exports no-this rule module", () => {
+        expect(getPluginRule("no-this")).toBeDefined();
+    });
+
     tester.run("no-this", getPluginRule("no-this"), {
         invalid: [
             {

@@ -1,9 +1,9 @@
-# Contributing to eslint-plugin-typefest
+# Contributing to eslint-plugin-immutable-2
 
 Thanks for your interest in contributing.
 
-This repository contains an ESLint plugin focused on `type-fest` and
-`ts-extras` usage patterns for TypeScript codebases.
+This repository contains an ESLint plugin focused on `immutable` and
+`immutable` usage patterns for TypeScript codebases.
 
 ## Prerequisites
 
@@ -127,7 +127,7 @@ Format:
 
 Examples:
 
-- `:sparkles: feat(rule): add prefer-type-fest-xyz`
+- `:sparkles: feat(rule): add prefer-immutable-xyz`
 - `:bug: fix(rule): avoid false positive in union type handling`
 - `:memo: docs: clarify configuration for type-aware rules`
 

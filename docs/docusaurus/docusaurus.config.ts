@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 
 /** Route base path where docs site is deployed (GitHub Pages project path). */
 const baseUrl =
-    process.env["DOCUSAURUS_BASE_URL"] ?? "/eslint-plugin-typefest/";
+    process.env["DOCUSAURUS_BASE_URL"] ?? "/eslint-plugin-immutable-2/";
 /** Opt-in flag for experimental Docusaurus performance features. */
 const enableExperimentalFaster =
     process.env["DOCUSAURUS_ENABLE_EXPERIMENTAL"] === "true";
@@ -15,7 +15,7 @@ const enableExperimentalFaster =
 /** GitHub organization used for edit links and project metadata. */
 const organizationName = "Nick2bad4u";
 /** Repository name used for edit links and project metadata. */
-const projectName = "eslint-plugin-typefest";
+const projectName = "eslint-plugin-immutable-2";
 /** Client module path for runtime DOM enhancement bootstrap script. */
 const modernEnhancementsClientModule = fileURLToPath(
     new URL("src/js/modernEnhancements.ts", import.meta.url)
@@ -64,7 +64,7 @@ const futureConfig = {
 
 /** Full Docusaurus site configuration exported to the build/runtime. */
 const config: Config = {
-    baseUrl: "/eslint-plugin-typefest/",
+    baseUrl: "/eslint-plugin-immutable-2/",
     baseUrlIssueBanner: true,
     deploymentBranch: "gh-pages",
     favicon: "img/logo.svg",
@@ -167,10 +167,10 @@ const config: Config = {
             {
                 blog: {
                     blogDescription:
-                        "Updates, architecture notes, and practical guidance for eslint-plugin-typefest users.",
+                        "Updates, architecture notes, and practical guidance for eslint-plugin-immutable-2 users.",
                     blogSidebarCount: "ALL",
                     blogSidebarTitle: "All posts",
-                    blogTitle: "eslint-plugin-typefest Blog",
+                    blogTitle: "eslint-plugin-immutable-2 Blog",
                     editUrl: `https://github.com/${organizationName}/${projectName}/blob/main/docs/docusaurus/`,
                     feedOptions: {
                         type: ["rss", "atom"],
@@ -254,7 +254,7 @@ const config: Config = {
     ],
     projectName,
     tagline:
-        "Type-safe ESLint rules for preferring type-fest and ts-extras patterns.",
+        "Type-safe ESLint rules for preferring immutable and immutable patterns.",
     themeConfig: {
         colorMode: {
             defaultMode: "dark",
@@ -263,7 +263,7 @@ const config: Config = {
         },
         metadata: [
             {
-                content: "eslint-plugin-typefest",
+                content: "eslint-plugin-immutable-2",
                 name: "keywords",
             },
         ],
@@ -298,16 +298,16 @@ const config: Config = {
                             label: "\ueb09 Releases",
                         },
                         {
-                            href: `https://nick2bad4u.github.io/eslint-plugin-typefest/eslint-inspector/`,
+                            href: `https://nick2bad4u.github.io/eslint-plugin-immutable-2/eslint-inspector/`,
                             label: "\ue7d2 ESLint Inspector",
                         },
                         {
-                            href: `https://www.npmjs.com/package/ts-extras`,
-                            label: "\uf113 ts-extras",
+                            href: `https://www.npmjs.com/package/immutable`,
+                            label: "\uf113 immutable",
                         },
                         {
-                            href: `https://www.npmjs.com/package/type-fest`,
-                            label: "\ue65b type-fest",
+                            href: `https://www.npmjs.com/package/immutable`,
+                            label: "\ue65b immutable",
                         },
                     ],
                     title: "📁 Project",
@@ -335,7 +335,7 @@ const config: Config = {
                 },
             ],
             logo: {
-                alt: "eslint-plugin-typefest logo",
+                alt: "eslint-plugin-immutable-2 logo",
                 href: `https://github.com/${organizationName}/${projectName}`,
                 src: "img/logo.svg",
                 width: 60,
@@ -381,12 +381,12 @@ const config: Config = {
                             to: "/docs/rules",
                         },
                         {
-                            label: "💠 Rules for ts-extras",
-                            to: "/docs/rules/category/ts-extras",
+                            label: "💠 Rules for immutable",
+                            to: "/docs/rules/category/immutable",
                         },
                         {
-                            label: "✴️ Rules for type-fest",
-                            to: "/docs/rules/category/type-fest",
+                            label: "✴️ Rules for immutable",
+                            to: "/docs/rules/category/immutable",
                         },
                     ],
                 },
@@ -418,12 +418,12 @@ const config: Config = {
                             to: "/docs/rules/presets/all",
                         },
                         {
-                            label: "💠 type-fest",
-                            to: "/docs/rules/presets/type-fest-types",
+                            label: "💠 immutable",
+                            to: "/docs/rules/presets/immutable-types",
                         },
                         {
-                            label: "✴️ ts-extras",
-                            to: "/docs/rules/presets/ts-extras-type-guards",
+                            label: "✴️ immutable",
+                            to: "/docs/rules/presets/immutable-type-guards",
                         },
                     ],
                 },
@@ -490,34 +490,34 @@ const config: Config = {
                             label: "• \ue616 NPM",
                         },
                         {
-                            href: `https://github.com/sindresorhus/type-fest`,
+                            href: `https://github.com/sindresorhus/immutable`,
                             className: "navbar-dropdown-divider-before",
-                            label: "💠 \ue709 type-fest",
+                            label: "💠 \ue709 immutable",
                         },
                         {
-                            href: `https://www.npmjs.com/package/type-fest`,
-                            label: "💠 \ue616 type-fest",
+                            href: `https://www.npmjs.com/package/immutable`,
+                            label: "💠 \ue616 immutable",
                         },
                         {
-                            href: `https://github.com/sindresorhus/ts-extras`,
+                            href: `https://github.com/sindresorhus/immutable`,
                             className: "navbar-dropdown-divider-before",
-                            label: "✴️ \ue709 ts-extras",
+                            label: "✴️ \ue709 immutable",
                         },
                         {
-                            href: `https://www.npmjs.com/package/ts-extras`,
-                            label: "✴️ \ue616 ts-extras",
+                            href: `https://www.npmjs.com/package/immutable`,
+                            label: "✴️ \ue616 immutable",
                         },
                     ],
                 },
             ],
             logo: {
-                alt: "eslint-plugin-typefest logo",
+                alt: "eslint-plugin-immutable-2 logo",
                 height: 48,
                 href: baseUrl,
                 src: "img/logo.svg",
                 width: 48,
             },
-            title: "eslint-plugin-typefest",
+            title: "eslint-plugin-immutable-2",
         },
         prism: {
             additionalLanguages: [
@@ -576,7 +576,7 @@ const config: Config = {
             },
         ],
     ],
-    title: "eslint-plugin-typefest",
+    title: "eslint-plugin-immutable-2",
     trailingSlash: false,
     url: "https://nick2bad4u.github.io",
 };

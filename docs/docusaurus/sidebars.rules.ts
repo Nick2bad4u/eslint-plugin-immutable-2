@@ -68,10 +68,10 @@ const createRuleItemsByPrefix = (prefix: string): SidebarDocItem[] =>
             };
         });
 
-/** Sidebar entries for `prefer-ts-extras-*` rule docs. */
-const tsExtrasRuleItems = createRuleItemsByPrefix("prefer-ts-extras-");
-/** Sidebar entries for `prefer-type-fest-*` rule docs. */
-const typeFestRuleItems = createRuleItemsByPrefix("prefer-type-fest-");
+/** Sidebar entries for `prefer-immutable-*` rule docs. */
+const tsExtrasRuleItems = createRuleItemsByPrefix("prefer-immutable-");
+/** Sidebar entries for `prefer-immutable-*` rule docs. */
+const immutableRuleItems = createRuleItemsByPrefix("prefer-immutable-");
 
 /** Complete sidebar structure for docs site navigation. */
 const sidebars: SidebarsConfig = {
@@ -169,14 +169,14 @@ const sidebars: SidebarsConfig = {
                     type: "doc",
                 },
                 {
-                    className: "sb-preset-type-fest",
-                    id: "presets/type-fest-types",
-                    label: "💠 type-fest",
+                    className: "sb-preset-immutable",
+                    id: "presets/immutable-types",
+                    label: "💠 immutable",
                     type: "doc",
                 },
                 {
                     className: "sb-preset-type-guards",
-                    id: "presets/ts-extras-type-guards",
+                    id: "presets/immutable-type-guards",
                     label: "✴️ type-guards",
                     type: "doc",
                 },
@@ -195,42 +195,42 @@ const sidebars: SidebarsConfig = {
                 title: "Rule Reference",
                 slug: "/",
                 description:
-                    "Rule documentation for every eslint-plugin-typefest rule.",
+                    "Rule documentation for every eslint-plugin-immutable-2 rule.",
             },
             items: [
                 {
-                    className: "sb-cat-rules-ts-extras",
+                    className: "sb-cat-rules-immutable",
                     collapsed: true,
                     collapsible: true,
                     customProps: {
-                        badge: "ts-extras",
+                        badge: "immutable",
                     },
                     type: "category",
-                    label: "ts-extras",
+                    label: "immutable",
                     link: {
                         type: "generated-index",
-                        title: "ts-extras Rules",
+                        title: "immutable Rules",
                         description:
-                            "Rules that prefer ts-extras runtime helpers and utility functions.",
+                            "Rules that prefer immutable runtime helpers and utility functions.",
                     },
                     items: tsExtrasRuleItems,
                 },
                 {
-                    className: "sb-cat-rules-type-fest",
+                    className: "sb-cat-rules-immutable",
                     collapsed: true,
                     collapsible: true,
                     customProps: {
-                        badge: "type-fest",
+                        badge: "immutable",
                     },
                     type: "category",
-                    label: "type-fest",
+                    label: "immutable",
                     link: {
                         type: "generated-index",
-                        title: "type-fest Rules",
+                        title: "immutable Rules",
                         description:
-                            "Rules that prefer expressive type-fest utility types for clearer type-level code.",
+                            "Rules that prefer expressive immutable utility types for clearer type-level code.",
                     },
-                    items: typeFestRuleItems,
+                    items: immutableRuleItems,
                 },
             ],
         },

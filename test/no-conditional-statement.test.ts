@@ -1,10 +1,14 @@
-import { describe } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { createRuleTester, getPluginRule } from "./_internal/ruleTester";
 
 const tester = createRuleTester();
 
 describe("no-conditional-statement rule", () => {
+    it("exports no-conditional-statement rule module", () => {
+        expect(getPluginRule("no-conditional-statement")).toBeDefined();
+    });
+
     tester.run(
         "no-conditional-statement",
         getPluginRule("no-conditional-statement"),

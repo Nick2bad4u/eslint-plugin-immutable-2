@@ -7,12 +7,12 @@ All notable changes to this project will be documented in this file.
 ## [1.0.1] - 2026-03-13
 
 
-[c94f474...c94f474](https://github.com/Nick2bad4u/eslint-plugin-typefest/compare/c94f47418c00ccf8e84b8a7dd1539db18518d22a...c94f47418c00ccf8e84b8a7dd1539db18518d22a)
+[c94f474...c94f474](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/compare/c94f47418c00ccf8e84b8a7dd1539db18518d22a...c94f47418c00ccf8e84b8a7dd1539db18518d22a)
 
 
 ### 🧹 Chores
 
-- Release v1.0.1 [`(c94f474)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/c94f47418c00ccf8e84b8a7dd1539db18518d22a)
+- Release v1.0.1 [`(c94f474)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/c94f47418c00ccf8e84b8a7dd1539db18518d22a)
 
 
 
@@ -22,17 +22,17 @@ All notable changes to this project will be documented in this file.
 ## [1.0.0] - 2026-03-13
 
 
-[d233b9c...fe9afd2](https://github.com/Nick2bad4u/eslint-plugin-typefest/compare/d233b9c2b49f5f87e10e2c2ee04deed9765f54a3...fe9afd26fe79835b171003e19575a90518e14be6)
+[d233b9c...fe9afd2](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/compare/d233b9c2b49f5f87e10e2c2ee04deed9765f54a3...fe9afd26fe79835b171003e19575a90518e14be6)
 
 
 ### ✨ Features
 
 - ✨ [feat] Add Prettier configuration and bootstrap instructions
 📝 [docs] Update ESLint configuration with package installation guidance
-🧪 [test] Enhance type safety and fix assertions in prefer-ts-extras-key-in tests
+🧪 [test] Enhance type safety and fix assertions in prefer-immutable-key-in tests
 🔧 [chore] Include prettier.config.ts in TypeScript configuration
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8219846)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/82198469abc5897572fba1dc3e17a4929daaf7e3)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8219846)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/82198469abc5897572fba1dc3e17a4929daaf7e3)
 
 
 - ✨ [feat] Enhance ESLint configuration and improve scope resolution utilities
@@ -44,7 +44,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8219
 - Update various test files to ensure proper type checks and function assertions.
 - Improve type safety in tests by refining fix function checks and ensuring expected types.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3d0c909)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3d0c909e2649b1603e278ba9774d35b7fe9694c1)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3d0c909)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3d0c909e2649b1603e278ba9774d35b7fe9694c1)
 
 
 - ✨ [feat] Add contributors section and update package dependencies
@@ -61,7 +61,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3d0c
 
 - 🧹 Remove outdated RELEASING.md file
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1d5fa24)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/1d5fa24bbea2842389a350d0e5389134b16ee4c3)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1d5fa24)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/1d5fa24bbea2842389a350d0e5389134b16ee4c3)
 
 
 - ✨ [feat] Add strict profile configuration and enhance module exports
@@ -77,7 +77,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1d5f
 
 - Implemented tests to verify the exported structure of the runtime plugin
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7ff063c)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7ff063cd9834399920a111b9c48c3e6ef3ae624c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7ff063c)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7ff063cd9834399920a111b9c48c3e6ef3ae624c)
 
 
 - ✨ [feat] Enhance Mermaid configuration and add presets rules synchronization
@@ -95,14 +95,14 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7ff0
 
 - 🧪 [test] Update `readme-rules-table-sync.test.ts` to normalize markdown table spacing for consistency in tests.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(292e4a4)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/292e4a49f94c517cb317dbf77cbad13bccdfa3d0)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(292e4a4)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/292e4a49f94c517cb317dbf77cbad13bccdfa3d0)
 
 
 - ✨ [feat] Add blog link to navigation menu
 
 - Introduced a new link to the blog section in the navigation menu for easier access.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(76ff1fe)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/76ff1fe85bdff07695c59e70cdd023603de59b7f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(76ff1fe)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/76ff1fe85bdff07695c59e70cdd023603de59b7f)
 
 
 - ✨ [feat] Add rule catalog ID validation and normalize markdown table spacing
@@ -124,7 +124,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(76ff
 
 - 🧪 Updated tests to utilize the new normalization function for comparing readme rules sections, ensuring snapshot stability.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c1caabb)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/c1caabb730504b1ad1d737428b156c8675b7e0eb)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c1caabb)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/c1caabb730504b1ad1d737428b156c8675b7e0eb)
 
 
 - ✨ [feat] Introduce default operators for nullish comparison parsing
@@ -135,7 +135,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c1ca
 
 - Enhanced flexibility by allowing custom operators while maintaining default behavior
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(473f8d6)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/473f8d6329ade1b3e203c7c1fb7a0d2961a41b05)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(473f8d6)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/473f8d6329ade1b3e203c7c1fb7a0d2961a41b05)
 
 
 - ✨ [feat] Enhance typed rule functionality and validation
@@ -150,7 +150,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(473f
 
 - 🧪 [test] Ensure typed services retrieval behaves correctly in various contexts
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(370a7cd)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/370a7cd7d545a20d0b9047adb75094fa5fbc7709)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(370a7cd)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/370a7cd7d545a20d0b9047adb75094fa5fbc7709)
 
 
 - ✨ [feat] Enhance sidebar readability and button styles
@@ -169,7 +169,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(370a
 
 - 🔍 Updated ESLint configuration to disable specific rules and enforce new package.json requirements.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(719bab6)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/719bab6821895a1509e99e2c263776f94f407ae6)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(719bab6)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/719bab6821895a1509e99e2c263776f94f407ae6)
 
 
 - ✨ [feat] Implement telemetry for typed rule paths
@@ -184,7 +184,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(719b
 
 - 🧪 [test] Enhance tests to mock typed rule services and validate telemetry functionality
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8bb7d79)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/8bb7d79ac483fd2336235c0018d072d76a78e060)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8bb7d79)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/8bb7d79ac483fd2336235c0018d072d76a78e060)
 
 
 - ✨ [feat] Enhance rule documentation and argument validation
@@ -201,7 +201,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8bb7
 
 - 🧪 [test] Update rule docs integrity tests to utilize new URL generation logic
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(36e010b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/36e010b654605c0c0bc1f0fd570bc5e3557dd272)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(36e010b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/36e010b654605c0c0bc1f0fd570bc5e3557dd272)
 
 
 - ✨ [feat] Enhance rule reporting and configuration management
@@ -214,11 +214,11 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(36e0
 
 - 🔧 Add `sync:readme-rules-table` script for README consistency
 
-- 📝 Expand typefest configuration metadata for better documentation
+- 📝 Expand immutable configuration metadata for better documentation
 
 - 🧪 Add contract tests to ensure rule modules use shared reporting helpers
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ef3e2b0)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ef3e2b0f505bd52bf9043ce4f3061c5fa9d26343)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ef3e2b0)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ef3e2b0f505bd52bf9043ce4f3061c5fa9d26343)
 
 
 - ✨ [feat] Enhance rule metadata with ruleId and ruleNumber
@@ -236,7 +236,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ef3e
 
 - 🔄 Refactored existing tests to check for the presence and correctness of the new properties in the rule metadata.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(dae1c27)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/dae1c27f6a81ce85d86580020ac57dc5ac73e58e)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(dae1c27)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/dae1c27f6a81ce85d86580020ac57dc5ac73e58e)
 
 
 - ✨ [feat] Enhance logging functionality in scripts
@@ -251,7 +251,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(dae1
 
 - 📝 Update remove-temp.sh to include success/failure messages and dry run feedback
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(954d614)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/954d6144b034d79a7fd4cf013b1396ac2aea67ce)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(954d614)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/954d6144b034d79a7fd4cf013b1396ac2aea67ce)
 
 
 - ✨ [feat] Enhance TypeScript ESLint integration with new utilities and benchmarks
@@ -264,7 +264,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(954d
 
 - 🔧 Modify `typescript-eslint-node-autofix.ts` to leverage the new type resolution utility, enhancing type safety in autofix scenarios.
 
-- 🔧 Update rules in `prefer-ts-extras-safe-cast-to.ts`, `prefer-ts-extras-set-has.ts`, and `prefer-ts-extras-string-split.ts` to incorporate the new type resolution utility, improving type checks and suggestions.
+- 🔧 Update rules in `prefer-immutable-safe-cast-to.ts`, `prefer-immutable-set-has.ts`, and `prefer-immutable-string-split.ts` to incorporate the new type resolution utility, improving type checks and suggestions.
 
 - 🧪 Add tests for new type resolution scenarios, including handling of `any`, `unknown`, and `never` types, ensuring robust linting behavior.
 
@@ -272,7 +272,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(954d
 
 - 🧪 Introduce tests for ignored type aliases, ensuring that linting suggestions are appropriately filtered for `any`, `never`, and `unknown` aliases.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(021b3e9)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/021b3e936183cb36f498cb5904e2e60a1467170c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(021b3e9)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/021b3e936183cb36f498cb5904e2e60a1467170c)
 
 
 - ✨ [feat] Add type annotations to exported constants and introduce new tsconfig for Vitest type-checking
@@ -289,7 +289,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(021b
 
 - 🔧 [build] Refactor `vitest.stryker.config.ts` to define and export the Vitest configuration
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(21e0d49)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/21e0d498a8ed4c996ad2844795716c2cfdd01593)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(21e0d49)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/21e0d498a8ed4c996ad2844795716c2cfdd01593)
 
 
 - ✨ [feat] Add sync:readme-rules-table script to package.json and optimize rule handling
@@ -298,22 +298,22 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(21e0
 
 - Refactored rule name checks to utilize Set for improved performance in sync-readme-rules-table.mjs.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(92bd316)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/92bd316192d7f16ca8cbcd9d13565b1751a503af)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(92bd316)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/92bd316192d7f16ca8cbcd9d13565b1751a503af)
 
 
-- ✨ [feat] Enhance typefest plugin with new functionality and documentation updates
+- ✨ [feat] Enhance immutable plugin with new functionality and documentation updates
 
 - 📝 Add JSDoc comments for `getSafeLocalNameForImportedValue` to clarify its purpose and parameters
 
 - 📝 Update `createSafeTypeOperationCounter` to include typed reason literals for better type inference
 
-- 📝 Refine documentation for `typefestConfigNames` to ensure clarity on preset keys
+- 📝 Refine documentation for `immutableConfigNames` to ensure clarity on preset keys
 
-- 📝 Introduce rule module definitions for `prefer-ts-extras-array-last` and `prefer-ts-extras-is-infinite`
+- 📝 Introduce rule module definitions for `prefer-immutable-array-last` and `prefer-immutable-is-infinite`
 
-- 🧪 Improve test mocks for `typed-rule.js` in `prefer-ts-extras-set-has` and `prefer-ts-extras-string-split` tests
+- 🧪 Improve test mocks for `typed-rule.js` in `prefer-immutable-set-has` and `prefer-immutable-string-split` tests
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b496d4e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/b496d4e9e7b79d90c1ca42dd8de32437f25a398d)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b496d4e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b496d4e9e7b79d90c1ca42dd8de32437f25a398d)
 
 
 - ✨ [feat] Enhance ESLint Plugin with various improvements and optimizations
@@ -326,18 +326,18 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b496
 
 - ✨ [feat] Add runtime plugin shape validation in `plugin-entry.test.ts` to ensure correct exports
 
-- 🧪 [test] Enhance test coverage for `prefer-ts-extras-set-has` and `prefer-ts-extras-string-split` rules with mock utilities
+- 🧪 [test] Enhance test coverage for `prefer-immutable-set-has` and `prefer-immutable-string-split` rules with mock utilities
 
 - 📝 [docs] Update comments and documentation for clarity and consistency across multiple files
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(00fc246)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/00fc24679cd832ceed639e19414838bcad265851)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(00fc246)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/00fc24679cd832ceed639e19414838bcad265851)
 
 
 - ✨ [feat] Enhance ESLint Plugin with New Rules and Performance Improvements
 
-- 🆕 Add `prefer-ts-extras-set-has` rule to improve set membership checks.
+- 🆕 Add `prefer-immutable-set-has` rule to improve set membership checks.
 
-- 🆕 Introduce `prefer-ts-extras-string-split` rule for string manipulation.
+- 🆕 Introduce `prefer-immutable-string-split` rule for string manipulation.
 
 - 🔍 Implement benchmarks for new rules to ensure performance and correctness.
 
@@ -351,9 +351,9 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(00fc
 
 - 🧪 Add unit tests for `memoizeExpressionBooleanPredicate` to ensure caching behavior.
 
-- 🧪 Improve existing tests for `prefer-ts-extras-set-has` and `prefer-ts-extras-string-split` rules.
+- 🧪 Improve existing tests for `prefer-immutable-set-has` and `prefer-immutable-string-split` rules.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a1e6f4b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a1e6f4ba9c120d62306db5a2868e1495f5a3a5df)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a1e6f4b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a1e6f4ba9c120d62306db5a2868e1495f5a3a5df)
 
 
 - ✨ [feat] Update dependencies and enhance parser options handling
@@ -366,20 +366,20 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a1e6
 
 - 🛠️ Implement `normalizeParserOptions` function to handle default parser options
 
-- 🧪 Refactor parser options retrieval in `withTypefestPlugin` function to use `normalizeParserOptions`
+- 🧪 Refactor parser options retrieval in `withImmutablePlugin` function to use `normalizeParserOptions`
 
 - 📝 Update test cases in plugin-source-configs.test.ts for renamed config variables
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(be1768e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/be1768ecb0caa251823fc6c1092d59ce7d103df9)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(be1768e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/be1768ecb0caa251823fc6c1092d59ce7d103df9)
 
 
 - ✨ [feat] Introduce 'recommended-type-checked' configuration for ESLint plugin
 
-- 🆕 Added 'recommended-type-checked' to typefestConfigNames for enhanced type checking.
+- 🆕 Added 'recommended-type-checked' to immutableConfigNames for enhanced type checking.
 
-- 🆕 Updated typefestConfigReferenceToName to include 'recommended-type-checked'.
+- 🆕 Updated immutableConfigReferenceToName to include 'recommended-type-checked'.
 
-- 🔄 Modified typefestConfigsDefinition to include a new preset for 'recommended-type-checked' with type-aware rules.
+- 🔄 Modified immutableConfigsDefinition to include a new preset for 'recommended-type-checked' with type-aware rules.
 
 - 🔄 Adjusted rule configurations to set 'recommended' to false for several rules, now included in 'recommended-type-checked'.
 
@@ -391,7 +391,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(be17
 
 - 🧪 Updated existing tests to reflect changes in rule recommendations and configurations.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3e11f34)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3e11f3414a7deda15d7ca4ce1dc9b33175f9cea5)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3e11f34)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3e11f3414a7deda15d7ca4ce1dc9b33175f9cea5)
 
 
 - ✨ [feat] Add deMorgan ESLint plugin and update dependencies
@@ -402,7 +402,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3e11
 
 - 🗑️ Remove obsolete `rule-docs-url.ts` file
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4ab8742)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4ab87429abba03528830985abc2645c04f1d56b8)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4ab8742)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4ab87429abba03528830985abc2645c04f1d56b8)
 
 
 - ✨ [feat] auto-enable parser services and centralize preset membership
@@ -447,7 +447,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4ab8
 
 These changes aim to reduce duplication, improve reliability of presets, and make parser setup seamless for users.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3e52bb0)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3e52bb09e51b587351e8927e947ee7d34ca57c7f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3e52bb0)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3e52bb09e51b587351e8927e947ee7d34ca57c7f)
 
 
 - ✨ [feat] Enhance import insertion functionality and add failure handling
@@ -467,59 +467,59 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3e52
 
 - 🧪 [test] Create comprehensive tests for the new failure handling in `safe-type-operation`, including local and global observer notifications.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f06b2d9)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/f06b2d997d21d0567915dbabcac36bbc49f50ae5)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f06b2d9)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/f06b2d997d21d0567915dbabcac36bbc49f50ae5)
 
 
-- ✨ [feat] Enhance TypeFest rules with new options and improvements
+- ✨ [feat] Enhance Immutable rules with new options and improvements
 
-- 🛠️ [fix] Update `prefer-ts-extras-set-has` rule to support `unionBranchMatchingMode` options for better union handling
+- 🛠️ [fix] Update `prefer-immutable-set-has` rule to support `unionBranchMatchingMode` options for better union handling
 
-- 🛠️ [fix] Modify `prefer-type-fest-except` rule to include `enforceBuiltinOmit` option for controlling Omit enforcement
+- 🛠️ [fix] Modify `prefer-immutable-except` rule to include `enforceBuiltinOmit` option for controlling Omit enforcement
 
-- 🛠️ [fix] Add `enforceLegacyAliases` and `enforcePromiseUnions` options to `prefer-type-fest-promisable` rule for more flexible alias handling
+- 🛠️ [fix] Add `enforceLegacyAliases` and `enforcePromiseUnions` options to `prefer-immutable-promisable` rule for more flexible alias handling
 
-- 🛠️ [fix] Introduce `enforcedAliasNames` option in `prefer-type-fest-require-exactly-one` rule to customize alias enforcement
+- 🛠️ [fix] Introduce `enforcedAliasNames` option in `prefer-immutable-require-exactly-one` rule to customize alias enforcement
 
-- 🛠️ [fix] Enhance `prefer-type-fest-tagged-brands` rule with options for ad-hoc brand intersections and legacy alias enforcement
+- 🛠️ [fix] Enhance `prefer-immutable-tagged-brands` rule with options for ad-hoc brand intersections and legacy alias enforcement
 
-- 🛠️ [fix] Add `enforcedAliasNames` option to `prefer-type-fest-tuple-of` rule for better alias management
+- 🛠️ [fix] Add `enforcedAliasNames` option to `prefer-immutable-tuple-of` rule for better alias management
 
-- 🧪 [test] Update tests for `prefer-ts-extras-set-has` to validate new union matching options
+- 🧪 [test] Update tests for `prefer-immutable-set-has` to validate new union matching options
 
-- 🧪 [test] Enhance tests for `prefer-type-fest-except` to check behavior with `enforceBuiltinOmit` option
+- 🧪 [test] Enhance tests for `prefer-immutable-except` to check behavior with `enforceBuiltinOmit` option
 
-- 🧪 [test] Add tests for `prefer-type-fest-promisable` to ensure correct handling of legacy aliases and promise unions
+- 🧪 [test] Add tests for `prefer-immutable-promisable` to ensure correct handling of legacy aliases and promise unions
 
-- 🧪 [test] Update tests for `prefer-type-fest-require-exactly-one` to validate alias enforcement options
+- 🧪 [test] Update tests for `prefer-immutable-require-exactly-one` to validate alias enforcement options
 
-- 🧪 [test] Enhance tests for `prefer-type-fest-tagged-brands` to check new enforcement options
+- 🧪 [test] Enhance tests for `prefer-immutable-tagged-brands` to check new enforcement options
 
-- 🧪 [test] Add tests for `prefer-type-fest-tuple-of` to validate alias enforcement behavior
+- 🧪 [test] Add tests for `prefer-immutable-tuple-of` to validate alias enforcement behavior
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(46a0938)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/46a0938464a8b70ba3aea1023157589517fc8b17)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(46a0938)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/46a0938464a8b70ba3aea1023157589517fc8b17)
 
 
-- ✨ [feat] Enhance TypeFest ESLint rules with ts-extras utilities
+- ✨ [feat] Enhance Immutable ESLint rules with immutable utilities
 
-- 🔧 [refactor] Update `prefer-type-fest-literal-union.ts` to use `arrayFirst` and `arrayJoin` for improved literal union text generation.
+- 🔧 [refactor] Update `prefer-immutable-literal-union.ts` to use `arrayFirst` and `arrayJoin` for improved literal union text generation.
 
-- 🔧 [refactor] Modify `prefer-type-fest-primitive.ts` to utilize `setHas` for checking primitive keyword types.
+- 🔧 [refactor] Modify `prefer-immutable-primitive.ts` to utilize `setHas` for checking primitive keyword types.
 
-- 🔧 [refactor] Revise `prefer-type-fest-promisable.ts` to incorporate `isDefined` and `arrayFirst` for better promise inner type extraction.
+- 🔧 [refactor] Revise `prefer-immutable-promisable.ts` to incorporate `isDefined` and `arrayFirst` for better promise inner type extraction.
 
-- 🔧 [fix] Correct parameter order in `keyIn` function in `prefer-ts-extras-key-in` tests for consistency with utility function.
+- 🔧 [fix] Correct parameter order in `keyIn` function in `prefer-immutable-key-in` tests for consistency with utility function.
 
-- 🔧 [fix] Adjust `prefer-ts-extras-key-in` and `prefer-ts-extras-key-in.valid.ts` tests to reflect the correct usage of `keyIn`.
+- 🔧 [fix] Adjust `prefer-immutable-key-in` and `prefer-immutable-key-in.valid.ts` tests to reflect the correct usage of `keyIn`.
 
 - 🔧 [test] Add new test cases for `arrayFirst`, `arrayIncludes`, and `arrayLast` to ensure proper handling of optional chains and return-like patterns.
 
-- 🔧 [test] Implement logical guard checks in `prefer-ts-extras-array-includes` and `prefer-ts-extras-object-has-in` tests to validate suggestions for `arrayIncludes` and `objectHasIn`.
+- 🔧 [test] Implement logical guard checks in `prefer-immutable-array-includes` and `prefer-immutable-object-has-in` tests to validate suggestions for `arrayIncludes` and `objectHasIn`.
 
-- 🔧 [test] Introduce logical guard and side-effect checks in `prefer-ts-extras-set-has` to ensure correct usage of `setHas`.
+- 🔧 [test] Introduce logical guard and side-effect checks in `prefer-immutable-set-has` to ensure correct usage of `setHas`.
 
-- 🔧 [test] Enhance `prefer-ts-extras-object-has-own` tests with logical guard checks to validate suggestions for `objectHasOwn`.
+- 🔧 [test] Enhance `prefer-immutable-object-has-own` tests with logical guard checks to validate suggestions for `objectHasOwn`.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6a02cd3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/6a02cd3f09977c68334884e0f51efc61de550d8d)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6a02cd3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/6a02cd3f09977c68334884e0f51efc61de550d8d)
 
 
 - ✨ [feat] Add comprehensive audit prompt for repository quality and scalability
@@ -530,10 +530,10 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6a02
 
 - Provide a structured execution plan for searching, analyzing, refactoring, and validating code changes.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(042e729)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/042e729588719f03e61fab404d0cfdd6c8bfbe7f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(042e729)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/042e729588719f03e61fab404d0cfdd6c8bfbe7f)
 
 
-- ✨ [feat] Introduce isDefined utility from ts-extras for nullish checks
+- ✨ [feat] Introduce isDefined utility from immutable for nullish checks
 
 - 🔧 Update nullish-comparison.ts to use isDefined for better readability and consistency in null checks.
 
@@ -545,7 +545,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(042e
 
 - 🔧 Update plugin.ts to enhance parser options validation using isDefined.
 
-- 🔧 Refactor multiple rules (prefer-ts-extras-is-defined, prefer-ts-extras-is-empty, prefer-ts-extras-is-equal-type, etc.) to leverage isDefined for improved null checks.
+- 🔧 Refactor multiple rules (prefer-immutable-is-defined, prefer-immutable-is-empty, prefer-immutable-is-equal-type, etc.) to leverage isDefined for improved null checks.
 
 - 🧪 Add tests to ensure correct behavior of new isDefined checks in various rules.
 
@@ -553,7 +553,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(042e
 
 - 🧪 Introduce new test cases for inline AST node checks to validate autofix suppression logic.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(647d69f)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/647d69f6f8475e274d3e02e4e806df224f46da47)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(647d69f)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/647d69f6f8475e274d3e02e4e806df224f46da47)
 
 
 - ✨ [feat] Implement import insertion coordination and enhance type import handling
@@ -568,7 +568,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(647d
 
 - Enhanced unit tests to verify self-contained suggestion-intent fixes with import insertion.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5879928)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/5879928457bb7615018776d8c03f0ea213e0388f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5879928)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/5879928457bb7615018776d8c03f0ea213e0388f)
 
 
 - ✨ [feat] Enhance import insertion handling and deduplication logic
@@ -591,12 +591,12 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5879
 
 - 🧹 Removed redundant output arrays in test cases, simplifying the expected output to focus on the second pass output for clarity.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e5b98f0)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e5b98f0f409c34817972c2da205e1c7e8eb5d936)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e5b98f0)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e5b98f0f409c34817972c2da205e1c7e8eb5d936)
 
 
-- ✨ [feat] Introduce runtime harness for prefer-ts-extras-assert-present tests
+- ✨ [feat] Introduce runtime harness for prefer-immutable-assert-present tests
 
-- 🆕 Added a new file `prefer-ts-extras-assert-present-runtime-harness.ts` containing utilities for testing the `prefer-ts-extras-assert-present` rule.
+- 🆕 Added a new file `prefer-immutable-assert-present-runtime-harness.ts` containing utilities for testing the `prefer-immutable-assert-present` rule.
 
 - 📜 Defined types for `ReplaceTextOnlyFixer` and `ReportDescriptor` to facilitate structured reporting in tests.
 
@@ -604,20 +604,20 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e5b9
 
 - 🔍 Included parsing utilities to extract relevant AST nodes from code, improving the ability to analyze and test the rule's behavior.
 
-🧪 [test] Refactor tests for prefer-ts-extras-assert-present rule
+🧪 [test] Refactor tests for prefer-immutable-assert-present rule
 
-- 🔄 Updated `prefer-ts-extras-assert-present.test.ts` to utilize the new runtime harness for generating test cases.
+- 🔄 Updated `prefer-immutable-assert-present.test.ts` to utilize the new runtime harness for generating test cases.
 
 - 🧩 Removed redundant inline code snippets and replaced them with structured test cases using the new harness functions.
 
 - ✅ Ensured that invalid and valid test cases are clearly defined and utilize the new utilities for better maintainability and readability.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f0826fe)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/f0826fe3c507b5dcd2fc7a6d9c68c6cc318f9021)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f0826fe)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/f0826fe3c507b5dcd2fc7a6d9c68c6cc318f9021)
 
 
 - ✨ [feat] Enhance fixer parse-safety coverage tests
 
-- 🛠️ Refactor `collectRuleIdsRequiringParseSafety` to utilize `typefestPlugin.rules` directly, removing the need for file system access.
+- 🛠️ Refactor `collectRuleIdsRequiringParseSafety` to utilize `immutablePlugin.rules` directly, removing the need for file system access.
 
 - 🔍 Introduce `ruleRequiresParseSafetyCoverage` function to determine if a rule requires parse safety coverage based on its metadata.
 
@@ -625,7 +625,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f082
 
 - 📜 Update test logic to check for multiple markers in rule test files, including `parseForESLint`, `fc.assert`, `fc.property`, and `fast-check:`.
 
-🧪 [test] Improve test coverage for `prefer-ts-extras-is-present`
+🧪 [test] Improve test coverage for `prefer-immutable-is-present`
 
 - 🔧 Add new test cases to ensure that autofixes for loose null comparisons remain parseable and do not trigger second-pass binary reports.
 
@@ -633,7 +633,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f082
 
 - 🛠️ Introduce utility functions for parsing variable initializers and extracting call expressions to streamline test logic.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(25e991b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/25e991bb37399af03b9e1d19e9abe9248095f24e)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(25e991b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/25e991bb37399af03b9e1d19e9abe9248095f24e)
 
 
 - ✨ [feat] Enhance homepage with GitHub stats and improve layout
@@ -648,7 +648,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(25e9
 
 - 🎨 Adjust layout and spacing in index.module.css for better responsiveness
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1489fe5)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/1489fe589c1e44b4fdb47256ced3177967844d7c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1489fe5)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/1489fe589c1e44b4fdb47256ced3177967844d7c)
 
 
 - ✨ [feat] Enforce canonical docs & expand rule guides
@@ -683,7 +683,7 @@ The changes raise documentation quality, make future edits
 deterministic and reduce manual review churn while
 handling a subtle predicate bug.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5ef9c15)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/5ef9c157b9304ef69f1c4c3b9fa3ede02ddae86f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5ef9c15)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/5ef9c157b9304ef69f1c4c3b9fa3ede02ddae86f)
 
 
 - ✨ [feat] Enhance unicode and emoji support in autofixes
@@ -698,7 +698,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5ef9
 
 - 🛠️ Support unicode and emoji in loose null equality checks
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7349e48)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7349e48baf605c4457a8fe27765bb29cd998122a)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7349e48)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7349e48baf605c4457a8fe27765bb29cd998122a)
 
 
 - ✨ [feat] Add global identifier guards and expand test coverage
@@ -756,7 +756,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7349
 These changes reduce false positives, harden rules against variable
 shadowing, and significantly improve test reliability and coverage.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6ae4136)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/6ae41360a5a5e5c6bdc1fafd67aa9400b0472e2f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6ae4136)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/6ae41360a5a5e5c6bdc1fafd67aa9400b0472e2f)
 
 
 - ✨ [feat] Add plugin settings to control autofixes and shared helper utilities
@@ -783,7 +783,7 @@ remove unused plugins
 These changes let users suppress unwanted fixes, ensure safe import insertion,
 and reduce code drift by centralizing shared functionality.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6b530ec)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/6b530ece7f5f101f9d599fdacd7f526321060d6c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6b530ec)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/6b530ece7f5f101f9d599fdacd7f526321060d6c)
 
 
 - ✨ [feat] Update test coverage scripts and enhance JUnit reporting
@@ -794,9 +794,9 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6b53
 
 - 📤 Implement upload of test results to Codecov
 
-- 🔍 Refactor assertions in prefer-ts-extras-is-empty, prefer-ts-extras-is-infinite, and prefer-ts-extras-not tests to use regex matching for improved accuracy
+- 🔍 Refactor assertions in prefer-immutable-is-empty, prefer-immutable-is-infinite, and prefer-immutable-not tests to use regex matching for improved accuracy
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fe9b0b3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/fe9b0b3d4133560154045a82ec981920ba847574)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fe9b0b3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/fe9b0b3d4133560154045a82ec981920ba847574)
 
 
 - ✨ [feat] Add ESLint 9 compatibility checks and update documentation
@@ -811,7 +811,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fe9b
 
 - 🚜 [refactor] Simplify regex patterns in typed-rule.ts for test file detection
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8e7a5a8)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/8e7a5a8890c707d01bd8af285ff7bd3eb53a9698)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8e7a5a8)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/8e7a5a8890c707d01bd8af285ff7bd3eb53a9698)
 
 
 - ✨ [feat] Enhance ESLint Benchmarking and Add New Fixtures
@@ -822,11 +822,11 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8e7a
 
 - 📝 [docs] Add `recommended-zero-message.baseline.ts` to provide a baseline workload for the recommended preset.
 
-- 📝 [docs] Create `safe-cast-to.stress.ts` to test the `prefer-ts-extras-safe-cast-to` rule under stress conditions.
+- 📝 [docs] Create `safe-cast-to.stress.ts` to test the `prefer-immutable-safe-cast-to` rule under stress conditions.
 
 - ⚡ [perf] Improve `assertMeaningfulBenchmarkSignal` to accept options for maximum and minimum reported problems.
 
-- ✨ [feat] Add new benchmarks for the `prefer-ts-extras-safe-cast-to` rule with both fixing and non-fixing scenarios.
+- ✨ [feat] Add new benchmarks for the `prefer-immutable-safe-cast-to` rule with both fixing and non-fixing scenarios.
 
 - 👷 [ci] Update `run-eslint-stats.mjs` to handle new benchmark scenarios and improve reporting with comparison capabilities.
 
@@ -836,14 +836,14 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8e7a
 
 - ⚡ [perf] Optimize `vite.config.ts` to include source files in coverage reporting.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(72b72c3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/72b72c3d76e79c5c48b80909a5f26f5d304afd53)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(72b72c3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/72b72c3d76e79c5c48b80909a5f26f5d304afd53)
 
 
-- ✨ [feat] Update rules to require 'frozen: false' for typefest ESLint rules
+- ✨ [feat] Update rules to require 'frozen: false' for immutable ESLint rules
 
-- 📝 Added 'frozen: false' to the documentation of multiple TypeFest ESLint rules to indicate that these rules are not frozen and can be modified in the future.
+- 📝 Added 'frozen: false' to the documentation of multiple Immutable ESLint rules to indicate that these rules are not frozen and can be modified in the future.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(110d7dd)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/110d7dd4ad77096226ed311227c6e9dc54b8669a)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(110d7dd)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/110d7dd4ad77096226ed311227c6e9dc54b8669a)
 
 
 - ✨ [feat] Adds preset-tagged rule recommendations
@@ -863,27 +863,27 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(110d
 🚜 [refactor] Applies consistency cleanups in scripts and internal utilities, including style normalization and stricter readonly typing.
 🧪 [test] Updates test helpers and mocks to align with stricter type expectations and explicit undefined checks.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(155c352)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/155c352f4fdb9a3ac38104a5b11b67ede23aefe4)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(155c352)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/155c352f4fdb9a3ac38104a5b11b67ede23aefe4)
 
 
-- ✨ [feat] Enhance TypeFest rule tests with detailed metadata and messages
+- ✨ [feat] Enhance Immutable rule tests with detailed metadata and messages
 
 - 🛠️ [fix] Refactor rule tests to include `ruleId`, `docsDescription`, and `messages` for better clarity and maintainability
 
-- 📝 [docs] Update documentation strings to specify the purpose of each rule, emphasizing the preference for TypeFest types over aliases
+- 📝 [docs] Update documentation strings to specify the purpose of each rule, emphasizing the preference for Immutable types over aliases
 
-- 🔧 [build] Add inline invalid and valid test cases for various TypeFest rules, ensuring comprehensive coverage
+- 🔧 [build] Add inline invalid and valid test cases for various Immutable rules, ensuring comprehensive coverage
 
 - ⚡ [perf] Optimize test structure by consolidating repetitive code patterns into reusable functions
 
 - 🧪 [test] Introduce new test cases for edge scenarios, including whitespace formatting and generic type handling
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db8f3d9)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/db8f3d907e5b7dff0f98dc648045e96776573ba2)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db8f3d9)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/db8f3d907e5b7dff0f98dc648045e96776573ba2)
 
 
-- ✨ [feat] Enhance prefer-ts-extras-is-equal-type tests with metadata validation
+- ✨ [feat] Enhance prefer-immutable-is-equal-type tests with metadata validation
 
-- 📝 Add metadata loading function for `prefer-ts-extras-is-equal-type` rule
+- 📝 Add metadata loading function for `prefer-immutable-is-equal-type` rule
 
 - ✅ Implement tests for stable report and suggestion messages
 
@@ -891,29 +891,29 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db8f
 
 - 🔄 Add inline code examples for conflicting bindings and named imports
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b7735ff)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/b7735fff0c81b9b0e938e11e80f466824d347ee6)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b7735ff)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b7735fff0c81b9b0e938e11e80f466824d347ee6)
 
 
-- ✨ [feat] Enhance prefer-ts-extras-is-equal-type rule with ts-extras integration
+- ✨ [feat] Enhance prefer-immutable-is-equal-type rule with immutable integration
 
-- 🛠️ [fix] Add support for isEqualType function from ts-extras in ESLint rule
+- 🛠️ [fix] Add support for isEqualType function from immutable in ESLint rule
 
-- 🔧 [build] Update test fixtures to include ts-extras imports and expected outputs
+- 🔧 [build] Update test fixtures to include immutable imports and expected outputs
 
 - 🧪 [test] Extend tests for aliased imports and ensure correct suggestions are provided
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(64beea6)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/64beea69975339a2924f307a80baf25d38e4c3c7)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(64beea6)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/64beea69975339a2924f307a80baf25d38e4c3c7)
 
 
-- ✨ [feat] Introduce local Typefest plugin dogfooding rules
+- ✨ [feat] Introduce local Immutable plugin dogfooding rules
 
-- Added local Typefest plugin for manual dogfooding in ESLint configuration
+- Added local Immutable plugin for manual dogfooding in ESLint configuration
 
-- Defined explicit rules for Typefest utilities to enhance linting experience
+- Defined explicit rules for Immutable utilities to enhance linting experience
 
 - Updated section headers from "MARK" to "SECTION" for consistency across the config
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(df8b7be)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/df8b7be5d4074457f8d826c979149f8f861f7c73)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(df8b7be)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/df8b7be5d4074457f8d826c979149f8f861f7c73)
 
 
 - ✨ [feat] Implement script for temp directory cleanup
@@ -926,7 +926,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(df8b
 
 - 📝 Create `remove-temp.ps1` script to handle temp directory cleanup
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(98e032b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/98e032b352efbe56862f5912aaab20d094319018)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(98e032b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/98e032b352efbe56862f5912aaab20d094319018)
 
 
 - ✨ [feat] Update node configuration and dependencies
@@ -969,7 +969,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(98e0
 
 - 🧪 Ensure parser defaults and plugin namespace are registered properly
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5c39e3d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/5c39e3d5254fd081c9bd94a35933f21cd396893e)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5c39e3d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/5c39e3d5254fd081c9bd94a35933f21cd396893e)
 
 
 - ✨ [feat] Add Stryker mutation testing configuration
@@ -984,7 +984,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5c39
 
 - 🛠️ [config] Adjust thresholds for mutation testing to improve quality metrics
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7608574)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7608574ff670f60b3822c80f981c06e41e61e748)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7608574)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7608574ff670f60b3822c80f981c06e41e61e748)
 
 
 - ✨ [feat] Update ESLint configuration and dependencies
@@ -1005,13 +1005,13 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7608
 
 - 🔧 Refactor `isLocalNameBoundToExpectedImport` to utilize the new variable resolution function
 
-✨ [feat] Enhance TypeFest plugin rule definitions
+✨ [feat] Enhance Immutable plugin rule definitions
 
-- 🔧 Define new rule names for TypeFest and TypeScript extras
+- 🔧 Define new rule names for Immutable and TypeScript extras
 
-- 🔧 Refactor `typefestRules` to use a more structured approach for rule definitions
+- 🔧 Refactor `immutableRules` to use a more structured approach for rule definitions
 
-- 🔧 Update the `TypefestRuleId` and `TypefestRuleName` types for better type safety
+- 🔧 Update the `ImmutableRuleId` and `ImmutableRuleName` types for better type safety
 
 🧪 [test] Improve typed rule tester and runtime tests
 
@@ -1031,7 +1031,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7608
 
 - 🔧 Define `vitestConfig` with explicit type for better readability and maintainability
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8afc040)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/8afc040b174fd9de7074b1ef149837163aa8dddf)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8afc040)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/8afc040b174fd9de7074b1ef149837163aa8dddf)
 
 
 - ✨ [feat] Adds import-safe autofixes to lint rules
@@ -1052,7 +1052,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8afc
 
 🧪 [test] Adds broad invalid-case coverage with expected autofix and suggestion outputs to verify safety gates and rewrite correctness.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bfc3d8d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/bfc3d8d98165dd6866d558d059a2f6cd46369752)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bfc3d8d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/bfc3d8d98165dd6866d558d059a2f6cd46369752)
 
 
 - ✨ [feat] Adds safe autofixes for preference rules
@@ -1077,7 +1077,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bfc3
 
 - Retains non-fixable and report-only paths to reduce regression risk.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(25a1784)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/25a1784bf26d1d3e9023f21ed2d2023e1d628e02)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(25a1784)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/25a1784bf26d1d3e9023f21ed2d2023e1d628e02)
 
 
 - ✨ [feat] Add authors configuration for blog
@@ -1088,7 +1088,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(25a1
 
 - Added Nick2bad4u with image, title, permalink, and social links
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(53bf4a6)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/53bf4a66503c9a0274fea8af7b4cc1ee70c485ac)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(53bf4a6)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/53bf4a66503c9a0274fea8af7b4cc1ee70c485ac)
 
 
 - ✨ [feat] Add favicon and enhance ESLint Config Inspector build script
@@ -1103,7 +1103,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(53bf
 
 - 📄 Create index redirect page for improved SEO and usability
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2359e0c)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/2359e0c73d136715759ac931708f1f494a23a447)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2359e0c)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/2359e0c73d136715759ac931708f1f494a23a447)
 
 
 - ✨ [feat] Enhance documentation and CI workflow
@@ -1124,7 +1124,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2359
 
 - 🎨 [style] Add logo images for improved branding
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a8ce34a)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a8ce34af2b417febf44ca290ff535ba226c44a7f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a8ce34a)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a8ce34af2b417febf44ca290ff535ba226c44a7f)
 
 
 - ✨ [feat] Integrate Stryker for mutation testing and enhance changelog generation
@@ -1141,12 +1141,12 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a8ce
 
 - 🎨 Refactor type casting in imported-type-aliases test for improved readability
 
-- 🎨 Adjust formatting in prefer-type-fest-tagged-brands test for consistency
+- 🎨 Adjust formatting in prefer-immutable-tagged-brands test for consistency
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2c6b5ef)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/2c6b5ef32519e49d3162d67786ba71cce83daf01)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2c6b5ef)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/2c6b5ef32519e49d3162d67786ba71cce83daf01)
 
 
-- ✨ [feat] Adds TypeFest typing preference rules
+- ✨ [feat] Adds Immutable typing preference rules
 
 ✨ [feat] Expands typed linting to standardize common type patterns on canonical utility aliases.
 
@@ -1170,7 +1170,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2c6b
 
 - Confirms diagnostics trigger only on intended patterns and remain silent in test fixtures.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(dcd7a6f)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/dcd7a6ffeea657c615551a71e08bcf6e7afbc4df)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(dcd7a6f)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/dcd7a6ffeea657c615551a71e08bcf6e7afbc4df)
 
 
 - ✨ [feat] Add modern docs UI enhancements
@@ -1185,16 +1185,16 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(dcd7
 
 - Improves readability and maintenance confidence without changing runtime or linting behavior.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d81f477)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/d81f47784ebb46ade581d9f8f58fd073bd088608)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d81f477)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/d81f47784ebb46ade581d9f8f58fd073bd088608)
 
 
-- ✨ [feat] Enhance documentation structure and content for eslint-plugin-typefest
+- ✨ [feat] Enhance documentation structure and content for eslint-plugin-immutable-2
 
 - 📝 [docs] Update docusaurus configuration to include new pages for rules overview and getting started
 
 - 📝 [docs] Add new sidebar categories and links for presets and rules
 
-- 📝 [docs] Create detailed markdown files for each preset: minimal, recommended, strict, all, type-fest types, and type-guards
+- 📝 [docs] Create detailed markdown files for each preset: minimal, recommended, strict, all, immutable types, and type-guards
 
 - 📝 [docs] Introduce getting started and overview documentation to guide users
 
@@ -1206,7 +1206,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d81f
 
 - 🧹 [chore] Clean up package.json and package-lock.json to ensure proper dependency management
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a73ec43)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a73ec4395f4b8c8977837a94ca16fbb998da3989)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a73ec43)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a73ec4395f4b8c8977837a94ca16fbb998da3989)
 
 
 - ✨ [feat] Update Docusaurus homepage links and text
@@ -1245,7 +1245,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a73e
 
 - 📦 Upgrade "typescript" peer dependency to version 5.9.3
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(413a896)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/413a896d53a2576852b4bc02e554478137e50477)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(413a896)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/413a896d53a2576852b4bc02e554478137e50477)
 
 
 - ✨ [feat] Enhance ESLint Plugin and Documentation
@@ -1269,10 +1269,10 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(413a
 
 - 🧹 [chore] Clean up and optimize existing scripts for better maintainability
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(17f1583)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/17f1583bc3a8ca11d587c827ac23d73895fd8c98)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(17f1583)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/17f1583bc3a8ca11d587c827ac23d73895fd8c98)
 
 
-- ✨ [feat] Enhance TypeFest ESLint Plugin with TypeScript Support
+- ✨ [feat] Enhance Immutable ESLint Plugin with TypeScript Support
 
 - 🆕 Add TypeScript parser as a dependency to improve compatibility with TypeScript files.
 
@@ -1280,7 +1280,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(17f1
 
 - 🛠️ Refactor plugin structure to utilize TypeScript types for improved type safety and clarity.
 
-- 📜 Introduce detailed documentation for ESLint rules related to TypeFest and TypeScript utilities.
+- 📜 Introduce detailed documentation for ESLint rules related to Immutable and TypeScript utilities.
 
 - 🔄 Restructure rule definitions to enhance maintainability and readability.
 
@@ -1290,14 +1290,14 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(17f1
 
 - 📝 Modify test cases to reflect changes in the plugin's configuration structure and rule registration.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(58d2f8d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/58d2f8dad12ea27c2417c65490cc542b18a0bcbd)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(58d2f8d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/58d2f8dad12ea27c2417c65490cc542b18a0bcbd)
 
 
 - ✨ [feat] Add new ESLint rules for TypeScript extras
 
-- 🎉 Introduced `prefer-ts-extras-is-equal-type` rule to encourage the use of `isEqualType<T, U>()` from `ts-extras` over `IsEqual<T, U>` boolean assertions.
+- 🎉 Introduced `prefer-immutable-is-equal-type` rule to encourage the use of `isEqualType<T, U>()` from `immutable` over `IsEqual<T, U>` boolean assertions.
 
-- 🎉 Introduced `prefer-ts-extras-is-present` rule to promote the use of `isPresent(value)` from `ts-extras` instead of inline nullish comparisons outside filter callbacks.
+- 🎉 Introduced `prefer-immutable-is-present` rule to promote the use of `isPresent(value)` from `immutable` instead of inline nullish comparisons outside filter callbacks.
 
 - 🛠️ Implemented logic to identify and suggest replacements for `IsEqual<T, U>` and nullish checks in the codebase.
 
@@ -1305,9 +1305,9 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(58d2
 
 🧪 [test] Add tests for new ESLint rules
 
-- ✅ Created test cases for `prefer-ts-extras-is-equal-type` to validate correct identification and suggestion of type equality checks.
+- ✅ Created test cases for `prefer-immutable-is-equal-type` to validate correct identification and suggestion of type equality checks.
 
-- ✅ Created test cases for `prefer-ts-extras-is-present` to ensure proper detection of nullish comparisons and provide suggestions for using `isPresent`.
+- ✅ Created test cases for `prefer-immutable-is-present` to ensure proper detection of nullish comparisons and provide suggestions for using `isPresent`.
 
 📝 [docs] Update documentation and test fixtures
 
@@ -1321,7 +1321,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(58d2
 
 - 🧹 Adjusted test structure to improve readability and maintainability.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e731149)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e7311497fccdd2a094cde912c332f28b562a9adb)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e731149)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e7311497fccdd2a094cde912c332f28b562a9adb)
 
 
 - ✨ [feat] Enhance ESLint configuration with new rules and plugins
@@ -1334,24 +1334,24 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e731
 
 - 🔧 Adjust various rule settings for improved linting accuracy and performance
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2cb3cac)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/2cb3cac8a808b97edc8e28aecad7c65bce1c22b0)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2cb3cac)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/2cb3cac8a808b97edc8e28aecad7c65bce1c22b0)
 
 
 - ✨ [feat] Introduce new rules for TypeScript extras
 
 
-- ✨ [feat] Add `prefer-ts-extras-as-writable` rule
+- ✨ [feat] Add `prefer-immutable-as-writable` rule
   
-- Enforces the use of `asWritable(value)` from `ts-extras` over `Writable<T>` assertions from `type-fest`.
+- Enforces the use of `asWritable(value)` from `immutable` over `Writable<T>` assertions from `immutable`.
   
 - Includes logic to identify and report incorrect usages in TypeScript files.
   
 - Provides comprehensive tests for valid and invalid cases.
 
 
-- ✨ [feat] Add `prefer-ts-extras-safe-cast-to` rule
+- ✨ [feat] Add `prefer-immutable-safe-cast-to` rule
   
-- Requires the use of `safeCastTo<T>(value)` from `ts-extras` for type-safe assertions instead of direct `as` casts.
+- Requires the use of `safeCastTo<T>(value)` from `immutable` for type-safe assertions instead of direct `as` casts.
   
 - Implements checks to ensure type safety and reports violations.
   
@@ -1365,7 +1365,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2cb3
 
 - 🧪 [test] Add tests for new rules
   
-- Comprehensive test cases for both `prefer-ts-extras-as-writable` and `prefer-ts-extras-safe-cast-to` rules.
+- Comprehensive test cases for both `prefer-immutable-as-writable` and `prefer-immutable-safe-cast-to` rules.
   
 - Includes valid and invalid scenarios to ensure robust rule enforcement.
 
@@ -1374,7 +1374,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2cb3
   
 - Adjustments to the rule tester to accommodate new rules and ensure compatibility with existing tests.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7702d74)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7702d7457c6a6f278e1a3ed786e9c46fa04dc6d0)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7702d74)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7702d7457c6a6f278e1a3ed786e9c46fa04dc6d0)
 
 
 - ✨ [feat] Add .madgerc and .npmpackagejsonlintrc.json configuration files
@@ -1391,7 +1391,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7702
 
 - Included validation for author names and license types to ensure compliance
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(52dea7a)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/52dea7a2b170f4a07f7975d2c12f26773aa6fd5c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(52dea7a)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/52dea7a2b170f4a07f7975d2c12f26773aa6fd5c)
 
 
 - ✨ [feat] Enhance ESLint configuration and testing setup
@@ -1410,10 +1410,10 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(52de
 
 - 🔧 [build] Adjust Vite configuration for parallel test execution
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(570a740)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/570a7402f6ea936368bf1dd9364c107327357582)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(570a740)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/570a7402f6ea936368bf1dd9364c107327357582)
 
 
-- ✨ [feat] Adds canonical TypeFest alias lint rules
+- ✨ [feat] Adds canonical Immutable alias lint rules
 
 ✨ [feat] Adds new typed lint coverage that prefers canonical utility-type naming for index-signature omission and key-level non-nullable, readonly, and required transformations.
 
@@ -1437,16 +1437,16 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(570a
 
 - Strengthens plugin export assertions so newly added rules stay registered in exposed presets.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fdaf37b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/fdaf37b4f0b1e9185e9d6b82c8cc11befb8f32d8)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fdaf37b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/fdaf37b4f0b1e9185e9d6b82c8cc11befb8f32d8)
 
 
-- ✨ [feat] Adds canonical TypeFest alias rules
+- ✨ [feat] Adds canonical Immutable alias rules
 
-✨ [feat] Adds typed lint coverage that flags imported legacy aliases for all-or-none and at-least-one key groups, and steers usage toward canonical TypeFest utilities to reduce semantic drift.
+✨ [feat] Adds typed lint coverage that flags imported legacy aliases for all-or-none and at-least-one key groups, and steers usage toward canonical Immutable utilities to reduce semantic drift.
 
 - ✨ [feat] Registers the new checks in exported rules and the minimal preset so enforcement is available by default.
 
-- ✨ [feat] Aligns plugin rule availability by including a previously missing TypeFest preference rule in registration and presets.
+- ✨ [feat] Aligns plugin rule availability by including a previously missing Immutable preference rule in registration and presets.
 
 📝 [docs] Adds focused rule guides that explain detection scope and why canonical naming improves consistency and migration clarity.
 
@@ -1454,10 +1454,10 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fdaf
 
 - 🧪 [test] Improves existing typed fixtures with additional non-trigger patterns to better guard against false positives.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f3d1dfc)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/f3d1dfcb50479d3e1319af1e2f213eb5bb1692d1)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f3d1dfc)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/f3d1dfcb50479d3e1319af1e2f213eb5bb1692d1)
 
 
-- ✨ [feat] Enforces canonical TypeFest aliases
+- ✨ [feat] Enforces canonical Immutable aliases
 
 ✨ [feat] Adds broad lint coverage to prefer canonical utility names over legacy or deprecated imported aliases.
 
@@ -1483,20 +1483,20 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f3d1
 
 🧪 [test] Adds comprehensive typed fixtures and rule coverage, including namespace-import pass cases, test-file skip scenarios, and helper property tests.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(38e7310)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/38e73102067f20b68f8508b95171511b178e3705)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(38e7310)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/38e73102067f20b68f8508b95171511b178e3705)
 
 
-- ✨ [feat] Implement prefer-type-fest-non-empty-tuple rule
+- ✨ [feat] Implement prefer-immutable-non-empty-tuple rule
 
-- 📝 Add documentation for the prefer-type-fest-non-empty-tuple rule
+- 📝 Add documentation for the prefer-immutable-non-empty-tuple rule
 
-- 🛠️ Create the prefer-type-fest-non-empty-tuple rule logic
+- 🛠️ Create the prefer-immutable-non-empty-tuple rule logic
 
 - 🔧 Integrate the rule into the ESLint plugin
 
 - 🧪 Add test cases for valid and invalid usages of NonEmptyTuple
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4715139)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4715139acd6f3d0f1d0e4a506eee30c84f5fea23)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4715139)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4715139acd6f3d0f1d0e4a506eee30c84f5fea23)
 
 
 - ✨ [feat] Enhance TypeScript Extras with New Array and Assertion Utilities
@@ -1509,13 +1509,13 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4715
 
 - 🆕 [feat] Create `objectHasIn` utility for object property checks with tests
 
-- 🆕 [feat] Expand TypeFest integration with `Arrayable`, `JsonArray`, `JsonObject`, and `JsonPrimitive` types
+- 🆕 [feat] Expand Immutable integration with `Arrayable`, `JsonArray`, `JsonObject`, and `JsonPrimitive` types
 
-- 🆕 [feat] Add tests for TypeFest utilities to ensure correct usage and validation
+- 🆕 [feat] Add tests for Immutable utilities to ensure correct usage and validation
 
 - 🧪 [test] Add comprehensive tests for all new features to ensure expected behavior and error handling
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e2d0ec0)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e2d0ec00a7925321774f10dcbf9c8237464584b3)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e2d0ec0)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e2d0ec00a7925321774f10dcbf9c8237464584b3)
 
 
 - ✨ [feat] Update package.json and package-lock.json with new remark packages
@@ -1524,7 +1524,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e2d0
 
 - Include "remark-lint" for linting markdown files
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a324362)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a3243623759d4219255e750c02b216e6bb5f224d)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a324362)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a3243623759d4219255e750c02b216e6bb5f224d)
 
 
 - ✨ [feat] Update package.json and package-lock.json with new remark-lint rules
@@ -1557,7 +1557,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a324
 
 - 🆕 Add "remark-lint-table-cell-padding" version 5.1.1 for table cell padding checks
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(55a2687)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/55a26876bf6c5a78873fe449590b9fde596ec41d)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(55a2687)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/55a26876bf6c5a78873fe449590b9fde596ec41d)
 
 
 - ✨ [feat] Enhance TypeScript rule testing and add new type utilities
@@ -1578,27 +1578,27 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(55a2
   
 - Refactor `typed-rule-tester.ts` to enhance project service options and allow default projects
   
-- Create new test fixtures for `prefer-type-fest-*` rules to ensure proper type handling
+- Create new test fixtures for `prefer-immutable-*` rules to ensure proper type handling
   
-- Update existing tests for `prefer-ts-extras-*` rules to use the new testing structure
+- Update existing tests for `prefer-immutable-*` rules to use the new testing structure
 
 
-- ✨ [feat] Introduce new type utilities using `type-fest`
+- ✨ [feat] Introduce new type utilities using `immutable`
   
-- Add `prefer-type-fest-async-return-type` rule to enforce the use of `AsyncReturnType`
+- Add `prefer-immutable-async-return-type` rule to enforce the use of `AsyncReturnType`
   
-- Implement `prefer-type-fest-except` rule to promote the use of `Except` for type manipulation
+- Implement `prefer-immutable-except` rule to promote the use of `Except` for type manipulation
   
 - Create tests for `UnknownArray`, `UnknownMap`, and `UnknownSet` to validate type safety
 
 
 - 🧪 [test] Add comprehensive tests for new and existing rules
   
-- Implement tests for `prefer-type-fest-*` rules to ensure they function as expected
+- Implement tests for `prefer-immutable-*` rules to ensure they function as expected
   
-- Update test cases for `prefer-ts-extras-*` rules to align with new testing methodology
+- Update test cases for `prefer-immutable-*` rules to align with new testing methodology
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c7085da)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/c7085daeaa35a5fc9a980e327d28113b35a8dcee)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c7085da)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/c7085daeaa35a5fc9a980e327d28113b35a8dcee)
 
 
 - ✨ [feat] Update dependencies and add Vite configuration for linting
@@ -1623,7 +1623,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c708
   
 - Implemented caching and optimization settings for improved performance during test runs
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bd59068)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/bd5906889751671df9f18db89fa218f2cbcd763c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bd59068)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/bd5906889751671df9f18db89fa218f2cbcd763c)
 
 
 - ✨ [feat] Update package.json with new dependencies for enhanced linting and markdown processing
@@ -1644,14 +1644,14 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bd59
 
 - 🆕 Added "remark-preset-lint-recommended" and other presets for consistent linting rules
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a7c1162)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a7c1162a1e8a86c7543310ef491fc7a4cbcaf1a9)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a7c1162)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a7c1162a1e8a86c7543310ef491fc7a4cbcaf1a9)
 
 
 - ✨ [feat] Enhance ESLint Plugin with New Rules and TypeScript Configurations
 
-- 🆕 [feat] Introduce `prefer-ts-extras-array-concat` rule to enforce usage of `arrayConcat` from `ts-extras` for better typing.
+- 🆕 [feat] Introduce `prefer-immutable-array-concat` rule to enforce usage of `arrayConcat` from `immutable` for better typing.
 
-- 🆕 [feat] Add `prefer-ts-extras-is-finite`, `prefer-ts-extras-is-integer`, and `prefer-ts-extras-is-safe-integer` rules to promote consistent predicate helper usage over native `Number` methods.
+- 🆕 [feat] Add `prefer-immutable-is-finite`, `prefer-immutable-is-integer`, and `prefer-immutable-is-safe-integer` rules to promote consistent predicate helper usage over native `Number` methods.
 
 - 🔧 [build] Update `package.json` to include new linting scripts for actions and prettier, and adjust TypeScript configurations for better build management.
 
@@ -1663,13 +1663,13 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a7c1
 
 - 🧪 [test] Create valid and invalid fixture files for each new rule to facilitate thorough testing.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4c55f69)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4c55f695e4a6214348d084e0756ea4af6fac83f1)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4c55f69)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4c55f695e4a6214348d084e0756ea4af6fac83f1)
 
 
-- Add prefer-ts-extras rules for array and object utilities [`(e7bdca6)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e7bdca6ae1d25f5fcd0ada0b2234d1cf86f5cf03)
+- Add prefer-immutable rules for array and object utilities [`(e7bdca6)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e7bdca6ae1d25f5fcd0ada0b2234d1cf86f5cf03)
 
 
-- Add prefer-type-fest-value-of rule to enforce ValueOf<T> usage [`(6aa5b95)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/6aa5b955e06d923a1e6754e3edb7fa378d095f0c)
+- Add prefer-immutable-value-of rule to enforce ValueOf<T> usage [`(6aa5b95)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/6aa5b955e06d923a1e6754e3edb7fa378d095f0c)
 
 
 
@@ -1684,53 +1684,53 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4c55
 
 - The following files were updated:
   
-- `prefer-ts-extras-set-has.test.ts`
+- `prefer-immutable-set-has.test.ts`
   
-- `prefer-ts-extras-string-split.test.ts`
+- `prefer-immutable-string-split.test.ts`
   
-- `prefer-type-fest-abstract-constructor.test.ts`
+- `prefer-immutable-abstract-constructor.test.ts`
   
-- `prefer-type-fest-arrayable.test.ts`
+- `prefer-immutable-arrayable.test.ts`
   
-- `prefer-type-fest-async-return-type.test.ts`
+- `prefer-immutable-async-return-type.test.ts`
   
-- `prefer-type-fest-constructor.test.ts`
+- `prefer-immutable-constructor.test.ts`
   
-- `prefer-type-fest-except.test.ts`
+- `prefer-immutable-except.test.ts`
   
-- `prefer-type-fest-if.test.ts`
+- `prefer-immutable-if.test.ts`
   
-- `prefer-type-fest-iterable-element.test.ts`
+- `prefer-immutable-iterable-element.test.ts`
   
-- `prefer-type-fest-json-array.test.ts`
+- `prefer-immutable-json-array.test.ts`
   
-- `prefer-type-fest-json-object.test.ts`
+- `prefer-immutable-json-object.test.ts`
   
-- `prefer-type-fest-json-primitive.test.ts`
+- `prefer-immutable-json-primitive.test.ts`
   
-- `prefer-type-fest-json-value.test.ts`
+- `prefer-immutable-json-value.test.ts`
   
-- `prefer-type-fest-literal-union.test.ts`
+- `prefer-immutable-literal-union.test.ts`
   
-- `prefer-type-fest-non-empty-tuple.test.ts`
+- `prefer-immutable-non-empty-tuple.test.ts`
   
-- `prefer-type-fest-promisable.test.ts`
+- `prefer-immutable-promisable.test.ts`
   
-- `prefer-type-fest-simplify.test.ts`
+- `prefer-immutable-simplify.test.ts`
   
-- `prefer-type-fest-tuple-of.test.ts`
+- `prefer-immutable-tuple-of.test.ts`
   
-- `prefer-type-fest-unknown-array.test.ts`
+- `prefer-immutable-unknown-array.test.ts`
   
-- `prefer-type-fest-unknown-map.test.ts`
+- `prefer-immutable-unknown-map.test.ts`
   
-- `prefer-type-fest-unknown-set.test.ts`
+- `prefer-immutable-unknown-set.test.ts`
   
-- `prefer-type-fest-value-of.test.ts`
+- `prefer-immutable-value-of.test.ts`
   
-- `prefer-type-fest-writable-deep.test.ts`
+- `prefer-immutable-writable-deep.test.ts`
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3786790)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3786790627efa5dda227e8ae1d4b23d4efed40b3)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3786790)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3786790627efa5dda227e8ae1d4b23d4efed40b3)
 
 
 - 🛠️ [fix] Replace appendPendingValues function with inline logic for better clarity
@@ -1738,11 +1738,11 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3786
 - 🔄 Updated multiple instances in typescript-eslint-node-autofix.ts to directly push values into arrays
 
 - 🧹 Removed the unused appendPendingValues function to streamline the code
-🛠️ [fix] Enhance type safety in prefer-ts-extras-safe-cast-to rule
+🛠️ [fix] Enhance type safety in prefer-immutable-safe-cast-to rule
 
-- 🔄 Utilized isDefined from ts-extras for improved null checks on expressionTsNode
+- 🔄 Utilized isDefined from immutable for improved null checks on expressionTsNode
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a1e119d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a1e119de70162a3600b02853761cd8a30df50fea)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a1e119d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a1e119de70162a3600b02853761cd8a30df50fea)
 
 
 - 🛠️ [fix] Improve import-aware fixes and type handling
@@ -1766,18 +1766,18 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a1e1
 
 - 🧪 Refactor existing tests to accommodate multiple output scenarios for various rules, ensuring robust validation of fixture outputs.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(be7cea7)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/be7cea7dfc090bfcd00cbedbd70ac16aad978948)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(be7cea7)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/be7cea7dfc090bfcd00cbedbd70ac16aad978948)
 
 
-- 🛠️ [fix] Update prefer-type-fest-json-value rule documentation and implementation
+- 🛠️ [fix] Update prefer-immutable-json-value rule documentation and implementation
 
-- Clarify the requirement for TypeFest `JsonObject` in serialization-bound string-keyed record contracts.
+- Clarify the requirement for Immutable `JsonObject` in serialization-bound string-keyed record contracts.
 
 - Adjust reporting to use `JsonObject` instead of `JsonValue` for boundary payload aliases.
 
 - Enhance message clarity for suggested replacements in the rule's documentation.
 
-🧪 [test] Improve tests for prefer-type-fest-json-value rule
+🧪 [test] Improve tests for prefer-immutable-json-value rule
 
 - Update test descriptions to reflect changes in the rule's requirements.
 
@@ -1803,11 +1803,11 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(be7c
 
 - Introduce tests for handling empty-string side-effect module specifiers.
 
-🧪 [test] Update prefer-type-fest-json-value tests for new messaging
+🧪 [test] Update prefer-immutable-json-value tests for new messaging
 
 - Ensure test messages reflect the updated rule documentation.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(17b8f52)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/17b8f5264091ca2d6089637834b7fa04e007acb8)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(17b8f52)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/17b8f5264091ca2d6089637834b7fa04e007acb8)
 
 
 - 🛠️ [fix] Update ESLint rule configurations and improve import handling
@@ -1820,72 +1820,72 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(17b8
 
 - 🧪 Enhance tests for import insertion to validate new behavior with named imports
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(892f32c)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/892f32c53b0175d189eded52181d4fef5c806920)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(892f32c)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/892f32c53b0175d189eded52181d4fef5c806920)
 
 
 - 🛠️ [fix] Refactor ESLint rule implementations for improved reporting and fixes
 
-- 🔧 Update `prefer-type-fest-value-of.ts` to use `reportWithOptionalFix` for cleaner reporting
+- 🔧 Update `prefer-immutable-value-of.ts` to use `reportWithOptionalFix` for cleaner reporting
 
-- 🔧 Update `prefer-type-fest-writable.ts` to utilize `reportWithOptionalFix` for consistent reporting
+- 🔧 Update `prefer-immutable-writable.ts` to utilize `reportWithOptionalFix` for consistent reporting
 
 - 📝 Modify documentation tests in `docs-integrity.test.ts` to use async file reading for better performance
 
 - 🛠️ Refactor file reading in `fixer-parse-safety-coverage.test.ts` to use async methods
 
-- 🧹 Clean up unnecessary file reading in multiple tests, including `prefer-ts-extras-as-writable.test.ts`, `prefer-ts-extras-assert-defined.test.ts`, and others
+- 🧹 Clean up unnecessary file reading in multiple tests, including `prefer-immutable-as-writable.test.ts`, `prefer-immutable-assert-defined.test.ts`, and others
 
-- 🧪 Update tests to focus on runtime safety assertions instead of source assertions for various `prefer-ts-extras` rules
+- 🧪 Update tests to focus on runtime safety assertions instead of source assertions for various `prefer-immutable` rules
 
-- 🧪 Remove redundant source assertions from tests for `prefer-ts-extras-*` rules to streamline test coverage
+- 🧪 Remove redundant source assertions from tests for `prefer-immutable-*` rules to streamline test coverage
 
 - 🧪 Ensure all tests maintain focus on runtime behavior and safety checks
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9375d77)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/9375d778d50fb7feb5362597759820de5e1b40a3)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9375d77)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/9375d778d50fb7feb5362597759820de5e1b40a3)
 
 
 - 🛠️ [fix] Update source assertions for TypeScript extras rules
 
 
-- 🔧 Refactor `prefer-ts-extras-as-writable` test to check for new structure and metadata.
+- 🔧 Refactor `prefer-immutable-as-writable` test to check for new structure and metadata.
 
-- 🔧 Refactor `prefer-ts-extras-assert-defined` test to ensure stability in matcher and report/fix wiring.
+- 🔧 Refactor `prefer-immutable-assert-defined` test to ensure stability in matcher and report/fix wiring.
 
-- 🔧 Refactor `prefer-ts-extras-assert-present` test to maintain consistency in matcher and report/fix wiring.
+- 🔧 Refactor `prefer-immutable-assert-present` test to maintain consistency in matcher and report/fix wiring.
 
-- 🔧 Refactor `prefer-ts-extras-is-defined-filter` test to include optional-chain filter calls.
+- 🔧 Refactor `prefer-immutable-is-defined-filter` test to include optional-chain filter calls.
 
-- 🔧 Refactor `prefer-ts-extras-is-empty` test to ensure stable matcher and fix wiring.
+- 🔧 Refactor `prefer-immutable-is-empty` test to ensure stable matcher and fix wiring.
 
-- 🔧 Refactor `prefer-ts-extras-is-equal-type` test to check for new matcher and suggestion wiring.
+- 🔧 Refactor `prefer-immutable-is-equal-type` test to check for new matcher and suggestion wiring.
 
-- 🔧 Refactor `prefer-ts-extras-is-finite` test to update identifier checks.
+- 🔧 Refactor `prefer-immutable-is-finite` test to update identifier checks.
 
-- 🔧 Refactor `prefer-ts-extras-is-infinite` test to ensure stable matcher and fix wiring.
+- 🔧 Refactor `prefer-immutable-is-infinite` test to ensure stable matcher and fix wiring.
 
-- 🔧 Refactor `prefer-ts-extras-is-integer` test to update identifier checks.
+- 🔧 Refactor `prefer-immutable-is-integer` test to update identifier checks.
 
-- 🔧 Refactor `prefer-ts-extras-is-present-filter` test to include optional-chain filter calls.
+- 🔧 Refactor `prefer-immutable-is-present-filter` test to include optional-chain filter calls.
 
-- 🔧 Refactor `prefer-ts-extras-is-safe-integer` test to update identifier checks.
+- 🔧 Refactor `prefer-immutable-is-safe-integer` test to update identifier checks.
 
-- 🔧 Refactor `prefer-ts-extras-not` test to ensure stable matcher and fix wiring.
+- 🔧 Refactor `prefer-immutable-not` test to ensure stable matcher and fix wiring.
 
-- 🔧 Refactor `prefer-ts-extras-object-has-in` test to update identifier checks.
+- 🔧 Refactor `prefer-immutable-object-has-in` test to update identifier checks.
 
-- 🔧 Refactor `prefer-ts-extras-object-has-own` test to update identifier checks.
+- 🔧 Refactor `prefer-immutable-object-has-own` test to update identifier checks.
 
-- 🔧 Refactor `prefer-ts-extras-string-split` test to ensure stable analysis and fix wiring.
+- 🔧 Refactor `prefer-immutable-string-split` test to ensure stable analysis and fix wiring.
 
-- 🔧 Refactor `prefer-type-fest-async-return-type` test to ensure stability in source assertions.
+- 🔧 Refactor `prefer-immutable-async-return-type` test to ensure stability in source assertions.
 
-- 🔧 Refactor `prefer-type-fest-json-primitive` test to ensure stable matcher and fixer wiring.
+- 🔧 Refactor `prefer-immutable-json-primitive` test to ensure stable matcher and fixer wiring.
 
-- 🔧 Refactor `prefer-type-fest-literal-union` test to ensure stable matcher and fixer wiring.
+- 🔧 Refactor `prefer-immutable-literal-union` test to ensure stable matcher and fixer wiring.
 
-- 🔧 Refactor `prefer-type-fest-promisable` test to ensure stability in source assertions.
+- 🔧 Refactor `prefer-immutable-promisable` test to ensure stability in source assertions.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(415b2fe)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/415b2fe2a972bdff91f115d610ee5c9b9761115a)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(415b2fe)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/415b2fe2a972bdff91f115d610ee5c9b9761115a)
 
 
 - 🛠️ [fix] Remove unnecessary isTestFilePath mocks from test files
@@ -1894,135 +1894,135 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(415b
 
 - 📂 Affected files include:
   
-- prefer-ts-extras-array-find-last.test.ts
+- prefer-immutable-array-find-last.test.ts
   
-- prefer-ts-extras-array-find.test.ts
+- prefer-immutable-array-find.test.ts
   
-- prefer-ts-extras-array-first.test.ts
+- prefer-immutable-array-first.test.ts
   
-- prefer-ts-extras-array-includes.test.ts
+- prefer-immutable-array-includes.test.ts
   
-- prefer-ts-extras-array-join.test.ts
+- prefer-immutable-array-join.test.ts
   
-- prefer-ts-extras-array-last.test.ts
+- prefer-immutable-array-last.test.ts
   
-- prefer-ts-extras-as-writable.test.ts
+- prefer-immutable-as-writable.test.ts
   
-- prefer-ts-extras-assert-defined.test.ts
+- prefer-immutable-assert-defined.test.ts
   
-- prefer-ts-extras-assert-error.test.ts
+- prefer-immutable-assert-error.test.ts
   
-- prefer-ts-extras-assert-present.test.ts
+- prefer-immutable-assert-present.test.ts
   
-- prefer-ts-extras-is-defined-filter.test.ts
+- prefer-immutable-is-defined-filter.test.ts
   
-- prefer-ts-extras-is-defined.test.ts
+- prefer-immutable-is-defined.test.ts
   
-- prefer-ts-extras-is-empty.test.ts
+- prefer-immutable-is-empty.test.ts
   
-- prefer-ts-extras-is-infinite.test.ts
+- prefer-immutable-is-infinite.test.ts
   
-- prefer-ts-extras-is-present-filter.test.ts
+- prefer-immutable-is-present-filter.test.ts
   
-- prefer-ts-extras-is-present.test.ts
+- prefer-immutable-is-present.test.ts
   
-- prefer-ts-extras-key-in.test.ts
+- prefer-immutable-key-in.test.ts
   
-- prefer-ts-extras-object-entries.test.ts
+- prefer-immutable-object-entries.test.ts
   
-- prefer-ts-extras-object-from-entries.test.ts
+- prefer-immutable-object-from-entries.test.ts
   
-- prefer-ts-extras-object-has-own.test.ts
+- prefer-immutable-object-has-own.test.ts
   
-- prefer-ts-extras-object-keys.test.ts
+- prefer-immutable-object-keys.test.ts
   
-- prefer-ts-extras-object-values.test.ts
+- prefer-immutable-object-values.test.ts
   
-- prefer-ts-extras-safe-cast-to.test.ts
+- prefer-immutable-safe-cast-to.test.ts
   
-- prefer-ts-extras-set-has.test.ts
+- prefer-immutable-set-has.test.ts
   
-- prefer-ts-extras-string-split.test.ts
+- prefer-immutable-string-split.test.ts
   
-- prefer-type-fest-abstract-constructor.test.ts
+- prefer-immutable-abstract-constructor.test.ts
   
-- prefer-type-fest-arrayable.test.ts
+- prefer-immutable-arrayable.test.ts
   
-- prefer-type-fest-async-return-type.test.ts
+- prefer-immutable-async-return-type.test.ts
   
-- prefer-type-fest-conditional-pick.test.ts
+- prefer-immutable-conditional-pick.test.ts
   
-- prefer-type-fest-constructor.test.ts
+- prefer-immutable-constructor.test.ts
   
-- prefer-type-fest-except.test.ts
+- prefer-immutable-except.test.ts
   
-- prefer-type-fest-if.test.ts
+- prefer-immutable-if.test.ts
   
-- prefer-type-fest-iterable-element.test.ts
+- prefer-immutable-iterable-element.test.ts
   
-- prefer-type-fest-json-array.test.ts
+- prefer-immutable-json-array.test.ts
   
-- prefer-type-fest-json-object.test.ts
+- prefer-immutable-json-object.test.ts
   
-- prefer-type-fest-json-primitive.test.ts
+- prefer-immutable-json-primitive.test.ts
   
-- prefer-type-fest-json-value.test.ts
+- prefer-immutable-json-value.test.ts
   
-- prefer-type-fest-literal-union.test.ts
+- prefer-immutable-literal-union.test.ts
   
-- prefer-type-fest-non-empty-tuple.test.ts
+- prefer-immutable-non-empty-tuple.test.ts
   
-- prefer-type-fest-promisable.test.ts
+- prefer-immutable-promisable.test.ts
   
-- prefer-type-fest-simplify.test.ts
+- prefer-immutable-simplify.test.ts
   
-- prefer-type-fest-tuple-of.test.ts
+- prefer-immutable-tuple-of.test.ts
   
-- prefer-type-fest-unknown-array.test.ts
+- prefer-immutable-unknown-array.test.ts
   
-- prefer-type-fest-unknown-map.test.ts
+- prefer-immutable-unknown-map.test.ts
   
-- prefer-type-fest-unknown-set.test.ts
+- prefer-immutable-unknown-set.test.ts
   
-- prefer-type-fest-value-of.test.ts
+- prefer-immutable-value-of.test.ts
   
-- prefer-type-fest-writable-deep.test.ts
+- prefer-immutable-writable-deep.test.ts
   
-- prefer-type-fest-writable.test.ts
+- prefer-immutable-writable.test.ts
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(42e9cfd)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/42e9cfdda964ac07b32d4f31a313d7e6b3e5b65e)
-
-
-- 🛠️ [fix] Refactor and optimize test cases for prefer-ts-extras and prefer-type-fest rules
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(42e9cfd)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/42e9cfdda964ac07b32d4f31a313d7e6b3e5b65e)
 
 
-- 🔧 Update `prefer-ts-extras-set-has.test.ts` to import runtime harness utilities and remove redundant code.
-
-- 🧹 Clean up `prefer-ts-extras-string-split.test.ts` by consolidating fixture definitions and removing unused variables.
-
-- 🚜 Refactor `prefer-type-fest-arrayable.test.ts` to streamline test cases and remove unnecessary inline definitions.
-
-- 🎨 Enhance `prefer-type-fest-literal-union.test.ts` by organizing and optimizing test case definitions, removing redundant code.
-
-- 🧪 Improve `prefer-type-fest-promisable.test.ts` by consolidating valid test cases and removing commented-out code for clarity.
-
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(78c8608)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/78c86080b31c14fffe92eb341db9d32286566361)
+- 🛠️ [fix] Refactor and optimize test cases for prefer-immutable and prefer-immutable rules
 
 
-- 🛠️ [fix] Refactor prefer-ts-extras-set-has and prefer-type-fest-promisable tests
+- 🔧 Update `prefer-immutable-set-has.test.ts` to import runtime harness utilities and remove redundant code.
+
+- 🧹 Clean up `prefer-immutable-string-split.test.ts` by consolidating fixture definitions and removing unused variables.
+
+- 🚜 Refactor `prefer-immutable-arrayable.test.ts` to streamline test cases and remove unnecessary inline definitions.
+
+- 🎨 Enhance `prefer-immutable-literal-union.test.ts` by organizing and optimizing test case definitions, removing redundant code.
+
+- 🧪 Improve `prefer-immutable-promisable.test.ts` by consolidating valid test cases and removing commented-out code for clarity.
+
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(78c8608)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/78c86080b31c14fffe92eb341db9d32286566361)
 
 
-- 🔧 [test] Import test cases from prefer-ts-extras-set-has-cases for better organization
+- 🛠️ [fix] Refactor prefer-immutable-set-has and prefer-immutable-promisable tests
 
-- 🧹 [chore] Remove redundant inline code definitions in prefer-ts-extras-set-has.test.ts
 
-- 🔧 [test] Import test cases from prefer-type-fest-promisable-cases to streamline test setup
+- 🔧 [test] Import test cases from prefer-immutable-set-has-cases for better organization
 
-- 🧹 [chore] Clean up inline code definitions in prefer-type-fest-promisable.test.ts
+- 🧹 [chore] Remove redundant inline code definitions in prefer-immutable-set-has.test.ts
+
+- 🔧 [test] Import test cases from prefer-immutable-promisable-cases to streamline test setup
+
+- 🧹 [chore] Clean up inline code definitions in prefer-immutable-promisable.test.ts
 
 - ⚡ [refactor] Enhance readability and maintainability by consolidating test case definitions
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ad971e5)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ad971e53cdc971a24de6338a3384389187ba37ea)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ad971e5)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ad971e53cdc971a24de6338a3384389187ba37ea)
 
 
 - 🛠️ [fix] Enhance type handling and error reporting in ESLint synchronization script
@@ -2037,7 +2037,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ad97
 
 - 📝 Update synchronization process to log errors and exit with a non-zero code on failure
 
-🧪 [test] Improve test coverage for `prefer-type-fest-if` and `prefer-type-fest-json-array`
+🧪 [test] Improve test coverage for `prefer-immutable-if` and `prefer-immutable-json-array`
 
 - 🔍 Add fast-check properties to validate replacement logic for type aliases
 
@@ -2045,33 +2045,33 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ad97
 
 - 🧪 Introduce assertions to verify that replacements are correctly applied in tests
 
-🧪 [test] Expand tests for `prefer-type-fest-simplify` to ensure type alias replacements
+🧪 [test] Expand tests for `prefer-immutable-simplify` to ensure type alias replacements
 
 - 🔄 Implement fast-check tests to validate simplification logic
 
 - 📜 Ensure that all type references are correctly parsed and replaced in test cases
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(72e9b70)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/72e9b70f084fd2f63509b01eb0e596d2844bc338)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(72e9b70)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/72e9b70f084fd2f63509b01eb0e596d2844bc338)
 
 
-- 🛠️ [fix] Refactor type-fest rule tests for improved fixture handling and parsing
+- 🛠️ [fix] Refactor immutable rule tests for improved fixture handling and parsing
 
 
-- 🔧 Update `prefer-type-fest-abstract-constructor.test.ts` to use a dynamic fixture creation function for generating fixable output code, enhancing maintainability and readability.
+- 🔧 Update `prefer-immutable-abstract-constructor.test.ts` to use a dynamic fixture creation function for generating fixable output code, enhancing maintainability and readability.
 
-- 🔧 Introduce `createFixtureFixableOutputCode` function to replace constructor signatures in `prefer-type-fest-constructor.test.ts`, ensuring consistent fixture generation.
+- 🔧 Introduce `createFixtureFixableOutputCode` function to replace constructor signatures in `prefer-immutable-constructor.test.ts`, ensuring consistent fixture generation.
 
-- 🔧 Implement `replaceOrThrow` utility function in `prefer-type-fest-async-return-type.test.ts` and other tests to streamline the replacement process and improve error handling.
+- 🔧 Implement `replaceOrThrow` utility function in `prefer-immutable-async-return-type.test.ts` and other tests to streamline the replacement process and improve error handling.
 
-- 🔧 Enhance test coverage for `prefer-type-fest-literal-union.test.ts` by applying the new replacement strategy for fixture outputs.
+- 🔧 Enhance test coverage for `prefer-immutable-literal-union.test.ts` by applying the new replacement strategy for fixture outputs.
 
-- 🔧 Refactor `prefer-type-fest-tuple-of.test.ts` to include a more robust fixture generation method, ensuring that the tests remain valid and easy to update.
+- 🔧 Refactor `prefer-immutable-tuple-of.test.ts` to include a more robust fixture generation method, ensuring that the tests remain valid and easy to update.
 
-- 🔧 Update `prefer-type-fest-value-of.test.ts` to include comprehensive parsing and validation for indexed access types, improving the accuracy of the tests.
+- 🔧 Update `prefer-immutable-value-of.test.ts` to include comprehensive parsing and validation for indexed access types, improving the accuracy of the tests.
 
 - 🧪 Add fast-check properties to various tests to ensure that generated code remains parseable and adheres to expected structures, enhancing test reliability.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(24f4d30)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/24f4d30b7003eda3f09e41895c3ee54cf34afaae)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(24f4d30)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/24f4d30b7003eda3f09e41895c3ee54cf34afaae)
 
 
 - 🛠️ [fix] Update dependencies in package.json and package-lock.json
@@ -2092,36 +2092,36 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(24f4
 
 - 🔧 Upgrade @easyops-cn/docusaurus-search-local to version 0.55.1
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(99f276b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/99f276bf7e98e8077b80cd77c51cc5b122eec66d)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(99f276b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/99f276bf7e98e8077b80cd77c51cc5b122eec66d)
 
 
-- 🛠️ [fix] Update TypeFest rules and documentation for improved clarity and accuracy
+- 🛠️ [fix] Update Immutable rules and documentation for improved clarity and accuracy
 
-- 📝 [docs] Refine descriptions in `prefer-type-fest-json-primitive.md` to clarify targeted patterns and reporting criteria
+- 📝 [docs] Refine descriptions in `prefer-immutable-json-primitive.md` to clarify targeted patterns and reporting criteria
 
-- 📝 [docs] Enhance `prefer-type-fest-json-value.md` documentation for better understanding of JSON-compatible value representation
+- 📝 [docs] Enhance `prefer-immutable-json-value.md` documentation for better understanding of JSON-compatible value representation
 
-- 📝 [docs] Adjust `prefer-type-fest-promisable.md` to specify strict matching criteria for Promise/base unions
+- 📝 [docs] Adjust `prefer-immutable-promisable.md` to specify strict matching criteria for Promise/base unions
 
-- 📝 [docs] Clarify `prefer-type-fest-set-non-nullable.md` to focus on imported legacy aliases for non-nullable types
+- 📝 [docs] Clarify `prefer-immutable-set-non-nullable.md` to focus on imported legacy aliases for non-nullable types
 
-- 📝 [docs] Update `prefer-type-fest-set-optional.md` to emphasize imported legacy aliases for optional types
+- 📝 [docs] Update `prefer-immutable-set-optional.md` to emphasize imported legacy aliases for optional types
 
-- 📝 [docs] Modify `prefer-type-fest-set-readonly.md` to specify imported legacy aliases for readonly types
+- 📝 [docs] Modify `prefer-immutable-set-readonly.md` to specify imported legacy aliases for readonly types
 
-- 📝 [docs] Revise `prefer-type-fest-set-required.md` to clarify the focus on imported legacy aliases for required types
+- 📝 [docs] Revise `prefer-immutable-set-required.md` to clarify the focus on imported legacy aliases for required types
 
-- 📝 [docs] Improve `prefer-type-fest-simplify.md` to specify matching for imported `Prettify` and `Expand` aliases
+- 📝 [docs] Improve `prefer-immutable-simplify.md` to specify matching for imported `Prettify` and `Expand` aliases
 
-- 📝 [docs] Update `prefer-type-fest-unknown-array.md` to clarify targeting of unknown-array spellings
+- 📝 [docs] Update `prefer-immutable-unknown-array.md` to clarify targeting of unknown-array spellings
 
-- 📝 [docs] Refine `prefer-type-fest-unknown-map.md` to specify targeting of unknown-map spellings
+- 📝 [docs] Refine `prefer-immutable-unknown-map.md` to specify targeting of unknown-map spellings
 
-- 📝 [docs] Enhance `prefer-type-fest-unknown-record.md` to clarify targeting of unknown-record spellings
+- 📝 [docs] Enhance `prefer-immutable-unknown-record.md` to clarify targeting of unknown-record spellings
 
-- 📝 [docs] Update `prefer-type-fest-unknown-set.md` to specify targeting of unknown-set spellings
+- 📝 [docs] Update `prefer-immutable-unknown-set.md` to specify targeting of unknown-set spellings
 
-- 📝 [docs] Revise `prefer-type-fest-value-of.md` to clarify matching for indexed-access type shapes
+- 📝 [docs] Revise `prefer-immutable-value-of.md` to clarify matching for indexed-access type shapes
 
 - 🔧 [build] Adjust peer dependencies in `package.json` and `package-lock.json` to support ESLint versions 9.0.0 and 10.0.2
 
@@ -2129,7 +2129,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(99f2
 
 - 🧪 [test] Update multiple test files to replace specific run counts with the new default configuration
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4894a46)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4894a469b4d5d1f1305737470312152b63a27cab)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4894a46)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4894a469b4d5d1f1305737470312152b63a27cab)
 
 
 - 🛠️ [fix] Improve type handling and testing for TypeScript rules
@@ -2137,52 +2137,52 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4894
 
 - 🔧 [build] Update test files to include necessary imports for TypeScript parsing
 
-- 🧪 [test] Enhance tests for prefer-type-fest-arrayable with fast-check integration
+- 🧪 [test] Enhance tests for prefer-immutable-arrayable with fast-check integration
   
 - Introduce new utilities for generating arrayable types and unions
   
 - Implement comprehensive tests to ensure correct reporting and fixing of arrayable types
 
-- 🧪 [test] Refactor prefer-type-fest-async-return-type tests for clarity and consistency
+- 🧪 [test] Refactor prefer-immutable-async-return-type tests for clarity and consistency
 
-- 🧪 [test] Adjust prefer-type-fest-json-primitive tests to correct type declaration handling
+- 🧪 [test] Adjust prefer-immutable-json-primitive tests to correct type declaration handling
 
-- 🧪 [test] Expand prefer-type-fest-literal-union tests with fast-check for better coverage
+- 🧪 [test] Expand prefer-immutable-literal-union tests with fast-check for better coverage
   
 - Add generators for various literal union cases and cross-family unions
   
 - Ensure that generated unions are correctly reported and parsed
 
-- 🧪 [test] Update prefer-type-fest-promisable tests to validate autofix behavior
+- 🧪 [test] Update prefer-immutable-promisable tests to validate autofix behavior
   
 - Ensure that the autofix preserves parseability and correctly inserts necessary imports
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(48155f0)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/48155f0b4a6693d72f38a2aa6016621b07a99900)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(48155f0)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/48155f0b4a6693d72f38a2aa6016621b07a99900)
 
 
 - 🛠️ [fix] Improve type normalization and documentation across rules
 
-- 🔧 Update `prefer-type-fest-promisable.ts` to enhance type extraction and add documentation for `getPromiseInnerType`.
+- 🔧 Update `prefer-immutable-promisable.ts` to enhance type extraction and add documentation for `getPromiseInnerType`.
 
-- 🔧 Refactor `prefer-type-fest-tagged-brands.ts` to improve brand detection logic and document the purpose of helper functions.
+- 🔧 Refactor `prefer-immutable-tagged-brands.ts` to improve brand detection logic and document the purpose of helper functions.
 
-- 🔧 Enhance `prefer-type-fest-tuple-of.ts` with better alias normalization and detailed comments for tuple replacement logic.
+- 🔧 Enhance `prefer-immutable-tuple-of.ts` with better alias normalization and detailed comments for tuple replacement logic.
 
-- 🔧 Improve `prefer-type-fest-unknown-array.ts` to clarify checks for `ReadonlyArray` and document type reference candidates.
+- 🔧 Improve `prefer-immutable-unknown-array.ts` to clarify checks for `ReadonlyArray` and document type reference candidates.
 
-- 🔧 Update `prefer-type-fest-unknown-map.ts` to refine checks for `ReadonlyMap` and document type argument validation.
+- 🔧 Update `prefer-immutable-unknown-map.ts` to refine checks for `ReadonlyMap` and document type argument validation.
 
-- 🔧 Enhance `prefer-type-fest-unknown-record.ts` to clarify detection of `Record<string, unknown>` references.
+- 🔧 Enhance `prefer-immutable-unknown-record.ts` to clarify detection of `Record<string, unknown>` references.
 
-- 🔧 Improve `prefer-type-fest-unknown-set.ts` to clarify checks for `ReadonlySet` and document type reference candidates.
+- 🔧 Improve `prefer-immutable-unknown-set.ts` to clarify checks for `ReadonlySet` and document type reference candidates.
 
-- 🔧 Update `prefer-type-fest-writable.ts` to enhance checks for writable mapped types and document the logic.
+- 🔧 Update `prefer-immutable-writable.ts` to enhance checks for writable mapped types and document the logic.
 
 - 📝 Add detailed comments and documentation across various test files to improve clarity and maintainability.
 
 - 📝 Update test files to include more descriptive comments for test setup and assertions.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(95fdc29)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/95fdc29c3b3754079161967f6f28f630e8cb6fcf)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(95fdc29)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/95fdc29c3b3754079161967f6f28f630e8cb6fcf)
 
 
 - 🛠️ [fix] Improve import insertion and type handling
@@ -2208,47 +2208,47 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(95fd
 
 - 🧪 Implement tests for settings caching to ensure that different program contexts do not share settings, maintaining isolation.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(338f913)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/338f9131139d00ce9c875eed219d2ce38e98be42)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(338f913)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/338f9131139d00ce9c875eed219d2ce38e98be42)
 
 
 - 🛠️ [fix] Remove unused prettier-plugin-jsdoc-type from configuration
 
 - Eliminated "prettier-plugin-jsdoc-type" from the plugins list in multiple sections of the .prettierrc file
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3d31bbc)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3d31bbc7a6e3e09429df3cc42c134218158c9ee2)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3d31bbc)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3d31bbc7a6e3e09429df3cc42c134218158c9ee2)
 
 
-- 🛠️ [fix] Update messages for TypeFest rule tests to improve clarity
+- 🛠️ [fix] Update messages for Immutable rule tests to improve clarity
 
-- 📝 Refactor error messages in `prefer-type-fest-set-non-nullable.test.ts` to specify making selected keys non-nullable instead of using legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-set-non-nullable.test.ts` to specify making selected keys non-nullable instead of using legacy aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-set-optional.test.ts` to clarify making selected keys optional instead of using legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-set-optional.test.ts` to clarify making selected keys optional instead of using legacy aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-set-readonly.test.ts` to indicate marking selected keys as readonly instead of using legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-set-readonly.test.ts` to indicate marking selected keys as readonly instead of using legacy aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-set-required.test.ts` to specify making selected keys required instead of using legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-set-required.test.ts` to specify making selected keys required instead of using legacy aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-simplify.test.ts` to clarify flattening resolved object and intersection types instead of using legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-simplify.test.ts` to clarify flattening resolved object and intersection types instead of using legacy aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-tagged-brands.test.ts` to indicate using canonical tagged-brand aliases instead of legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-tagged-brands.test.ts` to indicate using canonical tagged-brand aliases instead of legacy aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-tuple-of.test.ts` to clarify modeling fixed-length homogeneous tuples instead of using legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-tuple-of.test.ts` to clarify modeling fixed-length homogeneous tuples instead of using legacy aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-unknown-array.test.ts` to specify using `Readonly<UnknownArray>` instead of legacy types.
+- 📝 Refactor error messages in `prefer-immutable-unknown-array.test.ts` to specify using `Readonly<UnknownArray>` instead of legacy types.
 
-- 📝 Refactor error messages in `prefer-type-fest-unknown-map.test.ts` to clarify using `Readonly<UnknownMap>` instead of legacy types.
+- 📝 Refactor error messages in `prefer-immutable-unknown-map.test.ts` to clarify using `Readonly<UnknownMap>` instead of legacy types.
 
-- 📝 Refactor error messages in `prefer-type-fest-unknown-record.test.ts` to improve clarity on reporting unknown record aliases.
+- 📝 Refactor error messages in `prefer-immutable-unknown-record.test.ts` to improve clarity on reporting unknown record aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-unknown-set.test.ts` to specify using `Readonly<UnknownSet>` instead of legacy types.
+- 📝 Refactor error messages in `prefer-immutable-unknown-set.test.ts` to specify using `Readonly<UnknownSet>` instead of legacy types.
 
-- 📝 Refactor error messages in `prefer-type-fest-unwrap-tagged.test.ts` to clarify unwrapping Tagged/Opaque values instead of using legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-unwrap-tagged.test.ts` to clarify unwrapping Tagged/Opaque values instead of using legacy aliases.
 
-- 📝 Refactor error messages in `prefer-type-fest-value-of.test.ts` to improve clarity on indexed-access value unions.
+- 📝 Refactor error messages in `prefer-immutable-value-of.test.ts` to improve clarity on indexed-access value unions.
 
-- 📝 Refactor error messages in `prefer-type-fest-writable.test.ts` to specify removing readonly modifiers from selected keys instead of using legacy aliases.
+- 📝 Refactor error messages in `prefer-immutable-writable.test.ts` to specify removing readonly modifiers from selected keys instead of using legacy aliases.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c606fd2)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/c606fd2b73ca23cfb48854fc0170aae43635d1c6)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c606fd2)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/c606fd2b73ca23cfb48854fc0170aae43635d1c6)
 
 
 - 🛠️ [fix] Adds missing-import insertion to autofixes
@@ -2277,7 +2277,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c606
 
 🎨 [style] Applies minor formatting and comment cleanup in auxiliary scripts and config text for readability without changing runtime behavior.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7639e4d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7639e4d3d04fd40ec505141ee4c9d5a6fce34388)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7639e4d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7639e4d3d04fd40ec505141ee4c9d5a6fce34388)
 
 
 - 🛠️ [fix] Improve documentation link checker functionality
@@ -2294,7 +2294,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7639
 
 - Refactor link validation logic to reduce redundancy
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(721700d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/721700d4f551e3b9b70675dc68c11b9ccd4f0c72)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(721700d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/721700d4f551e3b9b70675dc68c11b9ccd4f0c72)
 
 
 - 🛠️ [fix] Guard missing filenames in lint rules
@@ -2315,7 +2315,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7217
 
 - Introduces shared metadata smoke checks and extends many rule suites with no-fix, suggestion, whitespace-normalization, shadowing, and qualified-type scenarios to reduce survivor regressions.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c7c99db)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/c7c99dba2a2b84979ad8462087f8c60348cbda73)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c7c99db)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/c7c99dba2a2b84979ad8462087f8c60348cbda73)
 
 
 - 🛠️ [fix] Improves rule matching and early exits
@@ -2340,7 +2340,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c7c9
 
 - Keeps package configuration ordering consistent while retaining the parser version override.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3ede063)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3ede06303b78cea7525adb221778dea080e352a9)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3ede063)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3ede06303b78cea7525adb221778dea080e352a9)
 
 
 - 🛠️ [fix] Stabilizes plugin export defaults
@@ -2365,45 +2365,45 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3ede
 
 - Reinforces correctness and maintainability over shortcuts, including iterative follow-up when needed.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8f4b499)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/8f4b499a6c0285c3cc0b92c4ba08b78af04e8a08)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8f4b499)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/8f4b499a6c0285c3cc0b92c4ba08b78af04e8a08)
 
 
-- 🛠️ [fix] Update type aliases to use TypeScript's type-fest library
+- 🛠️ [fix] Update type aliases to use TypeScript's immutable library
 
 
-- 🔧 [fix] Replace `MaybePromise` with `Promisable` in `prefer-type-fest-promisable.test.ts`
+- 🔧 [fix] Replace `MaybePromise` with `Promisable` in `prefer-immutable-promisable.test.ts`
 
-- 🔧 [fix] Replace `DeepReadonly` with `ReadonlyDeep` in `prefer-type-fest-readonly-deep.test.ts`
+- 🔧 [fix] Replace `DeepReadonly` with `ReadonlyDeep` in `prefer-immutable-readonly-deep.test.ts`
 
-- 🔧 [fix] Replace `DeepRequired` with `RequiredDeep` in `prefer-type-fest-required-deep.test.ts`
+- 🔧 [fix] Replace `DeepRequired` with `RequiredDeep` in `prefer-immutable-required-deep.test.ts`
 
-- 🔧 [fix] Replace `RecordDeep` with `Schema` in `prefer-type-fest-schema.test.ts`
+- 🔧 [fix] Replace `RecordDeep` with `Schema` in `prefer-immutable-schema.test.ts`
 
-- 🔧 [fix] Replace `NonNullableBy` with `SetNonNullable` in `prefer-type-fest-set-non-nullable.test.ts`
+- 🔧 [fix] Replace `NonNullableBy` with `SetNonNullable` in `prefer-immutable-set-non-nullable.test.ts`
 
-- 🔧 [fix] Replace `PartialBy` with `SetOptional` in `prefer-type-fest-set-optional.test.ts`
+- 🔧 [fix] Replace `PartialBy` with `SetOptional` in `prefer-immutable-set-optional.test.ts`
 
-- 🔧 [fix] Replace `ReadonlyBy` with `SetReadonly` in `prefer-type-fest-set-readonly.test.ts`
+- 🔧 [fix] Replace `ReadonlyBy` with `SetReadonly` in `prefer-immutable-set-readonly.test.ts`
 
-- 🔧 [fix] Replace `RequiredBy` with `SetRequired` in `prefer-type-fest-set-required.test.ts`
+- 🔧 [fix] Replace `RequiredBy` with `SetRequired` in `prefer-immutable-set-required.test.ts`
 
-- 🔧 [fix] Replace `Expand` with `Simplify` in `prefer-type-fest-simplify.test.ts`
+- 🔧 [fix] Replace `Expand` with `Simplify` in `prefer-immutable-simplify.test.ts`
 
-- 🔧 [fix] Replace `Opaque` with `Tagged` in `prefer-type-fest-tagged-brands.test.ts`
+- 🔧 [fix] Replace `Opaque` with `Tagged` in `prefer-immutable-tagged-brands.test.ts`
 
-- 🔧 [fix] Replace `ReadonlyTuple` with `Readonly<TupleOf<Length, Element>>` in `prefer-type-fest-tuple-of.test.ts`
+- 🔧 [fix] Replace `ReadonlyTuple` with `Readonly<TupleOf<Length, Element>>` in `prefer-immutable-tuple-of.test.ts`
 
-- 🔧 [fix] Replace `readonly unknown[]` with `unknown[]` in `prefer-type-fest-unknown-array.test.ts`
+- 🔧 [fix] Replace `readonly unknown[]` with `unknown[]` in `prefer-immutable-unknown-array.test.ts`
 
-- 🔧 [fix] Replace `ReadonlyMap<unknown, unknown>` with `Map<unknown, unknown>` in `prefer-type-fest-unknown-map.test.ts`
+- 🔧 [fix] Replace `ReadonlyMap<unknown, unknown>` with `Map<unknown, unknown>` in `prefer-immutable-unknown-map.test.ts`
 
-- 🔧 [fix] Replace `ReadonlySet<unknown>` with `Set<unknown>` in `prefer-type-fest-unknown-set.test.ts`
+- 🔧 [fix] Replace `ReadonlySet<unknown>` with `Set<unknown>` in `prefer-immutable-unknown-set.test.ts`
 
-- 🔧 [fix] Replace `UnwrapOpaque` with `UnwrapTagged` in `prefer-type-fest-unwrap-tagged.test.ts`
+- 🔧 [fix] Replace `UnwrapOpaque` with `UnwrapTagged` in `prefer-immutable-unwrap-tagged.test.ts`
 
-- 🔧 [fix] Replace `Mutable` with `Writable` in `prefer-type-fest-writable.test.ts`
+- 🔧 [fix] Replace `Mutable` with `Writable` in `prefer-immutable-writable.test.ts`
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(895cb41)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/895cb413648d9421fcfd6c557cb66025ebc1cb8d)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(895cb41)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/895cb413648d9421fcfd6c557cb66025ebc1cb8d)
 
 
 
@@ -2418,18 +2418,18 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(895c
 
 - 📦 Upgrade "eslint-plugin-no-secrets" from "^2.2.2" to "^2.3.3" to incorporate the latest security checks and improvements.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b76ce59)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/b76ce59b0a7317ddb8d5cac096f30d2859963dfe)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b76ce59)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b76ce59b0a7317ddb8d5cac096f30d2859963dfe)
 
 
-- *(deps)* [dependency] Update the github-actions group across 1 directory with 7 updates [`(7b08932)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7b089328816b87606e9b80a03a22495aecfd7de0)
+- *(deps)* [dependency] Update the github-actions group across 1 directory with 7 updates [`(7b08932)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7b089328816b87606e9b80a03a22495aecfd7de0)
 
 
-- *(deps)* [dependency] Update the github-actions group across 1 directory with 8 updates [`(acd2932)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/acd29320fdc5e4e99afe81e099e3f6beb622f455)
+- *(deps)* [dependency] Update the github-actions group across 1 directory with 8 updates [`(acd2932)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/acd29320fdc5e4e99afe81e099e3f6beb622f455)
 
 
 - [StepSecurity] Apply security best practices
 
-Signed-off-by: StepSecurity Bot <bot@stepsecurity.io> [`(de875de)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/de875ded17a8f5ee5851d27586215eeb2bf1d419)
+Signed-off-by: StepSecurity Bot <bot@stepsecurity.io> [`(de875de)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/de875ded17a8f5ee5851d27586215eeb2bf1d419)
 
 
 - 📝 [docs] Add comprehensive guidelines for various file types in the repository
@@ -2486,7 +2486,7 @@ Signed-off-by: StepSecurity Bot <bot@stepsecurity.io> [`(de875de)`](https://gith
 
 - 🧹 [chore] Remove instructions folder from .gitignore to allow tracking of new guidelines
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(976452b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/976452b5c39227330fa42d56f08eab88968d53a6)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(976452b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/976452b5c39227330fa42d56f08eab88968d53a6)
 
 
 - 📝 [docs] Add configuration files for various tools
@@ -2507,7 +2507,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9764
 
 - Introduced `markdownlint.json` for markdown linting rules, ensuring consistent formatting across markdown files.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(20a6723)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/20a672338e3a0d93f3a85dca1dd1df52e48b18eb)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(20a6723)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/20a672338e3a0d93f3a85dca1dd1df52e48b18eb)
 
 
 
@@ -2517,19 +2517,19 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(20a6
 
 - Implement tests for various rules in the uptime-watcher plugin, including:
  
-- prefer-ts-extras-is-present-filter
+- prefer-immutable-is-present-filter
  
-- prefer-ts-extras-object-has-own
+- prefer-immutable-object-has-own
  
-- prefer-type-fest-json-value
+- prefer-immutable-json-value
  
-- prefer-type-fest-promisable
+- prefer-immutable-promisable
  
-- prefer-type-fest-tagged-brands
+- prefer-immutable-tagged-brands
  
-- prefer-type-fest-unknown-record
+- prefer-immutable-unknown-record
  
-- prefer-type-fest-value-of
+- prefer-immutable-value-of
  
 - preload-no-local-is-plain-object
  
@@ -2573,7 +2573,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(20a6
 
 - Add TypeScript configuration files for linting and building the uptime-watcher plugin.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d233b9c)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/d233b9c2b49f5f87e10e2c2ee04deed9765f54a3)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d233b9c)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/d233b9c2b49f5f87e10e2c2ee04deed9765f54a3)
 
 
 
@@ -2623,7 +2623,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d233
 
 Overall this refactor makes metadata authoritative, automates documentation, and strengthens verification across the codebase.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(93ac9b2)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/93ac9b21c4af4817d278a6b28c0076d8f275b6f2)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(93ac9b2)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/93ac9b21c4af4817d278a6b28c0076d8f275b6f2)
 
 
 - 🚜 [refactor] Remove open-pull-requests-limit from Dependabot configuration
@@ -2633,14 +2633,14 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(93ac
 
 - Streamlined the Dependabot configuration for better flexibility in handling pull requests
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(043d8e0)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/043d8e0e4e13ce0b50b9962b8f62c838f6ac8647)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(043d8e0)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/043d8e0e4e13ce0b50b9962b8f62c838f6ac8647)
 
 
 - 🚜 [refactor] Remove versioning strategy from GitHub Actions updates
 
 - Eliminated the `versioning-strategy: increase` line for GitHub Actions updates in the Dependabot configuration
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bc34602)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/bc34602c5d2bfdb727f39932458712012a0b1f5a)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bc34602)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/bc34602c5d2bfdb727f39932458712012a0b1f5a)
 
 
 - 🚜 [refactor] Simplify Dependabot configuration in YAML file
@@ -2653,12 +2653,12 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bc34
 
 - Eliminate unused grouping configurations for better maintainability
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(cc09090)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/cc09090b487eac05c34f854a0e9aaabef9406d08)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(cc09090)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/cc09090b487eac05c34f854a0e9aaabef9406d08)
 
 
 - 🚜 [refactor] Remove unnecessary name from Docusaurus NPM dependencies in Dependabot configuration
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(625bf6c)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/625bf6c76b4fdd57ce7775faab33cb9f2fa30e30)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(625bf6c)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/625bf6c76b4fdd57ce7775faab33cb9f2fa30e30)
 
 
 - 🚜 [refactor] Remove unnecessary naming and versioning strategy for Dependabot updates
@@ -2667,7 +2667,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(625b
 
 - Streamlined configuration for better clarity and maintainability
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(50e9b6e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/50e9b6ecb39f81e9ffe2214166b5143302aff525)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(50e9b6e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/50e9b6ecb39f81e9ffe2214166b5143302aff525)
 
 
 - 🚜 [refactor] centralize documentation URL base for rules
@@ -2691,7 +2691,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(50e9
 
 The change is purely structural; rule behavior is unaffected.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(08e3bab)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/08e3babbd1e0599cb734c359a1a40f2c686256b0)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(08e3bab)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/08e3babbd1e0599cb734c359a1a40f2c686256b0)
 
 
 - 🚜 [refactor] Centralize member‑call and throw‑consequent logic and streamline rules
@@ -2738,19 +2738,19 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(08e3
 
 This consolidation reduces duplication, strengthens type safety, and simplifies future maintenance of rule logic.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3d21778)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3d21778f72cabd910c1d79136fc01fd0a7807a4b)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3d21778)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3d21778f72cabd910c1d79136fc01fd0a7807a4b)
 
 
 - 🚜 [refactor] Simplify array-like type checks and improve code reuse
 
 
-- 🔧 [build] Refactor `prefer-ts-extras-array-includes` and `prefer-ts-extras-array-join` rules to utilize a shared `createIsArrayLikeExpressionChecker` function for determining array-like expressions.
+- 🔧 [build] Refactor `prefer-immutable-array-includes` and `prefer-immutable-array-join` rules to utilize a shared `createIsArrayLikeExpressionChecker` function for determining array-like expressions.
 
-- 🔧 [build] Remove redundant `isArrayLikeType` functions from `prefer-ts-extras-array-last`, `prefer-ts-extras-assert-present`, `prefer-ts-extras-is-empty`, and `prefer-ts-extras-string-split` rules, replacing them with the new shared utility.
+- 🔧 [build] Remove redundant `isArrayLikeType` functions from `prefer-immutable-array-last`, `prefer-immutable-assert-present`, `prefer-immutable-is-empty`, and `prefer-immutable-string-split` rules, replacing them with the new shared utility.
 
-- 🔧 [build] Enhance `prefer-ts-extras-set-has` rule to improve set type detection using a more comprehensive approach that checks for union and intersection types.
+- 🔧 [build] Enhance `prefer-immutable-set-has` rule to improve set type detection using a more comprehensive approach that checks for union and intersection types.
 
-- 🔧 [build] Update `prefer-ts-extras-is-infinite` rule to utilize `areEquivalentExpressions` for comparing expressions, enhancing clarity and maintainability.
+- 🔧 [build] Update `prefer-immutable-is-infinite` rule to utilize `areEquivalentExpressions` for comparing expressions, enhancing clarity and maintainability.
 
 - 🔧 [build] Introduce `areEquivalentExpressions` utility to normalize expression comparisons, allowing for better handling of TypeScript assertion wrappers.
 
@@ -2760,7 +2760,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3d21
 
 - 📝 [docs] Improve documentation for rules to clarify the purpose of changes and the benefits of using the new utilities.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e3c8cda)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e3c8cda4cc05fec1a9b7f353473bb1e0ebf54e73)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e3c8cda)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e3c8cda4cc05fec1a9b7f353473bb1e0ebf54e73)
 
 
 - 🚜 [refactor] switch rule docs to Docusaurus routes & add footer links
@@ -2774,7 +2774,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e3c8
 
 Enhances user experience by pointing editors and links at rendered documentation, stabilizes the public docs surface independent of repo layout, and keeps shared guidance discoverable without duplicating boilerplate. Tests and sources no longer assume `.md` filenames; route stability is now a compatibility concern.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(91a136d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/91a136dbd7dd14660f9a4b9a6aeffc0e4a6b7657)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(91a136d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/91a136dbd7dd14660f9a4b9a6aeffc0e4a6b7657)
 
 
 - 🚜 [refactor] Improve code readability and formatting in inspect_pr_checks.py
@@ -2787,7 +2787,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(91a1
 
 - 🎨 Improve indentation and line breaks for better readability
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a62ba9e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a62ba9eb919101eabe2fde50818be1b64866cdd4)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a62ba9e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a62ba9eb919101eabe2fde50818be1b64866cdd4)
 
 
 - 🚜 [refactor] Treats tests like other files
@@ -2798,7 +2798,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a62b
 
 - ⚙️ Updates benchmark scripts/config to build before running stats/timing suites and adds explicit namespace metadata to the plugin entry for clearer identification.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(72c85a8)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/72c85a8e2335f64003b42f78dc8104a105169f03)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(72c85a8)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/72c85a8e2335f64003b42f78dc8104a105169f03)
 
 
 - 🚜 [refactor] Remove redundant defaultOptions stubs
@@ -2808,7 +2808,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(72c8
 🎨 [style]
 - Refreshes doc/test helpers with tighter formatting for import/type utilities and assertion checks to match the cleaned-up style.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(60e7e00)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/60e7e0073c1a54ac8b6611e269bc74a53537aa3c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(60e7e00)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/60e7e0073c1a54ac8b6611e269bc74a53537aa3c)
 
 
 - 🚜 [refactor] Enforce readonly parameter typing
@@ -2825,10 +2825,10 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(60e7
 
 - Applies safer optional access and targeted writable casts only where test scaffolding must mutate nodes.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0422fd8)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/0422fd8f088a1e8f6231815f795e57e4a01a916c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0422fd8)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/0422fd8f088a1e8f6231815f795e57e4a01a916c)
 
 
-- Migrate plugin to TypeScript and restructure codebase [`(2101a3e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/2101a3ec1f446f93c0351941344f34603bfb3f13)
+- Migrate plugin to TypeScript and restructure codebase [`(2101a3e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/2101a3ec1f446f93c0351941344f34603bfb3f13)
 
 
 
@@ -2836,37 +2836,37 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0422
 
 - 📝 [docs] Update documentation link check command to include API verification
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e095a9f)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e095a9f3bfee6d69d1e9091a10b3e31176c1d32f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e095a9f)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e095a9f3bfee6d69d1e9091a10b3e31176c1d32f)
 
 
 - 📝 [docs] Update Stylelint configuration with installation instructions
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(15d3bea)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/15d3beaba202108f75ac0ad87962bac935f63c2f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(15d3bea)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/15d3beaba202108f75ac0ad87962bac935f63c2f)
 
 
 - 📝 [docs] Update contributor badge formatting and documentation guidelines
 ✨ [feat] Enhance commit message guidelines with hybrid Gitmoji format
 🔧 [build] Add devEngines configuration for Node.js and npm version enforcement
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9339c8c)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/9339c8c73edde7b0d0577e3d92624ce000d0d06b)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9339c8c)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/9339c8c73edde7b0d0577e3d92624ce000d0d06b)
 
 
 - 📝 [docs] Update commit message guidelines to include Gitmoji format and examples
 🔧 [build] Add commitlint-config-gitmoji as a dependency for enforcing commit message format
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ee06635)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ee06635387e8a07fd4a5072ccebfdb37551e2ee1)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ee06635)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ee06635387e8a07fd4a5072ccebfdb37551e2ee1)
 
 
 - 📝 [docs] Add blank line before "Further reading" section in rule documentation
 
 
-- Added a blank line before the "## Further reading" section in multiple TypeScript extra and TypeFest rule documentation files to improve readability and adhere to documentation standards.
+- Added a blank line before the "## Further reading" section in multiple TypeScript extra and Immutable rule documentation files to improve readability and adhere to documentation standards.
 
 - Updated the regex pattern in the `remark-lint-rule-doc-headings` script to enforce this formatting rule.
 
 - Modified the test case in `docs-integrity.test.ts` to check for exactly one blank line between the rule catalog ID and the "Further reading" section.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8350423)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/835042393b7b31364243bfe9f851e12b1c07fcb9)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8350423)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/835042393b7b31364243bfe9f851e12b1c07fcb9)
 
 
 - 📝 [docs] Add comprehensive charts for developer documentation
@@ -2944,7 +2944,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8350
   
 - Ensures that rule IDs and numbers are correctly formatted and sequenced.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2f9b6d3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/2f9b6d386efd59b703aefa982a483257ec424500)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2f9b6d3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/2f9b6d386efd59b703aefa982a483257ec424500)
 
 
 - 📝 [docs] Update developer documentation and charts
@@ -2966,7 +2966,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2f9b
 
 - 🔧 [build] Update TypeDoc configuration to adjust private class field visibility and type conversion depth
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4817427)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/481742759795f51f0b053217f9a8dbbb41307b1c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4817427)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/481742759795f51f0b053217f9a8dbbb41307b1c)
 
 
 - 📝 [docs] Add snapshot tests for rule documentation headings
@@ -3005,135 +3005,135 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4817
 
 - Adjusted the reporters list based on the environment variable for better diagnostics.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(015b85e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/015b85e5ec5405a89807ba1767f361084f5df7d7)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(015b85e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/015b85e5ec5405a89807ba1767f361084f5df7d7)
 
 
-- 📝 [docs] Add documentation URLs for TypeFest ESLint rules
+- 📝 [docs] Add documentation URLs for Immutable ESLint rules
 
 
-- 📜 Updated the `prefer-ts-extras-is-empty` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-is-empty` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-is-equal-type` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-is-equal-type` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-is-finite` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-is-finite` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-is-infinite` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-is-infinite` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-is-integer` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-is-integer` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-is-present-filter` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-is-present-filter` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-is-present` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-is-present` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-is-safe-integer` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-is-safe-integer` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-key-in` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-key-in` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-not` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-not` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-object-entries` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-object-entries` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-object-from-entries` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-object-from-entries` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-object-has-in` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-object-has-in` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-object-has-own` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-object-has-own` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-object-keys` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-object-keys` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-object-values` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-object-values` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-safe-cast-to` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-safe-cast-to` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-set-has` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-set-has` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-ts-extras-string-split` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-string-split` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-abstract-constructor` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-abstract-constructor` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-arrayable` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-arrayable` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-async-return-type` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-async-return-type` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-conditional-pick` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-conditional-pick` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-constructor` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-constructor` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-except` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-except` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-if` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-if` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-iterable-element` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-iterable-element` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-json-array` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-json-array` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-json-object` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-json-object` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-json-primitive` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-json-primitive` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-json-value` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-json-value` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-keys-of-union` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-keys-of-union` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-literal-union` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-literal-union` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-merge-exclusive` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-merge-exclusive` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-non-empty-tuple` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-non-empty-tuple` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-omit-index-signature` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-omit-index-signature` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-partial-deep` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-partial-deep` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-primitive` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-primitive` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-promisable` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-promisable` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-readonly-deep` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-readonly-deep` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-require-all-or-none` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-require-all-or-none` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-require-at-least-one` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-require-at-least-one` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-require-exactly-one` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-require-exactly-one` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-require-one-or-none` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-require-one-or-none` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-required-deep` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-required-deep` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-schema` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-schema` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-set-non-nullable` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-set-non-nullable` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-set-optional` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-set-optional` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-set-readonly` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-set-readonly` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-set-required` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-set-required` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-simplify` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-simplify` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-tagged-brands` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-tagged-brands` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-tuple-of` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-tuple-of` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-unknown-array` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-unknown-array` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-unknown-map` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-unknown-map` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-unknown-record` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-unknown-record` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-unknown-set` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-unknown-set` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-unwrap-tagged` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-unwrap-tagged` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-value-of` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-value-of` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-writable-deep` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-writable-deep` rule to include a documentation URL.
 
-- 📜 Updated the `prefer-type-fest-writable` rule to include a documentation URL.
+- 📜 Updated the `prefer-immutable-writable` rule to include a documentation URL.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bef8875)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/bef8875701aae3580b2a1b137a3d0738267457b0)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bef8875)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/bef8875701aae3580b2a1b137a3d0738267457b0)
 
 
 - 📝 [docs] Update description for review-hacky-brittle-fixes prompt
@@ -3143,12 +3143,12 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bef8
 
 - Remove outdated agent reference for improved clarity.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(12454e9)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/12454e9f6e7e4499ac9082c122d0287455fe3bab)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(12454e9)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/12454e9f6e7e4499ac9082c122d0287455fe3bab)
 
 
-- 📝 [docs] Add blog and architecture decision records for eslint-plugin-typefest
+- 📝 [docs] Add blog and architecture decision records for eslint-plugin-immutable-2
 
-- ✨ [feat] Introduce blog for eslint-plugin-typefest with posts on design and governance
+- ✨ [feat] Introduce blog for eslint-plugin-immutable-2 with posts on design and governance
 
 - 📝 [docs] Create ADR 0008 for TypeDoc generation strategy in CI and local development
 
@@ -3166,35 +3166,35 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1245
 
 - 🧪 [test] Add tests for new features and ensure existing functionality remains intact
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6541e53)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/6541e53092db4bc31702088ad4a203a3262dfe0b)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6541e53)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/6541e53092db4bc31702088ad4a203a3262dfe0b)
 
 
-- 📝 [docs] Update TypeFest rule documentation for clarity and consistency
+- 📝 [docs] Update Immutable rule documentation for clarity and consistency
 
-- 📝 [docs] Revise `prefer-type-fest-tuple-of` to emphasize deprecated alias usage
+- 📝 [docs] Revise `prefer-immutable-tuple-of` to emphasize deprecated alias usage
 
-- 📝 [docs] Clarify behavior and migration notes in `prefer-type-fest-unknown-array`
+- 📝 [docs] Clarify behavior and migration notes in `prefer-immutable-unknown-array`
 
-- 📝 [docs] Enhance `prefer-type-fest-unknown-map` documentation with intent and usage
+- 📝 [docs] Enhance `prefer-immutable-unknown-map` documentation with intent and usage
 
-- 📝 [docs] Improve `prefer-type-fest-unknown-record` to focus on boundary contracts
+- 📝 [docs] Improve `prefer-immutable-unknown-record` to focus on boundary contracts
 
-- 📝 [docs] Refine `prefer-type-fest-unknown-set` to highlight shared alias benefits
+- 📝 [docs] Refine `prefer-immutable-unknown-set` to highlight shared alias benefits
 
-- 📝 [docs] Update `prefer-type-fest-unwrap-tagged` to target deprecated alias usage
+- 📝 [docs] Update `prefer-immutable-unwrap-tagged` to target deprecated alias usage
 
-- 📝 [docs] Clarify `prefer-type-fest-value-of` to emphasize clarity in value extraction
+- 📝 [docs] Clarify `prefer-immutable-value-of` to emphasize clarity in value extraction
 
-- 📝 [docs] Revise `prefer-type-fest-writable-deep` to standardize deep mutability usage
+- 📝 [docs] Revise `prefer-immutable-writable-deep` to standardize deep mutability usage
 
-- 📝 [docs] Update `prefer-type-fest-writable` to clarify targeted patterns and behavior
+- 📝 [docs] Update `prefer-immutable-writable` to clarify targeted patterns and behavior
 
 - 📝 [docs] Add alternative configuration example for applying recommended rules selectively
 🛠️ [fix] Normalize line endings in typed rule tester fixtures
 
 - 🛠️ [fix] Implement line ending normalization to ensure consistent fixture reading
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9acb9a8)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/9acb9a8bb27cf23d4503b52c095c48120bf5f568)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9acb9a8)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/9acb9a8bb27cf23d4503b52c095c48120bf5f568)
 
 
 - 📝 [docs] Adds ADR hub and updates docs build flow
@@ -3211,7 +3211,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9acb
 
 🧹 [chore] Refreshes selected lint and style tooling versions and expands script-level documentation comments to improve maintenance clarity.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(51d6a5d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/51d6a5d7ca6f3c5e14f32794f20f4c6ddb91f5cd)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(51d6a5d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/51d6a5d7ca6f3c5e14f32794f20f4c6ddb91f5cd)
 
 
 - 📝 [docs] Update Code of Conduct to reflect no formal guidelines
@@ -3220,7 +3220,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(51d6
 🔧 [build] Simplify project name label in vite.config.ts from "Frontend" to "Test"
 🔧 [build] Update vitest configuration in vitest.stryker.config.ts for improved test handling
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7d246f8)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7d246f84d4928bbae4ddfb3d51bb092a56864ef0)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7d246f8)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7d246f84d4928bbae4ddfb3d51bb092a56864ef0)
 
 
 - 📝 [docs] Update documentation scripts in package.json
@@ -3234,26 +3234,26 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7d24
 
 - 🧹 Removed unused `mdast` dependency to clean up package.json and reduce bloat.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f099e8d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/f099e8d191c3e432d3f50535834e08cef9ce09cb)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f099e8d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/f099e8d191c3e432d3f50535834e08cef9ce09cb)
 
 
-- 📝 [docs] Update strict and type-fest-types presets documentation
+- 📝 [docs] Update strict and immutable-types presets documentation
 
 
 - 📜 Refactor the rules table in `strict.md` for better readability
   
-- Added new rules: `prefer-type-fest-abstract-constructor`, `prefer-type-fest-constructor`, `prefer-type-fest-literal-union`, `prefer-type-fest-merge-exclusive`, `prefer-type-fest-required-deep`, `prefer-type-fest-readonly-deep`, and `prefer-type-fest-writable-deep`
+- Added new rules: `prefer-immutable-abstract-constructor`, `prefer-immutable-constructor`, `prefer-immutable-literal-union`, `prefer-immutable-merge-exclusive`, `prefer-immutable-required-deep`, `prefer-immutable-readonly-deep`, and `prefer-immutable-writable-deep`
   
-- Removed outdated rules: `prefer-type-fest-require-exactly-one`, `prefer-type-fest-require-one-or-none`, `prefer-type-fest-schema`, `prefer-type-fest-set-non-nullable`, `prefer-type-fest-set-optional`, `prefer-type-fest-set-readonly`, `prefer-type-fest-set-required`, `prefer-type-fest-simplify`, `prefer-type-fest-tagged-brands`, `prefer-type-fest-tuple-of`, `prefer-type-fest-unknown-array`, `prefer-type-fest-unknown-map`, `prefer-type-fest-unknown-record`, `prefer-type-fest-unknown-set`, `prefer-type-fest-unwrap-tagged`, `prefer-type-fest-value-of`, and `prefer-type-fest-writable`
+- Removed outdated rules: `prefer-immutable-require-exactly-one`, `prefer-immutable-require-one-or-none`, `prefer-immutable-schema`, `prefer-immutable-set-non-nullable`, `prefer-immutable-set-optional`, `prefer-immutable-set-readonly`, `prefer-immutable-set-required`, `prefer-immutable-simplify`, `prefer-immutable-tagged-brands`, `prefer-immutable-tuple-of`, `prefer-immutable-unknown-array`, `prefer-immutable-unknown-map`, `prefer-immutable-unknown-record`, `prefer-immutable-unknown-set`, `prefer-immutable-unwrap-tagged`, `prefer-immutable-value-of`, and `prefer-immutable-writable`
 
 
-- 📜 Refactor the rules table in `type-fest-types.md` for better readability
+- 📜 Refactor the rules table in `immutable-types.md` for better readability
   
-- Added new rules: `prefer-type-fest-abstract-constructor`, `prefer-type-fest-constructor`, `prefer-type-fest-literal-union`, `prefer-type-fest-merge-exclusive`, `prefer-type-fest-required-deep`, `prefer-type-fest-readonly-deep`, and `prefer-type-fest-writable-deep`
+- Added new rules: `prefer-immutable-abstract-constructor`, `prefer-immutable-constructor`, `prefer-immutable-literal-union`, `prefer-immutable-merge-exclusive`, `prefer-immutable-required-deep`, `prefer-immutable-readonly-deep`, and `prefer-immutable-writable-deep`
   
-- Removed outdated rules: `prefer-type-fest-require-exactly-one`, `prefer-type-fest-require-one-or-none`, `prefer-type-fest-schema`, `prefer-type-fest-set-non-nullable`, `prefer-type-fest-set-optional`, `prefer-type-fest-set-readonly`, `prefer-type-fest-set-required`, `prefer-type-fest-simplify`, `prefer-type-fest-tagged-brands`, `prefer-type-fest-tuple-of`, `prefer-type-fest-unknown-array`, `prefer-type-fest-unknown-map`, `prefer-type-fest-unknown-record`, `prefer-type-fest-unknown-set`, `prefer-type-fest-unwrap-tagged`, `prefer-type-fest-value-of`, and `prefer-type-fest-writable`
+- Removed outdated rules: `prefer-immutable-require-exactly-one`, `prefer-immutable-require-one-or-none`, `prefer-immutable-schema`, `prefer-immutable-set-non-nullable`, `prefer-immutable-set-optional`, `prefer-immutable-set-readonly`, `prefer-immutable-set-required`, `prefer-immutable-simplify`, `prefer-immutable-tagged-brands`, `prefer-immutable-tuple-of`, `prefer-immutable-unknown-array`, `prefer-immutable-unknown-map`, `prefer-immutable-unknown-record`, `prefer-immutable-unknown-set`, `prefer-immutable-unwrap-tagged`, `prefer-immutable-value-of`, and `prefer-immutable-writable`
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(92500d2)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/92500d25d901851046813ee34b0d0ba1bc29663f)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(92500d2)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/92500d25d901851046813ee34b0d0ba1bc29663f)
 
 
 - 📝 [docs] Update presets documentation with rule matrices and details
@@ -3267,63 +3267,63 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9250
 
 - 📜 Updated `strict.md` preset documentation with a detailed list of rules to inform users of strict configurations.
 
-- 📜 Enhanced `ts-extras-type-guards.md` with a complete list of rules to provide clarity on type guard functionalities.
+- 📜 Enhanced `immutable-type-guards.md` with a complete list of rules to provide clarity on type guard functionalities.
 
-- 📜 Updated `type-fest-types.md` to include a detailed list of rules, ensuring users understand the available type fest functionalities.
+- 📜 Updated `immutable-types.md` to include a detailed list of rules, ensuring users understand the available type fest functionalities.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b8b30d5)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/b8b30d533d1ccda5f5d9450da6013c9eb6997a57)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b8b30d5)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b8b30d533d1ccda5f5d9450da6013c9eb6997a57)
 
 
 - 📝 [docs] Enhance documentation across multiple rules and tests
 
 
-- 📝 [docs] Add JSDoc comments for utility functions in `prefer-ts-extras-is-empty.ts`
+- 📝 [docs] Add JSDoc comments for utility functions in `prefer-immutable-is-empty.ts`
 
-- 📝 [docs] Document utility functions in `prefer-ts-extras-is-infinite.ts`
+- 📝 [docs] Document utility functions in `prefer-immutable-is-infinite.ts`
 
-- 📝 [docs] Improve documentation for helper functions in `prefer-ts-extras-is-present-filter.ts`
+- 📝 [docs] Improve documentation for helper functions in `prefer-immutable-is-present-filter.ts`
 
-- 📝 [docs] Add JSDoc comments for utility functions in `prefer-ts-extras-is-present.ts`
+- 📝 [docs] Add JSDoc comments for utility functions in `prefer-immutable-is-present.ts`
 
-- 📝 [docs] Document utility functions in `prefer-ts-extras-not.ts`
+- 📝 [docs] Document utility functions in `prefer-immutable-not.ts`
 
-- 📝 [docs] Enhance documentation for helper functions in `prefer-ts-extras-object-has-in.ts`
+- 📝 [docs] Enhance documentation for helper functions in `prefer-immutable-object-has-in.ts`
 
-- 📝 [docs] Add JSDoc comments for utility functions in `prefer-ts-extras-safe-cast-to.ts`
+- 📝 [docs] Add JSDoc comments for utility functions in `prefer-immutable-safe-cast-to.ts`
 
-- 📝 [docs] Document utility functions in `prefer-type-fest-arrayable.ts`
+- 📝 [docs] Document utility functions in `prefer-immutable-arrayable.ts`
 
-- 📝 [docs] Enhance documentation for utility functions in `prefer-type-fest-async-return-type.ts`
+- 📝 [docs] Enhance documentation for utility functions in `prefer-immutable-async-return-type.ts`
 
-- 📝 [docs] Add JSDoc comments for utility functions in `prefer-type-fest-except.ts`
+- 📝 [docs] Add JSDoc comments for utility functions in `prefer-immutable-except.ts`
 
-- 📝 [docs] Document utility functions in `prefer-type-fest-json-array.ts`
+- 📝 [docs] Document utility functions in `prefer-immutable-json-array.ts`
 
-- 📝 [docs] Enhance documentation for utility functions in `prefer-type-fest-json-object.ts`
+- 📝 [docs] Enhance documentation for utility functions in `prefer-immutable-json-object.ts`
 
-- 📝 [docs] Add JSDoc comments for utility functions in `prefer-type-fest-json-primitive.ts`
+- 📝 [docs] Add JSDoc comments for utility functions in `prefer-immutable-json-primitive.ts`
 
-- 📝 [docs] Document utility functions in `prefer-type-fest-json-value.ts`
+- 📝 [docs] Document utility functions in `prefer-immutable-json-value.ts`
 
-- 📝 [docs] Enhance documentation for utility functions in `prefer-type-fest-non-empty-tuple.ts`
+- 📝 [docs] Enhance documentation for utility functions in `prefer-immutable-non-empty-tuple.ts`
 
-- 📝 [docs] Add JSDoc comments for utility functions in `prefer-type-fest-primitive.ts`
+- 📝 [docs] Add JSDoc comments for utility functions in `prefer-immutable-primitive.ts`
 
-- 📝 [docs] Document utility functions in `prefer-type-fest-promisable.ts`
+- 📝 [docs] Document utility functions in `prefer-immutable-promisable.ts`
 
-- 📝 [docs] Enhance documentation for utility functions in `prefer-type-fest-tagged-brands.ts`
+- 📝 [docs] Enhance documentation for utility functions in `prefer-immutable-tagged-brands.ts`
 
-- 📝 [docs] Add JSDoc comments for utility functions in `prefer-type-fest-unknown-array.ts`
+- 📝 [docs] Add JSDoc comments for utility functions in `prefer-immutable-unknown-array.ts`
 
-- 📝 [docs] Document utility functions in `prefer-type-fest-unknown-map.ts`
+- 📝 [docs] Document utility functions in `prefer-immutable-unknown-map.ts`
 
-- 📝 [docs] Enhance documentation for utility functions in `prefer-type-fest-unknown-record.ts`
+- 📝 [docs] Enhance documentation for utility functions in `prefer-immutable-unknown-record.ts`
 
-- 📝 [docs] Add JSDoc comments for utility functions in `prefer-type-fest-unknown-set.ts`
+- 📝 [docs] Add JSDoc comments for utility functions in `prefer-immutable-unknown-set.ts`
 
-- 📝 [docs] Document utility functions in `prefer-type-fest-value-of.ts`
+- 📝 [docs] Document utility functions in `prefer-immutable-value-of.ts`
 
-- 📝 [docs] Enhance documentation for utility functions in `prefer-type-fest-writable.ts`
+- 📝 [docs] Enhance documentation for utility functions in `prefer-immutable-writable.ts`
 
 - 📝 [docs] Add JSDoc comments for utility functions in `imported-type-aliases.test.ts`
 
@@ -3333,19 +3333,19 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b8b3
 
 - 📝 [docs] Add JSDoc comments for utility functions in `docs-integrity.test.ts`
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(562ff90)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/562ff901516df7171c834f22ed0b83b92cdcc693)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(562ff90)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/562ff901516df7171c834f22ed0b83b92cdcc693)
 
 
 - 📝 [docs] Enhance ESLint rule documentation across multiple files
 
 
-- ✨ [feat] Add detailed ESLint rule definitions and metadata for `prefer-ts-extras-object-keys`, `prefer-ts-extras-object-values`, `prefer-ts-extras-safe-cast-to`, `prefer-ts-extras-set-has`, `prefer-ts-extras-string-split`, `prefer-type-fest-arrayable`, `prefer-type-fest-async-return-type`, `prefer-type-fest-conditional-pick`, `prefer-type-fest-except`, `prefer-type-fest-if`, `prefer-type-fest-iterable-element`, `prefer-type-fest-json-array`, `prefer-type-fest-json-object`, `prefer-type-fest-json-primitive`, `prefer-type-fest-json-value`, `prefer-type-fest-keys-of-union`, `prefer-type-fest-non-empty-tuple`, `prefer-type-fest-omit-index-signature`, `prefer-type-fest-primitive`, `prefer-type-fest-promisable`, `prefer-type-fest-require-all-or-none`, `prefer-type-fest-require-at-least-one`, `prefer-type-fest-require-exactly-one`, `prefer-type-fest-require-one-or-none`, `prefer-type-fest-schema`, `prefer-type-fest-set-non-nullable`, `prefer-type-fest-set-optional`, `prefer-type-fest-set-readonly`, `prefer-type-fest-set-required`, `prefer-type-fest-simplify`, `prefer-type-fest-tagged-brands`, `prefer-type-fest-tuple-of`, `prefer-type-fest-unknown-array`, `prefer-type-fest-unknown-map`, `prefer-type-fest-unknown-record`, `prefer-type-fest-unknown-set`, `prefer-type-fest-unwrap-tagged`, and `prefer-type-fest-value-of`.
+- ✨ [feat] Add detailed ESLint rule definitions and metadata for `prefer-immutable-object-keys`, `prefer-immutable-object-values`, `prefer-immutable-safe-cast-to`, `prefer-immutable-set-has`, `prefer-immutable-string-split`, `prefer-immutable-arrayable`, `prefer-immutable-async-return-type`, `prefer-immutable-conditional-pick`, `prefer-immutable-except`, `prefer-immutable-if`, `prefer-immutable-iterable-element`, `prefer-immutable-json-array`, `prefer-immutable-json-object`, `prefer-immutable-json-primitive`, `prefer-immutable-json-value`, `prefer-immutable-keys-of-union`, `prefer-immutable-non-empty-tuple`, `prefer-immutable-omit-index-signature`, `prefer-immutable-primitive`, `prefer-immutable-promisable`, `prefer-immutable-require-all-or-none`, `prefer-immutable-require-at-least-one`, `prefer-immutable-require-exactly-one`, `prefer-immutable-require-one-or-none`, `prefer-immutable-schema`, `prefer-immutable-set-non-nullable`, `prefer-immutable-set-optional`, `prefer-immutable-set-readonly`, `prefer-immutable-set-required`, `prefer-immutable-simplify`, `prefer-immutable-tagged-brands`, `prefer-immutable-tuple-of`, `prefer-immutable-unknown-array`, `prefer-immutable-unknown-map`, `prefer-immutable-unknown-record`, `prefer-immutable-unknown-set`, `prefer-immutable-unwrap-tagged`, and `prefer-immutable-value-of`.
 
 - 📝 [docs] Add JSDoc comments to clarify the purpose and usage of each rule, enhancing maintainability and developer understanding.
 
 - 🧹 [chore] Update `ruleTester` utility functions with additional documentation to improve clarity on their usage and functionality.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ef195de)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ef195de3aaabb27a1e3542df4c1a025a2d28c701)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ef195de)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ef195de3aaabb27a1e3542df4c1a025a2d28c701)
 
 
 - 📝 [docs] Update CSS documentation and global styles for Docusaurus
@@ -3356,7 +3356,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ef19
 
 - Updated hover background color for sidebar menu links for better accessibility.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6863895)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/68638954b10b776b033cd5a207f83531347f28ab)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6863895)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/68638954b10b776b033cd5a207f83531347f28ab)
 
 
 - 📝 [docs] Adds package-level module docs
@@ -3371,29 +3371,29 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6863
 
 🧪 [test] Applies the same package-level documentation pattern to test utilities and suites for repository-wide consistency.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(84bc8a1)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/84bc8a1d500497e1ce3bd9302f1aefd69b698c79)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(84bc8a1)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/84bc8a1d500497e1ce3bd9302f1aefd69b698c79)
 
 
-- 📝 [docs] Update documentation for type-fest utility rules
+- 📝 [docs] Update documentation for immutable utility rules
 
 
 - 🔧 Refactor rule documentation to replace "Legacy" terminology with "Non-canonical" for clarity.
 
-- 📝 Enhance examples in `prefer-type-fest-require-one-or-none.md`, `prefer-type-fest-schema.md`, and other related files to reflect updated import aliases.
+- 📝 Enhance examples in `prefer-immutable-require-one-or-none.md`, `prefer-immutable-schema.md`, and other related files to reflect updated import aliases.
 
 - 📝 Modify adoption tips across multiple rule documents to emphasize direct canonical imports and discourage compatibility aliases.
 
 - 📚 Update rollout strategies in various rule documents to clarify migration processes and reduce review noise.
 
-- 🔍 Ensure consistency in references to `typefest.configs["type-fest/types"]` across all relevant documentation files.
+- 🔍 Ensure consistency in references to `immutable.configs["immutable/types"]` across all relevant documentation files.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(07214d3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/07214d3546cf52dafafc26936403cf090ddffb3c)
-
-
-- 📝 [docs] Update documentation for type-fest utility types
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(07214d3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/07214d3546cf52dafafc26936403cf090ddffb3c)
 
 
-- 📝 Improve clarity in examples for `prefer-type-fest-set-required`, `prefer-type-fest-simplify`, `prefer-type-fest-tagged-brands`, `prefer-type-fest-tuple-of`, `prefer-type-fest-unknown-array`, `prefer-type-fest-unknown-map`, `prefer-type-fest-unknown-record`, `prefer-type-fest-unknown-set`, `prefer-type-fest-unwrap-tagged`, and `prefer-type-fest-value-of` rules.
+- 📝 [docs] Update documentation for immutable utility types
+
+
+- 📝 Improve clarity in examples for `prefer-immutable-set-required`, `prefer-immutable-simplify`, `prefer-immutable-tagged-brands`, `prefer-immutable-tuple-of`, `prefer-immutable-unknown-array`, `prefer-immutable-unknown-map`, `prefer-immutable-unknown-record`, `prefer-immutable-unknown-set`, `prefer-immutable-unwrap-tagged`, and `prefer-immutable-value-of` rules.
 
 - 🔄 Replace non-canonical patterns with comments indicating legacy patterns repeated inline across modules.
 
@@ -3403,7 +3403,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0721
 
 - 🔄 Update `package-lock.json` and `package.json` to reflect version upgrades for various ESLint plugins, ensuring compatibility and access to new features.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9a45e98)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/9a45e98c3c63a49374ed2dbfe37e1a45b518a564)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9a45e98)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/9a45e98c3c63a49374ed2dbfe37e1a45b518a564)
 
 
 
@@ -3411,7 +3411,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9a45
 
 - ⚡️ [perf] Update import-x/no-unused-modules rule configuration
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(83baba7)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/83baba78bad3ad109c19e0aee332ffa54f5c0bac)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(83baba7)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/83baba78bad3ad109c19e0aee332ffa54f5c0bac)
 
 
 
@@ -3425,7 +3425,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(83ba
 
 - Adjusted import statements in `eslint9-compat-smoke.mjs` and test files to use double quotes
 
-- Reformatted code for better readability and consistency in `plugin-entry.test.ts`, `plugin-public-types.test-d.ts`, `plugin-runtime-entry-types.test-d.ts`, `prefer-type-fest-except.test.ts`, `prefer-type-fest-unknown-map.test.ts`, and `prefer-type-fest-unknown-set.test.ts`
+- Reformatted code for better readability and consistency in `plugin-entry.test.ts`, `plugin-public-types.test-d.ts`, `plugin-runtime-entry-types.test-d.ts`, `prefer-immutable-except.test.ts`, `prefer-immutable-unknown-map.test.ts`, and `prefer-immutable-unknown-set.test.ts`
 
 - Ensured consistent use of double quotes in mock imports
 ✨ [feat] Enhance ESLint compatibility and plugin versioning
@@ -3438,7 +3438,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(83ba
 
 - Enhanced type assertions in `plugin-runtime-entry-types.test-d.ts` to use the imported plugin directly
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4b8520f)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4b8520f0d1e192b2cd41dda6ea899bb5dbc6faa2)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4b8520f)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4b8520f0d1e192b2cd41dda6ea899bb5dbc6faa2)
 
 
 - 🎨 [style] Update Docusaurus config and documentation for improved UI
@@ -3452,9 +3452,9 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4b85
 
 - Introduce new Blog and Dev sections with structured items for user guidance
 
-- Add rule catalog ID to prefer-ts-extras-array-find-last documentation
+- Add rule catalog ID to prefer-immutable-array-find-last documentation
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2c033a5)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/2c033a5e68a590b8d3f08d105957dc468dd7b6b7)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2c033a5)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/2c033a5e68a590b8d3f08d105957dc468dd7b6b7)
 
 
 - 🎨 [style] Adjust doMock method signature formatting
@@ -3464,7 +3464,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2c03
 
 - Ensure method signature is clearly defined for better readability and maintainability.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f72a493)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/f72a49344875884878dd937a71ae7553da492276)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f72a493)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/f72a49344875884878dd937a71ae7553da492276)
 
 
 - 🎨 [style] Update icons and labels in Docusaurus configuration
@@ -3479,7 +3479,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(f72a
 
 - Update conditional checks to include null values for constrained type results
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5c9c3d3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/5c9c3d30b1892862be5cdd337cd45ee5034e4d92)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5c9c3d3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/5c9c3d30b1892862be5cdd337cd45ee5034e4d92)
 
 
 - 🎨 [style] Remove unnecessary whitespace in rule configuration files
@@ -3490,133 +3490,133 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5c9c
 
 - Affected files include:
   
-- `prefer-ts-extras-assert-present.ts`
+- `prefer-immutable-assert-present.ts`
   
-- `prefer-ts-extras-is-defined-filter.ts`
+- `prefer-immutable-is-defined-filter.ts`
   
-- `prefer-ts-extras-is-defined.ts`
+- `prefer-immutable-is-defined.ts`
   
-- `prefer-ts-extras-is-empty.ts`
+- `prefer-immutable-is-empty.ts`
   
-- `prefer-ts-extras-is-equal-type.ts`
+- `prefer-immutable-is-equal-type.ts`
   
-- `prefer-ts-extras-is-finite.ts`
+- `prefer-immutable-is-finite.ts`
   
-- `prefer-ts-extras-is-infinite.ts`
+- `prefer-immutable-is-infinite.ts`
   
-- `prefer-ts-extras-is-integer.ts`
+- `prefer-immutable-is-integer.ts`
   
-- `prefer-ts-extras-is-present-filter.ts`
+- `prefer-immutable-is-present-filter.ts`
   
-- `prefer-ts-extras-is-present.ts`
+- `prefer-immutable-is-present.ts`
   
-- `prefer-ts-extras-is-safe-integer.ts`
+- `prefer-immutable-is-safe-integer.ts`
   
-- `prefer-ts-extras-key-in.ts`
+- `prefer-immutable-key-in.ts`
   
-- `prefer-ts-extras-not.ts`
+- `prefer-immutable-not.ts`
   
-- `prefer-ts-extras-object-entries.ts`
+- `prefer-immutable-object-entries.ts`
   
-- `prefer-ts-extras-object-from-entries.ts`
+- `prefer-immutable-object-from-entries.ts`
   
-- `prefer-ts-extras-object-has-in.ts`
+- `prefer-immutable-object-has-in.ts`
   
-- `prefer-ts-extras-object-has-own.ts`
+- `prefer-immutable-object-has-own.ts`
   
-- `prefer-ts-extras-object-keys.ts`
+- `prefer-immutable-object-keys.ts`
   
-- `prefer-ts-extras-object-values.ts`
+- `prefer-immutable-object-values.ts`
   
-- `prefer-ts-extras-safe-cast-to.ts`
+- `prefer-immutable-safe-cast-to.ts`
   
-- `prefer-ts-extras-set-has.ts`
+- `prefer-immutable-set-has.ts`
   
-- `prefer-ts-extras-string-split.ts`
+- `prefer-immutable-string-split.ts`
   
-- `prefer-type-fest-arrayable.ts`
+- `prefer-immutable-arrayable.ts`
   
-- `prefer-type-fest-async-return-type.ts`
+- `prefer-immutable-async-return-type.ts`
   
-- `prefer-type-fest-conditional-pick.ts`
+- `prefer-immutable-conditional-pick.ts`
   
-- `prefer-type-fest-constructor.ts`
+- `prefer-immutable-constructor.ts`
   
-- `prefer-type-fest-except.ts`
+- `prefer-immutable-except.ts`
   
-- `prefer-type-fest-if.ts`
+- `prefer-immutable-if.ts`
   
-- `prefer-type-fest-iterable-element.ts`
+- `prefer-immutable-iterable-element.ts`
   
-- `prefer-type-fest-json-array.ts`
+- `prefer-immutable-json-array.ts`
   
-- `prefer-type-fest-json-object.ts`
+- `prefer-immutable-json-object.ts`
   
-- `prefer-type-fest-json-primitive.ts`
+- `prefer-immutable-json-primitive.ts`
   
-- `prefer-type-fest-json-value.ts`
+- `prefer-immutable-json-value.ts`
   
-- `prefer-type-fest-keys-of-union.ts`
+- `prefer-immutable-keys-of-union.ts`
   
-- `prefer-type-fest-literal-union.ts`
+- `prefer-immutable-literal-union.ts`
   
-- `prefer-type-fest-merge-exclusive.ts`
+- `prefer-immutable-merge-exclusive.ts`
   
-- `prefer-type-fest-non-empty-tuple.ts`
+- `prefer-immutable-non-empty-tuple.ts`
   
-- `prefer-type-fest-omit-index-signature.ts`
+- `prefer-immutable-omit-index-signature.ts`
   
-- `prefer-type-fest-partial-deep.ts`
+- `prefer-immutable-partial-deep.ts`
   
-- `prefer-type-fest-primitive.ts`
+- `prefer-immutable-primitive.ts`
   
-- `prefer-type-fest-promisable.ts`
+- `prefer-immutable-promisable.ts`
   
-- `prefer-type-fest-readonly-deep.ts`
+- `prefer-immutable-readonly-deep.ts`
   
-- `prefer-type-fest-require-all-or-none.ts`
+- `prefer-immutable-require-all-or-none.ts`
   
-- `prefer-type-fest-require-at-least-one.ts`
+- `prefer-immutable-require-at-least-one.ts`
   
-- `prefer-type-fest-require-exactly-one.ts`
+- `prefer-immutable-require-exactly-one.ts`
   
-- `prefer-type-fest-require-one-or-none.ts`
+- `prefer-immutable-require-one-or-none.ts`
   
-- `prefer-type-fest-required-deep.ts`
+- `prefer-immutable-required-deep.ts`
   
-- `prefer-type-fest-schema.ts`
+- `prefer-immutable-schema.ts`
   
-- `prefer-type-fest-set-non-nullable.ts`
+- `prefer-immutable-set-non-nullable.ts`
   
-- `prefer-type-fest-set-optional.ts`
+- `prefer-immutable-set-optional.ts`
   
-- `prefer-type-fest-set-readonly.ts`
+- `prefer-immutable-set-readonly.ts`
   
-- `prefer-type-fest-set-required.ts`
+- `prefer-immutable-set-required.ts`
   
-- `prefer-type-fest-simplify.ts`
+- `prefer-immutable-simplify.ts`
   
-- `prefer-type-fest-tagged-brands.ts`
+- `prefer-immutable-tagged-brands.ts`
   
-- `prefer-type-fest-tuple-of.ts`
+- `prefer-immutable-tuple-of.ts`
   
-- `prefer-type-fest-unknown-array.ts`
+- `prefer-immutable-unknown-array.ts`
   
-- `prefer-type-fest-unknown-map.ts`
+- `prefer-immutable-unknown-map.ts`
   
-- `prefer-type-fest-unknown-record.ts`
+- `prefer-immutable-unknown-record.ts`
   
-- `prefer-type-fest-unknown-set.ts`
+- `prefer-immutable-unknown-set.ts`
   
-- `prefer-type-fest-unwrap-tagged.ts`
+- `prefer-immutable-unwrap-tagged.ts`
   
-- `prefer-type-fest-value-of.ts`
+- `prefer-immutable-value-of.ts`
   
-- `prefer-type-fest-writable-deep.ts`
+- `prefer-immutable-writable-deep.ts`
   
-- `prefer-type-fest-writable.ts`
+- `prefer-immutable-writable.ts`
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c37f3cc)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/c37f3cca935850135cb83007efd1baf9c4550e2a)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c37f3cc)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/c37f3cca935850135cb83007efd1baf9c4550e2a)
 
 
 - 🎨 [style] Refactor code for consistency and readability
@@ -3627,7 +3627,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c37f
 
 🛠️ [fix] Update type handling in ESLint plugin
 
-- Replace `Omit` with `Except` from `type-fest` for better type safety in `TypefestPluginContract`
+- Replace `Omit` with `Except` from `immutable` for better type safety in `ImmutablePluginContract`
 
 - Improve error handling in `loadTypeScriptParser` function
 
@@ -3639,17 +3639,17 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c37f
 
 🧪 [test] Enhance test coverage for TypeScript extras rules
 
-- Add tests for new argument text retrieval logic in `prefer-ts-extras-*` rules
+- Add tests for new argument text retrieval logic in `prefer-immutable-*` rules
 
 - Remove outdated tests that reference `setHas` in favor of `setContainsValue`
 
 📝 [docs] Update documentation for rule behavior
 
-- Clarify the purpose of `prefer-ts-extras-set-has` rule in documentation
+- Clarify the purpose of `prefer-immutable-set-has` rule in documentation
 
 - Ensure all rule descriptions reflect the latest implementation changes
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9a70578)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/9a70578fa48e099426d2a71df8f63046a88b9b09)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9a70578)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/9a70578fa48e099426d2a71df8f63046a88b9b09)
 
 
 - 🎨 [style] Clean up trailing whitespace in TypeScript rule files
@@ -3658,121 +3658,121 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9a70
 
 - Affected files include:
   
-- `prefer-ts-extras-is-finite.ts`
+- `prefer-immutable-is-finite.ts`
   
-- `prefer-ts-extras-is-infinite.ts`
+- `prefer-immutable-is-infinite.ts`
   
-- `prefer-ts-extras-is-integer.ts`
+- `prefer-immutable-is-integer.ts`
   
-- `prefer-ts-extras-is-present-filter.ts`
+- `prefer-immutable-is-present-filter.ts`
   
-- `prefer-ts-extras-is-present.ts`
+- `prefer-immutable-is-present.ts`
   
-- `prefer-ts-extras-is-safe-integer.ts`
+- `prefer-immutable-is-safe-integer.ts`
   
-- `prefer-ts-extras-key-in.ts`
+- `prefer-immutable-key-in.ts`
   
-- `prefer-ts-extras-not.ts`
+- `prefer-immutable-not.ts`
   
-- `prefer-ts-extras-object-entries.ts`
+- `prefer-immutable-object-entries.ts`
   
-- `prefer-ts-extras-object-from-entries.ts`
+- `prefer-immutable-object-from-entries.ts`
   
-- `prefer-ts-extras-object-has-in.ts`
+- `prefer-immutable-object-has-in.ts`
   
-- `prefer-ts-extras-object-has-own.ts`
+- `prefer-immutable-object-has-own.ts`
   
-- `prefer-ts-extras-object-keys.ts`
+- `prefer-immutable-object-keys.ts`
   
-- `prefer-ts-extras-object-values.ts`
+- `prefer-immutable-object-values.ts`
   
-- `prefer-ts-extras-safe-cast-to.ts`
+- `prefer-immutable-safe-cast-to.ts`
   
-- `prefer-ts-extras-set-has.ts`
+- `prefer-immutable-set-has.ts`
   
-- `prefer-ts-extras-string-split.ts`
+- `prefer-immutable-string-split.ts`
   
-- `prefer-type-fest-arrayable.ts`
+- `prefer-immutable-arrayable.ts`
   
-- `prefer-type-fest-async-return-type.ts`
+- `prefer-immutable-async-return-type.ts`
   
-- `prefer-type-fest-conditional-pick.ts`
+- `prefer-immutable-conditional-pick.ts`
   
-- `prefer-type-fest-constructor.ts`
+- `prefer-immutable-constructor.ts`
   
-- `prefer-type-fest-except.ts`
+- `prefer-immutable-except.ts`
   
-- `prefer-type-fest-if.ts`
+- `prefer-immutable-if.ts`
   
-- `prefer-type-fest-iterable-element.ts`
+- `prefer-immutable-iterable-element.ts`
   
-- `prefer-type-fest-json-array.ts`
+- `prefer-immutable-json-array.ts`
   
-- `prefer-type-fest-json-object.ts`
+- `prefer-immutable-json-object.ts`
   
-- `prefer-type-fest-json-primitive.ts`
+- `prefer-immutable-json-primitive.ts`
   
-- `prefer-type-fest-json-value.ts`
+- `prefer-immutable-json-value.ts`
   
-- `prefer-type-fest-keys-of-union.ts`
+- `prefer-immutable-keys-of-union.ts`
   
-- `prefer-type-fest-literal-union.ts`
+- `prefer-immutable-literal-union.ts`
   
-- `prefer-type-fest-merge-exclusive.ts`
+- `prefer-immutable-merge-exclusive.ts`
   
-- `prefer-type-fest-non-empty-tuple.ts`
+- `prefer-immutable-non-empty-tuple.ts`
   
-- `prefer-type-fest-omit-index-signature.ts`
+- `prefer-immutable-omit-index-signature.ts`
   
-- `prefer-type-fest-partial-deep.ts`
+- `prefer-immutable-partial-deep.ts`
   
-- `prefer-type-fest-primitive.ts`
+- `prefer-immutable-primitive.ts`
   
-- `prefer-type-fest-promisable.ts`
+- `prefer-immutable-promisable.ts`
   
-- `prefer-type-fest-readonly-deep.ts`
+- `prefer-immutable-readonly-deep.ts`
   
-- `prefer-type-fest-require-all-or-none.ts`
+- `prefer-immutable-require-all-or-none.ts`
   
-- `prefer-type-fest-require-at-least-one.ts`
+- `prefer-immutable-require-at-least-one.ts`
   
-- `prefer-type-fest-require-exactly-one.ts`
+- `prefer-immutable-require-exactly-one.ts`
   
-- `prefer-type-fest-require-one-or-none.ts`
+- `prefer-immutable-require-one-or-none.ts`
   
-- `prefer-type-fest-required-deep.ts`
+- `prefer-immutable-required-deep.ts`
   
-- `prefer-type-fest-schema.ts`
+- `prefer-immutable-schema.ts`
   
-- `prefer-type-fest-set-non-nullable.ts`
+- `prefer-immutable-set-non-nullable.ts`
   
-- `prefer-type-fest-set-optional.ts`
+- `prefer-immutable-set-optional.ts`
   
-- `prefer-type-fest-set-readonly.ts`
+- `prefer-immutable-set-readonly.ts`
   
-- `prefer-type-fest-set-required.ts`
+- `prefer-immutable-set-required.ts`
   
-- `prefer-type-fest-simplify.ts`
+- `prefer-immutable-simplify.ts`
   
-- `prefer-type-fest-tagged-brands.ts`
+- `prefer-immutable-tagged-brands.ts`
   
-- `prefer-type-fest-tuple-of.ts`
+- `prefer-immutable-tuple-of.ts`
   
-- `prefer-type-fest-unknown-array.ts`
+- `prefer-immutable-unknown-array.ts`
   
-- `prefer-type-fest-unknown-map.ts`
+- `prefer-immutable-unknown-map.ts`
   
-- `prefer-type-fest-unknown-record.ts`
+- `prefer-immutable-unknown-record.ts`
   
-- `prefer-type-fest-unknown-set.ts`
+- `prefer-immutable-unknown-set.ts`
   
-- `prefer-type-fest-unwrap-tagged.ts`
+- `prefer-immutable-unwrap-tagged.ts`
   
-- `prefer-type-fest-value-of.ts`
+- `prefer-immutable-value-of.ts`
   
-- `prefer-type-fest-writable-deep.ts`
+- `prefer-immutable-writable-deep.ts`
   
-- `prefer-type-fest-writable.ts`
+- `prefer-immutable-writable.ts`
 🧪 [test] Update test files for consistency
 
 - Adjusted test files to remove trailing whitespace and ensure consistent formatting.
@@ -3781,37 +3781,37 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9a70
   
 - `imported-type-aliases.test.ts`
   
-- `prefer-type-fest-arrayable.test.ts`
+- `prefer-immutable-arrayable.test.ts`
   
-- `prefer-type-fest-async-return-type.test.ts`
+- `prefer-immutable-async-return-type.test.ts`
   
-- `prefer-type-fest-json-array.test.ts`
+- `prefer-immutable-json-array.test.ts`
   
-- `prefer-type-fest-json-object.test.ts`
+- `prefer-immutable-json-object.test.ts`
   
-- `prefer-type-fest-partial-deep.test.ts`
+- `prefer-immutable-partial-deep.test.ts`
   
-- `prefer-type-fest-require-all-or-none.test.ts`
+- `prefer-immutable-require-all-or-none.test.ts`
   
-- `prefer-type-fest-require-exactly-one.test.ts`
+- `prefer-immutable-require-exactly-one.test.ts`
   
-- `prefer-type-fest-required-deep.test.ts`
+- `prefer-immutable-required-deep.test.ts`
   
-- `prefer-type-fest-set-non-nullable.test.ts`
+- `prefer-immutable-set-non-nullable.test.ts`
   
-- `prefer-type-fest-set-optional.test.ts`
+- `prefer-immutable-set-optional.test.ts`
   
-- `prefer-type-fest-set-required.test.ts`
+- `prefer-immutable-set-required.test.ts`
   
-- `prefer-type-fest-simplify.test.ts`
+- `prefer-immutable-simplify.test.ts`
   
-- `prefer-type-fest-tagged-brands.test.ts`
+- `prefer-immutable-tagged-brands.test.ts`
   
-- `prefer-type-fest-unknown-array.test.ts`
+- `prefer-immutable-unknown-array.test.ts`
   
-- `prefer-type-fest-unwrap-tagged.test.ts`
+- `prefer-immutable-unwrap-tagged.test.ts`
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e6eeff5)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e6eeff586d1d69f4c812df893a00f836dde93222)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e6eeff5)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e6eeff586d1d69f4c812df893a00f836dde93222)
 
 
 - 🎨 [style] Refine stylelint disable comments in custom.css
@@ -3820,7 +3820,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e6ee
 
 - Maintained essential rules for Docusaurus CSS compatibility
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6eb9b0f)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/6eb9b0ff35cb5769ce2142ae048c29e8e05ec5f9)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6eb9b0f)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/6eb9b0ff35cb5769ce2142ae048c29e8e05ec5f9)
 
 
 - 🎨 [style] Refine stylelint disable comments in CSS module
@@ -3829,7 +3829,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6eb9
 
 - Maintained essential rules to ensure Docusaurus CSS compatibility
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1d8c4af)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/1d8c4af3441e33c1a4db469903c731a91ea80470)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1d8c4af)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/1d8c4af3441e33c1a4db469903c731a91ea80470)
 
 
 - 🎨 [style] Improve code formatting and consistency in scripts
@@ -3849,7 +3849,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1d8c
 
 - Provide audit and export functionalities for label management
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7f84870)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7f84870ac38c2d089a0bfb6fe85025cce034c2ce)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7f84870)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7f84870ac38c2d089a0bfb6fe85025cce034c2ce)
 
 
 - 🎨 [style] Clean up code formatting and improve readability
@@ -3860,40 +3860,40 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7f84
 
 🛠️ [fix] Enhance type checks and improve rule implementations
 
-- Added checks for undefined elements in tuple types within `prefer-type-fest-non-empty-tuple.ts` to prevent runtime errors.
+- Added checks for undefined elements in tuple types within `prefer-immutable-non-empty-tuple.ts` to prevent runtime errors.
 
-- Improved type handling in `prefer-type-fest-promisable.ts` to ensure proper identification of identifier type references.
+- Improved type handling in `prefer-immutable-promisable.ts` to ensure proper identification of identifier type references.
 
-- Updated logic in `prefer-type-fest-tuple-of.ts` to handle shadowed type parameters correctly, ensuring accurate suggestions for replacements.
+- Updated logic in `prefer-immutable-tuple-of.ts` to handle shadowed type parameters correctly, ensuring accurate suggestions for replacements.
 
 🧪 [test] Update and expand test cases for rule validation
 
-- Added new test cases for `prefer-type-fest-value-of` to ensure correct handling of shadowed identifiers.
+- Added new test cases for `prefer-immutable-value-of` to ensure correct handling of shadowed identifiers.
 
-- Enhanced tests for `prefer-type-fest-tuple-of` to cover scenarios with shadowed type parameters and ensure proper output.
+- Enhanced tests for `prefer-immutable-tuple-of` to cover scenarios with shadowed type parameters and ensure proper output.
 
 - Refactored existing tests for clarity and consistency, ensuring they align with the latest rule implementations.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b4b1929)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/b4b1929c19e9e23e7e2c88229979a2c23473a4b3)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b4b1929)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b4b1929c19e9e23e7e2c88229979a2c23473a4b3)
 
 
 - 🎨 [style] Improve code formatting and consistency across multiple files
 
-- ✨ Adjust spacing around object destructuring in `prefer-ts-extras-array-first.ts`
+- ✨ Adjust spacing around object destructuring in `prefer-immutable-array-first.ts`
 
-- 🎨 Standardize spacing in `prefer-type-fest-json-primitive.ts` for better readability
+- 🎨 Standardize spacing in `prefer-immutable-json-primitive.ts` for better readability
 
-- 🎨 Refactor spacing in `prefer-type-fest-primitive.ts` to enhance clarity
+- 🎨 Refactor spacing in `prefer-immutable-primitive.ts` to enhance clarity
 
-- 🎨 Clean up spacing in `prefer-type-fest-tagged-brands.ts` for uniformity
+- 🎨 Clean up spacing in `prefer-immutable-tagged-brands.ts` for uniformity
 
-- 🎨 Normalize spacing in `prefer-type-fest-writable.ts` to maintain style consistency
+- 🎨 Normalize spacing in `prefer-immutable-writable.ts` to maintain style consistency
 
 - 🎨 Update spacing in `imported-type-aliases.test.ts` for improved code aesthetics
 
 - 🎨 Modify spacing in `docs-integrity.test.ts` to align with style guidelines
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(22c06f3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/22c06f32690751743723df370ee9f648bb27b943)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(22c06f3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/22c06f32690751743723df370ee9f648bb27b943)
 
 
 - 🎨 [style] Refactor code formatting for consistency and readability
@@ -3910,7 +3910,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(22c0
 
 - Implemented tests for `getSignatureParameterTypeAt` to validate behavior with parameter indices
 
-- Created new test files for `prefer-ts-extras-not` rule to validate its functionality
+- Created new test files for `prefer-immutable-not` rule to validate its functionality
 
 🛠️ [fix] Corrected issues in test fixtures
 
@@ -3918,7 +3918,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(22c0
 
 - Adjusted conditional checks in test fixtures to prevent unexpected behavior during tests
 
-✨ [feat] Introduce new rule: prefer-ts-extras-not
+✨ [feat] Introduce new rule: prefer-immutable-not
 
 - Developed a new rule to encourage the use of `not` for filtering non-nullable values
 
@@ -3930,7 +3930,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(22c0
 
 - Adjusted coverage settings to ensure accurate reporting and exclude unnecessary files
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4ab154d)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4ab154d52bb4581406410e848c69daebc6d0e847)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4ab154d)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4ab154d52bb4581406410e848c69daebc6d0e847)
 
 
 
@@ -3938,18 +3938,18 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4ab1
 
 - 🧪 [test] Enhance type safety and listener functionality across multiple test files
 
-- 🧪 [test] Update `prefer-ts-extras-is-present.test.ts` to utilize `getSelectorAwareNodeListener` for `LogicalExpression` listener, improving type safety and ensuring proper function references.
-- 🧪 [test] Modify `prefer-ts-extras-key-in.test.ts` to enhance fix handling by checking for mock calls and ensuring proper fallback mechanisms for replacement text.
-- 🧪 [test] Refactor `prefer-ts-extras-safe-cast-to.test.ts` to include fallback type checkers and parser services, enhancing the robustness of type checks in the tests.
-- 🧪 [test] Improve `prefer-ts-extras-set-has.test.ts` by adding fallback checkers and parser services, ensuring accurate type handling and reporting in tests.
-- 🧪 [test] Revise `prefer-ts-extras-string-split.test.ts` to implement fallback type checkers and enhance error handling in parser services.
-- 🧪 [test] Update `prefer-type-fest-async-return-type.test.ts` to ensure proper listener references and improve mock handling for type node replacements.
-- 🧪 [test] Enhance `prefer-type-fest-json-array.test.ts` by implementing listener checks and ensuring proper handling of mock calls for type node replacements.
-- 🧪 [test] Refactor `prefer-type-fest-json-object.test.ts` to improve listener handling and ensure fallback mechanisms are in place for type replacements.
-- 🧪 [test] Update `prefer-type-fest-json-primitive.test.ts` to enhance listener functionality and ensure proper handling of mock calls for type replacements.
-- 🧪 [test] Revise `prefer-type-fest-unknown-array.test.ts` to implement listener checks for type operators and references, improving type safety in tests.
+- 🧪 [test] Update `prefer-immutable-is-present.test.ts` to utilize `getSelectorAwareNodeListener` for `LogicalExpression` listener, improving type safety and ensuring proper function references.
+- 🧪 [test] Modify `prefer-immutable-key-in.test.ts` to enhance fix handling by checking for mock calls and ensuring proper fallback mechanisms for replacement text.
+- 🧪 [test] Refactor `prefer-immutable-safe-cast-to.test.ts` to include fallback type checkers and parser services, enhancing the robustness of type checks in the tests.
+- 🧪 [test] Improve `prefer-immutable-set-has.test.ts` by adding fallback checkers and parser services, ensuring accurate type handling and reporting in tests.
+- 🧪 [test] Revise `prefer-immutable-string-split.test.ts` to implement fallback type checkers and enhance error handling in parser services.
+- 🧪 [test] Update `prefer-immutable-async-return-type.test.ts` to ensure proper listener references and improve mock handling for type node replacements.
+- 🧪 [test] Enhance `prefer-immutable-json-array.test.ts` by implementing listener checks and ensuring proper handling of mock calls for type node replacements.
+- 🧪 [test] Refactor `prefer-immutable-json-object.test.ts` to improve listener handling and ensure fallback mechanisms are in place for type replacements.
+- 🧪 [test] Update `prefer-immutable-json-primitive.test.ts` to enhance listener functionality and ensure proper handling of mock calls for type replacements.
+- 🧪 [test] Revise `prefer-immutable-unknown-array.test.ts` to implement listener checks for type operators and references, improving type safety in tests.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2193ed9)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/2193ed9abc153379bcb5c989ded4729d78ebd5d6)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2193ed9)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/2193ed9abc153379bcb5c989ded4729d78ebd5d6)
 
 
 - 🧪 [test] Update error handling assertions in tests
@@ -3958,31 +3958,31 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2193
 - Adjusted tests across various files including `imported-value-symbols.test.ts`, `rule-catalog.test.ts`, `safe-type-operation.test.ts`, and others to ensure consistency and maintainability.
 - This change enhances readability and standardizes error handling across the test suite, improving overall test quality and clarity.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(02a1f4e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/02a1f4ea66ef3dda4e2ab79f03851ddaacdd9d70)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(02a1f4e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/02a1f4ea66ef3dda4e2ab79f03851ddaacdd9d70)
 
 
-- 🧪 [test] Enhance type safety and parsing for TypeFest rules
+- 🧪 [test] Enhance type safety and parsing for Immutable rules
 
 
 - ✨ [feat] Introduce `replaceOrThrow` utility function to streamline text replacements in test fixtures across multiple test files.
 
-- 🛠️ [fix] Update `prefer-type-fest-unknown-map.test.ts` to ensure `ReadonlyMap<unknown, unknown>` is correctly replaced with `Readonly<UnknownMap>`, enhancing type safety.
+- 🛠️ [fix] Update `prefer-immutable-unknown-map.test.ts` to ensure `ReadonlyMap<unknown, unknown>` is correctly replaced with `Readonly<UnknownMap>`, enhancing type safety.
 
-- 🛠️ [fix] Modify `prefer-type-fest-unknown-record.test.ts` to replace `Record<string, unknown>` with `UnknownRecord`, ensuring consistent type usage.
+- 🛠️ [fix] Modify `prefer-immutable-unknown-record.test.ts` to replace `Record<string, unknown>` with `UnknownRecord`, ensuring consistent type usage.
 
-- 🛠️ [fix] Adjust `prefer-type-fest-unknown-set.test.ts` to replace `ReadonlySet<unknown>` with `Readonly<UnknownSet>`, improving type clarity.
+- 🛠️ [fix] Adjust `prefer-immutable-unknown-set.test.ts` to replace `ReadonlySet<unknown>` with `Readonly<UnknownSet>`, improving type clarity.
 
-- 🛠️ [fix] Revise `prefer-type-fest-unwrap-tagged.test.ts` to replace `UnwrapOpaque<` with `UnwrapTagged<`, ensuring correct type transformation.
+- 🛠️ [fix] Revise `prefer-immutable-unwrap-tagged.test.ts` to replace `UnwrapOpaque<` with `UnwrapTagged<`, ensuring correct type transformation.
 
-- 🛠️ [fix] Update `prefer-type-fest-value-of.test.ts` to replace `T[keyof T]` with `ValueOf<T>`, enhancing type inference.
+- 🛠️ [fix] Update `prefer-immutable-value-of.test.ts` to replace `T[keyof T]` with `ValueOf<T>`, enhancing type inference.
 
-- 🛠️ [fix] Modify `prefer-type-fest-writable-deep.test.ts` to replace `DeepMutable<TeamConfig>` with `WritableDeep<TeamConfig>`, improving type consistency.
+- 🛠️ [fix] Modify `prefer-immutable-writable-deep.test.ts` to replace `DeepMutable<TeamConfig>` with `WritableDeep<TeamConfig>`, improving type consistency.
 
-- 🛠️ [fix] Adjust `prefer-type-fest-writable.test.ts` to replace `Mutable<` with `Writable<`, ensuring correct type aliasing.
+- 🛠️ [fix] Adjust `prefer-immutable-writable.test.ts` to replace `Mutable<` with `Writable<`, ensuring correct type aliasing.
 
 - 🧪 [test] Add fast-check properties to validate that replacements remain parseable across various test cases, enhancing test coverage and reliability.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d1092f9)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/d1092f9268d3ba4649775868068210e930ef9df9)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d1092f9)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/d1092f9268d3ba4649775868068210e930ef9df9)
 
 
 - 🧪 [test] bolster guards and metadata across rules
@@ -4003,7 +4003,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d109
 
 - 🧪 [test] update many existing tests with new fixtures, outputs and scenario names to improve coverage and resilience
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4c685cb)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4c685cbac3253139b206443b8fa80571a470b30b)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4c685cb)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4c685cbac3253139b206443b8fa80571a470b30b)
 
 
 - 🧪 [test] Refactor test cases to use 'test' instead of 'it' for consistency
@@ -4026,7 +4026,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4c68
 
 - Enhanced documentation comments in various test files to provide clearer context and explanations for the tests being conducted.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(10c699a)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/10c699af540ea73a73ab0e69acb9d2c217b3d9ff)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(10c699a)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/10c699af540ea73a73ab0e69acb9d2c217b3d9ff)
 
 
 - 🧪 [test] Expands type-utility rule coverage
@@ -4039,10 +4039,10 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(10c6
 🧪 [test] Broadens valid-case coverage for multi-member unions and duplicate-member combinations to ensure rules trigger only on exact intended patterns.
 🎨 [style] Normalizes import ordering and modernizes matcher assertions and regex flags in metadata checks to keep tests consistent and less brittle.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(145743a)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/145743a270bfa524527bdcfd1ff264a7fce87aa1)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(145743a)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/145743a270bfa524527bdcfd1ff264a7fce87aa1)
 
 
-- 📝 [test] Enhance type-fest rule tests with additional cases
+- 📝 [test] Enhance immutable rule tests with additional cases
 
 
 - ✨ [test] Add valid cases for Awaited with Promise and qualified ReturnType
@@ -4089,18 +4089,18 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1457
 
 - ✨ [test] Expand Writable tests with various valid cases and namespace aliases
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ec44a53)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ec44a53779b9a5e7d5ea0f2e0f08c7c318a92366)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ec44a53)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ec44a53779b9a5e7d5ea0f2e0f08c7c318a92366)
 
 
 
 ### 🧹 Chores
 
-- Release v1.0.0 [`(fe9afd2)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/fe9afd26fe79835b171003e19575a90518e14be6)
+- Release v1.0.0 [`(fe9afd2)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/fe9afd26fe79835b171003e19575a90518e14be6)
 
 
 - 🧹 [chore] Clean up configuration files by removing bootstrap instructions
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(79d484b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/79d484b673d237e04d4d6a36eaa413162edec085)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(79d484b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/79d484b673d237e04d4d6a36eaa413162edec085)
 
 
 - 🧹 [chore] migrate documentation URLs to GitHub Pages and bump dev dependencies
@@ -4113,7 +4113,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(79d4
 
 The changes simplify hosting strategy for docs and keep development dependencies current.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(aeb72ee)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/aeb72eeeb9be48054bf96209b07ff62e9f777d33)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(aeb72ee)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/aeb72eeeb9be48054bf96209b07ff62e9f777d33)
 
 
 - 🗑️ [chore] Remove ESLint Config Inspector build and verification scripts
@@ -4124,7 +4124,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(aeb7
 
 - Their removal simplifies the project structure and eliminates unused code
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(79dd244)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/79dd2444ee0729ab547a608945aca8f9097070fc)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(79dd244)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/79dd2444ee0729ab547a608945aca8f9097070fc)
 
 
 
@@ -4134,7 +4134,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(79dd
 
 - Updated the Codecov test results action to a specific commit for better stability and features
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(232fe61)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/232fe61b01124fd8bf0113271cf6ff2eaba70c99)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(232fe61)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/232fe61b01124fd8bf0113271cf6ff2eaba70c99)
 
 
 
@@ -4149,7 +4149,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(232f
 - Updated "vite" from "^7.3.1" to "^8.0.0" for new features and performance improvements.
 - [dependency] Updateed "vitest" from "^4.0.18" to "^4.1.0" for better testing capabilities.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fbc4753)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/fbc47539a7a9af13b983e0061e147e1d100d83b2)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fbc4753)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/fbc47539a7a9af13b983e0061e147e1d100d83b2)
 
 
 - 🔧 [build] Update package dependencies and configurations
@@ -4163,7 +4163,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fbc4
 - 🎨 Adjust files entry in package.json to include docs/rules/**
 🧪 [test] Clean up test file by removing unnecessary blank line in plugin-entry.test.ts
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c2cb0ea)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/c2cb0ea80a19d336113a4599c453eec35166ddb1)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c2cb0ea)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/c2cb0ea80a19d336113a4599c453eec35166ddb1)
 
 
 - 🔧 [build] Update package configurations and dependencies
@@ -4182,7 +4182,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(c2cb
 
 - 🧪 [test] Add tests for docusaurus site configuration integrity
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4d8023a)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4d8023abd7080def62cafa17ec1128de75c17d7d)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4d8023a)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4d8023abd7080def62cafa17ec1128de75c17d7d)
 
 
 - 🔧 [build] Update code for improved readability and safety
@@ -4197,7 +4197,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4d80
 
 - 🛠️ Adjust ESLint configuration to include additional paths for better module resolution
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6d7d427)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/6d7d4277dbb4ab767076fce90a84934e4bfd04f9)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6d7d427)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/6d7d4277dbb4ab767076fce90a84934e4bfd04f9)
 
 
 - 🔧 [build] Refactor vitest globals type definitions
@@ -4208,7 +4208,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6d7d
 
 - 🛠️ Adjust doMock method signature for improved type safety
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db4aff6)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/db4aff6ccb4a292eb3621a53cfa73f6379a17567)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db4aff6)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/db4aff6ccb4a292eb3621a53cfa73f6379a17567)
 
 
 - 🔧 [build] Update TypeScript ESLint dependencies and related packages
@@ -4227,7 +4227,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db4a
 
 - Upgrade typescript-eslint to version 8.57.0
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(124785e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/124785ed1892b86fedc8ad44509902dd39332a47)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(124785e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/124785ed1892b86fedc8ad44509902dd39332a47)
 
 
 - 🔧 [build] Update PowerShell script execution commands and error handling
@@ -4239,18 +4239,18 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1247
 
 - 🚜 [refactor] Update log directory path in log-prompt.ps1 for consistency and clarity.
 
-- 🚜 [refactor] Refactor multiple rules in the TypeScript codebase to replace hardcoded "type-fest" strings with a centralized constant, TYPE_FEST_MODULE_SOURCE, improving maintainability and reducing potential errors.
+- 🚜 [refactor] Refactor multiple rules in the TypeScript codebase to replace hardcoded "immutable" strings with a centralized constant, TYPE_FEST_MODULE_SOURCE, improving maintainability and reducing potential errors.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8bee5b3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/8bee5b36f4ba4bc67ec6010bc65a73e60d83a9c7)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(8bee5b3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/8bee5b36f4ba4bc67ec6010bc65a73e60d83a9c7)
 
 
 - 🔧 [build] Refactor module source imports for consistency across rules
 
-- 🛠️ [fix] Update all rules to use `TS_EXTRAS_MODULE_SOURCE` instead of hardcoded string "ts-extras" for improved maintainability and consistency.
+- 🛠️ [fix] Update all rules to use `TS_EXTRAS_MODULE_SOURCE` instead of hardcoded string "immutable" for improved maintainability and consistency.
 - 📝 [docs] Add a new test file for bounded cache functionality to ensure proper behavior of caching mechanisms.
 - ⚡ [perf] Implement bounded cache logic to handle nullable values correctly and optimize eviction of least-recently-used entries.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0ec1cf7)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/0ec1cf79284b6bda8b6c4bc68d32972cc7f7c80b)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0ec1cf7)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/0ec1cf79284b6bda8b6c4bc68d32972cc7f7c80b)
 
 
 - 🔧 [build] Update package-lock.json to remove unnecessary dev flags
@@ -4262,28 +4262,28 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0ec1
 
 - Introduced "tailwindcss" as a new dependency with "dev": true and "peer": true.
 
-✨ [feat] Enhance type name resolution in prefer-ts-extras-set-has rule
+✨ [feat] Enhance type name resolution in prefer-immutable-set-has rule
 
 
 - Integrated `getTypeName` function to improve type name retrieval for candidate types.
 
 - Updated logic to check both the resolved type name and the symbol name for "ReadonlySet" and "Set" to enhance type detection accuracy.
 
-✨ [feat] Improve type name handling in prefer-ts-extras-string-split rule
+✨ [feat] Improve type name handling in prefer-immutable-string-split rule
 
 
 - Implemented `getTypeName` function to retrieve the type name of candidate types.
 
 - Modified fallback logic to check the resolved type name for "String" when name-based fallback is necessary, ensuring more robust type resolution.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e2a2129)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e2a21297ba718c316f6e158605474e3b72384a0b)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e2a2129)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e2a21297ba718c316f6e158605474e3b72384a0b)
 
 
 - 🔧 [build] Update Stryker Vitest configuration
 
 - Add setupFiles entry to specify custom setup script for Vitest
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a0f74f2)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a0f74f2c7e56fda2ae08bd98de7c3bbb1fda951c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a0f74f2)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a0f74f2c7e56fda2ae08bd98de7c3bbb1fda951c)
 
 
 - 🔧 [build] Update dependencies and add autofix smoke test
@@ -4305,7 +4305,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a0f7
 
 - 🧹 [chore] Add `.gitkeep` to `test/fixtures/autofix-smoke` directory to maintain structure
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fb71524)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/fb71524bea3708c7d8be18eec2bbbdd101eec1a4)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fb71524)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/fb71524bea3708c7d8be18eec2bbbdd101eec1a4)
 
 
 - 🔧 [build] Update dependencies for TypeDoc and ESLint plugins
@@ -4344,7 +4344,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(fb71
 
 - 🎨 Ensure tests cover edge cases for parsing and matching listener methods
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a916f48)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a916f4835b426f01dc82ae38e14719a1953c3bed)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a916f48)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a916f4835b426f01dc82ae38e14719a1953c3bed)
 
 
 - 🔧 [build] Update package dependencies in package.json and package-lock.json
@@ -4355,10 +4355,10 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a916
 
 - 🔄 [dependency] Update postcss-sort-media-queries ^6.1.0
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3231367)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3231367cb944df9345c0de8b7934346044e8ba68)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3231367)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3231367cb944df9345c0de8b7934346044e8ba68)
 
 
-- 🔧 [build] Update TypeFest plugin and tests for improved rule documentation synchronization
+- 🔧 [build] Update Immutable plugin and tests for improved rule documentation synchronization
 
 - 🛠️ Refactor rule documentation synchronization logic to derive `docs.recommended` from preset references
 
@@ -4366,23 +4366,23 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3231
 
 - 📝 Enhance tests to verify that rule documentation correctly indicates recommended status based on configurations
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ee0edba)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ee0edbad0a9c287b0e05ce6f63410fa34ec1682b)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ee0edba)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ee0edbad0a9c287b0e05ce6f63410fa34ec1682b)
 
 
-- 🔧 [build] Update TypeFest rule configurations for improved type inference
+- 🔧 [build] Update Immutable rule configurations for improved type inference
 
-- 🛠️ [fix] Set `recommended` to `false` for `prefer-ts-extras-object-keys` and `prefer-ts-extras-object-values` rules
-- 🛠️ [fix] Set `recommended` to `true` for `prefer-ts-extras-safe-cast-to`, `prefer-ts-extras-set-has`, and other TypeFest rules
-- ⚡ [perf] Introduce `typefestConfigs` for all rules to specify recommended configurations
+- 🛠️ [fix] Set `recommended` to `false` for `prefer-immutable-object-keys` and `prefer-immutable-object-values` rules
+- 🛠️ [fix] Set `recommended` to `true` for `prefer-immutable-safe-cast-to`, `prefer-immutable-set-has`, and other Immutable rules
+- ⚡ [perf] Introduce `immutableConfigs` for all rules to specify recommended configurations
  
 - 📜 [docs] Update documentation URLs for better reference
-- 🧪 [test] Enhance rule metadata tests to validate `recommended` and `typefestConfigs` properties
+- 🧪 [test] Enhance rule metadata tests to validate `recommended` and `immutableConfigs` properties
  
 - 🔍 [test] Ensure type checks for `recommended` are boolean
  
-- 🔍 [test] Validate that `typefestConfigs` contains valid references
+- 🔍 [test] Validate that `immutableConfigs` contains valid references
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6a2586a)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/6a2586aa770cc53bf466a6b3b04e140dc3e62dc6)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6a2586a)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/6a2586aa770cc53bf466a6b3b04e140dc3e62dc6)
 
 
 - 🔧 [build] Optimize scope variable retrieval with cycle detection
@@ -4395,7 +4395,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6a25
 
 - 🛠️ Introduce caching for namespace import names to improve performance in `getTypeScriptEslintNamespaceImportNames`.
 
-- ⚡ Optimize type resolution checks in various rules, including `prefer-ts-extras-set-has`, `prefer-ts-extras-string-split`, and `prefer-ts-extras-safe-cast-to`, by implementing caching mechanisms.
+- ⚡ Optimize type resolution checks in various rules, including `prefer-immutable-set-has`, `prefer-immutable-string-split`, and `prefer-immutable-safe-cast-to`, by implementing caching mechanisms.
 
 🧪 [test] Add comprehensive tests for new features and optimizations
 
@@ -4403,9 +4403,9 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6a25
 
 - 📝 Add tests for namespace import collection and caching behavior in `import-analysis.test.ts`.
 
-- 📝 Create tests to ensure proper handling of parser service failures in `prefer-ts-extras-safe-cast-to.test.ts`, `prefer-ts-extras-set-has.test.ts`, and `prefer-ts-extras-string-split.test.ts`.
+- 📝 Create tests to ensure proper handling of parser service failures in `prefer-immutable-safe-cast-to.test.ts`, `prefer-immutable-set-has.test.ts`, and `prefer-immutable-string-split.test.ts`.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ccc8365)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ccc8365d2550d4881467b30ea50e86340277fdbd)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ccc8365)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ccc8365d2550d4881467b30ea50e86340277fdbd)
 
 
 - 🔧 [build] Refactor TypeScript ESLint node autofix suppression logic
@@ -4416,13 +4416,13 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ccc8
 
 - 🧪 Adjust test cases to reflect changes in autofix suppression behavior, ensuring proper reporting without applying autofixes for AST-node comparisons
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7a1aa5f)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/7a1aa5f593e42eda2c185e2c70b3c48a5c0cf39d)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7a1aa5f)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/7a1aa5f593e42eda2c185e2c70b3c48a5c0cf39d)
 
 
 - 🔧 [build] Refactor rule metadata test imports and remove deprecated tests
 
 
-- 🛠️ Update import statements in multiple test files to replace `addTypeFestRuleMetadataAndFilenameFallbackTests` with `addTypeFestRuleMetadataSmokeTests` for consistency and clarity.
+- 🛠️ Update import statements in multiple test files to replace `addImmutableRuleMetadataAndFilenameFallbackTests` with `addImmutableRuleMetadataSmokeTests` for consistency and clarity.
 
 - 🧹 Remove `rules-test-file-guards.test.ts` and `typed-rule-internal.test.ts` as they are no longer needed, streamlining the test suite.
 
@@ -4430,21 +4430,21 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(7a1a
 
 - 📝 Ensure all relevant test descriptions and structures are preserved during the refactor to maintain clarity in test intentions.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4ae5381)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4ae53812112c8f33d658c3e6be6b3e82a5b42438)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4ae5381)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4ae53812112c8f33d658c3e6be6b3e82a5b42438)
 
 
 - 🔧 [build] Remove unused import for remark-ignore from .remarkrc.mjs
 
 - Clean up the configuration file by eliminating the import statement for remark-ignore, which is no longer needed.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d3cc622)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/d3cc622c6e7bfcf17735a7bb5771ffbbea089e40)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(d3cc622)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/d3cc622c6e7bfcf17735a7bb5771ffbbea089e40)
 
 
 - 🔧 [build] Update stylelint-plugin-use-baseline to version 1.2.6
 
 - Updated dependency version in package.json and package-lock.json
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a37b73b)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a37b73bcb7b205c52c9cfe40dcc57ca2ce5cddec)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a37b73b)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a37b73bcb7b205c52c9cfe40dcc57ca2ce5cddec)
 
 
 - 🔧 [build] Refactor type reference handling in tests
@@ -4454,55 +4454,55 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a37b
 
 - 🧪 Modify parsing functions to return `tsReference` instead of `typeReference` in:
   
-- `prefer-type-fest-primitive.test.ts`
+- `prefer-immutable-primitive.test.ts`
   
-- `prefer-type-fest-readonly-deep.test.ts`
+- `prefer-immutable-readonly-deep.test.ts`
   
-- `prefer-type-fest-require-all-or-none.test.ts`
+- `prefer-immutable-require-all-or-none.test.ts`
   
-- `prefer-type-fest-require-at-least-one.test.ts`
+- `prefer-immutable-require-at-least-one.test.ts`
   
-- `prefer-type-fest-require-exactly-one.test.ts`
+- `prefer-immutable-require-exactly-one.test.ts`
   
-- `prefer-type-fest-require-one-or-none.test.ts`
+- `prefer-immutable-require-one-or-none.test.ts`
   
-- `prefer-type-fest-required-deep.test.ts`
+- `prefer-immutable-required-deep.test.ts`
   
-- `prefer-type-fest-schema.test.ts`
+- `prefer-immutable-schema.test.ts`
   
-- `prefer-type-fest-set-non-nullable.test.ts`
+- `prefer-immutable-set-non-nullable.test.ts`
   
-- `prefer-type-fest-set-optional.test.ts`
+- `prefer-immutable-set-optional.test.ts`
   
-- `prefer-type-fest-set-readonly.test.ts`
+- `prefer-immutable-set-readonly.test.ts`
   
-- `prefer-type-fest-set-required.test.ts`
+- `prefer-immutable-set-required.test.ts`
   
-- `prefer-type-fest-simplify.test.ts`
+- `prefer-immutable-simplify.test.ts`
   
-- `prefer-type-fest-tagged-brands.test.ts`
+- `prefer-immutable-tagged-brands.test.ts`
   
-- `prefer-type-fest-tuple-of.test.ts`
+- `prefer-immutable-tuple-of.test.ts`
   
-- `prefer-type-fest-unknown-array.test.ts`
+- `prefer-immutable-unknown-array.test.ts`
   
-- `prefer-type-fest-unknown-map.test.ts`
+- `prefer-immutable-unknown-map.test.ts`
   
-- `prefer-type-fest-unknown-record.test.ts`
+- `prefer-immutable-unknown-record.test.ts`
   
-- `prefer-type-fest-unknown-set.test.ts`
+- `prefer-immutable-unknown-set.test.ts`
   
-- `prefer-type-fest-unwrap-tagged.test.ts`
+- `prefer-immutable-unwrap-tagged.test.ts`
   
-- `prefer-type-fest-value-of.test.ts`
+- `prefer-immutable-value-of.test.ts`
   
-- `prefer-type-fest-writable-deep.test.ts`
+- `prefer-immutable-writable-deep.test.ts`
   
-- `prefer-type-fest-writable.test.ts`
+- `prefer-immutable-writable.test.ts`
 
 - 🎨 Improve readability and maintainability of test code by ensuring consistent naming conventions.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bf40c75)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/bf40c75de70bb03d12426e9a6b4ca61121d95495)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bf40c75)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/bf40c75de70bb03d12426e9a6b4ca61121d95495)
 
 
 - 🔧 [build] Update configuration and dependencies
@@ -4527,124 +4527,124 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(bf40
 
 - 🎨 [style] Update DEFAULT_RULE_DOCS_URL_BASE to a constant in rule-docs-url.ts
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(475a43e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/475a43e989567f2e4c57633edf650a928ef71925)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(475a43e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/475a43e989567f2e4c57633edf650a928ef71925)
 
 
 - 🔧 [build] Add defaultOptions to multiple TypeScript rules
 
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-ts-extras-not.ts`, ensuring consistent default behavior across rules.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-not.ts`, ensuring consistent default behavior across rules.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-ts-extras-object-entries.ts`, enhancing rule configurability.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-object-entries.ts`, enhancing rule configurability.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-ts-extras-object-from-entries.ts`, standardizing rule options.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-object-from-entries.ts`, standardizing rule options.
 
-- ✨ [feat] Included `defaultOptions: []` in `prefer-ts-extras-object-has-in.ts`, improving rule consistency.
+- ✨ [feat] Included `defaultOptions: []` in `prefer-immutable-object-has-in.ts`, improving rule consistency.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-ts-extras-object-has-own.ts`, aligning with other rules.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-object-has-own.ts`, aligning with other rules.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-ts-extras-object-keys.ts`, ensuring uniformity in rule definitions.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-object-keys.ts`, ensuring uniformity in rule definitions.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-ts-extras-object-values.ts`, enhancing rule behavior.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-object-values.ts`, enhancing rule behavior.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-ts-extras-safe-cast-to.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-safe-cast-to.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-ts-extras-set-has.ts`, improving rule configurability.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-set-has.ts`, improving rule configurability.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-ts-extras-string-split.ts`, ensuring consistent default behavior.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-string-split.ts`, ensuring consistent default behavior.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-arrayable.ts`, enhancing rule configurability.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-arrayable.ts`, enhancing rule configurability.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-async-return-type.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-async-return-type.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-conditional-pick.ts`, aligning with other rules.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-conditional-pick.ts`, aligning with other rules.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-constructor.ts`, ensuring uniformity in rule definitions.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-constructor.ts`, ensuring uniformity in rule definitions.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-except.ts`, improving rule consistency.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-except.ts`, improving rule consistency.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-if.ts`, enhancing rule behavior.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-if.ts`, enhancing rule behavior.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-iterable-element.ts`, standardizing rule options.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-iterable-element.ts`, standardizing rule options.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-json-array.ts`, ensuring consistent default behavior.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-json-array.ts`, ensuring consistent default behavior.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-json-object.ts`, enhancing rule configurability.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-json-object.ts`, enhancing rule configurability.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-json-primitive.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-json-primitive.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-json-value.ts`, improving rule consistency.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-json-value.ts`, improving rule consistency.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-keys-of-union.ts`, ensuring uniformity in rule definitions.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-keys-of-union.ts`, ensuring uniformity in rule definitions.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-literal-union.ts`, enhancing rule behavior.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-literal-union.ts`, enhancing rule behavior.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-merge-exclusive.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-merge-exclusive.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-non-empty-tuple.ts`, improving rule configurability.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-non-empty-tuple.ts`, improving rule configurability.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-omit-index-signature.ts`, ensuring consistent default behavior.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-omit-index-signature.ts`, ensuring consistent default behavior.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-partial-deep.ts`, enhancing rule behavior.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-partial-deep.ts`, enhancing rule behavior.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-primitive.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-primitive.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-promisable.ts`, improving rule consistency.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-promisable.ts`, improving rule consistency.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-readonly-deep.ts`, ensuring uniformity in rule definitions.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-readonly-deep.ts`, ensuring uniformity in rule definitions.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-require-all-or-none.ts`, enhancing rule configurability.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-require-all-or-none.ts`, enhancing rule configurability.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-require-at-least-one.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-require-at-least-one.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-require-exactly-one.ts`, improving rule consistency.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-require-exactly-one.ts`, improving rule consistency.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-require-one-or-none.ts`, ensuring consistent default behavior.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-require-one-or-none.ts`, ensuring consistent default behavior.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-required-deep.ts`, enhancing rule behavior.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-required-deep.ts`, enhancing rule behavior.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-schema.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-schema.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-set-non-nullable.ts`, improving rule configurability.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-set-non-nullable.ts`, improving rule configurability.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-set-optional.ts`, ensuring uniformity in rule definitions.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-set-optional.ts`, ensuring uniformity in rule definitions.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-set-readonly.ts`, enhancing rule behavior.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-set-readonly.ts`, enhancing rule behavior.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-set-required.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-set-required.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-simplify.ts`, improving rule consistency.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-simplify.ts`, improving rule consistency.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-tagged-brands.ts`, ensuring consistent default behavior.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-tagged-brands.ts`, ensuring consistent default behavior.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-tuple-of.ts`, enhancing rule configurability.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-tuple-of.ts`, enhancing rule configurability.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-unknown-array.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-unknown-array.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-unknown-map.ts`, improving rule consistency.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-unknown-map.ts`, improving rule consistency.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-unknown-record.ts`, ensuring uniformity in rule definitions.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-unknown-record.ts`, ensuring uniformity in rule definitions.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-unknown-set.ts`, enhancing rule behavior.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-unknown-set.ts`, enhancing rule behavior.
 
-- ✨ [feat] Introduced `defaultOptions: []` in `prefer-type-fest-unwrap-tagged.ts`, standardizing rule options.
+- ✨ [feat] Introduced `defaultOptions: []` in `prefer-immutable-unwrap-tagged.ts`, standardizing rule options.
 
-- ✨ [feat] Set `defaultOptions: []` in `prefer-type-fest-value-of.ts`, improving rule configurability.
+- ✨ [feat] Set `defaultOptions: []` in `prefer-immutable-value-of.ts`, improving rule configurability.
 
-- ✨ [feat] Added `defaultOptions: []` to `prefer-type-fest-writable-deep.ts`, ensuring consistent default behavior.
+- ✨ [feat] Added `defaultOptions: []` to `prefer-immutable-writable-deep.ts`, ensuring consistent default behavior.
 
-- ✨ [feat] Implemented `defaultOptions: []` in `prefer-type-fest-writable.ts`, enhancing rule behavior.
+- ✨ [feat] Implemented `defaultOptions: []` in `prefer-immutable-writable.ts`, enhancing rule behavior.
 
 🧪 [test] Update tests to reflect changes in rule configurations
 
 
-- 🧪 [test] Modified `configs.test.ts` to utilize `UnknownRecord` from `type-fest`, improving type safety.
+- 🧪 [test] Modified `configs.test.ts` to utilize `UnknownRecord` from `immutable`, improving type safety.
 
-- 🧪 [test] Updated `prefer-type-fest-writable-deep.test.ts` to reflect changes in return types, ensuring consistency.
+- 🧪 [test] Updated `prefer-immutable-writable-deep.test.ts` to reflect changes in return types, ensuring consistency.
 
 - 🧪 [test] Adjusted `typed-rule-internal.test.ts` to improve clarity in test descriptions and ensure accurate path recognition.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9082660)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/90826605cb10f2a9ca47e47f8aafaa621e972e9b)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9082660)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/90826605cb10f2a9ca47e47f8aafaa621e972e9b)
 
 
 - 🔧 [build] Refactor benchmark and test configurations
@@ -4663,7 +4663,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9082
 
 - 🛠️ Adjust Vite configuration to include benchmark files
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(528c601)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/528c601c385c557e677649bbaa06af894e6e9f82)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(528c601)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/528c601c385c557e677649bbaa06af894e6e9f82)
 
 
 - 🔧 [build] Update dependencies in package.json and package-lock.json
@@ -4686,7 +4686,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(528c
 
 - 📝 Implement tests to ensure that various file paths do not get incorrectly identified as test files, covering a range of common file naming conventions.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db80fb0)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/db80fb0425ed6198b5e3c426c2632208081053ad)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db80fb0)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/db80fb0425ed6198b5e3c426c2632208081053ad)
 
 
 - 🔧 [build] Update aliasReplacementFix checks for consistency across rules
@@ -4695,7 +4695,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(db80
 
 - 🛠️ [fix] Adjust handling of `aliasReplacementFix` to check for `null` instead of using a truthy check in various rules
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ba3b799)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ba3b799b909cd67fe3c334cfb9aec7da650e57a5)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ba3b799)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ba3b799b909cd67fe3c334cfb9aec7da650e57a5)
 
 
 - 🔧 [build] Mark rules as non-deprecated
@@ -4705,153 +4705,153 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ba3b
 
 - 🔧 Set `deprecated: false` for the following rules:
   
-- prefer-ts-extras-array-find-last-index
+- prefer-immutable-array-find-last-index
   
-- prefer-ts-extras-array-find-last
+- prefer-immutable-array-find-last
   
-- prefer-ts-extras-array-find
+- prefer-immutable-array-find
   
-- prefer-ts-extras-array-first
+- prefer-immutable-array-first
   
-- prefer-ts-extras-array-includes
+- prefer-immutable-array-includes
   
-- prefer-ts-extras-array-join
+- prefer-immutable-array-join
   
-- prefer-ts-extras-array-last
+- prefer-immutable-array-last
   
-- prefer-ts-extras-as-writable
+- prefer-immutable-as-writable
   
-- prefer-ts-extras-assert-defined
+- prefer-immutable-assert-defined
   
-- prefer-ts-extras-assert-error
+- prefer-immutable-assert-error
   
-- prefer-ts-extras-assert-present
+- prefer-immutable-assert-present
   
-- prefer-ts-extras-is-defined-filter
+- prefer-immutable-is-defined-filter
   
-- prefer-ts-extras-is-defined
+- prefer-immutable-is-defined
   
-- prefer-ts-extras-is-empty
+- prefer-immutable-is-empty
   
-- prefer-ts-extras-is-equal-type
+- prefer-immutable-is-equal-type
   
-- prefer-ts-extras-is-finite
+- prefer-immutable-is-finite
   
-- prefer-ts-extras-is-infinite
+- prefer-immutable-is-infinite
   
-- prefer-ts-extras-is-integer
+- prefer-immutable-is-integer
   
-- prefer-ts-extras-is-present-filter
+- prefer-immutable-is-present-filter
   
-- prefer-ts-extras-is-present
+- prefer-immutable-is-present
   
-- prefer-ts-extras-is-safe-integer
+- prefer-immutable-is-safe-integer
   
-- prefer-ts-extras-key-in
+- prefer-immutable-key-in
   
-- prefer-ts-extras-not
+- prefer-immutable-not
   
-- prefer-ts-extras-object-entries
+- prefer-immutable-object-entries
   
-- prefer-ts-extras-object-from-entries
+- prefer-immutable-object-from-entries
   
-- prefer-ts-extras-object-has-in
+- prefer-immutable-object-has-in
   
-- prefer-ts-extras-object-has-own
+- prefer-immutable-object-has-own
   
-- prefer-ts-extras-object-keys
+- prefer-immutable-object-keys
   
-- prefer-ts-extras-object-values
+- prefer-immutable-object-values
   
-- prefer-ts-extras-safe-cast-to
+- prefer-immutable-safe-cast-to
   
-- prefer-ts-extras-set-has
+- prefer-immutable-set-has
   
-- prefer-ts-extras-string-split
+- prefer-immutable-string-split
   
-- prefer-type-fest-arrayable
+- prefer-immutable-arrayable
   
-- prefer-type-fest-async-return-type
+- prefer-immutable-async-return-type
   
-- prefer-type-fest-conditional-pick
+- prefer-immutable-conditional-pick
   
-- prefer-type-fest-constructor
+- prefer-immutable-constructor
   
-- prefer-type-fest-except
+- prefer-immutable-except
   
-- prefer-type-fest-if
+- prefer-immutable-if
   
-- prefer-type-fest-iterable-element
+- prefer-immutable-iterable-element
   
-- prefer-type-fest-json-array
+- prefer-immutable-json-array
   
-- prefer-type-fest-json-object
+- prefer-immutable-json-object
   
-- prefer-type-fest-json-primitive
+- prefer-immutable-json-primitive
   
-- prefer-type-fest-json-value
+- prefer-immutable-json-value
   
-- prefer-type-fest-keys-of-union
+- prefer-immutable-keys-of-union
   
-- prefer-type-fest-literal-union
+- prefer-immutable-literal-union
   
-- prefer-type-fest-merge-exclusive
+- prefer-immutable-merge-exclusive
   
-- prefer-type-fest-non-empty-tuple
+- prefer-immutable-non-empty-tuple
   
-- prefer-type-fest-omit-index-signature
+- prefer-immutable-omit-index-signature
   
-- prefer-type-fest-partial-deep
+- prefer-immutable-partial-deep
   
-- prefer-type-fest-primitive
+- prefer-immutable-primitive
   
-- prefer-type-fest-promisable
+- prefer-immutable-promisable
   
-- prefer-type-fest-readonly-deep
+- prefer-immutable-readonly-deep
   
-- prefer-type-fest-require-all-or-none
+- prefer-immutable-require-all-or-none
   
-- prefer-type-fest-require-at-least-one
+- prefer-immutable-require-at-least-one
   
-- prefer-type-fest-require-exactly-one
+- prefer-immutable-require-exactly-one
   
-- prefer-type-fest-require-one-or-none
+- prefer-immutable-require-one-or-none
   
-- prefer-type-fest-required-deep
+- prefer-immutable-required-deep
   
-- prefer-type-fest-schema
+- prefer-immutable-schema
   
-- prefer-type-fest-set-non-nullable
+- prefer-immutable-set-non-nullable
   
-- prefer-type-fest-set-optional
+- prefer-immutable-set-optional
   
-- prefer-type-fest-set-readonly
+- prefer-immutable-set-readonly
   
-- prefer-type-fest-set-required
+- prefer-immutable-set-required
   
-- prefer-type-fest-simplify
+- prefer-immutable-simplify
   
-- prefer-type-fest-tagged-brands
+- prefer-immutable-tagged-brands
   
-- prefer-type-fest-tuple-of
+- prefer-immutable-tuple-of
   
-- prefer-type-fest-unknown-array
+- prefer-immutable-unknown-array
   
-- prefer-type-fest-unknown-map
+- prefer-immutable-unknown-map
   
-- prefer-type-fest-unknown-record
+- prefer-immutable-unknown-record
   
-- prefer-type-fest-unknown-set
+- prefer-immutable-unknown-set
   
-- prefer-type-fest-unwrap-tagged
+- prefer-immutable-unwrap-tagged
   
-- prefer-type-fest-value-of
+- prefer-immutable-value-of
   
-- prefer-type-fest-writable-deep
+- prefer-immutable-writable-deep
   
-- prefer-type-fest-writable
+- prefer-immutable-writable
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(46e0d73)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/46e0d732d26617586d5b1533da10fd9d729bec56)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(46e0d73)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/46e0d732d26617586d5b1533da10fd9d729bec56)
 
 
 - 🔧 [build] Raises lint baseline and hardens rules
@@ -4870,7 +4870,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(46e0
 
 - Aligns edge-case expectations for suggestion behavior and escaped template placeholders to reduce brittle test outcomes.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3ad591e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/3ad591e4f8be1ffade32bc896ec0af34673ef703)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3ad591e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/3ad591e4f8be1ffade32bc896ec0af34673ef703)
 
 
 - 🔧 [build] Update dependencies in package.json
@@ -4890,7 +4890,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(3ad5
 
 - 📦 Update peerDependencies to require eslint version 10.0.2 for compatibility.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4f1aede)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/4f1aede544912eba9af43a5078b774ede5845435)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4f1aede)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/4f1aede544912eba9af43a5078b774ede5845435)
 
 
 - 🔧 [build] Update Stryker configuration for improved testing
@@ -4899,7 +4899,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(4f1a
 
 - Change `ignoreStatic` option in Stryker config to `false` for comprehensive mutant testing
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(28104ce)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/28104ce26257b19d12fb03c117832bb62fab0a26)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(28104ce)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/28104ce26257b19d12fb03c117832bb62fab0a26)
 
 
 - 🔧 [build] Update Stryker configuration and package.json scripts
@@ -4910,7 +4910,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2810
 
 - ⚡ Enhance Stryker configuration with ignoreStatic and disableTypeChecks options
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5f83e37)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/5f83e378a295fcba40c50841f08b8e13223fba6a)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5f83e37)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/5f83e378a295fcba40c50841f08b8e13223fba6a)
 
 
 - 🔧 [build] Update package.json and package-lock.json
@@ -4919,7 +4919,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5f83
 
 - 🔧 Remove unused dependencies from package-lock.json
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b934c2e)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/b934c2e401cac9ef0889f3d606107b6ee6e0716e)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b934c2e)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b934c2e401cac9ef0889f3d606107b6ee6e0716e)
 
 
 - 🔧 [build] Update dependencies in package.json
@@ -4954,7 +4954,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b934
 
 - 🧪 Ensure all tests cover both defined and negated scenarios for comprehensive coverage
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(63355ae)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/63355ae568aabe9d928faa0d575643f48768d5fa)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(63355ae)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/63355ae568aabe9d928faa0d575643f48768d5fa)
 
 
 - 🔧 [build] Update dependencies in package.json
@@ -4972,7 +4972,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(6335
 
 - 🔄 Update peer dependency "eslint" to version 10.0.1 to ensure compatibility with the latest changes.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e06b605)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/e06b605ec157e48bdef1667bd9b7d29c594ee17a)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e06b605)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e06b605ec157e48bdef1667bd9b7d29c594ee17a)
 
 
 - 🔧 [build] Update Stryker dependencies and package manager version
@@ -4981,7 +4981,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(e06b
 
 - Update package manager version to 11.10.1 for better compatibility
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1dde506)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/1dde506c1d63afe0a9d0ffc1ea7fb8d4722e1844)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1dde506)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/1dde506c1d63afe0a9d0ffc1ea7fb8d4722e1844)
 
 
 - 🔧 [build] Update Knip configuration to remove unnecessary dependencies
@@ -4990,7 +4990,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(1dde
 
 - This change helps in reducing false positives and improving the accuracy of dependency tracking
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5d2f382)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/5d2f382a0e7cdbc2463d18c6f322c29f0d697ace)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5d2f382)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/5d2f382a0e7cdbc2463d18c6f322c29f0d697ace)
 
 
 - 🔧 [build] Update TypeScript configuration for ESLint
@@ -5000,7 +5000,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(5d2f
 
 - 📂 This addition allows ESLint to recognize and lint the `knip.config.ts` file, ensuring consistent code quality and adherence to coding standards across the project.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a4ac857)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a4ac8576e18b4a30ef54662a3857951dca1ac277)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a4ac857)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a4ac8576e18b4a30ef54662a3857951dca1ac277)
 
 
 - 🔧 [build] Force install dependencies in Docusaurus deployment workflow
@@ -5015,14 +5015,14 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a4ac
 
 - Changed path for ActionLintConfig.yaml to use the repository root for better accessibility
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b1b30c3)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/b1b30c3c1fb58329c11e49acbe4e84acae2d46c4)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(b1b30c3)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b1b30c3c1fb58329c11e49acbe4e84acae2d46c4)
 
 
 - 🔧 [build] Update npm-check-updates to version 19.4.0
 
 - Upgraded the "npm-check-updates" package in both package.json and package-lock.json to ensure compatibility with the latest features and fixes.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0d1b867)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/0d1b867c174310b07659a43fbd41694ab4579337)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0d1b867)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/0d1b867c174310b07659a43fbd41694ab4579337)
 
 
 - 🔧 [build] Update Docusaurus configuration and add manifest file
@@ -5035,20 +5035,20 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(0d1b
 
 - 🔧 [build] Update TypeDoc output path in typedoc.local.config.json
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9327651)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/93276515f3fef321f4fea54d762fdf9d63ac07b5)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(9327651)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/93276515f3fef321f4fea54d762fdf9d63ac07b5)
 
 
-- 🔧 [build] Refactor TypeFest plugin types and configurations
+- 🔧 [build] Refactor Immutable plugin types and configurations
 
-- 🆕 Export `TypefestConfigName` and `TypefestPresetConfig` types for better clarity
+- 🆕 Export `ImmutableConfigName` and `ImmutablePresetConfig` types for better clarity
 
-- 🔄 Update `TypefestPlugin` and `TypefestConfigs` types to enhance type safety
+- 🔄 Update `ImmutablePlugin` and `ImmutableConfigs` types to enhance type safety
 
 - 🔧 Modify function signatures to use new types for improved consistency
 
-- 📦 Adjust `typefestPlugin` structure to align with updated type definitions
+- 📦 Adjust `immutablePlugin` structure to align with updated type definitions
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a0fdbab)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/a0fdbabd4429095440c4efd43d07829ace5b2afc)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a0fdbab)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/a0fdbabd4429095440c4efd43d07829ace5b2afc)
 
 
 - 🔧 [build] Update eslint-plugin-testing-library to version 7.16.0
@@ -5057,84 +5057,84 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(a0fd
 
 - Update dependencies for compatibility with the latest ESLint versions
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(25224f5)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/25224f59273e80a3b6231b8eaf954f164f3565f2)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(25224f5)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/25224f59273e80a3b6231b8eaf954f164f3565f2)
 
 
-- 🔧 [build] Refactor TypeFest ESLint rules for consistency and clarity
+- 🔧 [build] Refactor Immutable ESLint rules for consistency and clarity
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-require-all-or-none`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-require-all-or-none`
   
 - Moved `name`, `meta`, and `defaultOptions` to the end of the rule definition for consistency.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-require-at-least-one`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-require-at-least-one`
   
 - Adjusted the structure to match the new format.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-require-exactly-one`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-require-exactly-one`
   
 - Ensured consistent ordering of properties.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-require-one-or-none`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-require-one-or-none`
   
 - Updated to follow the new structure.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-schema`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-schema`
   
 - Aligned with the new metadata format.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-set-non-nullable`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-set-non-nullable`
   
 - Adjusted to maintain consistency across rules.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-set-optional`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-set-optional`
   
 - Updated to follow the new structure.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-set-readonly`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-set-readonly`
   
 - Ensured consistent ordering of properties.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-set-required`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-set-required`
   
 - Aligned with the new metadata format.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-simplify`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-simplify`
   
 - Updated to follow the new structure.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-tagged-brands`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-tagged-brands`
   
 - Adjusted to maintain consistency across rules.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-tuple-of`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-tuple-of`
   
 - Ensured consistent ordering of properties.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-unknown-array`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-unknown-array`
   
 - Aligned with the new metadata format.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-unknown-map`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-unknown-map`
   
 - Updated to follow the new structure.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-unknown-record`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-unknown-record`
   
 - Ensured consistent ordering of properties.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-unknown-set`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-unknown-set`
   
 - Aligned with the new metadata format.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-unwrap-tagged`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-unwrap-tagged`
   
 - Updated to follow the new structure.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-value-of`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-value-of`
   
 - Ensured consistent ordering of properties.
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-writable`
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-writable`
   
 - Aligned with the new metadata format.
 
@@ -5142,139 +5142,139 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(2522
   
 - Changed `expect(typeof description).toBe("string")` to `expectTypeOf(description).toBeString()`
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ce485eb)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ce485eb271acb65d12753e772cdcd320572bdeab)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ce485eb)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ce485eb271acb65d12753e772cdcd320572bdeab)
 
 
-- 🔧 [build] Refactor TypeFest ESLint rules for consistency and clarity
+- 🔧 [build] Refactor Immutable ESLint rules for consistency and clarity
 
 
-- 🛠️ [fix] Reorganize rule metadata for `prefer-type-fest-require-all-or-none`:
+- 🛠️ [fix] Reorganize rule metadata for `prefer-immutable-require-all-or-none`:
   
 - Moved `name`, `meta`, and `defaultOptions` to the correct positions.
   
 - Ensured the `create` function remains intact while maintaining functionality.
 
 
-- 🛠️ [fix] Update `prefer-type-fest-require-at-least-one` rule structure:
+- 🛠️ [fix] Update `prefer-immutable-require-at-least-one` rule structure:
   
 - Adjusted metadata organization for clarity.
   
 - Preserved the core logic within the `create` function.
 
 
-- 🛠️ [fix] Refactor `prefer-type-fest-require-exactly-one` rule:
+- 🛠️ [fix] Refactor `prefer-immutable-require-exactly-one` rule:
   
 - Streamlined metadata for better readability.
   
 - Kept the reporting logic unchanged.
 
 
-- 🛠️ [fix] Revise `prefer-type-fest-require-one-or-none` rule:
+- 🛠️ [fix] Revise `prefer-immutable-require-one-or-none` rule:
   
 - Enhanced metadata structure for consistency.
   
 - Maintained existing functionality in the `create` method.
 
 
-- 🛠️ [fix] Modify `prefer-type-fest-schema` rule:
+- 🛠️ [fix] Modify `prefer-immutable-schema` rule:
   
 - Reorganized metadata for improved clarity.
   
 - Ensured the reporting logic remains functional.
 
 
-- 🛠️ [fix] Adjust `prefer-type-fest-set-non-nullable` rule:
+- 🛠️ [fix] Adjust `prefer-immutable-set-non-nullable` rule:
   
 - Updated metadata layout for consistency.
   
 - Preserved the core logic in the `create` function.
 
 
-- 🛠️ [fix] Refactor `prefer-type-fest-set-optional` rule:
+- 🛠️ [fix] Refactor `prefer-immutable-set-optional` rule:
   
 - Improved metadata organization for clarity.
   
 - Maintained existing functionality.
 
 
-- 🛠️ [fix] Revise `prefer-type-fest-set-readonly` rule:
+- 🛠️ [fix] Revise `prefer-immutable-set-readonly` rule:
   
 - Streamlined metadata for better readability.
   
 - Ensured the reporting logic remains intact.
 
 
-- 🛠️ [fix] Update `prefer-type-fest-set-required` rule:
+- 🛠️ [fix] Update `prefer-immutable-set-required` rule:
   
 - Enhanced metadata structure for consistency.
   
 - Preserved the core logic within the `create` function.
 
 
-- 🛠️ [fix] Refactor `prefer-type-fest-simplify` rule:
+- 🛠️ [fix] Refactor `prefer-immutable-simplify` rule:
   
 - Reorganized metadata for improved clarity.
   
 - Kept the reporting logic unchanged.
 
 
-- 🛠️ [fix] Modify `prefer-type-fest-tagged-brands` rule:
+- 🛠️ [fix] Modify `prefer-immutable-tagged-brands` rule:
   
 - Adjusted metadata organization for clarity.
   
 - Maintained existing functionality in the `create` method.
 
 
-- 🛠️ [fix] Revise `prefer-type-fest-tuple-of` rule:
+- 🛠️ [fix] Revise `prefer-immutable-tuple-of` rule:
   
 - Improved metadata layout for consistency.
   
 - Preserved the core logic in the `create` function.
 
 
-- 🛠️ [fix] Adjust `prefer-type-fest-unknown-array` rule:
+- 🛠️ [fix] Adjust `prefer-immutable-unknown-array` rule:
   
 - Updated metadata structure for clarity.
   
 - Ensured the reporting logic remains functional.
 
 
-- 🛠️ [fix] Refactor `prefer-type-fest-unknown-map` rule:
+- 🛠️ [fix] Refactor `prefer-immutable-unknown-map` rule:
   
 - Streamlined metadata for better readability.
   
 - Maintained existing functionality.
 
 
-- 🛠️ [fix] Modify `prefer-type-fest-unknown-record` rule:
+- 🛠️ [fix] Modify `prefer-immutable-unknown-record` rule:
   
 - Enhanced metadata organization for consistency.
   
 - Preserved the core logic within the `create` function.
 
 
-- 🛠️ [fix] Revise `prefer-type-fest-unknown-set` rule:
+- 🛠️ [fix] Revise `prefer-immutable-unknown-set` rule:
   
 - Reorganized metadata for improved clarity.
   
 - Kept the reporting logic unchanged.
 
 
-- 🛠️ [fix] Update `prefer-type-fest-unwrap-tagged` rule:
+- 🛠️ [fix] Update `prefer-immutable-unwrap-tagged` rule:
   
 - Adjusted metadata layout for consistency.
   
 - Maintained existing functionality in the `create` method.
 
 
-- 🛠️ [fix] Refactor `prefer-type-fest-value-of` rule:
+- 🛠️ [fix] Refactor `prefer-immutable-value-of` rule:
   
 - Improved metadata structure for clarity.
   
 - Preserved the core logic in the `create` function.
 
 
-- 🛠️ [fix] Modify `prefer-type-fest-writable` rule:
+- 🛠️ [fix] Modify `prefer-immutable-writable` rule:
   
 - Streamlined metadata for better readability.
   
@@ -5286,7 +5286,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ce48
 
 - 🛠️ [fix] Enhanced type checks for rule descriptions to ensure they are strings.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(df2ae2f)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/df2ae2f38b3f8c5d03b1737f5bf328a8132adc77)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(df2ae2f)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/df2ae2f38b3f8c5d03b1737f5bf328a8132adc77)
 
 
 - 🔧 [build] Update dependencies for improved compatibility and features
@@ -5302,7 +5302,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(df2a
 
 - 📦 Update peer dependency "eslint" from "^9.0.0" to "^10.0.0" to align with the latest ESLint version requirements.
 
-Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ff78dc7)`](https://github.com/Nick2bad4u/eslint-plugin-typefest/commit/ff78dc7d23858611fe280055f82504009732e61c)
+Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ff78dc7)`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ff78dc7d23858611fe280055f82504009732e61c)
 
 
 
@@ -5310,7 +5310,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com> [`(ff78
 
 
 ## Contributors
-Thanks to all the [contributors](https://github.com/Nick2bad4u/eslint-plugin-typefest/graphs/contributors) for their hard work!
+Thanks to all the [contributors](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/graphs/contributors) for their hard work!
 ## License
-This project is licensed under the [UnLicense](https://github.com/Nick2bad4u/eslint-plugin-typefest/blob/main/LICENSE)
+This project is licensed under the [UnLicense](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/blob/main/LICENSE)
 *This changelog was automatically generated with [git-cliff](https://github.com/orhun/git-cliff).*

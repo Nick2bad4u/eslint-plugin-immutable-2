@@ -24,27 +24,27 @@ All type-aware rule execution now enters through explicit gates:
 
 ### Rules that require type checking (`meta.docs.requiresTypeChecking: true`)
 
-- `src/rules/prefer-ts-extras-array-at.ts`
-- `src/rules/prefer-ts-extras-array-concat.ts`
-- `src/rules/prefer-ts-extras-array-find.ts`
-- `src/rules/prefer-ts-extras-array-find-last.ts`
-- `src/rules/prefer-ts-extras-array-find-last-index.ts`
-- `src/rules/prefer-ts-extras-array-includes.ts`
-- `src/rules/prefer-ts-extras-array-join.ts`
-- `src/rules/prefer-ts-extras-array-first.ts`
-- `src/rules/prefer-ts-extras-array-last.ts`
-- `src/rules/prefer-ts-extras-is-empty.ts`
-- `src/rules/prefer-ts-extras-safe-cast-to.ts`
-- `src/rules/prefer-ts-extras-set-has.ts`
-- `src/rules/prefer-ts-extras-string-split.ts`
+- `src/rules/prefer-immutable-array-at.ts`
+- `src/rules/prefer-immutable-array-concat.ts`
+- `src/rules/prefer-immutable-array-find.ts`
+- `src/rules/prefer-immutable-array-find-last.ts`
+- `src/rules/prefer-immutable-array-find-last-index.ts`
+- `src/rules/prefer-immutable-array-includes.ts`
+- `src/rules/prefer-immutable-array-join.ts`
+- `src/rules/prefer-immutable-array-first.ts`
+- `src/rules/prefer-immutable-array-last.ts`
+- `src/rules/prefer-immutable-is-empty.ts`
+- `src/rules/prefer-immutable-safe-cast-to.ts`
+- `src/rules/prefer-immutable-set-has.ts`
+- `src/rules/prefer-immutable-string-split.ts`
 
 ### Rules with optional typed branch (`meta.docs.requiresTypeChecking: false`)
 
 These rules always run a definition-only check and only run checker-backed logic when services are explicitly prevalidated:
 
-- `src/rules/prefer-ts-extras-is-defined.ts`
-- `src/rules/prefer-ts-extras-is-infinite.ts`
-- `src/rules/prefer-ts-extras-is-present.ts`
+- `src/rules/prefer-immutable-is-defined.ts`
+- `src/rules/prefer-immutable-is-infinite.ts`
+- `src/rules/prefer-immutable-is-present.ts`
 
 ## Telemetry counters
 

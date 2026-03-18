@@ -3,18 +3,16 @@
  * Public plugin entrypoint for eslint-plugin-immutable exports and preset wiring.
  */
 import type { ESLint, Linter } from "eslint";
-import type { Except } from "type-fest";
 
 import typeScriptParser from "@typescript-eslint/parser";
-import { safeCastTo } from "ts-extras";
 
 import packageJson from "../package.json" with { type: "json" };
 import {
     type ImmutableConfigName,
     immutableConfigNames as immutableConfigNameList,
     immutableConfigsByName,
-} from "./immutable/configs/config-registry.js";
-import { rules as immutableRules } from "./immutable/rules/rule-registry.js";
+} from "./configs/config-registry.js";
+import { rules as immutableRules } from "./rules/rule-registry.js";
 
 /** Default file globs targeted by plugin presets when `files` is omitted. */
 const DEFAULT_FILES = ["**/*.{js,cjs,mjs,jsx,ts,tsx,mts,cts}"] as const;
@@ -39,10 +37,13 @@ export type ImmutableRuleId = `immutable/${ImmutableRuleName}`;
 export type ImmutableRuleName = keyof typeof immutableRules;
 
 /** Contract for the `configs` object exported by this plugin. */
-type ImmutableConfigsContract = Record<ImmutableConfigName, ImmutablePresetConfig>;
+type ImmutableConfigsContract = Record<
+    ImmutableConfigName,
+    ImmutablePresetConfig
+>;
 
 /** Fully assembled plugin contract used by the runtime default export. */
-type ImmutablePluginContract = Except<ESLint.Plugin, "configs" | "rules"> & {
+type ImmutablePluginContract = Omit<ESLint.Plugin, "configs" | "rules"> & {
     readonly configs: ImmutableConfigsContract;
     readonly meta: {
         readonly name: string;
@@ -62,7 +63,7 @@ const getPackageVersion = (pkg: unknown): string => {
     return typeof version === "string" ? version : "0.0.0";
 };
 
-const packageJsonValue = safeCastTo<unknown>(packageJson);
+const packageJsonValue = packageJson as unknown;
 
 const immutableEslintRules: NonNullable<ESLint.Plugin["rules"]> &
     typeof immutableRules = immutableRules as NonNullable<
@@ -80,8 +81,8 @@ const withImmutablePlugin = (
     const parserOptions = {
         ...defaultParserOptions,
         ...((parserOptionsInput !== null &&
-            typeof parserOptionsInput === "object" &&
-            !Array.isArray(parserOptionsInput)
+        typeof parserOptionsInput === "object" &&
+        !Array.isArray(parserOptionsInput)
             ? parserOptionsInput
             : {}) as NonNullable<
             NonNullable<Linter.Config["languageOptions"]>["parserOptions"]
