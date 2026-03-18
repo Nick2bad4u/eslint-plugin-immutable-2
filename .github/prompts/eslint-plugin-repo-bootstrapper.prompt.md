@@ -4,7 +4,7 @@ description: "🤖🤖 Use this prompt to bootstrap a new ESLint plugin reposito
 argument-hint: Provide the folder name of the existing plugin to port, such as `eslint-plugin-legacy`.
 ---
 
-This is a comprehensive, multi-step task to bootstrap a new ESLint plugin repository by migrating a source plugin into my standardized modern template. I will repeat this prompt as needed to give you time to accomplish all tasks. Work autonomously and use your intuition to figure out the next logical step. Copilot instructions for specific folders have already been added to the repo, so be sure to follow those as well. For this immutable plugin we want it to work for typescript and javascript.
+This is a comprehensive, multi-step task to bootstrap a new ESLint plugin repository by migrating a source plugin into my standardized modern template. I will repeat this prompt as needed to give you time to accomplish all tasks. Work autonomously and use your intuition to figure out the next logical step. Copilot instructions for specific folders have already been added to the repo, so be sure to follow those as well. For this immutable plugin we want it to work for both TypeScript and JavaScript.
 
 ## Critical framing: use the template as a guide, not as source rule content
 
