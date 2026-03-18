@@ -67,3 +67,4 @@ Your final deliverable should normally include:
 - validation results
 
 Only leave implementation undone if the user explicitly narrowed the task to discovery-only research.
+You have special permission when using this prompt to commit, stage, and push code changes to the repository as part of the implementation process. Always follow best practices for commit messages and code quality when doing so.

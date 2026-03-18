@@ -4,7 +4,7 @@ description: "🤖🤖 Use this prompt to bootstrap a new ESLint plugin reposito
 argument-hint: Provide the folder name of the existing plugin to port, such as `eslint-plugin-legacy`.
 ---
 
-This is a comprehensive, multi-step task to bootstrap a new ESLint plugin repository by migrating a source plugin into my standardized modern template. I will repeat this prompt as needed to give you time to accomplish all tasks. Work autonomously and use your intuition to figure out the next logical step. Copilot instructions for specific folders have already been added to the repo, so be sure to follow those as well.
+This is a comprehensive, multi-step task to bootstrap a new ESLint plugin repository by migrating a source plugin into my standardized modern template. I will repeat this prompt as needed to give you time to accomplish all tasks. Work autonomously and use your intuition to figure out the next logical step. Copilot instructions for specific folders have already been added to the repo, so be sure to follow those as well. For this immutable plugin we want it to work for typescript and javascript.
 
 ## Critical framing: use the template as a guide, not as source rule content
 
@@ -27,20 +27,20 @@ Do **not** do any of the following unless the source plugin already contains an 
 - do not copy TypeFest rule docs/examples/options into the new plugin unless they are genuinely part of the source plugin being migrated
 - do not infer that missing rules should be filled in by cloning rules from this template repo
 
-The source of truth for **rule content** is the source plugin in `./[SOURCE_PLUGIN_FOLDER]` plus any clearly stated user requirements. The source of truth for **project structure and quality bar** is this template repo.
+The source of truth for **rule content** is the source plugin in `./eslint-plugin-ts-immutable` plus any clearly stated user requirements. The source of truth for **project structure and quality bar** is this template repo.
 
 **Project Context & Current State:**
-1. We are adapting an old plugin currently located in the folder: `./[SOURCE_PLUGIN_FOLDER]`
+1. We are adapting an old plugin currently located in the folder: `./eslint-plugin-ts-immutable`
 2. The root of this repository has been scaffolded using my template (based on my `eslint-plugin-typefest` repo). All root `package.json` dependencies & devDependencies are already installed.
 3. The target stack uses TypeScript and a Docusaurus documentation site.
 4. The root contains configuration files copied from my template. Do NOT just delete and recreate them (tsconfig, lint configs, etc.). Instead, **adapt** them. Use the strict rules and configs already present as your baseline. Keep the Typedoc, ESLint, Remark, tsconfig, testing, Docusaurus, and other configs mostly intact, only making adjustments if absolutely necessary to get the new code working. Scripts may need some slight changes. The Typedoc and Remark plugins are to be used to help keep the docs up to date and in sync with the code.
 
 **Your Instructions:**
-5. **Adapt & Migrate:** Move rules, tests, and docs from `./[SOURCE_PLUGIN_FOLDER]` into the template's strict folder structure (`src/`, `docs/`, `test/`). Only migrate rule behavior that exists in the source plugin or that is explicitly required to support the migration.
+5. **Adapt & Migrate:** Move rules, tests, and docs from `./eslint-plugin-ts-immutable` into the template's strict folder structure (`src/`, `docs/`, `test/`). Only migrate rule behavior that exists in the source plugin or that is explicitly required to support the migration.
 6. **Strict Linting:** Update the entire repo (from `package.json` to GitHub release workflows). The lint config is very strict and must stay that way. It should work for the most part, but make slight adjustments if absolutely necessary. The only thing you need to do is update the local plugin import in the ESLint config. You should never turn off a rule unless it's absolutely necessary, but prefer to use inline ESLint disable comments for any exceptions rather than changing the config. The goal is to have 0 lint warnings/errors with the new code.
 7. **Typing & TSConfig:** We run an extremely strict TSConfig. You may need to add types or make adjustments to get the code to compile without errors. The goal is to have 0 type errors with the new code.
 8. **Modernize:** Rewrite all migrated rules in TypeScript and update them to modern ESLint 10 plugin standards. Preserve the source plugin's intent; do not replace it with TypeFest-template rule ideas.
-9. **Cleanup:** You may delete files from `./[SOURCE_PLUGIN_FOLDER]` ONLY after you have fully copied, updated, and verified the respective rule/doc.
+9. **Cleanup:** You may delete files from `./eslint-plugin-ts-immutable` ONLY after you have fully copied, updated, and verified the respective rule/doc.
 10. **Documentation:** Update the Docusaurus config and docs for each migrated rule, ensuring they match the style and standards of my template. ESLint meta data CANNOT be runtime injected into the docs via helpers, it has to be static. You must manually copy and update all relevant information for each rule, such as descriptions, options, examples, etc. Use template docs structure as a formatting reference only, not as content to copy blindly.
 11. **Testing:** Ensure all tests are updated and passing with well-written test cases that cover all edge cases.
 12. **Docusaurus:** Ensure the Docusaurus site is fully functional with the copied config and updated documentation. Make sure any documentation, examples, or site content is updated to reflect the new rules and standards. Look for any references to the old plugin name or rules and update them accordingly.
