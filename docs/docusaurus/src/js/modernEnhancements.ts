@@ -74,13 +74,10 @@ function isRuntimeSidebarLink(link: HTMLAnchorElement): boolean {
  *
  * @param link - Candidate sidebar link.
  *
- * @returns `true` when link is in `immutable` or `immutable` rule lists.
+ * @returns `true` when link is within the Rules sidebar category.
  */
 function isNumberedRuleSidebarLink(link: HTMLAnchorElement): boolean {
-    return (
-        link.closest(".sb-cat-rules-immutable") !== null ||
-        link.closest(".sb-cat-rules-immutable") !== null
-    );
+    return link.closest(".sb-cat-rules") !== null;
 }
 
 /**

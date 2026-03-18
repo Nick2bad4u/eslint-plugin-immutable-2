@@ -1,11 +1,11 @@
 ---
 title: Typed service path inventory
-description: Inventory of typed parser-service and TypeScript-checker callpaths used by eslint-plugin-immutable-2.
+description: Inventory of typed parser-service and checker callpaths relevant to eslint-plugin-immutable-2.
 ---
 
 # Typed service path inventory
 
-This page inventories the current typed callpaths that can reach parser services or the TypeScript checker.
+This page inventories typed callpaths that can reach parser services or the TypeScript checker.
 
 > Source document: [`docs/internal/typed-paths.md`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/blob/main/docs/internal/typed-paths.md)
 
@@ -29,29 +29,14 @@ All type-aware rule execution enters through explicit gates:
 
 ## Rule callpath inventory
 
-### Rules that require type checking (`meta.docs.requiresTypeChecking: true`)
+Current rule set is intentionally syntax-first and works for both JavaScript and
+TypeScript by default.
 
-- `src/rules/prefer-immutable-array-at.ts`
-- `src/rules/prefer-immutable-array-concat.ts`
-- `src/rules/prefer-immutable-array-find.ts`
-- `src/rules/prefer-immutable-array-find-last.ts`
-- `src/rules/prefer-immutable-array-find-last-index.ts`
-- `src/rules/prefer-immutable-array-includes.ts`
-- `src/rules/prefer-immutable-array-join.ts`
-- `src/rules/prefer-immutable-array-first.ts`
-- `src/rules/prefer-immutable-array-last.ts`
-- `src/rules/prefer-immutable-is-empty.ts`
-- `src/rules/prefer-immutable-safe-cast-to.ts`
-- `src/rules/prefer-immutable-set-has.ts`
-- `src/rules/prefer-immutable-string-split.ts`
-
-### Rules with optional typed branch (`meta.docs.requiresTypeChecking: false`)
-
-These rules always run a definition-only check and only run checker-backed logic when services are explicitly prevalidated:
-
-- `src/rules/prefer-immutable-is-defined.ts`
-- `src/rules/prefer-immutable-is-infinite.ts`
-- `src/rules/prefer-immutable-is-present.ts`
+- No currently shipped rule requires TypeScript checker services to execute.
+- Typed helper infrastructure remains available in `src/_internal` for
+  compatibility and future type-aware rules.
+- Any future type-aware rule should continue to use explicit guard gates before
+  calling typed services.
 
 ## Telemetry counters
 

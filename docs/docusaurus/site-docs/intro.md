@@ -4,16 +4,17 @@ sidebar_position: 1
 
 # eslint-plugin-immutable-2
 
-`eslint-plugin-immutable-2` helps TypeScript codebases adopt more explicit, safer patterns with:
+`eslint-plugin-immutable-2` helps JavaScript and TypeScript codebases adopt more explicit, safer patterns with:
 
-- [`immutable`](https://github.com/sindresorhus/immutable) utility types.
-- [`immutable`](https://github.com/sindresorhus/immutable) runtime helpers.
+- immutable-data enforcement rules.
+- functional-style constraints.
+- optional type-aware diagnostics for TypeScript projects.
 
 ## What this documentation includes
 
 - A complete **rule reference** with examples for every rule.
 - **Getting Started** guidance for Flat Config projects.
-- A small **Developer API** section generated with TypeDoc.
+- A **Developer API** section generated with TypeDoc.
 
 ## Next step
 

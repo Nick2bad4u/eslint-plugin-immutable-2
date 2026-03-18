@@ -16,21 +16,21 @@ import immutable from "eslint-plugin-immutable-2";
 
 const eslint = new ESLint({
   overrideConfig: {
-    files: ["**/*.ts"],
+    files: ["**/*.{js,ts}"],
     plugins: {
       immutable,
     },
     rules: {
-      "immutable/prefer-immutable-primitive": "error",
+      "immutable/no-let": "error",
     },
   },
 });
 
-const fileResults = await eslint.lintFiles(["src/**/*.ts"]);
+const fileResults = await eslint.lintFiles(["src/**/*.{js,ts}"]);
 
 const textResults = await eslint.lintText(
-  "type PrimitiveAlias = string | number | bigint | boolean | symbol | null | undefined;",
-  { filePath: "virtual.ts" }
+  "let total = 0;\nfor (const value of values) total += value;",
+  { filePath: "virtual.js" }
 );
 
 const allResults = [...fileResults, ...textResults];

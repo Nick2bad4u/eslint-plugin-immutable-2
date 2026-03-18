@@ -67,7 +67,7 @@ const config: Config = {
     baseUrl: "/eslint-plugin-immutable-2/",
     baseUrlIssueBanner: true,
     deploymentBranch: "gh-pages",
-    favicon: "img/logo.svg",
+    favicon: "img/favicon.ico",
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: futureConfig,
     clientModules: [modernEnhancementsClientModule],
@@ -254,7 +254,7 @@ const config: Config = {
     ],
     projectName,
     tagline:
-        "Type-safe ESLint rules for preferring immutable and immutable patterns.",
+        "ESLint rules for immutable and functional patterns in JavaScript and TypeScript.",
     themeConfig: {
         colorMode: {
             defaultMode: "dark",
@@ -302,12 +302,12 @@ const config: Config = {
                             label: "\ue7d2 ESLint Inspector",
                         },
                         {
-                            href: `https://www.npmjs.com/package/immutable`,
-                            label: "\uf113 immutable",
+                            href: "https://www.npmjs.com/package/eslint",
+                            label: "\uf113 ESLint",
                         },
                         {
-                            href: `https://www.npmjs.com/package/immutable`,
-                            label: "\ue65b immutable",
+                            href: "https://www.npmjs.com/package/@typescript-eslint/parser",
+                            label: "\ue65b typescript-eslint",
                         },
                     ],
                     title: "📁 Project",
@@ -381,12 +381,12 @@ const config: Config = {
                             to: "/docs/rules",
                         },
                         {
-                            label: "💠 Rules for immutable",
-                            to: "/docs/rules/category/immutable",
+                            label: "• immutable-data",
+                            to: "/docs/rules/immutable-data",
                         },
                         {
-                            label: "✴️ Rules for immutable",
-                            to: "/docs/rules/category/immutable",
+                            label: "• no-mutation rules",
+                            to: "/docs/rules/no-let",
                         },
                     ],
                 },
@@ -402,28 +402,24 @@ const config: Config = {
                             to: "/docs/rules/presets",
                         },
                         {
-                            label: "🟢 Minimal",
-                            to: "/docs/rules/presets/minimal",
+                            label: "🟢 Functional Lite",
+                            to: "/docs/rules/presets/functional-lite",
                         },
                         {
-                            label: "🟡 Recommended",
+                            label: "🟡 Functional",
+                            to: "/docs/rules/presets/functional",
+                        },
+                        {
+                            label: "🟠 Immutable",
+                            to: "/docs/rules/presets/immutable",
+                        },
+                        {
+                            label: "🔵 Recommended",
                             to: "/docs/rules/presets/recommended",
-                        },
-                        {
-                            label: "🔴 Strict",
-                            to: "/docs/rules/presets/strict",
                         },
                         {
                             label: "🟣 All",
                             to: "/docs/rules/presets/all",
-                        },
-                        {
-                            label: "💠 immutable",
-                            to: "/docs/rules/presets/immutable-types",
-                        },
-                        {
-                            label: "✴️ immutable",
-                            to: "/docs/rules/presets/immutable-type-guards",
                         },
                     ],
                 },
@@ -490,22 +486,22 @@ const config: Config = {
                             label: "• \ue616 NPM",
                         },
                         {
-                            href: `https://github.com/sindresorhus/immutable`,
+                            href: "https://github.com/eslint/eslint",
                             className: "navbar-dropdown-divider-before",
-                            label: "💠 \ue709 immutable",
+                            label: "💠 \ue709 ESLint",
                         },
                         {
-                            href: `https://www.npmjs.com/package/immutable`,
-                            label: "💠 \ue616 immutable",
+                            href: "https://www.npmjs.com/package/eslint",
+                            label: "💠 \ue616 ESLint",
                         },
                         {
-                            href: `https://github.com/sindresorhus/immutable`,
+                            href: "https://github.com/typescript-eslint/typescript-eslint",
                             className: "navbar-dropdown-divider-before",
-                            label: "✴️ \ue709 immutable",
+                            label: "✴️ \ue709 typescript-eslint",
                         },
                         {
-                            href: `https://www.npmjs.com/package/immutable`,
-                            label: "✴️ \ue616 immutable",
+                            href: "https://www.npmjs.com/package/@typescript-eslint/parser",
+                            label: "✴️ \ue616 @typescript-eslint/parser",
                         },
                     ],
                 },

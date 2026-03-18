@@ -15,21 +15,17 @@ Then enable it in your Flat Config:
 ```ts
 import immutable from "eslint-plugin-immutable-2";
 
-export default [
-    {
-        plugins: {
-            immutable,
-        },
-        rules: {
-            "immutable/prefer-immutable-is-defined": "error",
-        },
-    },
-];
+export default [immutable.configs.recommended];
 ```
+
+For JavaScript-only projects, this works out of the box.
+
+For TypeScript projects, you can enable type-aware linting in ESLint when you
+want deeper semantic analysis.
 
 ## Recommended approach
 
-- Start with one ruleset (`immutable.configs.recommended` or `immutable.configs.strict`).
+- Start with one ruleset (`immutable.configs.recommended` or `immutable.configs["functional-lite"]`).
 - Fix violations in small batches.
 - Promote warnings to errors after stabilization.
 

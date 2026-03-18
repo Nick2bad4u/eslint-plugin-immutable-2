@@ -10,12 +10,10 @@ This section is for contributors and advanced users.
 
 ## Quick navigation
 
-- [📘 API Overview](./api/index.md)
 - [🧭 Architecture Decisions (ADR)](./adr/index.md)
 - [📊 Architecture and operations charts](./charts/index.md)
 - [🧬 Typed service path inventory](./typed-paths.md)
-- [🧠 Type aliases reference](./api/plugin/type-aliases/ImmutablePlugin.md)
-- [⚙️ Runtime exports reference](./api/plugin/variables/immutablePlugin.md)
+- [⚙️ Runtime exports and public API](./node-api-usage.md)
 
 ## Maintainer operations guides
 
@@ -26,11 +24,11 @@ This section is for contributors and advanced users.
 
 ## Section map
 
-- **API Overview**: Entry point for generated TypeDoc, including internal and plugin exports.
+- **API Usage**: Programmatic lint execution patterns with the Node.js ESLint API.
 - **Architecture Decisions**: ADRs that explain major architectural choices and policy tradeoffs.
 - **Charts**: Visual diagrams for lifecycle, release, docs synchronization, and diagnostics workflows.
-- **Types**: Generated API pages for type aliases and type-level contracts.
-- **Runtime**: Generated API pages for runtime exports and internal helper modules.
+- **Types**: Type-aware linting guidance, readiness checks, and migration notes.
+- **Runtime**: Runtime behavior, rule execution lifecycle, and diagnostics workflows.
 - **Links** (sidebar bottom): Upstream package references, blog pages, and open issue tracker.
 
 ## Architecture decisions (ADR)
@@ -88,5 +86,5 @@ That command loads rule docs directly from `docs/rules`, generates TypeDoc outpu
 - [Open bug issues](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Abug)
 - [Open documentation issues](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Adocumentation)
 - [Open rules issues](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues?q=is%3Aissue%20is%3Aopen%20label%3Arules)
-- [immutable on GitHub](https://github.com/sindresorhus/immutable) / [npm](https://www.npmjs.com/package/immutable)
-- [immutable on GitHub](https://github.com/sindresorhus/immutable) / [npm](https://www.npmjs.com/package/immutable)
+- [ESLint on GitHub](https://github.com/eslint/eslint) / [npm](https://www.npmjs.com/package/eslint)
+- [typescript-eslint on GitHub](https://github.com/typescript-eslint/typescript-eslint) / [npm](https://www.npmjs.com/package/@typescript-eslint/parser)

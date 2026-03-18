@@ -36,12 +36,14 @@ const heroBadges = [
         label: "Flat Config native",
     },
     {
-        description: "Type-aware guidance without sacrificing readability.",
+        description:
+            "Works in JavaScript today and scales to type-aware analysis in TypeScript.",
         icon: "\ue628",
-        label: "TypeScript-first",
+        label: "JavaScript + TypeScript",
     },
     {
-        description: "Clear diagnostics with safe autofixes and suggestions.",
+        description:
+            "Clear diagnostics with safe autofixes and practical migration guidance.",
         icon: "\uf0ad",
         label: "Actionable rule docs",
     },
@@ -54,16 +56,16 @@ const heroBadges = [
  */
 const heroStats = [
     {
-        description: "Type-safe patterns from immutable and immutable.",
-        headline: "\uf0ca 70+ Rules",
+        description: "Core immutable and functional rules for everyday code.",
+        headline: "\uf0ca 14 Core Rules",
     },
     {
         description: "Start small, then scale to stricter coverage.",
-        headline: "\ue690 6 Presets",
+        headline: "\ue690 5 Presets",
     },
     {
         description: "Safe rewrites where semantics are preserved.",
-        headline: "\udb80\udc68 DX-first Autofix & Suggestions",
+        headline: "\udb80\udc68 Safe Autofix & Suggestions",
     },
 ] as const satisfies readonly HeroStat[];
 
@@ -90,14 +92,14 @@ const homeCards = [
         icon: "\uf135",
         title: "Get Started",
         description:
-            "Install the plugin, enable a preset, and start enforcing type-safe immutable and immutable patterns.",
+            "Install the plugin, enable a preset, and start enforcing immutable patterns in JavaScript or TypeScript.",
         to: "/docs/rules/getting-started",
     },
     {
         icon: "\ue690",
         title: "Presets",
         description:
-            "Choose the right preset for your team, from minimal baseline to full strict coverage.",
+            "Choose the right rollout path: functional-lite, functional, immutable, recommended, or all.",
         to: "/docs/rules/presets",
     },
     {
@@ -122,31 +124,27 @@ export default function Home() {
                     <div className={styles.heroGrid}>
                         <div>
                             <p className={styles.heroKicker}>
-                                {`${heroKickerIcon} ESLint plugin for modern TypeScript teams ${heroKickerIcon2}`}
+                                {`${heroKickerIcon} ESLint plugin for modern JavaScript + TypeScript teams ${heroKickerIcon2}`}
                             </p>
                             <Heading as="h1" className={styles.heroTitle}>
                                 eslint-plugin-immutable-2
                             </Heading>
                             <p className={styles.heroSubtitle}>
-                                ESLint rules that recommend safer, clearer
-                                TypeScript types, type guards, and other
-                                patterns by utilizing{" "}
+                                ESLint rules that enforce immutable data and
+                                functional constraints across JavaScript and
+                                TypeScript codebases. Start with{" "}
                                 <Link
                                     className={`${styles.heroInlineLink} ${styles.heroInlineLinkImmutable}`}
-                                    href="https://github.com/sindresorhus/immutable"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    to="/docs/rules/overview"
                                 >
-                                    immutable
+                                    the overview
                                 </Link>{" "}
-                                and{" "}
+                                and pick a preset from{" "}
                                 <Link
                                     className={`${styles.heroInlineLink} ${styles.heroInlineLinkTsExtras}`}
-                                    href="https://github.com/sindresorhus/immutable"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    to="/docs/rules/presets"
                                 >
-                                    immutable
+                                    the presets guide
                                 </Link>
                             </p>
 
