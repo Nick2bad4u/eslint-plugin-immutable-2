@@ -10,12 +10,6 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 // @ts-expect-error -- dist output is generated during build/publish.
 import builtPlugin from "../dist/plugin.js";
-// @ts-expect-error -- dist output is generated during build/publish.
-import {
-    immutableConfigMetadataByName,
-    immutableConfigNamesByReadmeOrder,
-    immutableConfigReferenceToName,
-} from "../dist/_internal/immutable-config-references.js";
 
 /**
  * @typedef {Readonly<{
@@ -41,6 +35,84 @@ import {
  *     | "immutable/type-guards"
  *     | "immutable/types"} PresetName
  */
+
+/**
+ * Canonical metadata for README preset icon rendering.
+ *
+ * @type {Readonly<
+ *     Record<PresetName, Readonly<{ icon: string; readmeOrder: number }>>
+ * >}
+ */
+const immutableConfigMetadataByName = {
+    all: {
+        icon: "🟣",
+        readmeOrder: 5,
+    },
+    minimal: {
+        icon: "🟢",
+        readmeOrder: 1,
+    },
+    recommended: {
+        icon: "🟡",
+        readmeOrder: 2,
+    },
+    "recommended-type-checked": {
+        icon: "🟠",
+        readmeOrder: 3,
+    },
+    strict: {
+        icon: "🔴",
+        readmeOrder: 4,
+    },
+    "immutable/type-guards": {
+        icon: "✴️",
+        readmeOrder: 7,
+    },
+    "immutable/types": {
+        icon: "💠",
+        readmeOrder: 6,
+    },
+};
+
+/** Stable README legend/rendering order for preset icons. */
+const immutableConfigNamesByReadmeOrder = [
+    "minimal",
+    "recommended",
+    "recommended-type-checked",
+    "strict",
+    "all",
+    "immutable/types",
+    "immutable/type-guards",
+];
+
+/**
+ * Supported `meta.docs.immutableConfigs` references. Includes legacy
+ * `typefest.*` references for backward compatibility.
+ *
+ * @type {Readonly<Record<string, PresetName>>}
+ */
+const immutableConfigReferenceToName = {
+    "immutable.configs.all": "all",
+    "immutable.configs.minimal": "minimal",
+    "immutable.configs.recommended": "recommended",
+    "immutable.configs.recommended-type-checked": "recommended-type-checked",
+    "immutable.configs.strict": "strict",
+    "immutable.configs.immutable/type-guards": "immutable/type-guards",
+    "immutable.configs.immutable/types": "immutable/types",
+    'immutable.configs["recommended-type-checked"]': "recommended-type-checked",
+    'immutable.configs["immutable/type-guards"]': "immutable/type-guards",
+    'immutable.configs["immutable/types"]': "immutable/types",
+    "typefest.configs.all": "all",
+    "typefest.configs.minimal": "minimal",
+    "typefest.configs.recommended": "recommended",
+    "typefest.configs.recommended-type-checked": "recommended-type-checked",
+    "typefest.configs.strict": "strict",
+    "typefest.configs.ts-extras/type-guards": "immutable/type-guards",
+    "typefest.configs.type-fest/types": "immutable/types",
+    'typefest.configs["recommended-type-checked"]': "recommended-type-checked",
+    'typefest.configs["ts-extras/type-guards"]': "immutable/type-guards",
+    'typefest.configs["type-fest/types"]': "immutable/types",
+};
 
 const presetOrder = [...immutableConfigNamesByReadmeOrder];
 const presetNameSet = new Set(presetOrder);
