@@ -90,7 +90,8 @@ import * as yamlEslintParser from "yaml-eslint-parser";
  * When bootstrapping a new ESLint plugin, do the following:
  *
  * 1. Import `immutable` from the npm package and add it above
- * 2. Change the `immutable` local import below to be the new plugin's name and path
+ * 2. Change the `immutable` local import below to be the new plugin's name and
+ *    path
  * 3. Setup the `🚢 Local Plugin Import` section below for new plugin
  */
 import immutable2 from "./plugin.mjs";

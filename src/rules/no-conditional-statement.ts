@@ -58,10 +58,7 @@ const getIfBranchViolations = (
     const branches: readonly [
         TSESTree.Statement,
         null | TSESTree.IfStatement | TSESTree.Statement,
-    ] = [
-        node.consequent,
-        node.alternate,
-    ];
+    ] = [node.consequent, node.alternate];
 
     const violations: TSESTree.Node[] = [];
     for (const branch of branches) {
@@ -99,7 +96,9 @@ const getSwitchCaseViolations = (
             continue;
         }
 
-        if (branch.consequent.some((statement) => isReturnStatement(statement))) {
+        if (
+            branch.consequent.some((statement) => isReturnStatement(statement))
+        ) {
             continue;
         }
 
@@ -111,7 +110,9 @@ const getSwitchCaseViolations = (
             if (
                 lastConsequent !== undefined &&
                 isBlockStatement(lastConsequent) &&
-                lastConsequent.body.some((statement) => isReturnStatement(statement))
+                lastConsequent.body.some((statement) =>
+                    isReturnStatement(statement)
+                )
             ) {
                 continue;
             }
@@ -125,8 +126,7 @@ const getSwitchCaseViolations = (
 
 const isExhaustiveIfViolation = (
     node: Readonly<TSESTree.IfStatement>
-): boolean =>
-    node.alternate === null;
+): boolean => node.alternate === null;
 
 const isExhaustiveSwitchViolation = (
     node: Readonly<TSESTree.SwitchStatement>
@@ -137,7 +137,9 @@ const noConditionalStatementRule: ReturnType<
     typeof createRule<Options, MessageIds>
 > = createRule<Options, MessageIds>({
     create(context, [options]) {
-        const checkIfStatement = (node: Readonly<TSESTree.IfStatement>): void => {
+        const checkIfStatement = (
+            node: Readonly<TSESTree.IfStatement>
+        ): void => {
             if (options.allowReturningBranches === false) {
                 context.report({
                     messageId: "unexpectedIf",
@@ -217,7 +219,8 @@ const noConditionalStatementRule: ReturnType<
                 "Incomplete if statement. It must have an else branch and each branch must return.",
             incompleteSwitch:
                 "Incomplete switch statement. It must have a default case and each case must return.",
-            unexpectedIf: "Unexpected if statement. Prefer a conditional expression instead.",
+            unexpectedIf:
+                "Unexpected if statement. Prefer a conditional expression instead.",
             unexpectedSwitch:
                 "Unexpected switch statement. Prefer expression-based branching instead.",
         },

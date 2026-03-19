@@ -6,31 +6,31 @@ export const name = "no-try" as const;
 /** `no-try` rule implementation. */
 const noTryRule: ReturnType<typeof createRule<readonly [], "generic">> =
     createRule<readonly [], "generic">({
-    create(context) {
-        return {
-            TryStatement(node) {
-                context.report({
-                    messageId: "generic",
-                    node,
-                });
+        create(context) {
+            return {
+                TryStatement(node) {
+                    context.report({
+                        messageId: "generic",
+                        node,
+                    });
+                },
+            };
+        },
+        defaultOptions: [],
+        meta: {
+            docs: {
+                description: "disallow try/catch/finally statements.",
+                recommended: true,
+                url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-try",
             },
-        };
-    },
-    defaultOptions: [],
-    meta: {
-        docs: {
-            description: "disallow try/catch/finally statements.",
-            recommended: true,
-            url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-try",
+            messages: {
+                generic:
+                    "Unexpected try statement. Prefer explicit control flow and value-level error handling.",
+            },
+            schema: [],
+            type: "suggestion",
         },
-        messages: {
-            generic:
-                "Unexpected try statement. Prefer explicit control flow and value-level error handling.",
-        },
-        schema: [],
-        type: "suggestion",
-    },
-    name,
-});
+        name,
+    });
 
 export default noTryRule;

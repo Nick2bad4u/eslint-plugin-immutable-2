@@ -15,9 +15,7 @@ import {
     shouldIgnore,
 } from "../common/ignore-options.js";
 import { createRule } from "../util/rule.js";
-import {
-    isPropertyDefinition,
-} from "../util/typeguard.js";
+import { isPropertyDefinition } from "../util/typeguard.js";
 
 /** Rule name exported for config wiring. */
 export const name = "readonly-keyword" as const;
