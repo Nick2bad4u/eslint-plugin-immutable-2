@@ -124,15 +124,11 @@ const noStatefulRegexpRule: ReturnType<
                 checkRegExpCtorInvocation(node);
             },
             Literal(node): void {
-                if (
-                    !("regex" in node) ||
-                    node.regex === undefined ||
-                    node.regex === null
-                ) {
+                if (!(node.value instanceof RegExp)) {
                     return;
                 }
 
-                reportWhenStateful(node, node.regex.flags);
+                reportWhenStateful(node, node.value.flags);
             },
             NewExpression(node): void {
                 checkRegExpCtorInvocation(node);

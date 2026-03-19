@@ -24,12 +24,16 @@ describe("plugin entry module", () => {
             )
         ).toStrictEqual([
             "immutable-data",
+            "no-abort-controller-mutation",
             "no-atomics-mutation",
             "no-buffer-mutation",
+            "no-cache-api-mutation",
             "no-class",
             "no-conditional-statement",
+            "no-cookie-mutation",
             "no-data-view-mutation",
             "no-date-mutation",
+            "no-dom-token-list-mutation",
             "no-expression-statement",
             "no-form-data-mutation",
             "no-headers-mutation",
