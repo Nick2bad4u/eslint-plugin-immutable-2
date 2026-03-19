@@ -13,11 +13,31 @@ describe("no-method-signature rule", () => {
         invalid: [
             {
                 code: "interface Service { run(input: string): string; }",
-                errors: [{ messageId: "generic" }],
+                errors: [
+                    {
+                        messageId: "generic",
+                        suggestions: [
+                            {
+                                messageId: "suggestReadonlyProperty",
+                                output: "interface Service { readonly run: (input: string) => string; }",
+                            },
+                        ],
+                    },
+                ],
             },
             {
                 code: "type Service = { run(input: string): string };",
-                errors: [{ messageId: "generic" }],
+                errors: [
+                    {
+                        messageId: "generic",
+                        suggestions: [
+                            {
+                                messageId: "suggestReadonlyProperty",
+                                output: "type Service = { readonly run: (input: string) => string; };",
+                            },
+                        ],
+                    },
+                ],
             },
         ],
         valid: [

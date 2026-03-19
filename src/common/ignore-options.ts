@@ -1,8 +1,6 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
-import escapeRegExp from "escape-string-regexp";
-
 import type { BaseOptions, RuleContext } from "../util/rule.js";
 
 import { inClass, inFunction, inInterface } from "../util/tree.js";
@@ -55,13 +53,12 @@ export type IgnoreReturnTypeOption = {
 };
 
 /** Shared JSON schema property for `ignoreLocal`. */
-export const ignoreLocalSchemaProperty: Readonly<
-    Record<string, JSONSchema4>
-> = {
-    ignoreLocal: {
-        type: "boolean",
-    },
-};
+export const ignoreLocalSchemaProperty: Readonly<Record<string, JSONSchema4>> =
+    {
+        ignoreLocal: {
+            type: "boolean",
+        },
+    };
 
 /** Shared JSON schema property for `ignorePattern`. */
 export const ignorePatternSchemaProperty: Readonly<
@@ -88,13 +85,12 @@ export const ignoreAccessorPatternSchemaProperty: Readonly<
 };
 
 /** Shared JSON schema property for `ignoreClass`. */
-export const ignoreClassSchemaProperty: Readonly<
-    Record<string, JSONSchema4>
-> = {
-    ignoreClass: {
-        type: "boolean",
-    },
-};
+export const ignoreClassSchemaProperty: Readonly<Record<string, JSONSchema4>> =
+    {
+        ignoreClass: {
+            type: "boolean",
+        },
+    };
 
 /** Shared JSON schema property for `ignoreInterface`. */
 export const ignoreInterfaceSchemaProperty: Readonly<
@@ -127,11 +123,16 @@ const normalizePatterns = (
     return [...patterns];
 };
 
+/** Escape regex metacharacters so user text can be matched literally. */
+const escapeRegExp = (value: string): string =>
+    value.replaceAll(/[$()*+.?[\\\]^{|}]/gu, String.raw`\$&`);
+
 /**
  * Safely test a regex pattern string against text.
  */
 const safelyMatchesRegexPattern = (pattern: string, text: string): boolean => {
     try {
+        // eslint-disable-next-line security/detect-non-literal-regexp -- user-supplied ignore patterns are intentionally compiled and guarded by try/catch.
         return new RegExp(pattern, "u").test(text);
     } catch {
         return false;
@@ -199,10 +200,14 @@ const matchesAccessorPattern = (
             return false;
         }
 
-        const segmentRegex = new RegExp(
-            `^${escapeRegExp(currentPatternPart).replaceAll(String.raw`\*`, ".*")}$`,
-            "u"
+        const escapedAsterisk = String.raw`\*`;
+        const escapedSegment = escapeRegExp(currentPatternPart).replaceAll(
+            escapedAsterisk,
+            ".*"
         );
+        const segmentRegexSource = `^${escapedSegment}$`;
+        // eslint-disable-next-line security/detect-non-literal-regexp -- glob fragments are escaped before wildcard expansion.
+        const segmentRegex = new RegExp(segmentRegexSource, "u");
 
         return (
             segmentRegex.test(currentTextPart) &&
@@ -216,9 +221,27 @@ const matchesAccessorPattern = (
 /**
  * Resolve a stable text form for pattern matching from a node.
  */
+const getNormalizedNodeText = (
+    node: Readonly<TSESTree.Node>,
+    context: Readonly<RuleContext<string, BaseOptions>>
+): string => {
+    if (isIdentifier(node)) {
+        return node.name;
+    }
+
+    if (isMemberExpression(node)) {
+        return `${getNormalizedNodeText(node.object, context)}.${getNormalizedNodeText(node.property, context)}`;
+    }
+
+    return context.sourceCode.getText(node);
+};
+
+/**
+ * Resolve a stable text form for pattern matching from a node.
+ */
 const getSingleNodeText = (
-    node: TSESTree.Node,
-    context: RuleContext<string, BaseOptions>
+    node: Readonly<TSESTree.Node>,
+    context: Readonly<RuleContext<string, BaseOptions>>
 ): string | undefined => {
     if (isAssignmentExpression(node)) {
         return getSingleNodeText(node.left, context);
@@ -244,34 +267,18 @@ const getSingleNodeText = (
 };
 
 /**
- * Render node text with special handling for identifiers/member access chains.
- */
-const getNormalizedNodeText = (
-    node: TSESTree.Node,
-    context: RuleContext<string, BaseOptions>
-): string => {
-    if (isIdentifier(node)) {
-        return node.name;
-    }
-
-    if (isMemberExpression(node)) {
-        return `${getNormalizedNodeText(node.object, context)}.${getNormalizedNodeText(node.property, context)}`;
-    }
-
-    return context.sourceCode.getText(node);
-};
-
-/**
  * Resolve node texts used for ignore-pattern/accessor matching.
  */
 const getNodeTexts = (
-    node: TSESTree.Node,
-    context: RuleContext<string, BaseOptions>
+    node: Readonly<TSESTree.Node>,
+    context: Readonly<RuleContext<string, BaseOptions>>
 ): readonly string[] => {
     if (isVariableDeclaration(node)) {
-        return node.declarations
-            .map((declaration) => getSingleNodeText(declaration, context))
-            .filter((text): text is string => typeof text === "string");
+        return node.declarations.flatMap((declaration) => {
+            const declarationText = getSingleNodeText(declaration, context);
+
+            return typeof declarationText === "string" ? [declarationText] : [];
+        });
     }
 
     const text = getSingleNodeText(node, context);
@@ -279,12 +286,13 @@ const getNodeTexts = (
 };
 
 /**
- * Check whether a node should be ignored according to configured ignore options.
+ * Check whether a node should be ignored according to configured ignore
+ * options.
  */
 export const shouldIgnore = (
-    node: TSESTree.Node,
-    context: RuleContext<string, BaseOptions>,
-    ignoreOptions: AllIgnoreOptions
+    node: Readonly<TSESTree.Node>,
+    context: Readonly<RuleContext<string, BaseOptions>>,
+    ignoreOptions: Readonly<AllIgnoreOptions>
 ): boolean => {
     if (ignoreOptions.ignoreLocal === true && inFunction(node)) {
         return true;
@@ -315,8 +323,9 @@ export const shouldIgnore = (
     }
 
     if (ignoreOptions.ignoreAccessorPattern !== undefined) {
+        const accessorPattern = ignoreOptions.ignoreAccessorPattern;
         const allTextsMatchAccessorPattern = nodeTexts.every((text) =>
-            matchesAccessorPattern(text, ignoreOptions.ignoreAccessorPattern!)
+            matchesAccessorPattern(text, accessorPattern)
         );
 
         if (allTextsMatchAccessorPattern) {

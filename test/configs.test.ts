@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
 
-import plugin from "../src/plugin";
+import immutablePlugin from "../src/plugin";
 
 describe("immutable plugin configs", () => {
     it("exports supported config keys", () => {
         expect(
-            Object.keys(plugin.configs).toSorted((left, right) =>
+            Object.keys(immutablePlugin.configs).toSorted((left, right) =>
                 left.localeCompare(right)
             )
         ).toStrictEqual([
@@ -18,7 +18,7 @@ describe("immutable plugin configs", () => {
     });
 
     it("registers parser defaults and plugin namespace", () => {
-        for (const config of Object.values(plugin.configs)) {
+        for (const config of Object.values(immutablePlugin.configs)) {
             expect(config.plugins).toHaveProperty("immutable");
             expect(config.languageOptions).toBeDefined();
             expect(config.languageOptions?.["parser"]).toBeDefined();
@@ -32,11 +32,11 @@ describe("immutable plugin configs", () => {
     });
 
     it("enables all immutable rules in the all preset", () => {
-        const ruleIds = Object.keys(plugin.rules).map(
+        const ruleIds = Object.keys(immutablePlugin.rules).map(
             (ruleName) => `immutable/${ruleName}`
         );
 
-        expect(plugin.configs.all.rules).toEqual(
+        expect(immutablePlugin.configs.all.rules).toEqual(
             expect.objectContaining(
                 Object.fromEntries(ruleIds.map((ruleId) => [ruleId, "error"]))
             )

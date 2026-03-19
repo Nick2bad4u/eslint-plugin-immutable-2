@@ -13,7 +13,17 @@ describe("no-let rule", () => {
         invalid: [
             {
                 code: "let count = 0;",
-                errors: [{ messageId: "generic" }],
+                errors: [
+                    {
+                        messageId: "generic",
+                        suggestions: [
+                            {
+                                messageId: "suggestConst",
+                                output: "const count = 0;",
+                            },
+                        ],
+                    },
+                ],
             },
             {
                 code: "for (let index = 0; index < 3; index += 1) {}",

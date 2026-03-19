@@ -1,3 +1,5 @@
+/* eslint-disable canonical/no-re-export -- registry modules intentionally compose imported presets into exported maps. */
+
 import type { Linter } from "eslint";
 
 import allConfig from "./all.js";
@@ -28,3 +30,5 @@ export const immutableConfigsByName: ImmutableConfigMap = {
     immutable: immutableConfig,
     recommended: immutableConfig,
 };
+
+/* eslint-enable canonical/no-re-export -- end intentional preset-map aggregation exception. */

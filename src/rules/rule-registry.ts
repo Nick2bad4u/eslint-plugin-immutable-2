@@ -1,20 +1,18 @@
+/* eslint-disable canonical/no-re-export -- this module intentionally aggregates imported rule modules into one export map. */
+
 import type { TSESLint } from "@typescript-eslint/utils";
 
 import immutableDataRule, {
     name as immutableDataName,
 } from "./immutable-data.js";
-import noClassRule, {
-    name as noClassName,
-} from "./no-class.js";
+import noClassRule, { name as noClassName } from "./no-class.js";
 import noConditionalStatementRule, {
     name as noConditionalStatementName,
 } from "./no-conditional-statement.js";
 import noExpressionStatementRule, {
     name as noExpressionStatementName,
 } from "./no-expression-statement.js";
-import noLetRule, {
-    name as noLetName,
-} from "./no-let.js";
+import noLetRule, { name as noLetName } from "./no-let.js";
 import noLoopStatementRule, {
     name as noLoopStatementName,
 } from "./no-loop-statement.js";
@@ -24,18 +22,10 @@ import noMethodSignatureRule, {
 import noMixedInterfaceRule, {
     name as noMixedInterfaceName,
 } from "./no-mixed-interface.js";
-import noRejectRule, {
-    name as noRejectName,
-} from "./no-reject.js";
-import noThisRule, {
-    name as noThisName,
-} from "./no-this.js";
-import noThrowRule, {
-    name as noThrowName,
-} from "./no-throw.js";
-import noTryRule, {
-    name as noTryName,
-} from "./no-try.js";
+import noRejectRule, { name as noRejectName } from "./no-reject.js";
+import noThisRule, { name as noThisName } from "./no-this.js";
+import noThrowRule, { name as noThrowName } from "./no-throw.js";
+import noTryRule, { name as noTryName } from "./no-try.js";
 import readonlyArrayRule, {
     name as readonlyArrayName,
 } from "./readonly-array.js";
@@ -79,3 +69,5 @@ export const rules: Readonly<
     [readonlyArrayName]: readonlyArrayRule,
     [readonlyKeywordName]: readonlyKeywordRule,
 };
+
+/* eslint-enable canonical/no-re-export -- end intentional rule-map aggregation exception. */

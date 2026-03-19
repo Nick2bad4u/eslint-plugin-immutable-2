@@ -101,48 +101,6 @@
             "screen": "https://testing-library.com/docs/queries/about#screen",
             "waitFor": "https://testing-library.com/docs/dom-testing-library/api-async#waitfor"
         },
-        "javascript": {
-            "Array": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-            "Boolean": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-            "Date": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
-            "Error": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
-            "Map": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
-            "Number": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-            "Object": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-            "Promise": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
-            "RegExp": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
-            "Set": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
-            "String": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-            "WeakMap": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
-            "WeakSet": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"
-        },
-        "node": {
-            "Buffer": "https://nodejs.org/docs/latest/api/buffer.html#class-buffer",
-            "Error": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
-            "EventEmitter": "https://nodejs.org/docs/latest/api/events.html#class-eventemitter",
-            "crypto": "https://nodejs.org/docs/latest/api/crypto.html",
-            "events": "https://nodejs.org/docs/latest/api/events.html",
-            "fs": "https://nodejs.org/docs/latest/api/fs.html",
-            "os": "https://nodejs.org/docs/latest/api/os.html",
-            "path": "https://nodejs.org/docs/latest/api/path.html",
-            "process": "https://nodejs.org/docs/latest/api/process.html",
-            "url": "https://nodejs.org/docs/latest/api/url.html"
-        },
-        "postcss": {
-            "Plugin": "https://postcss.org/api/#plugin"
-        },
-        "react": {
-            "Component": "https://react.dev/reference/react/Component",
-            "JSX": "https://react.dev/learn/writing-markup-with-jsx",
-            "ReactNode": "https://react.dev/reference/react/Children#react-node-type",
-            "useCallback": "https://react.dev/reference/react/useCallback",
-            "useContext": "https://react.dev/reference/react/useContext",
-            "useEffect": "https://react.dev/reference/react/useEffect",
-            "useMemo": "https://react.dev/reference/react/useMemo",
-            "useReducer": "https://react.dev/reference/react/useReducer",
-            "useRef": "https://react.dev/reference/react/useRef",
-            "useState": "https://react.dev/reference/react/useState"
-        },
         "immutable": {
             "AbstractClass": "https://github.com/sindresorhus/immutable/blob/main/source/abstract-class.d.ts",
             "AbstractConstructor": "https://github.com/sindresorhus/immutable/blob/main/source/abstract-constructor.d.ts",
@@ -345,6 +303,48 @@
             "WritableDeep": "https://github.com/sindresorhus/immutable/blob/main/source/writable-deep.d.ts",
             "WritableKeysOf": "https://github.com/sindresorhus/immutable/blob/main/source/writable-keys-of.d.ts",
             "Xor": "https://github.com/sindresorhus/immutable/blob/main/source/xor.d.ts"
+        },
+        "javascript": {
+            "Array": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+            "Boolean": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+            "Date": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+            "Error": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+            "Map": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+            "Number": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+            "Object": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+            "Promise": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+            "RegExp": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+            "Set": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+            "String": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+            "WeakMap": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+            "WeakSet": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"
+        },
+        "node": {
+            "Buffer": "https://nodejs.org/docs/latest/api/buffer.html#class-buffer",
+            "Error": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+            "EventEmitter": "https://nodejs.org/docs/latest/api/events.html#class-eventemitter",
+            "crypto": "https://nodejs.org/docs/latest/api/crypto.html",
+            "events": "https://nodejs.org/docs/latest/api/events.html",
+            "fs": "https://nodejs.org/docs/latest/api/fs.html",
+            "os": "https://nodejs.org/docs/latest/api/os.html",
+            "path": "https://nodejs.org/docs/latest/api/path.html",
+            "process": "https://nodejs.org/docs/latest/api/process.html",
+            "url": "https://nodejs.org/docs/latest/api/url.html"
+        },
+        "postcss": {
+            "Plugin": "https://postcss.org/api/#plugin"
+        },
+        "react": {
+            "Component": "https://react.dev/reference/react/Component",
+            "JSX": "https://react.dev/learn/writing-markup-with-jsx",
+            "ReactNode": "https://react.dev/reference/react/Children#react-node-type",
+            "useCallback": "https://react.dev/reference/react/useCallback",
+            "useContext": "https://react.dev/reference/react/useContext",
+            "useEffect": "https://react.dev/reference/react/useEffect",
+            "useMemo": "https://react.dev/reference/react/useMemo",
+            "useReducer": "https://react.dev/reference/react/useReducer",
+            "useRef": "https://react.dev/reference/react/useRef",
+            "useState": "https://react.dev/reference/react/useState"
         },
         "typescript": {
             "ArrayBufferView": "#",

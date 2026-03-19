@@ -28,11 +28,11 @@ import {
  */
 
 const singleRuleBenchmarks = Object.freeze({
+    "immutable/prefer-immutable-arrayable": "error",
     "immutable/prefer-immutable-is-present": "error",
     "immutable/prefer-immutable-safe-cast-to": "error",
     "immutable/prefer-immutable-set-has": "error",
     "immutable/prefer-immutable-string-split": "error",
-    "immutable/prefer-immutable-arrayable": "error",
 });
 
 const standardBenchmarkOptions = Object.freeze({

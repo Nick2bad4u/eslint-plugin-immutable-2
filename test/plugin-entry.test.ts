@@ -1,25 +1,25 @@
 import { describe, expect, it } from "vitest";
 
-import plugin from "../src/plugin";
+import immutablePlugin from "../src/plugin";
 
 describe("plugin entry module", () => {
     it("exports default plugin object with rule and config registries", () => {
-        expect(plugin).toHaveProperty("rules");
-        expect(plugin).toHaveProperty("configs");
-        expect(plugin).toHaveProperty("meta");
+        expect(immutablePlugin).toHaveProperty("rules");
+        expect(immutablePlugin).toHaveProperty("configs");
+        expect(immutablePlugin).toHaveProperty("meta");
     });
 
     it("uses immutable identity metadata", () => {
-        expect(plugin.meta).toMatchObject({
+        expect(immutablePlugin.meta).toMatchObject({
             name: "eslint-plugin-immutable",
             namespace: "immutable",
         });
-        expect(typeof plugin.meta.version).toBe("string");
+        expect(typeof immutablePlugin.meta.version).toBe("string");
     });
 
     it("contains all migrated immutable rules", () => {
         expect(
-            Object.keys(plugin.rules).toSorted((left, right) =>
+            Object.keys(immutablePlugin.rules).toSorted((left, right) =>
                 left.localeCompare(right)
             )
         ).toStrictEqual([

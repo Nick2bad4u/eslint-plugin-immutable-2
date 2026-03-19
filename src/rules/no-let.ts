@@ -1,3 +1,4 @@
+import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
 import {
@@ -25,42 +26,95 @@ const optionsSchema: readonly JSONSchema4[] = [
 ];
 
 /** `no-let` rule implementation. */
-const noLetRule: ReturnType<typeof createRule<Options, "generic">> =
-    createRule<Options, "generic">({
-        create(context, [ignoreOptions]) {
-            return {
-                VariableDeclaration(node) {
-                    if (node.kind !== "let") {
-                        return;
-                    }
+const isLetInClassicForLoopInit = (
+    node: Readonly<TSESTree.VariableDeclaration>
+): boolean => node.parent?.type === "ForStatement" && node.parent.init === node;
 
-                    if (shouldIgnore(node, context, ignoreOptions)) {
-                        return;
-                    }
+const canSafelySuggestConst = (
+    node: Readonly<TSESTree.VariableDeclaration>,
+    context: Readonly<TSESLint.RuleContext<"generic" | "suggestConst", Options>>
+): boolean => {
+    if (isLetInClassicForLoopInit(node)) {
+        return false;
+    }
 
-                    context.report({
-                        messageId: "generic",
-                        node,
-                    });
-                },
-            };
-        },
-        defaultOptions,
-        meta: {
-            defaultOptions: [{}],
-            docs: {
-                description:
-                    "disallow mutable `let` bindings in favor of `const` and expression-based updates.",
-                recommended: true,
-                url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-let",
+    const declaredVariables = context.sourceCode.getDeclaredVariables(node);
+    if (declaredVariables.length === 0) {
+        return false;
+    }
+
+    return declaredVariables.every((variable) =>
+        variable.references.every((reference) => {
+            const isReferenceWrite = reference.isWrite();
+            const isInitializationWrite = reference.init === true;
+            return !isReferenceWrite || isInitializationWrite;
+        })
+    );
+};
+
+/** `no-let` rule implementation. */
+const noLetRule: ReturnType<
+    typeof createRule<Options, "generic" | "suggestConst">
+> = createRule<Options, "generic" | "suggestConst">({
+    create(context, [ignoreOptions]) {
+        return {
+            VariableDeclaration(node) {
+                if (node.kind !== "let") {
+                    return;
+                }
+
+                if (shouldIgnore(node, context, ignoreOptions)) {
+                    return;
+                }
+
+                context.report({
+                    messageId: "generic",
+                    node,
+                    suggest: canSafelySuggestConst(node, context)
+                        ? [
+                              {
+                                  fix: (fixer) => {
+                                      const letToken =
+                                          context.sourceCode.getFirstToken(
+                                              node
+                                          );
+                                      if (letToken === null) {
+                                          return null;
+                                      }
+
+                                      return fixer.replaceText(
+                                          letToken,
+                                          "const"
+                                      );
+                                  },
+                                  messageId: "suggestConst",
+                              },
+                          ]
+                        : null,
+                });
             },
-            messages: {
-                generic: "Unexpected let declaration. Prefer `const` and immutable updates.",
-            },
-            schema: optionsSchema,
-            type: "suggestion",
+        };
+    },
+    defaultOptions,
+    meta: {
+        defaultOptions: [{}],
+        docs: {
+            description:
+                "disallow mutable `let` bindings in favor of `const` and expression-based updates.",
+            recommended: true,
+            url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-let",
         },
-        name,
-    });
+        hasSuggestions: true,
+        messages: {
+            generic:
+                "Unexpected let declaration. Prefer `const` and immutable updates.",
+            suggestConst:
+                "Convert `let` to `const` because this binding is never reassigned.",
+        },
+        schema: optionsSchema,
+        type: "suggestion",
+    },
+    name,
+});
 
 export default noLetRule;

@@ -28,11 +28,45 @@ export type RuleContext<
 /**
  * Shared immutable rule creator that canonicalizes `meta.docs.url`.
  */
-export const createRule: ReturnType<
+
+type ImmutableRuleCreator = ReturnType<
     typeof ESLintUtils.RuleCreator<ImmutableRuleDocs>
-> = ESLintUtils.RuleCreator<ImmutableRuleDocs>((ruleName) =>
-        `${RULE_DOCS_BASE_URL}/${ruleName}`
+>;
+
+const baseCreateRule: ImmutableRuleCreator =
+    // eslint-disable-next-line total-functions/no-hidden-type-assertions -- RuleCreator requires a concrete docs metadata generic to type `meta.docs` across all plugin rules.
+    ESLintUtils.RuleCreator<ImmutableRuleDocs>(
+        (ruleName) => `${RULE_DOCS_BASE_URL}/${ruleName}`
     );
+
+/**
+ * Immutable rule creator with normalized metadata defaults.
+ */
+export const createRule: typeof baseCreateRule = (rule) => {
+    const docs = rule.meta.docs ?? { description: "" };
+    const legacyRequiresTypechecking = Reflect.get(
+        docs,
+        "requiresTypechecking"
+    );
+    const requiresTypeChecking =
+        docs.requiresTypeChecking ??
+        (typeof legacyRequiresTypechecking === "boolean"
+            ? legacyRequiresTypechecking
+            : false);
+
+    return baseCreateRule({
+        ...rule,
+        meta: {
+            ...rule.meta,
+            deprecated: rule.meta.deprecated ?? false,
+            docs: {
+                ...docs,
+                frozen: docs.frozen ?? false,
+                requiresTypeChecking,
+            },
+        },
+    });
+};
 
 /**
  * Resolve the TypeScript type for an ESTree node when parser services are
@@ -44,7 +78,7 @@ export const createRule: ReturnType<
  * @returns TypeScript type or `null` when type information is unavailable.
  */
 export const getTypeOfNode = (
-    node: TSESTree.Node,
+    node: Readonly<TSESTree.Node>,
     context: RuleContext<string, BaseOptions>
 ): null | ts.Type => {
     try {

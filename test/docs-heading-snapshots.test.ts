@@ -6,7 +6,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import plugin from "../src/plugin";
+import immutablePlugin from "../src/plugin";
 import { parseMarkdownHeadingsAtLevel } from "./_internal/markdown-headings";
 
 /** Parse all H2 headings from markdown in order. */
@@ -29,8 +29,8 @@ const ruleCatalogIdPattern = /> \*\*Rule catalog ID:\*\* R\d{3}/v;
 
 describe("rule docs heading snapshots", () => {
     it("enforces canonical immutable docs headings for every exported rule", () => {
-        const ruleNames = Object.keys(plugin.rules).toSorted((left, right) =>
-            left.localeCompare(right)
+        const ruleNames = Object.keys(immutablePlugin.rules).toSorted(
+            (left, right) => left.localeCompare(right)
         );
 
         for (const ruleName of ruleNames) {

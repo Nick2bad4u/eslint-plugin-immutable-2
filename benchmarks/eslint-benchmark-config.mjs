@@ -52,6 +52,9 @@ export const benchmarkFileGlobs = Object.freeze({
     arrayableStressFixture: Object.freeze([
         "benchmarks/fixtures/arrayable.stress.ts",
     ]),
+    immutableInvalidFixtures: Object.freeze([
+        "test/fixtures/typed/prefer-immutable-*.invalid.ts",
+    ]),
     isPresentStressFixture: Object.freeze([
         "benchmarks/fixtures/is-present.stress.ts",
     ]),
@@ -72,9 +75,6 @@ export const benchmarkFileGlobs = Object.freeze({
     ]),
     typedInvalidFixtures: Object.freeze(["test/fixtures/typed/*.invalid.ts"]),
     typedValidFixtures: Object.freeze(["test/fixtures/typed/*.valid.ts"]),
-    immutableInvalidFixtures: Object.freeze([
-        "test/fixtures/typed/prefer-immutable-*.invalid.ts",
-    ]),
 });
 
 /**
@@ -158,11 +158,11 @@ const resolveRuleSet = (presetName) => {
  */
 export const immutableRuleSets = Object.freeze({
     all: resolveRuleSet("all"),
+    immutableTypes: resolveRuleSet("immutable/types"),
     minimal: resolveRuleSet("minimal"),
     recommended: resolveRuleSet("recommended"),
     strict: resolveRuleSet("strict"),
     tsExtrasTypeGuards: resolveRuleSet("immutable/type-guards"),
-    immutableTypes: resolveRuleSet("immutable/types"),
 });
 
 /**

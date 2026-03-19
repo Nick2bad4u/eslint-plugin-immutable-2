@@ -7,8 +7,8 @@ import pc from "picocolors";
 import {
     benchmarkFileGlobs,
     createImmutableFlatConfig,
-    repositoryRoot,
     immutableRuleSets,
+    repositoryRoot,
 } from "./eslint-benchmark-config.mjs";
 
 /**

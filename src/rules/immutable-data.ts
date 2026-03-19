@@ -66,7 +66,10 @@ const arrayMutatorMethods = [
     "unshift",
 ] as const;
 
-/** Methods that return a new array/object and can safely be chained before mutation. */
+/**
+ * Methods that return a new array/object and can safely be chained before
+ * mutation.
+ */
 const arrayNewObjectReturningMethods = [
     "concat",
     "filter",
@@ -79,7 +82,9 @@ const arrayNewObjectReturningMethods = [
 /** Array constructor functions producing new arrays. */
 const arrayConstructorFunctions = ["from", "of"] as const;
 
-const resolveAssumeTypesForArrays = (option: AssumeTypesOption["assumeTypes"]): boolean => {
+const resolveAssumeTypesForArrays = (
+    option: AssumeTypesOption["assumeTypes"]
+): boolean => {
     if (option === true) {
         return true;
     }
@@ -158,137 +163,155 @@ const isInChainCallAndFollowsNew = (
 };
 
 /** `immutable-data` rule implementation. */
-const immutableDataRule: ReturnType<
-    typeof createRule<Options, MessageIds>
-> = createRule<Options, MessageIds>({
-    create(context, [options]) {
-        const checkAssignmentExpression = (
-            node: Readonly<TSESTree.AssignmentExpression>
-        ): void => {
-            if (shouldIgnore(node, context, options)) {
-                return;
-            }
+const immutableDataRule: ReturnType<typeof createRule<Options, MessageIds>> =
+    createRule<Options, MessageIds>({
+        create(context, [options]) {
+            const checkAssignmentExpression = (
+                node: Readonly<TSESTree.AssignmentExpression>
+            ): void => {
+                if (shouldIgnore(node, context, options)) {
+                    return;
+                }
 
-            if (!isMemberExpression(node.left) || inConstructor(node)) {
-                return;
-            }
+                if (!isMemberExpression(node.left) || inConstructor(node)) {
+                    return;
+                }
 
-            context.report({
-                messageId: "generic",
-                node,
-            });
-        };
-
-        const checkUnaryExpression = (
-            node: Readonly<TSESTree.UnaryExpression>
-        ): void => {
-            if (shouldIgnore(node, context, options)) {
-                return;
-            }
-
-            if (node.operator !== "delete" || !isMemberExpression(node.argument)) {
-                return;
-            }
-
-            context.report({
-                messageId: "generic",
-                node,
-            });
-        };
-
-        const checkUpdateExpression = (
-            node: Readonly<TSESTree.UpdateExpression>
-        ): void => {
-            if (shouldIgnore(node, context, options)) {
-                return;
-            }
-
-            if (!isMemberExpression(node.argument)) {
-                return;
-            }
-
-            context.report({
-                messageId: "generic",
-                node,
-            });
-        };
-
-        const checkCallExpression = (node: TSESTree.CallExpression): void => {
-            if (shouldIgnore(node, context, options)) {
-                return;
-            }
-
-            if (!isMemberExpression(node.callee) || !isIdentifier(node.callee.property)) {
-                return;
-            }
-
-            const assumeTypesForArrays = resolveAssumeTypesForArrays(options.assumeTypes);
-            const assumeTypesForObjects = resolveAssumeTypesForObjects(options.assumeTypes);
-            const propertyName = node.callee.property.name;
-            const targetArgument = node.arguments[0];
-
-            if (
-                arrayMutatorMethods.some(isExpected(propertyName)) &&
-                !isInChainCallAndFollowsNew(node.callee, context, assumeTypesForArrays) &&
-                isArrayType(
-                    getTypeOfNode(node.callee.object, context),
-                    assumeTypesForArrays,
-                    node.callee.object
-                )
-            ) {
                 context.report({
-                    messageId: "array",
+                    messageId: "generic",
                     node,
                 });
+            };
 
-                return;
-            }
+            const checkUnaryExpression = (
+                node: Readonly<TSESTree.UnaryExpression>
+            ): void => {
+                if (shouldIgnore(node, context, options)) {
+                    return;
+                }
 
-            const hasMutableAssignTarget =
-                propertyName === "assign" &&
-                node.arguments.length >= 2 &&
-                targetArgument !== undefined &&
-                (isIdentifier(targetArgument) || isMemberExpression(targetArgument));
+                if (
+                    node.operator !== "delete" ||
+                    !isMemberExpression(node.argument)
+                ) {
+                    return;
+                }
 
-            if (
-                hasMutableAssignTarget &&
-                isObjectConstructorType(
-                    getTypeOfNode(node.callee.object, context),
-                    assumeTypesForObjects,
-                    node.callee.object
-                )
-            ) {
                 context.report({
-                    messageId: "object",
+                    messageId: "generic",
                     node,
                 });
-            }
-        };
+            };
 
-        return {
-            AssignmentExpression: checkAssignmentExpression,
-            CallExpression: checkCallExpression,
-            UnaryExpression: checkUnaryExpression,
-            UpdateExpression: checkUpdateExpression,
-        };
-    },
-    defaultOptions,
-    meta: {
-        defaultOptions: [{ assumeTypes: true }],
-        docs: {
-            description: "enforce treating objects and arrays as immutable data.",
-            recommended: true,
-            url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/immutable-data",
+            const checkUpdateExpression = (
+                node: Readonly<TSESTree.UpdateExpression>
+            ): void => {
+                if (shouldIgnore(node, context, options)) {
+                    return;
+                }
+
+                if (!isMemberExpression(node.argument)) {
+                    return;
+                }
+
+                context.report({
+                    messageId: "generic",
+                    node,
+                });
+            };
+
+            const checkCallExpression = (
+                node: TSESTree.CallExpression
+            ): void => {
+                if (shouldIgnore(node, context, options)) {
+                    return;
+                }
+
+                if (
+                    !isMemberExpression(node.callee) ||
+                    !isIdentifier(node.callee.property)
+                ) {
+                    return;
+                }
+
+                const assumeTypesForArrays = resolveAssumeTypesForArrays(
+                    options.assumeTypes
+                );
+                const assumeTypesForObjects = resolveAssumeTypesForObjects(
+                    options.assumeTypes
+                );
+                const propertyName = node.callee.property.name;
+                const targetArgument = node.arguments[0];
+
+                if (
+                    arrayMutatorMethods.some(isExpected(propertyName)) &&
+                    !isInChainCallAndFollowsNew(
+                        node.callee,
+                        context,
+                        assumeTypesForArrays
+                    ) &&
+                    isArrayType(
+                        getTypeOfNode(node.callee.object, context),
+                        assumeTypesForArrays,
+                        node.callee.object
+                    )
+                ) {
+                    context.report({
+                        messageId: "array",
+                        node,
+                    });
+
+                    return;
+                }
+
+                const hasMutableAssignTarget =
+                    propertyName === "assign" &&
+                    node.arguments.length >= 2 &&
+                    targetArgument !== undefined &&
+                    (isIdentifier(targetArgument) ||
+                        isMemberExpression(targetArgument));
+
+                if (
+                    hasMutableAssignTarget &&
+                    isObjectConstructorType(
+                        getTypeOfNode(node.callee.object, context),
+                        assumeTypesForObjects,
+                        node.callee.object
+                    )
+                ) {
+                    context.report({
+                        messageId: "object",
+                        node,
+                    });
+                }
+            };
+
+            return {
+                AssignmentExpression: checkAssignmentExpression,
+                CallExpression: checkCallExpression,
+                UnaryExpression: checkUnaryExpression,
+                UpdateExpression: checkUpdateExpression,
+            };
         },
-        messages: {
-            array: "Modifying an array is not allowed.",
-            generic: "Modifying an existing object/array is not allowed.",
-            object: "Modifying properties of existing object not allowed.",
+        defaultOptions,
+        meta: {
+            defaultOptions: [{ assumeTypes: true }],
+            docs: {
+                description:
+                    "enforce treating objects and arrays as immutable data.",
+                recommended: true,
+                requiresTypeChecking: true,
+                url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/immutable-data",
+            },
+            messages: {
+                array: "Modifying an array is not allowed.",
+                generic: "Modifying an existing object/array is not allowed.",
+                object: "Modifying properties of existing object not allowed.",
+            },
+            schema: optionsSchema,
+            type: "suggestion",
         },
-        schema: optionsSchema,
-        type: "suggestion",
-    },
-    name,
-});
+        name,
+    });
 
 export default immutableDataRule;
