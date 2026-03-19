@@ -132,7 +132,7 @@ export type ImmutableConfigs = typeof immutableConfigs;
 const immutablePlugin: ImmutablePluginContract = {
     configs: immutableConfigs,
     meta: {
-        name: "eslint-plugin-immutable",
+        name: "eslint-plugin-immutable-2",
         namespace: "immutable",
         version: getPackageVersion(packageJsonValue),
     },

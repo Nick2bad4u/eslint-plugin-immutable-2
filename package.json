@@ -1,6 +1,6 @@
 {
     "$schema": "https://www.schemastore.org/package.json",
-    "name": "eslint-plugin-immutable",
+    "name": "eslint-plugin-immutable-2",
     "version": "1.0.4",
     "private": false,
     "description": "ESLint rules for enforcing immutable and functional code patterns.",
@@ -137,7 +137,7 @@
         "lint:exports": "ts-unused-exports tsconfig.json src/plugin.ts --excludePathsFromReport=plugin.ts",
         "lint:fix": "cross-env NODE_OPTIONS=--max_old_space_size=16384 eslint --cache --cache-strategy content --cache-location .cache/.eslintcache --fix",
         "lint:fix:quiet": "cross-env ESLINT_PROGRESS=off NODE_OPTIONS=--max_old_space_size=16384 eslint --cache --cache-strategy content --cache-location .cache/.eslintcache --fix && echo \"Eslint fix done!\"",
-        "lint:grype": "grype . -c .grype.yaml --name eslint-plugin-immutable",
+        "lint:grype": "grype . -c .grype.yaml --name eslint-plugin-immutable-2",
         "lint:knip": "npm run knip",
         "lint:knip:exports": "npm run knip -- --include exports,nsExports,classMembers,types,nsTypes,enumMembers,duplicates",
         "lint:knip:unused:exports": "npm run knip -- --dependencies --exports",
@@ -213,8 +213,7 @@
     "dependencies": {
         "@typescript-eslint/parser": "^8.57.1",
         "@typescript-eslint/type-utils": "^8.57.1",
-        "@typescript-eslint/utils": "^8.57.1",
-        "immutable": "^0.17.0"
+        "@typescript-eslint/utils": "^8.57.1"
     },
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.18.2",
@@ -349,7 +348,7 @@
         "htmlhint": "^1.9.2",
         "jscpd": "^4.0.8",
         "jsonc-eslint-parser": "^3.1.0",
-        "knip": "^5.87.0",
+        "knip": "^5.88.0",
         "leasot": "^14.4.0",
         "madge": "^8.0.0",
         "markdown-link-check": "^3.14.2",
@@ -540,7 +539,7 @@
         "typescript-eslint": "^8.57.1",
         "typesync": "^0.14.3",
         "vfile": "^6.0.3",
-        "vite": "^8.0.0",
+        "vite": "^8.0.1",
         "vite-tsconfig-paths": "^6.1.1",
         "vitest": "^4.1.0",
         "yaml-eslint-parser": "^2.0.0",
@@ -550,7 +549,7 @@
         "eslint": "^9.0.0 || ^10.0.3",
         "typescript": ">=5.0.0"
     },
-    "packageManager": "npm@11.11.1",
+    "packageManager": "npm@11.12.0",
     "engines": {
         "node": ">=22.0.0"
     },

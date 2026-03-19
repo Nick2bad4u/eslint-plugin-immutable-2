@@ -67,7 +67,7 @@ describe("source plugin config wiring", () => {
         );
         expect(functional.rules).toHaveProperty("immutable/no-try", "error");
 
-        expect(plugin.meta.name).toBe("eslint-plugin-immutable");
+        expect(plugin.meta.name).toBe("eslint-plugin-immutable-2");
     });
 
     it("registers parser defaults, files, and plugin namespace", async () => {

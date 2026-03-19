@@ -8,7 +8,7 @@ import type {
     ImmutablePresetConfig,
     ImmutableRuleId,
     ImmutableRuleName,
-} from "eslint-plugin-immutable";
+} from "eslint-plugin-immutable-2";
 
 import { assertType } from "vitest";
 

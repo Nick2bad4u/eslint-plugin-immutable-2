@@ -1,4 +1,8 @@
-import type { Expand } from "immutable";
+type Expand<TValue> = TValue extends infer TInferred
+    ? {
+          [TKey in keyof TInferred]: TInferred[TKey];
+      }
+    : never;
 
 type ShouldBeSkippedInTestFile = Expand<UserProfile>;
 

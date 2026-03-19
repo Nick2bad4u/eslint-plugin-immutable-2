@@ -4,7 +4,7 @@
  */
 import type { ESLint } from "eslint";
 
-import immutablePlugin from "eslint-plugin-immutable";
+import immutablePlugin from "eslint-plugin-immutable-2";
 import { assertType } from "vitest";
 
 assertType<ESLint.Plugin>(immutablePlugin);

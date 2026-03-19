@@ -11,7 +11,7 @@ describe("plugin entry module", () => {
 
     it("uses immutable identity metadata", () => {
         expect(immutablePlugin.meta).toMatchObject({
-            name: "eslint-plugin-immutable",
+            name: "eslint-plugin-immutable-2",
             namespace: "immutable",
         });
         expect(typeof immutablePlugin.meta.version).toBe("string");
