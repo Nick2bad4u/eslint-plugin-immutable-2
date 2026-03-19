@@ -243,7 +243,8 @@ const noBufferMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
         meta: {
             defaultOptions: [{}],
             docs: {
-                description: "disallow mutating Buffer instances after creation.",
+                description:
+                    "disallow mutating Buffer instances after creation.",
                 recommended: true,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-buffer-mutation",
             },

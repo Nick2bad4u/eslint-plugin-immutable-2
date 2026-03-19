@@ -9,7 +9,11 @@ import {
     shouldIgnore,
 } from "../common/ignore-options.js";
 import { createRule } from "../util/rule.js";
-import { isIdentifier, isMemberExpression, isNewExpression } from "../util/typeguard.js";
+import {
+    isIdentifier,
+    isMemberExpression,
+    isNewExpression,
+} from "../util/typeguard.js";
 
 /** Rule name exported for config wiring. */
 export const name = "no-data-view-mutation" as const;

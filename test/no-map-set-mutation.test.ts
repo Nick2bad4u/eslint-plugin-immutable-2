@@ -25,10 +25,7 @@ describe("no-map-set-mutation rule", () => {
             },
             {
                 code: "const cache = new Map<string, number>(); const next = cache.set('a', 1).set('b', 2);",
-                errors: [
-                    { messageId: "generic" },
-                    { messageId: "generic" },
-                ],
+                errors: [{ messageId: "generic" }, { messageId: "generic" }],
             },
         ],
         valid: [

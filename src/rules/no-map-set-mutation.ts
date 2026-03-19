@@ -136,165 +136,166 @@ const isChainPreservingMethodForKind = (
 };
 
 /** `no-map-set-mutation` rule implementation. */
-const noMapSetMutationRule: ReturnType<
-    typeof createRule<Options, MessageIds>
-> = createRule<Options, MessageIds>({
-    create(context, [options]) {
-        const kindByVariable = new WeakMap<
-            TSESLint.Scope.Variable,
-            CollectionKind
-        >();
+const noMapSetMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
+    createRule<Options, MessageIds>({
+        create(context, [options]) {
+            const kindByVariable = new WeakMap<
+                TSESLint.Scope.Variable,
+                CollectionKind
+            >();
 
-        const resolveVariable = (
-            identifier: Readonly<TSESTree.Identifier>
-        ): null | TSESLint.Scope.Variable => {
-            let scope: null | TSESLint.Scope.Scope =
-                context.sourceCode.getScope(identifier);
+            const resolveVariable = (
+                identifier: Readonly<TSESTree.Identifier>
+            ): null | TSESLint.Scope.Variable => {
+                let scope: null | TSESLint.Scope.Scope =
+                    context.sourceCode.getScope(identifier);
 
-            while (scope !== null) {
-                const variable = scope.set.get(identifier.name);
-                if (variable !== undefined) {
-                    return variable;
+                while (scope !== null) {
+                    const variable = scope.set.get(identifier.name);
+                    if (variable !== undefined) {
+                        return variable;
+                    }
+
+                    scope = scope.upper;
                 }
 
-                scope = scope.upper;
-            }
+                return null;
+            };
 
-            return null;
-        };
+            const getKindFromExpression = (
+                expression: Readonly<TSESTree.Expression>
+            ): CollectionKind | null => {
+                const node = unwrapExpression(expression);
 
-        const getKindFromExpression = (
-            expression: Readonly<TSESTree.Expression>
-        ): CollectionKind | null => {
-            const node = unwrapExpression(expression);
+                if (isNewExpression(node) && isIdentifier(node.callee)) {
+                    return getCollectionKindFromConstructor(node.callee.name);
+                }
 
-            if (isNewExpression(node) && isIdentifier(node.callee)) {
-                return getCollectionKindFromConstructor(node.callee.name);
-            }
+                if (isIdentifier(node)) {
+                    const variable = resolveVariable(node);
 
-            if (isIdentifier(node)) {
-                const variable = resolveVariable(node);
+                    return variable === null
+                        ? null
+                        : (kindByVariable.get(variable) ?? null);
+                }
 
-                return variable === null
-                    ? null
-                    : (kindByVariable.get(variable) ?? null);
-            }
+                if (
+                    isCallExpression(node) &&
+                    isMemberExpression(node.callee) &&
+                    node.callee.object.type !== "Super" &&
+                    isIdentifier(node.callee.property)
+                ) {
+                    const receiverKind = getKindFromExpression(
+                        node.callee.object
+                    );
+                    if (receiverKind === null) {
+                        return null;
+                    }
 
-            if (
-                isCallExpression(node) &&
-                isMemberExpression(node.callee) &&
-                node.callee.object.type !== "Super" &&
-                isIdentifier(node.callee.property)
-            ) {
+                    return isChainPreservingMethodForKind(
+                        receiverKind,
+                        node.callee.property.name
+                    )
+                        ? receiverKind
+                        : null;
+                }
+
+                return null;
+            };
+
+            const markVariableKind = (
+                identifier: Readonly<TSESTree.Identifier>,
+                expression: null | Readonly<TSESTree.Expression>
+            ): void => {
+                const variable = resolveVariable(identifier);
+                if (variable === null) {
+                    return;
+                }
+
+                if (expression === null) {
+                    kindByVariable.delete(variable);
+                    return;
+                }
+
+                const detectedKind = getKindFromExpression(expression);
+                if (detectedKind === null) {
+                    kindByVariable.delete(variable);
+                    return;
+                }
+
+                kindByVariable.set(variable, detectedKind);
+            };
+
+            const checkCallExpression = (
+                node: Readonly<TSESTree.CallExpression>
+            ): void => {
+                if (shouldIgnore(node, context, options)) {
+                    return;
+                }
+
+                if (
+                    !isMemberExpression(node.callee) ||
+                    node.callee.object.type === "Super" ||
+                    !isIdentifier(node.callee.property)
+                ) {
+                    return;
+                }
+
                 const receiverKind = getKindFromExpression(node.callee.object);
                 if (receiverKind === null) {
-                    return null;
+                    return;
                 }
 
-                return isChainPreservingMethodForKind(
-                    receiverKind,
-                    node.callee.property.name
-                )
-                    ? receiverKind
-                    : null;
-            }
+                const methodName = node.callee.property.name;
+                if (!isMutatingMethodForKind(receiverKind, methodName)) {
+                    return;
+                }
 
-            return null;
-        };
+                context.report({
+                    data: {
+                        kind: receiverKind,
+                        methodName,
+                    },
+                    messageId: "generic",
+                    node,
+                });
+            };
 
-        const markVariableKind = (
-            identifier: Readonly<TSESTree.Identifier>,
-            expression: null | Readonly<TSESTree.Expression>
-        ): void => {
-            const variable = resolveVariable(identifier);
-            if (variable === null) {
-                return;
-            }
+            return {
+                AssignmentExpression(node): void {
+                    if (!isIdentifier(node.left)) {
+                        return;
+                    }
 
-            if (expression === null) {
-                kindByVariable.delete(variable);
-                return;
-            }
-
-            const detectedKind = getKindFromExpression(expression);
-            if (detectedKind === null) {
-                kindByVariable.delete(variable);
-                return;
-            }
-
-            kindByVariable.set(variable, detectedKind);
-        };
-
-        const checkCallExpression = (
-            node: Readonly<TSESTree.CallExpression>
-        ): void => {
-            if (shouldIgnore(node, context, options)) {
-                return;
-            }
-
-            if (
-                !isMemberExpression(node.callee) ||
-                node.callee.object.type === "Super" ||
-                !isIdentifier(node.callee.property)
-            ) {
-                return;
-            }
-
-            const receiverKind = getKindFromExpression(node.callee.object);
-            if (receiverKind === null) {
-                return;
-            }
-
-            const methodName = node.callee.property.name;
-            if (!isMutatingMethodForKind(receiverKind, methodName)) {
-                return;
-            }
-
-            context.report({
-                data: {
-                    kind: receiverKind,
-                    methodName,
+                    markVariableKind(node.left, node.right);
                 },
-                messageId: "generic",
-                node,
-            });
-        };
+                CallExpression: checkCallExpression,
+                VariableDeclarator(node): void {
+                    if (!isIdentifier(node.id)) {
+                        return;
+                    }
 
-        return {
-            AssignmentExpression(node): void {
-                if (!isIdentifier(node.left)) {
-                    return;
-                }
-
-                markVariableKind(node.left, node.right);
-            },
-            CallExpression: checkCallExpression,
-            VariableDeclarator(node): void {
-                if (!isIdentifier(node.id)) {
-                    return;
-                }
-
-                markVariableKind(node.id, node.init);
-            },
-        };
-    },
-    defaultOptions,
-    meta: {
-        defaultOptions: [{}],
-        docs: {
-            description:
-                "disallow mutating Map and Set collections after creation.",
-            recommended: true,
-            url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-map-set-mutation",
+                    markVariableKind(node.id, node.init);
+                },
+            };
         },
-        messages: {
-            generic:
-                "Mutating {{kind}} via `{{methodName}}` is not allowed. Create a new collection instead.",
+        defaultOptions,
+        meta: {
+            defaultOptions: [{}],
+            docs: {
+                description:
+                    "disallow mutating Map and Set collections after creation.",
+                recommended: true,
+                url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-map-set-mutation",
+            },
+            messages: {
+                generic:
+                    "Mutating {{kind}} via `{{methodName}}` is not allowed. Create a new collection instead.",
+            },
+            schema: optionsSchema,
+            type: "suggestion",
         },
-        schema: optionsSchema,
-        type: "suggestion",
-    },
-    name,
-});
+        name,
+    });
 
 export default noMapSetMutationRule;

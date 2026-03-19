@@ -30,7 +30,13 @@ import noFormDataMutationRule, {
 import noHeadersMutationRule, {
     name as noHeadersMutationName,
 } from "./no-headers-mutation.js";
+import noHistoryMutationRule, {
+    name as noHistoryMutationName,
+} from "./no-history-mutation.js";
 import noLetRule, { name as noLetName } from "./no-let.js";
+import noLocationMutationRule, {
+    name as noLocationMutationName,
+} from "./no-location-mutation.js";
 import noLoopStatementRule, {
     name as noLoopStatementName,
 } from "./no-loop-statement.js";
@@ -46,6 +52,9 @@ import noMixedInterfaceRule, {
 import noProcessEnvMutationRule, {
     name as noProcessEnvMutationName,
 } from "./no-process-env-mutation.js";
+import noRegexpLastIndexMutationRule, {
+    name as noRegexpLastIndexMutationName,
+} from "./no-regexp-lastindex-mutation.js";
 import noRejectRule, { name as noRejectName } from "./no-reject.js";
 import noReflectMutationRule, {
     name as noReflectMutationName,
@@ -87,12 +96,15 @@ export type ImmutableRuleId =
     | typeof noExpressionStatementName
     | typeof noFormDataMutationName
     | typeof noHeadersMutationName
+    | typeof noHistoryMutationName
     | typeof noLetName
+    | typeof noLocationMutationName
     | typeof noLoopStatementName
     | typeof noMapSetMutationName
     | typeof noMethodSignatureName
     | typeof noMixedInterfaceName
     | typeof noProcessEnvMutationName
+    | typeof noRegexpLastIndexMutationName
     | typeof noRejectName
     | typeof noReflectMutationName
     | typeof noStatefulRegexpName
@@ -120,12 +132,15 @@ export const rules: Readonly<
     [noExpressionStatementName]: noExpressionStatementRule,
     [noFormDataMutationName]: noFormDataMutationRule,
     [noHeadersMutationName]: noHeadersMutationRule,
+    [noHistoryMutationName]: noHistoryMutationRule,
     [noLetName]: noLetRule,
+    [noLocationMutationName]: noLocationMutationRule,
     [noLoopStatementName]: noLoopStatementRule,
     [noMapSetMutationName]: noMapSetMutationRule,
     [noMethodSignatureName]: noMethodSignatureRule,
     [noMixedInterfaceName]: noMixedInterfaceRule,
     [noProcessEnvMutationName]: noProcessEnvMutationRule,
+    [noRegexpLastIndexMutationName]: noRegexpLastIndexMutationRule,
     [noRejectName]: noRejectRule,
     [noReflectMutationName]: noReflectMutationRule,
     [noStatefulRegexpName]: noStatefulRegexpRule,
