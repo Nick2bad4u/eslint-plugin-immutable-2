@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * Synchronize or validate presets documentation tables from canonical rule metadata.
+ * Synchronize or validate preset documentation tables from canonical plugin metadata.
  */
 // @ts-nocheck
 
@@ -10,13 +10,11 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 // @ts-expect-error -- dist output is generated during build/publish.
 import builtPlugin from "../dist/plugin.js";
-import { generateReadmeRulesSectionFromRules } from "./sync-readme-rules-table.mjs";
 
 /**
  * @typedef {Readonly<{
  *     meta?: {
  *         docs?: {
- *             immutableConfigs?: readonly string[] | string;
  *             url?: string;
  *         };
  *         fixable?: string;
@@ -29,39 +27,50 @@ import { generateReadmeRulesSectionFromRules } from "./sync-readme-rules-table.m
 
 /**
  * @typedef {"all"
- *     | "minimal"
+ *     | "functional"
+ *     | "functional-lite"
  *     | "recommended"
- *     | "recommended-type-checked"
- *     | "strict"
- *     | "immutable/type-guards"
- *     | "immutable/types"} PresetConfigName
+ *     | "immutable"} PresetConfigName
  */
 
 const matrixSectionHeading = "## Rule matrix";
 const presetRulesSectionHeading = "## Rules in this preset";
-const recommendedTypeCheckedLegacyHeading =
-    "## What this preset adds on top of `recommended`";
 const presetsDocsDirectoryPath = "docs/rules/presets";
 
 /** @type {Readonly<Record<PresetConfigName, string>>} */
 const presetDocSlugByConfigName = {
     all: "all",
-    minimal: "minimal",
+    functional: "functional",
+    "functional-lite": "functional-lite",
+    immutable: "immutable",
     recommended: "recommended",
-    "recommended-type-checked": "recommended-type-checked",
-    strict: "strict",
-    "immutable/type-guards": "immutable-type-guards",
-    "immutable/types": "immutable-types",
+};
+
+/** @type {Readonly<Record<PresetConfigName, string>>} */
+const presetConfigReferenceByConfigName = {
+    all: "immutable.configs.all",
+    functional: "immutable.configs.functional",
+    "functional-lite": 'immutable.configs["functional-lite"]',
+    immutable: "immutable.configs.immutable",
+    recommended: "immutable.configs.recommended",
 };
 
 /** @type {readonly PresetConfigName[]} */
 const standardPresetConfigNames = [
     "all",
-    "minimal",
+    "functional",
+    "functional-lite",
     "recommended",
-    "strict",
-    "immutable/type-guards",
-    "immutable/types",
+    "immutable",
+];
+
+/** @type {readonly PresetConfigName[]} */
+const matrixPresetConfigNames = [
+    "functional-lite",
+    "functional",
+    "immutable",
+    "recommended",
+    "all",
 ];
 
 /**
@@ -225,39 +234,10 @@ const generateStandardPresetRulesSection = (presetConfigName) => {
 };
 
 /**
- * @returns {string}
- */
-const generateRecommendedTypeCheckedRulesSection = () => {
-    const recommendedRuleNames = collectPresetRuleNames("recommended");
-    const recommendedTypeCheckedRuleNames = collectPresetRuleNames(
-        "recommended-type-checked"
-    );
-    const recommendedRuleNameSet = new Set(recommendedRuleNames);
-    const additionalTypeAwareRuleNames = recommendedTypeCheckedRuleNames.filter(
-        (ruleName) => !recommendedRuleNameSet.has(ruleName)
-    );
-
-    return [
-        presetRulesSectionHeading,
-        "",
-        ...createFixLegendLines(),
-        "",
-        "### Type-aware additions over `recommended`",
-        "",
-        createPresetRulesTable(additionalTypeAwareRuleNames),
-        "",
-        "### Baseline rules inherited from `recommended`",
-        "",
-        createPresetRulesTable(recommendedRuleNames),
-        "",
-    ].join("\n");
-};
-
-/**
  * @param {string} markdown
  * @param {readonly string[]} headingCandidates
  *
- * @returns {{ headingOffset: number; sectionEndOffset: number }}
+ * @returns {null | { headingOffset: number; sectionEndOffset: number }}
  */
 const findSectionBoundsByHeadings = (markdown, headingCandidates) => {
     /** @type {number[]} */
@@ -272,11 +252,7 @@ const findSectionBoundsByHeadings = (markdown, headingCandidates) => {
     }
 
     if (headingOffsets.length === 0) {
-        throw new Error(
-            `Missing expected section heading. Tried: ${headingCandidates.join(
-                ", "
-            )}`
-        );
+        return null;
     }
 
     const headingOffset = Math.min(...headingOffsets);
@@ -287,47 +263,6 @@ const findSectionBoundsByHeadings = (markdown, headingCandidates) => {
     return {
         headingOffset,
         sectionEndOffset,
-    };
-};
-
-/**
- * @param {{
- *     markdown: string;
- *     generatedSection: string;
- *     headingCandidates: readonly string[];
- * }} input
- *
- * @returns {{ changed: boolean; nextMarkdown: string }}
- */
-const replaceMarkdownSection = ({
-    markdown,
-    generatedSection,
-    headingCandidates,
-}) => {
-    const { headingOffset, sectionEndOffset } = findSectionBoundsByHeadings(
-        markdown,
-        headingCandidates
-    );
-    const existingSection = markdown.slice(headingOffset, sectionEndOffset);
-
-    if (
-        normalizeMarkdownTableSpacing(existingSection) ===
-        normalizeMarkdownTableSpacing(generatedSection)
-    ) {
-        return {
-            changed: false,
-            nextMarkdown: markdown,
-        };
-    }
-
-    const markdownPrefix = markdown.slice(0, headingOffset).trimEnd();
-    const markdownSuffix = markdown.slice(sectionEndOffset);
-    const nextMarkdown =
-        `${markdownPrefix}\n\n${generatedSection}` + markdownSuffix;
-
-    return {
-        changed: true,
-        nextMarkdown,
     };
 };
 
@@ -383,6 +318,66 @@ const normalizeMarkdownTableSpacing = (markdown) =>
         .join("\n");
 
 /**
+ * @param {{
+ *     markdown: string;
+ *     generatedSection: string;
+ *     headingCandidates: readonly string[];
+ * }} input
+ *
+ * @returns {{ changed: boolean; nextMarkdown: string }}
+ */
+const replaceMarkdownSection = ({
+    markdown,
+    generatedSection,
+    headingCandidates,
+}) => {
+    const sectionBounds = findSectionBoundsByHeadings(
+        markdown,
+        headingCandidates
+    );
+
+    if (sectionBounds === null) {
+        const nextMarkdown = `${markdown.trimEnd()}\n\n${generatedSection}\n`;
+
+        return {
+            changed: true,
+            nextMarkdown,
+        };
+    }
+
+    const { headingOffset, sectionEndOffset } = sectionBounds;
+    const existingSection = markdown.slice(headingOffset, sectionEndOffset);
+
+    if (
+        normalizeMarkdownTableSpacing(existingSection).trim() ===
+        normalizeMarkdownTableSpacing(generatedSection).trim()
+    ) {
+        return {
+            changed: false,
+            nextMarkdown: markdown,
+        };
+    }
+
+    const markdownPrefix = markdown.slice(0, headingOffset).trimEnd();
+    const markdownSuffix = markdown.slice(sectionEndOffset);
+    const nextMarkdown =
+        `${markdownPrefix}\n\n${generatedSection}` + markdownSuffix;
+
+    return {
+        changed: true,
+        nextMarkdown,
+    };
+};
+
+/**
+ * @param {PresetConfigName} presetConfigName
+ *
+ * @returns {string}
+ */
+const toPresetConfigReferenceLink = (presetConfigName) =>
+    `[\`${presetConfigReferenceByConfigName[presetConfigName]}\`](./${presetDocSlugByConfigName[presetConfigName]}.md)`;
+
+/**
  * Generate the canonical presets page rule-matrix section from plugin rules
  * metadata.
  *
@@ -391,16 +386,47 @@ const normalizeMarkdownTableSpacing = (markdown) =>
  * @returns {string} Full markdown section text starting at `## Rule matrix`.
  */
 export const generatePresetsRulesMatrixSectionFromRules = (rules) => {
-    const readmeRulesSection = generateReadmeRulesSectionFromRules(rules)
-        .replace(/\r\n/gv, "\n")
-        .split("\n");
+    const ruleNames = sortStrings(Object.keys(rules));
+    const presetRuleNameSetByConfigName = Object.fromEntries(
+        matrixPresetConfigNames.map((presetConfigName) => [
+            presetConfigName,
+            new Set(collectPresetRuleNames(presetConfigName)),
+        ])
+    );
 
-    const rulesBodyWithoutHeading = readmeRulesSection.slice(2);
+    const ruleRows = ruleNames.map((ruleName) => {
+        const ruleModule = getRuleModuleByName(ruleName);
+        const docsUrl = ruleModule.meta?.docs?.url;
+
+        if (typeof docsUrl !== "string" || docsUrl.trim().length === 0) {
+            throw new TypeError(`Rule '${ruleName}' is missing meta.docs.url.`);
+        }
+
+        const enabledPresetLinks = matrixPresetConfigNames
+            .filter((presetConfigName) =>
+                presetRuleNameSetByConfigName[presetConfigName].has(ruleName)
+            )
+            .map(toPresetConfigReferenceLink);
+
+        const presetsCell =
+            enabledPresetLinks.length === 0
+                ? "—"
+                : enabledPresetLinks.join(", ");
+
+        return `| [\`${ruleName}\`](${docsUrl}) | ${getRuleFixIndicator(ruleModule)} | ${presetsCell} |`;
+    });
 
     return [
         matrixSectionHeading,
         "",
-        ...rulesBodyWithoutHeading,
+        ...createFixLegendLines(),
+        "",
+        "- `Presets` lists every preset config that enables the rule.",
+        "",
+        "| Rule | Fix | Presets |",
+        "| --- | :-: | --- |",
+        ...ruleRows,
+        "",
     ].join("\n");
 };
 
@@ -422,7 +448,6 @@ const syncPresetsRulesMatrixSection = async ({
     const generatedSection = generatePresetsRulesMatrixSectionFromRules(
         /** @type {RulesMap} */ (builtPlugin.rules)
     );
-
     const sectionReplacementResult = replaceMarkdownSection({
         generatedSection,
         headingCandidates: [matrixSectionHeading],
@@ -490,42 +515,6 @@ const syncPresetPageRuleTables = async ({ workspaceRoot, writeChanges }) => {
                 "utf8"
             );
         }
-    }
-
-    const recommendedTypeCheckedDocPath = resolve(
-        workspaceRoot,
-        presetsDocsDirectoryPath,
-        `${presetDocSlugByConfigName["recommended-type-checked"]}.md`
-    );
-    const recommendedTypeCheckedMarkdown = await readFile(
-        recommendedTypeCheckedDocPath,
-        "utf8"
-    );
-    const recommendedTypeCheckedSection =
-        generateRecommendedTypeCheckedRulesSection();
-    const recommendedTypeCheckedReplacementResult = replaceMarkdownSection({
-        generatedSection: recommendedTypeCheckedSection,
-        headingCandidates: [
-            presetRulesSectionHeading,
-            recommendedTypeCheckedLegacyHeading,
-        ],
-        markdown: recommendedTypeCheckedMarkdown,
-    });
-
-    if (!recommendedTypeCheckedReplacementResult.changed) {
-        return {
-            changed,
-        };
-    }
-
-    changed = true;
-
-    if (writeChanges) {
-        await writeFile(
-            recommendedTypeCheckedDocPath,
-            recommendedTypeCheckedReplacementResult.nextMarkdown,
-            "utf8"
-        );
     }
 
     return {

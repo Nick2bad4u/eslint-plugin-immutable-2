@@ -1829,6 +1829,8 @@ export default defineConfig([
             // Relaxed function rules for backend tests (explicit for clarity)
             "func-style": "off",
             "id-length": "off",
+            // Test and benchmark entry files intentionally do not export symbols.
+            "import-x/no-unused-modules": "off",
             "init-declarations": "off",
             "loadable-imports/sort": "error",
             "max-classes-per-file": "off",
