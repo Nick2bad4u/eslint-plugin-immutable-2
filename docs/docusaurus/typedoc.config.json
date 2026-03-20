@@ -73,7 +73,10 @@
     "entryPointStrategy": "expand",
     "entryPoints": [
         "../../src/plugin.ts",
-        "../../src/_internal"
+        "../../src/common",
+        "../../src/configs",
+        "../../src/rules",
+        "../../src/util"
     ],
     "exclude": [
         "**/dist/**",

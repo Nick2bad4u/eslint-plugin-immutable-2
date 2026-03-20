@@ -28,13 +28,9 @@ import plugin from "../plugin.mjs";
 
 const scriptsDirectoryPath = fileURLToPath(new URL(".", import.meta.url));
 const repositoryRootPath = path.resolve(scriptsDirectoryPath, "..");
-const typedFixturePath = path.resolve(
+const typedMethodSignatureFixturePath = path.resolve(
     repositoryRootPath,
-    "test/fixtures/typed/prefer-immutable-safe-cast-to.invalid.ts"
-);
-const arrayableFixturePath = path.resolve(
-    repositoryRootPath,
-    "test/fixtures/typed/prefer-immutable-arrayable.invalid.ts"
+    "test/fixtures/eslint9-compat/no-method-signature.typed.ts"
 );
 
 const expectedEslintMajorArgumentPrefix = "--expect-eslint-major=";
@@ -313,27 +309,17 @@ const scenarios = /** @type {const} */ ([
     {
         expectedMinimumMessages: 1,
         fix: false,
-        fixturePath: typedFixturePath,
-        name: "typed-detection",
-        ruleId: "immutable/prefer-immutable-safe-cast-to",
-        typed: true,
-    },
-    {
-        expectedMaximumMessages: 0,
-        expectedMinimumMessages: 0,
-        expectedOutputIncludes: ["safeCastTo<"],
-        fix: true,
-        fixturePath: typedFixturePath,
-        name: "typed-autofix",
-        ruleId: "immutable/prefer-immutable-safe-cast-to",
+        fixturePath: typedMethodSignatureFixturePath,
+        name: "typed-method-signature-detection",
+        ruleId: "immutable/no-method-signature",
         typed: true,
     },
     {
         expectedMinimumMessages: 1,
         fix: false,
-        fixturePath: arrayableFixturePath,
-        name: "non-typed-detection",
-        ruleId: "immutable/prefer-immutable-arrayable",
+        fixturePath: typedMethodSignatureFixturePath,
+        name: "non-typed-no-let-detection",
+        ruleId: "immutable/no-let",
         typed: false,
     },
 ]);
