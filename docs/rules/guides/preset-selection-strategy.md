@@ -29,14 +29,15 @@ Choose this when:
 
 Choose this when:
 
-- You want stronger functional enforcement with limited branching exceptions.
+- You want structural functional constraints beyond `immutable` without jumping straight to the strictest statement bans.
+- You want conditional restrictions but still need returning branches to remain legal.
 - You can absorb moderate migration effort.
 
 ### `functional`
 
 Choose this when:
 
-- You want strict functional style without enabling every possible rule.
+- You want strict functional style, including class, `this`, `throw`, `try`, and expression-statement bans, without enabling every possible rule.
 - Your team is ready for higher migration effort.
 
 ### `all`

@@ -59,8 +59,8 @@ Use this pattern when you only extend rules and want full control over parser se
 
 1. Start with `recommended`.
 2. Fix violations in small batches.
-3. Move to `functional-lite` for broader functional constraints.
-4. Move to `functional` once baseline stability is good.
+3. Move to `functional-lite` for structural functional constraints such as loop and conditional restrictions.
+4. Move to `functional` once the team is ready for stricter statement, exception, and `this` bans.
 5. Use `all` when you want every immutable rule enabled.
 
 ## Need a subset instead of a full preset?

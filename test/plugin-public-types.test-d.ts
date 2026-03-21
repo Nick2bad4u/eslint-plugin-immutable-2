@@ -16,7 +16,7 @@ const validConfigName = "recommended";
 
 assertType<keyof ImmutableConfigs>(validConfigName);
 // @ts-expect-error Invalid preset key must not satisfy immutable config key union.
-assertType<keyof ImmutableConfigs>("recommendedTypeChecked");
+assertType<keyof ImmutableConfigs>("legacyPreset");
 
 const validRuleId = "immutable/immutable-data";
 

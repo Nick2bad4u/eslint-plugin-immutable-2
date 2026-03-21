@@ -15,7 +15,6 @@ import builtPlugin from "../dist/plugin.js";
  * @typedef {Readonly<{
  *     meta?: {
  *         docs?: {
- *             immutableConfigs?: readonly string[] | string;
  *             url?: string;
  *         };
  *         fixable?: string;
@@ -28,12 +27,10 @@ import builtPlugin from "../dist/plugin.js";
 
 /**
  * @typedef {"all"
- *     | "minimal"
- *     | "recommended"
- *     | "recommended-type-checked"
- *     | "strict"
- *     | "immutable/type-guards"
- *     | "immutable/types"} PresetName
+ *     | "functional"
+ *     | "functional-lite"
+ *     | "immutable"
+ *     | "recommended"} PresetName
  */
 
 /**
@@ -44,78 +41,38 @@ import builtPlugin from "../dist/plugin.js";
  * >}
  */
 const immutableConfigMetadataByName = {
-    all: {
-        icon: "🟣",
-        readmeOrder: 5,
-    },
-    minimal: {
+    "functional-lite": {
         icon: "🟢",
         readmeOrder: 1,
     },
-    recommended: {
+    functional: {
         icon: "🟡",
         readmeOrder: 2,
     },
-    "recommended-type-checked": {
+    immutable: {
         icon: "🟠",
         readmeOrder: 3,
     },
-    strict: {
-        icon: "🔴",
+    recommended: {
+        icon: "🔵",
         readmeOrder: 4,
     },
-    "immutable/type-guards": {
-        icon: "✴️",
-        readmeOrder: 7,
-    },
-    "immutable/types": {
-        icon: "💠",
-        readmeOrder: 6,
+    all: {
+        icon: "🟣",
+        readmeOrder: 5,
     },
 };
 
 /** Stable README legend/rendering order for preset icons. */
 const immutableConfigNamesByReadmeOrder = [
-    "minimal",
+    "functional-lite",
+    "functional",
+    "immutable",
     "recommended",
-    "recommended-type-checked",
-    "strict",
     "all",
-    "immutable/types",
-    "immutable/type-guards",
 ];
 
-/**
- * Supported `meta.docs.immutableConfigs` references. Includes legacy
- * `typefest.*` references for backward compatibility.
- *
- * @type {Readonly<Record<string, PresetName>>}
- */
-const immutableConfigReferenceToName = {
-    "immutable.configs.all": "all",
-    "immutable.configs.minimal": "minimal",
-    "immutable.configs.recommended": "recommended",
-    "immutable.configs.recommended-type-checked": "recommended-type-checked",
-    "immutable.configs.strict": "strict",
-    "immutable.configs.immutable/type-guards": "immutable/type-guards",
-    "immutable.configs.immutable/types": "immutable/types",
-    'immutable.configs["recommended-type-checked"]': "recommended-type-checked",
-    'immutable.configs["immutable/type-guards"]': "immutable/type-guards",
-    'immutable.configs["immutable/types"]': "immutable/types",
-    "typefest.configs.all": "all",
-    "typefest.configs.minimal": "minimal",
-    "typefest.configs.recommended": "recommended",
-    "typefest.configs.recommended-type-checked": "recommended-type-checked",
-    "typefest.configs.strict": "strict",
-    "typefest.configs.ts-extras/type-guards": "immutable/type-guards",
-    "typefest.configs.type-fest/types": "immutable/types",
-    'typefest.configs["recommended-type-checked"]': "recommended-type-checked",
-    'typefest.configs["ts-extras/type-guards"]': "immutable/type-guards",
-    'typefest.configs["type-fest/types"]': "immutable/types",
-};
-
 const presetOrder = [...immutableConfigNamesByReadmeOrder];
-const presetNameSet = new Set(presetOrder);
 
 const rulesSectionHeading = "## Rules";
 const PRESET_DOCS_URL_BASE =
@@ -215,24 +172,54 @@ export const normalizeRulesSectionMarkdown = (markdown) =>
 /** @type {Readonly<Record<PresetName, string>>} */
 const presetDocsSlugByName = {
     all: "all",
-    minimal: "minimal",
+    functional: "functional",
+    "functional-lite": "functional-lite",
+    immutable: "immutable",
     recommended: "recommended",
-    "recommended-type-checked": "recommended-type-checked",
-    strict: "strict",
-    "immutable/type-guards": "immutable-type-guards",
-    "immutable/types": "immutable-types",
 };
 
 /** @type {Readonly<Record<PresetName, string>>} */
 const presetConfigReferenceByName = {
     all: "immutable.configs.all",
-    minimal: "immutable.configs.minimal",
+    functional: "immutable.configs.functional",
+    "functional-lite": 'immutable.configs["functional-lite"]',
+    immutable: "immutable.configs.immutable",
     recommended: "immutable.configs.recommended",
-    "recommended-type-checked": 'immutable.configs["recommended-type-checked"]',
-    strict: "immutable.configs.strict",
-    "immutable/type-guards": 'immutable.configs["immutable/type-guards"]',
-    "immutable/types": 'immutable.configs["immutable/types"]',
 };
+
+/**
+ * @param {PresetName} presetName
+ *
+ * @returns {Readonly<Record<string, unknown>>}
+ */
+const getPresetRulesRecord = (presetName) => {
+    const configs = builtPlugin.configs;
+    const preset = configs?.[presetName];
+
+    if (typeof preset !== "object" || preset === null) {
+        throw new TypeError(`Plugin preset '${presetName}' is missing.`);
+    }
+
+    const rules = preset.rules;
+
+    if (typeof rules !== "object" || rules === null || Array.isArray(rules)) {
+        throw new TypeError(
+            `Plugin preset '${presetName}' is missing a valid rules object.`
+        );
+    }
+
+    return rules;
+};
+
+/** @type {Readonly<Record<PresetName, ReadonlySet<string>>>} */
+const presetRuleIdsByName = Object.freeze(
+    Object.fromEntries(
+        presetOrder.map((presetName) => [
+            presetName,
+            new Set(Object.keys(getPresetRulesRecord(presetName))),
+        ])
+    )
+);
 
 /**
  * @param {PresetName} presetName
@@ -253,65 +240,6 @@ const createPresetLegendLines = () =>
 
         return `  - [${presetIcon}](${docsUrl}) — [\`${configReference}\`](${docsUrl})`;
     });
-
-/**
- * @param {string} reference
- *
- * @returns {null | PresetName}
- */
-const normalizeImmutableConfigName = (reference) => {
-    if (Object.hasOwn(immutableConfigReferenceToName, reference)) {
-        const referenceKey =
-            /** @type {keyof typeof immutableConfigReferenceToName} */ (
-                reference
-            );
-
-        return immutableConfigReferenceToName[referenceKey];
-    }
-
-    const presetName = /** @type {PresetName} */ (reference);
-
-    return presetNameSet.has(presetName) ? presetName : null;
-};
-
-/**
- * @param {readonly string[] | string | undefined} immutableConfigs
- *
- * @returns {readonly PresetName[]}
- */
-const normalizeImmutableConfigNames = (immutableConfigs) => {
-    const references = Array.isArray(immutableConfigs)
-        ? immutableConfigs
-        : [immutableConfigs];
-
-    /** @type {PresetName[]} */
-    const names = [];
-    /** @type {Set<PresetName>} */
-    const seenPresetNames = new Set();
-
-    for (const reference of references) {
-        if (typeof reference !== "string") {
-            continue;
-        }
-
-        const configName = normalizeImmutableConfigName(reference);
-
-        if (configName === null) {
-            continue;
-        }
-
-        if (!presetNameSet.has(configName)) {
-            continue;
-        }
-
-        if (!seenPresetNames.has(configName)) {
-            seenPresetNames.add(configName);
-            names.push(configName);
-        }
-    }
-
-    return names;
-};
 
 /**
  * @param {ReadmeRuleModule} ruleModule
@@ -338,20 +266,17 @@ const getRuleFixIndicator = (ruleModule) => {
 };
 
 /**
- * @param {ReadmeRuleModule} ruleModule
+ * @param {string} ruleName
  *
  * @returns {string}
  */
-const getPresetIndicator = (ruleModule) => {
-    const docsImmutableConfigs = ruleModule.meta?.docs?.immutableConfigs;
-    const presetNames = normalizeImmutableConfigNames(docsImmutableConfigs);
-    const presetNamesSet = new Set(presetNames);
-
+const getPresetIndicator = (ruleName) => {
+    const ruleId = `immutable/${ruleName}`;
     /** @type {string[]} */
     const icons = [];
 
     for (const presetName of presetOrder) {
-        if (presetNamesSet.has(presetName)) {
+        if (presetRuleIdsByName[presetName].has(ruleId)) {
             const docsUrl = createPresetDocsUrl(presetName);
             const presetIcon = immutableConfigMetadataByName[presetName].icon;
 
@@ -374,7 +299,7 @@ const toRuleTableRow = ([ruleName, ruleModule]) => {
         throw new TypeError(`Rule '${ruleName}' is missing meta.docs.url.`);
     }
 
-    return `| [\`${ruleName}\`](${docsUrl}) | ${getRuleFixIndicator(ruleModule)} | ${getPresetIndicator(ruleModule)} |`;
+    return `| [\`${ruleName}\`](${docsUrl}) | ${getRuleFixIndicator(ruleModule)} | ${getPresetIndicator(ruleName)} |`;
 };
 
 /**

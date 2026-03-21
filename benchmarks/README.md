@@ -7,7 +7,7 @@ The suite intentionally measures three complementary workloads:
 - **Real corpus benchmarks** against `test/fixtures/typed/*.invalid.ts` so rule timing reflects real rule inputs.
 - **Valid corpus benchmarks** against `test/fixtures/typed/*.valid.ts` to track near-clean traversal overhead.
 - **Curated zero-message benchmark** against `benchmarks/fixtures/recommended-zero-message.baseline.ts` for a true steady-state baseline.
-- **Preset-focused benchmarks** (`recommended`, `strict`, `immutable/type-guards`, `immutable/types`) so regressions are attributable to a config surface.
+- **Preset-focused benchmarks** (`functional-lite`, `functional`, `recommended`, `all`) so regressions are attributable to a current config surface.
 - **Single-rule stress benchmarks** for focused hot-path investigation (`prefer-immutable-is-present`, `prefer-immutable-safe-cast-to`, `prefer-immutable-set-has`, `prefer-immutable-string-split`, `prefer-immutable-arrayable`), including both `fix=false` and `fix=true` for `prefer-immutable-safe-cast-to`.
 
 ## Why this is meaningful

@@ -229,16 +229,16 @@ describe("eslint-plugin-immutable-2 meaningful benchmarks", () => {
     );
 
     bench(
-        "strict preset on full invalid typed fixture corpus",
+        "functional preset on full invalid typed fixture corpus",
         async () => {
             const lintResults = await lintScenario({
                 filePatterns: benchmarkFileGlobs.typedInvalidFixtures,
                 fix: false,
-                rules: immutableRuleSets.strict,
+                rules: immutableRuleSets.functional,
             });
 
             assertMeaningfulBenchmarkSignal(
-                "strict preset on full invalid typed fixture corpus",
+                "functional preset on full invalid typed fixture corpus",
                 lintResults
             );
         },
@@ -282,16 +282,16 @@ describe("eslint-plugin-immutable-2 meaningful benchmarks", () => {
     );
 
     bench(
-        "immutable type-guards preset on immutable invalid fixtures",
+        "functional-lite preset on full invalid typed fixture corpus",
         async () => {
             const lintResults = await lintScenario({
-                filePatterns: benchmarkFileGlobs.tsExtrasInvalidFixtures,
+                filePatterns: benchmarkFileGlobs.typedInvalidFixtures,
                 fix: false,
-                rules: immutableRuleSets.tsExtrasTypeGuards,
+                rules: immutableRuleSets.functionalLite,
             });
 
             assertMeaningfulBenchmarkSignal(
-                "immutable type-guards preset on immutable invalid fixtures",
+                "functional-lite preset on full invalid typed fixture corpus",
                 lintResults
             );
         },
@@ -299,16 +299,16 @@ describe("eslint-plugin-immutable-2 meaningful benchmarks", () => {
     );
 
     bench(
-        "immutable types preset on immutable invalid fixtures",
+        "all preset on full invalid typed fixture corpus",
         async () => {
             const lintResults = await lintScenario({
-                filePatterns: benchmarkFileGlobs.immutableInvalidFixtures,
+                filePatterns: benchmarkFileGlobs.typedInvalidFixtures,
                 fix: false,
-                rules: immutableRuleSets.immutableTypes,
+                rules: immutableRuleSets.all,
             });
 
             assertMeaningfulBenchmarkSignal(
-                "immutable types preset on immutable invalid fixtures",
+                "all preset on full invalid typed fixture corpus",
                 lintResults
             );
         },
@@ -316,16 +316,16 @@ describe("eslint-plugin-immutable-2 meaningful benchmarks", () => {
     );
 
     bench(
-        "recommended preset (fix=true) on immutable invalid fixtures",
+        "recommended preset (fix=true) on full invalid typed fixture corpus",
         async () => {
             const lintResults = await lintScenario({
-                filePatterns: benchmarkFileGlobs.tsExtrasInvalidFixtures,
+                filePatterns: benchmarkFileGlobs.typedInvalidFixtures,
                 fix: true,
                 rules: immutableRuleSets.recommended,
             });
 
             assertMeaningfulBenchmarkSignal(
-                "recommended preset (fix=true) on immutable invalid fixtures",
+                "recommended preset (fix=true) on full invalid typed fixture corpus",
                 lintResults
             );
         },

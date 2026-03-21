@@ -21,6 +21,10 @@ const getRuleEntries = (
     config: Readonly<PluginConfig>
 ): (readonly [string, unknown])[] => Object.entries(config.rules ?? {});
 
+/** Collect a preset's rule IDs into a stable set for relationship assertions. */
+const getRuleIds = (config: Readonly<PluginConfig>): Set<string> =>
+    new Set(Object.keys(config.rules ?? {}));
+
 const immutableConfigNames = [
     "all",
     "recommended",
@@ -62,12 +66,82 @@ describe("source plugin config wiring", () => {
         expect(functionalLite.rules).toHaveProperty(
             "immutable/no-conditional-statement"
         );
+        expect(
+            functionalLite.rules?.["immutable/no-conditional-statement"]
+        ).toEqual(["error", { allowReturningBranches: true }]);
+        expect(functionalLite.rules).toHaveProperty(
+            "immutable/no-loop-statement",
+            "error"
+        );
+        expect(functionalLite.rules).toHaveProperty(
+            "immutable/no-mixed-interface",
+            "error"
+        );
+        expect(functionalLite.rules).not.toHaveProperty("immutable/no-class");
+        expect(functionalLite.rules).not.toHaveProperty("immutable/no-this");
+        expect(functionalLite.rules).not.toHaveProperty("immutable/no-throw");
         expect(functional.rules).toHaveProperty(
             "immutable/no-expression-statement"
         );
+        expect(functional.rules).toHaveProperty("immutable/no-class", "error");
+        expect(functional.rules).toHaveProperty(
+            "immutable/no-conditional-statement",
+            "error"
+        );
+        expect(functional.rules).toHaveProperty("immutable/no-this", "error");
+        expect(functional.rules).toHaveProperty("immutable/no-throw", "error");
         expect(functional.rules).toHaveProperty("immutable/no-try", "error");
 
         expect(plugin.meta.name).toBe("eslint-plugin-immutable-2");
+    });
+
+    it("keeps preset rule sets layered logically", async () => {
+        const plugin = await loadSourcePlugin();
+        const immutableRuleIds = getRuleIds(plugin.configs.immutable);
+        const functionalLiteRuleIds = getRuleIds(
+            plugin.configs["functional-lite"]
+        );
+        const functionalRuleIds = getRuleIds(plugin.configs.functional);
+        const allRuleIds = getRuleIds(plugin.configs.all);
+
+        expect(immutableRuleIds).toStrictEqual(
+            getRuleIds(plugin.configs.recommended)
+        );
+        expect(
+            functionalLiteRuleIds.difference(immutableRuleIds)
+        ).toStrictEqual(
+            new Set([
+                "immutable/no-conditional-statement",
+                "immutable/no-loop-statement",
+                "immutable/no-mixed-interface",
+            ])
+        );
+        expect(
+            functionalRuleIds.difference(functionalLiteRuleIds)
+        ).toStrictEqual(
+            new Set([
+                "immutable/no-class",
+                "immutable/no-expression-statement",
+                "immutable/no-this",
+                "immutable/no-throw",
+                "immutable/no-try",
+            ])
+        );
+        expect(allRuleIds.difference(functionalRuleIds)).toStrictEqual(
+            new Set(["immutable/no-reject"])
+        );
+        expect(plugin.configs.immutable.rules).toHaveProperty(
+            "immutable/no-method-signature",
+            "warn"
+        );
+        expect(plugin.configs.all.rules).toHaveProperty(
+            "immutable/no-method-signature",
+            "error"
+        );
+        expect(plugin.configs.all.rules).toHaveProperty(
+            "immutable/no-conditional-statement",
+            "error"
+        );
     });
 
     it("registers parser defaults, files, and plugin namespace", async () => {

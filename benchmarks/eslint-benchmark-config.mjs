@@ -14,15 +14,13 @@ import plugin from "../plugin.mjs";
 /**
  * @typedef {{
  *     arrayableStressFixture: readonly string[];
- *     isPresentStressFixture: readonly string[];
  *     recommendedZeroMessageFixture: readonly string[];
+ *     isPresentStressFixture: readonly string[];
  *     setHasStressFixture: readonly string[];
  *     safeCastToStressFixture: readonly string[];
  *     stringSplitStressFixture: readonly string[];
- *     tsExtrasInvalidFixtures: readonly string[];
  *     typedInvalidFixtures: readonly string[];
  *     typedValidFixtures: readonly string[];
- *     immutableInvalidFixtures: readonly string[];
  * }} BenchmarkFileGlobs
  */
 
@@ -52,9 +50,6 @@ export const benchmarkFileGlobs = Object.freeze({
     arrayableStressFixture: Object.freeze([
         "benchmarks/fixtures/arrayable.stress.ts",
     ]),
-    immutableInvalidFixtures: Object.freeze([
-        "test/fixtures/typed/prefer-immutable-*.invalid.ts",
-    ]),
     isPresentStressFixture: Object.freeze([
         "benchmarks/fixtures/is-present.stress.ts",
     ]),
@@ -69,9 +64,6 @@ export const benchmarkFileGlobs = Object.freeze({
     ]),
     stringSplitStressFixture: Object.freeze([
         "benchmarks/fixtures/string-split.stress.ts",
-    ]),
-    tsExtrasInvalidFixtures: Object.freeze([
-        "test/fixtures/typed/prefer-immutable-*.invalid.ts",
     ]),
     typedInvalidFixtures: Object.freeze(["test/fixtures/typed/*.invalid.ts"]),
     typedValidFixtures: Object.freeze(["test/fixtures/typed/*.valid.ts"]),
@@ -155,14 +147,21 @@ const resolveRuleSet = (presetName) => {
 
 /**
  * Plugin rule sets used by benchmark scenarios.
+ *
+ * @type {Readonly<{
+ *     all: Readonly<BenchmarkRules>;
+ *     functional: Readonly<BenchmarkRules>;
+ *     functionalLite: Readonly<BenchmarkRules>;
+ *     immutable: Readonly<BenchmarkRules>;
+ *     recommended: Readonly<BenchmarkRules>;
+ * }>}
  */
 export const immutableRuleSets = Object.freeze({
     all: resolveRuleSet("all"),
-    immutableTypes: resolveRuleSet("immutable/types"),
-    minimal: resolveRuleSet("minimal"),
+    functional: resolveRuleSet("functional"),
+    functionalLite: resolveRuleSet("functional-lite"),
+    immutable: resolveRuleSet("immutable"),
     recommended: resolveRuleSet("recommended"),
-    strict: resolveRuleSet("strict"),
-    tsExtrasTypeGuards: resolveRuleSet("immutable/type-guards"),
 });
 
 /**
