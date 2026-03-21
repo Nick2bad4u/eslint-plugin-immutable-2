@@ -6,6 +6,8 @@ ESLint plugin for teams that want TypeScript-first immutability and
 functional-style conventions in modern flat config projects.
 
 The plugin ships focused flat-config presets with parser setup already wired in.
+Typed parser services remain opt-in so consumers can decide when they want the
+extra semantic precision.
 
 ## Table of contents
 
@@ -13,7 +15,7 @@ The plugin ships focused flat-config presets with parser setup already wired in.
 2. [Quick start (flat config)](#quick-start-flat-config)
 3. [Presets](#presets)
 4. [Configuration examples by preset](#configuration-examples-by-preset)
-5. [Global settings](#global-settings)
+5. [Type-aware precision](#type-aware-precision)
 6. [Rules](#rules)
 7. [Contributors ✨](#contributors-)
 
@@ -111,41 +113,37 @@ export default [
 ];
 ```
 
-## Global settings
+## Type-aware precision
 
-You can globally disable autofixes that add missing imports while still keeping
-rule reports and non-import autofixes enabled.
+The plugin presets already set the parser and base parser options, but they do
+**not** automatically enable `project`/`projectService` for you.
+
+If you want the most accurate checker-backed behavior from rules such as
+`immutable-data` and the implicit-array inference branch of `readonly-array`,
+extend a preset with typed parser services:
 
 ```js
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
   {
-    ...immutable.configs.recommended,
-    settings: {
-      immutable: {
-        // Disable all autofixes while keeping suggestions enabled.
-        // disableAllAutofixes: true,
-
-        // Disable only autofixes that add missing imports.
-        disableImportInsertionFixes: true,
+    ...recommended,
+    languageOptions: {
+      ...recommended.languageOptions,
+      parserOptions: {
+        ...recommended.languageOptions?.parserOptions,
+        projectService: true,
       },
     },
   },
 ];
 ```
 
-When `settings.immutable.disableImportInsertionFixes` is `true`, rules that
-would normally add a missing helper import will report
-without applying that import-adding autofix. Autofixes that do not require
-inserting a new import (for example, when the replacement symbol is already in
-scope) still apply.
+Without parser services, the plugin still loads and syntax-first rules still
+run, but checker-backed branches may fall back to conservative behavior.
 
-When `settings.immutable.disableAllAutofixes` is `true`, all rule autofixes are
-suppressed, but reports and suggestions remain available.
-
-If both settings are enabled, `disableAllAutofixes` takes precedence for
-autofix behavior.
+The plugin does not currently expose any custom `settings.immutable` runtime
+switches. Behavior is controlled through preset choice and per-rule options.
 
 ## Rules
 

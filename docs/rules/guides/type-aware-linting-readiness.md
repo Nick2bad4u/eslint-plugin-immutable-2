@@ -5,14 +5,19 @@ description: Checklist and rollout playbook for enabling type-aware eslint-plugi
 
 # Type-aware linting readiness
 
-Use this guide before enabling stricter immutable presets in a large codebase.
+Use this guide when you want the full checker-backed behavior of the plugin's
+typed branches.
 
 ## When this guide applies
 
 Use this checklist when adopting:
 
-- `functional`
-- `all`
+- `immutable.configs.recommended` with `projectService` enabled for
+  `immutable-data`
+- `immutable.configs.immutable` or any stricter preset when you want the
+  implicit-array inference branch of `readonly-array`
+- a custom flat-config block that enables `immutable-data` or `readonly-array`
+  and relies on parser services
 
 ## Readiness checklist
 
@@ -24,7 +29,18 @@ Confirm the lint runtime can provide full type services:
 - your lint config resolves the intended `tsconfig`(s)
 - the targeted files are included in those `tsconfig`(s)
 
-### 2) Project graph stability
+### 2) Know which rules gain precision
+
+Today the most relevant checker-backed paths are:
+
+- `immutable-data` when it distinguishes mutable array/object operations from
+  freshly-created values
+- `readonly-array` when it infers implicit mutable array types from initializers
+
+Without parser services, these rules fall back conservatively instead of
+crashing, but they may report less precisely.
+
+### 3) Project graph stability
 
 Before enabling stricter checks:
 
@@ -32,7 +48,7 @@ Before enabling stricter checks:
 - baseline linting is green (or has a controlled known backlog)
 - generated types/artifacts are not stale
 
-### 3) Performance baseline
+### 4) Performance baseline
 
 Capture a baseline to detect regressions:
 
@@ -46,12 +62,12 @@ Track:
 - expensive files
 - hot rules that call type-checker operations frequently
 
-### 4) CI gate ordering
+### 5) CI gate ordering
 
 Prefer this order:
 
 1. typecheck
-2. lint (typed rules enabled)
+2. lint (typed parser services enabled where needed)
 3. tests
 
 This keeps typed-service failures easy to classify.
@@ -80,13 +96,20 @@ npx eslint "src/**/*.{ts,tsx}" --stats
 
 ## Common failure modes
 
-### "Typed rule requires type information"
+### Typed behavior is missing or less precise than expected
 
 Likely causes:
 
 - file not included in the active `tsconfig`
 - parser-service wiring mismatch for the current workspace
 - incorrect project root assumptions in local/CI lint execution
+- `projectService` not enabled in the config block that spreads the preset
+
+Typical symptoms:
+
+- `immutable-data` falling back to its conservative `assumeTypes` behavior
+- `readonly-array` still reporting explicit `T[]` syntax but skipping implicit
+  array inference for unannotated declarations
 
 ### Large runtime regressions
 

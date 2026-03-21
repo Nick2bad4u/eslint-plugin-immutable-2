@@ -11,49 +11,42 @@ This page inventories typed callpaths that can reach parser services or the Type
 
 ## Guard model
 
-All type-aware rule execution enters through explicit gates:
+The plugin follows a syntax-first design.
 
-- `createTypedRule(...)` short-circuits typed rules (`meta.docs.requiresTypeChecking: true`) when full type services are unavailable.
-- Optional typed flows in non-type-checked rules call `hasTypeServices(context)` before calling `getTypedRuleServices(context)`.
-- Type-dependent helpers no longer discover typed services internally.
+- Shared typed access flows through `getTypeOfNode(node, context)` in
+  `src/util/rule.ts`.
+- That helper calls `ESLintUtils.getParserServices(context, true)` and returns
+  `null` when parser services or a `program` are unavailable.
+- Rules consuming the helper treat `null` as a normal fallback path rather than
+  crashing.
 
-## Core typed helpers
+## Core typed helper
 
-| Path                                                                                              | Typed dependency                   | Guard entry                                                                  | Fallback behavior                                              | Max expected expensive calls/file               |
-| ------------------------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------- |
-| `src/_internal/typed-rule.ts#getTypedRuleServices`                                                | `parserServices.program`, checker  | `hasTypeServices(context)` or typed-rule create short-circuit                | Throws if called without `program`                             | 1 (rule create path)                            |
-| `src/_internal/constrained-type-at-location.ts#getConstrainedTypeAtLocationWithFallback`          | `parserServices`, checker          | Caller must pass prevalidated checker/parser services                        | Attempts constrained API first, then checker/node-map fallback | O(number of callsites invoking type resolution) |
-| `src/_internal/array-like-expression.ts#createIsArrayLikeExpressionChecker`                       | checker + parser-services node map | Caller must pass typed services object                                       | Returns `false` on safe operation failure                      | O(array-like candidate expressions)             |
-| `src/_internal/typescript-eslint-node-autofix.ts#createTypeScriptEslintNodeExpressionSkipChecker` | optional typed services            | Caller passes `typedServices` explicitly (or omits for definition-only mode) | Definition-only path when no typed services are supplied       | O(guard candidate expressions)                  |
-| `src/_internal/type-checker-compat.ts` helpers                                                    | checker compatibility methods      | Only called from typed helper/rule paths                                     | Returns `undefined` when host checker API is unavailable       | O(type graph traversal within caller)           |
+| Path                             | Typed dependency                                      | Current callers                    | Fallback behavior                                  | Max expected expensive calls/file                                                                |
+| -------------------------------- | ----------------------------------------------------- | ---------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `src/util/rule.ts#getTypeOfNode` | `parserServices.program`, checker, ESTree→TS node map | `immutable-data`, `readonly-array` | Catches parser-service failures and returns `null` | Up to 4 lookups in one `immutable-data` mutator path; per implicit candidate in `readonly-array` |
 
 ## Rule callpath inventory
 
-Current rule set is intentionally syntax-first and works for both JavaScript and
-TypeScript by default.
+### `immutable-data`
 
-- No currently shipped rule requires TypeScript checker services to execute.
-- Typed helper infrastructure remains available in `src/_internal` for
-  compatibility and future type-aware rules.
-- Any future type-aware rule should continue to use explicit guard gates before
-  calling typed services.
+- Uses type lookups to distinguish mutating array/object operations from
+  freshly-created values.
+- Consults checker-backed type information for chained array constructors and
+  `Object.assign(...)` targets.
+- Falls back to its conservative `assumeTypes` behavior when type services are
+  unavailable.
 
-## Telemetry counters
+### `readonly-array`
 
-Typed hot-path counters are recorded in `src/_internal/typed-path-telemetry.ts`:
+- Uses type lookups only for implicit mutable-array inference when a declaration
+  or parameter lacks an explicit annotation.
+- Still reports explicit `T[]`, `Array<T>`, and tuple syntax without any parser
+  services.
+- Skips the implicit inference branch when `getTypeOfNode(...)` returns `null`.
 
-- `prefilterChecks`
-- `prefilterHits`
-- `expensiveTypeCalls`
-- `fallbackInvocations`
+## Operational guidance
 
-Snapshot API:
-
-- `getTypedPathTelemetrySnapshot()`
-- `resetTypedPathTelemetry()`
-
-Derived rates included in snapshot totals:
-
-- `prefilterHitRate = prefilterHits / prefilterChecks`
-- `fallbackInvocationRate = fallbackInvocations / expensiveTypeCalls`
-- `averageExpensiveCallsPerFile = expensiveTypeCalls / fileCount`
+- Enable `projectService: true` when you want the highest semantic precision.
+- Treat `null` from `getTypeOfNode(...)` as an expected soft-failure path.
+- Keep typed lookups narrow and local to already-filtered AST nodes.

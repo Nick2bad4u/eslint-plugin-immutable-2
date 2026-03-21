@@ -1,12 +1,12 @@
 ---
-title: Rule Catalog and Docs Synchronization
-description: How rule source files, catalog IDs, metadata, docs pages, and metadata tests stay aligned.
+title: Rule Source and Docs Synchronization
+description: How rule source files, preset definitions, docs pages, and sync scripts stay aligned in eslint-plugin-immutable-2.
 sidebar_position: 4
 ---
 
 # Rule catalog and docs synchronization
 
-Use this diagram to understand how a single rule change propagates through catalog identity, docs metadata, and validation tests.
+Use this diagram to understand how a single rule change propagates through runtime metadata, hand-authored docs, generated tables, and validation tests.
 
 ```mermaid
 flowchart TB
@@ -16,47 +16,52 @@ flowchart TB
     classDef tests fill:#7f1d1d,stroke:#fca5a5,color:#fef2f2,stroke-width:1px
     classDef output fill:#0f766e,stroke:#5eead4,color:#ecfeff,stroke-width:1px
 
-    RuleSource[src/rules/prefer-*.ts]
-    TypedRule[src/_internal/typed-rule.ts]
-    RuleCatalog[src/_internal/rule-catalog.ts]
-    RuleDocsMetadata[src/_internal/rule-docs-metadata.ts]
+    RuleSource[src/rules/*.ts]
+    RuleCreator[src/util/rule.ts]
+    PresetSource[src/configs/rule-sets.ts]
+    PluginBuild[src/plugin.ts + dist/plugin.js]
     RuleDocs[docs/rules/*.md]
+    PresetDocs[docs/rules/presets/*.md]
+    ReadmeSync[scripts/sync-readme-rules-table.mjs]
+    PresetSync[scripts/sync-presets-rules-matrix.mjs]
     RuleSidebar[docs/docusaurus/sidebars.rules.ts]
-    IntegrityTests[test/rule-metadata-integrity.test.ts]
-    SnapshotTests[test/rule-metadata-snapshots.test.ts]
-    SmokeTests[test/_internal/rule-metadata-smoke.ts]
-    BuiltDocs[Docusaurus Rule Pages]
+    IntegrityTests[test/docs-integrity.test.ts]
+    HeadingTests[test/docs-heading-snapshots.test.ts]
+    PresetTests[test/configs.test.ts + test/plugin-source-configs.test.ts]
+    BuiltDocs[Docusaurus Rule Pages + README]
 
-    RuleSource --> TypedRule
-    RuleSource --> RuleCatalog
-    RuleCatalog --> RuleDocsMetadata
-    TypedRule --> RuleDocsMetadata
-    RuleDocs --> RuleDocsMetadata
-    RuleDocsMetadata --> RuleSidebar
+    RuleSource --> RuleCreator
+    RuleSource --> PluginBuild
+    PresetSource --> PluginBuild
+    PluginBuild --> ReadmeSync
+    PluginBuild --> PresetSync
+    RuleDocs --> RuleSidebar
     RuleSidebar --> BuiltDocs
 
-    RuleDocsMetadata --> IntegrityTests
-    RuleDocsMetadata --> SnapshotTests
-    RuleDocsMetadata --> SmokeTests
-
+    ReadmeSync --> BuiltDocs
+    PresetSync --> PresetDocs
+    RuleDocs --> IntegrityTests
+    RuleDocs --> HeadingTests
+    PluginBuild --> PresetTests
+    PresetDocs --> PresetTests
     RuleDocs --> BuiltDocs
 
-    class RuleSource,TypedRule src
-    class RuleCatalog,RuleDocsMetadata catalog
-    class RuleDocs,RuleSidebar docs
-    class IntegrityTests,SnapshotTests,SmokeTests tests
+    class RuleSource,RuleCreator,PresetSource src
+    class PluginBuild,ReadmeSync,PresetSync catalog
+    class RuleDocs,PresetDocs,RuleSidebar docs
+    class IntegrityTests,HeadingTests,PresetTests tests
     class BuiltDocs output
 ```
 
 ## Why this matters
 
-- Stable catalog IDs prevent accidental reorder/regression bugs in rule references.
-- Metadata tests catch drift between source metadata and docs content early.
-- Sidebars and generated docs stay deterministic when source-of-truth metadata is consistent.
+- Runtime metadata and docs URLs come directly from rule source.
+- Sync scripts catch drift between preset membership and published tables.
+- Docs tests keep hand-authored rule pages present and structurally consistent.
 
 ## Common maintenance workflow
 
 1. Update rule logic and `meta.docs` fields in the rule source.
-2. Confirm catalog identity and metadata extraction remain aligned.
-3. Update rule docs if examples/options changed.
-4. Run metadata-integrity + snapshot tests before merging.
+2. Update rule docs if examples/options changed.
+3. Re-run README/preset sync scripts when preset or metadata surfaces change.
+4. Run docs and preset validation tests before merging.

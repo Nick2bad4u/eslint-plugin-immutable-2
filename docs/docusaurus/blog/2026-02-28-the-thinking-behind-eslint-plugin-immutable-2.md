@@ -6,8 +6,8 @@ authors:
 tags:
   - eslint
   - typescript
-  - immutable
-  - immutable
+  - immutability
+  - functional-programming
   - architecture
 description: Why this plugin exists, what constraints shaped it, and how we balance strictness with developer experience.
 ---
@@ -20,13 +20,13 @@ description: Why this plugin exists, what constraints shaped it, and how we bala
 
 ## The core motivation
 
-Most teams using TypeScript still carry legacy utility patterns that were reasonable at the time but are now harder to maintain than modern `immutable` and `immutable` alternatives.
+Most TypeScript codebases still accumulate mutation in the places where the language and standard library make it easy: object property writes, `let`, mutable array types, exception-style control flow, and host APIs such as `Date`, `URL`, `Map`, `Set`, `Storage`, and `Headers`.
 
 This plugin tries to close that gap by doing three things:
 
-1. Detect outdated or unsafe patterns reliably.
+1. Detect mutation-heavy patterns reliably.
 2. Offer clear, actionable diagnostics instead of vague “bad style” warnings.
-3. Autofix only when semantics are preserved.
+3. Provide a preset ladder that teams can adopt gradually rather than all at once.
 
 ## Design constraints we intentionally accepted
 
@@ -38,7 +38,7 @@ So we bias toward:
 
 - syntax-first detection where possible,
 - narrow AST selectors,
-- type-aware fallbacks only where they materially improve correctness.
+- type-aware lookups only where they materially improve correctness.
 
 ### 2) Correctness over aggressive autofixes
 
@@ -62,10 +62,17 @@ Every rule is expected to explain:
 
 ## Long-term direction
 
-The roadmap is to keep tightening alignment with modern TypeScript utility ecosystems while preserving practical adoption paths:
+The roadmap is to keep broadening immutability coverage while preserving practical adoption paths:
 
 - low-friction presets for gradual rollout,
 - stricter presets for mature codebases,
+- targeted mutation coverage for both core language constructs and mutable host APIs,
 - focused migration guidance in docs and examples.
 
 If a rule cannot be explained explicitly, implemented performantly, and fixed safely, it does not belong in this plugin.
+
+## Related docs
+
+- [Preset selection strategy](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/guides/preset-selection-strategy)
+- [System architecture overview](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/developer/charts/system-architecture-overview)
+- [Architecture Decision Records](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/developer/adr)

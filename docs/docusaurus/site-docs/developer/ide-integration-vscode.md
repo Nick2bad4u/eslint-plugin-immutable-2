@@ -41,7 +41,12 @@ export default [
 
 ## Type-aware parser setup notes
 
-`immutable.configs.recommended` already enables `projectService`.
+`immutable.configs.recommended` already wires the parser, file globs, and base
+parser options, but it does **not** automatically enable `projectService`.
+
+Enable typed parser services in the config block where you spread the preset
+when you want full semantic precision from rules such as `immutable-data` and
+`readonly-array`:
 
 If you build a fully manual config block (instead of consuming a preset), configure parser services in the TypeScript-targeted config block:
 
@@ -54,7 +59,8 @@ languageOptions: {
 }
 ```
 
-If parser services are missing, typed rules may not run as expected.
+If parser services are missing, the plugin still loads, but checker-backed
+branches may skip or fall back conservatively.
 
 ## Common gotchas
 

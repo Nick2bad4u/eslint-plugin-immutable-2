@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Rule lifecycle and autofix flow
 
-This sequence diagram models what happens from lint invocation through optional fix output and safety fallback behavior.
+This sequence diagram models what happens from lint invocation through optional typed lookup, reporting, and fix/suggestion output.
 
 ```mermaid
 sequenceDiagram
@@ -14,29 +14,33 @@ sequenceDiagram
     box Lavender Lint engine
     participant ESLint as ESLint Engine
     end
-    box LightYellow Rule and typed wrapper
+    box LightYellow Rule implementation
     participant Rule as Rule Module
-    participant Typed as createTypedRule
+    participant Create as createRule
     end
     box LightCyan Type system bridge
+    participant Helper as getTypeOfNode
     participant Parser as parserServices
     participant TS as TypeChecker
     end
     box LightGreen Reporting and rewriting
-    participant Report as reportWithImmutablePolicy
+    participant Report as context.report
     participant Fix as Fix/Suggestion Builder
     end
 
     ESLint->>Rule: load rule + meta
-    Rule->>Typed: create(context)
-    Typed->>Parser: getParserServices(context, true)
-    Parser-->>Typed: parserServices + program
-    Typed->>TS: program.getTypeChecker()
+    Rule->>Create: create(context)
 
     loop For matched AST nodes
         Rule->>Rule: cheap syntax guards
-        Rule->>TS: optional semantic checks
-        TS-->>Rule: type information
+        opt semantic lookup needed
+            Rule->>Helper: getTypeOfNode(node, context)
+            Helper->>Parser: getParserServices(context, true)
+            Parser-->>Helper: parserServices + program or throw
+            Helper->>TS: program.getTypeChecker()
+            TS-->>Helper: type information
+            Helper-->>Rule: type or null
+        end
         Rule->>Fix: compute safe rewrite options
         alt autofix is safe
             Fix-->>Report: autofix function
@@ -56,11 +60,11 @@ sequenceDiagram
 ## Safety checkpoints
 
 - Syntax-first guards prevent expensive checker access when unnecessary.
-- Type operations are wrapped with safe fallbacks to avoid linter crashes.
+- Type operations are wrapped in `getTypeOfNode(...)`, which returns `null` instead of crashing when services are missing.
 - Autofix only applies when parse-safe and semantic-safe constraints are met.
 
 ## Maintainer reading guide
 
 - Focus on the `loop` body to reason about performance.
 - Treat checker calls as optional/guarded operations, not defaults.
-- Keep `report()` construction centralized so policy checks stay consistent.
+- Prefer local, mechanical rewrites over broad structural edits.

@@ -20,6 +20,8 @@ Autofix is one of the biggest quality-of-life features in ESLint, but it is also
 
 In this plugin, a fix is not accepted just because it is convenient. A fix must be safe.
 
+That matters especially in `eslint-plugin-immutable-2`, where most reports are about mutation-heavy code paths that teams often adopt gradually. A bad rewrite can easily turn a trust-building rollout into a source of churn.
+
 ## The safety bar
 
 Before a fixer is enabled, the rule needs confidence in three areas:
@@ -48,9 +50,11 @@ This keeps automation helpful without becoming risky.
 
 ## Why this matters in TypeScript-heavy codebases
 
-TypeScript projects frequently rely on utility types, narrowings, and overloaded APIs. Small rewrites can accidentally change constraints or type inference behavior.
+TypeScript projects frequently rely on narrowings, structural typing, and mutable host APIs whose behavior is easy to change accidentally. Small rewrites can alter inference, runtime semantics, or both.
 
 A conservative strategy means developers still get guidance and one-click migrations, but only in places where the rule can prove safety.
+
+In practice, that means this plugin favors **local, mechanical rewrites** such as adding `readonly`, preserving existing syntax shape, or suggesting a safer declaration form. It deliberately avoids broader cross-file or import-inserting fix behavior that would be harder to validate reliably.
 
 ## Practical rollout advice
 
@@ -61,3 +65,9 @@ If your team is adopting this plugin:
 3. Move stricter rules from suggestion-first to fix-first once confidence is high.
 
 That progression gives teams predictable upgrades instead of disruptive churn.
+
+## Related docs
+
+- [Rule lifecycle and autofix flow](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/developer/charts/rule-lifecycle-and-autofix-flow)
+- [Autofix safety decision tree](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/developer/charts/autofix-safety-decision-tree)
+- [Rollout and fix safety](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/guides/rollout-and-fix-safety)

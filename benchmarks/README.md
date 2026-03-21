@@ -8,7 +8,7 @@ The suite intentionally measures three complementary workloads:
 - **Valid corpus benchmarks** against `test/fixtures/typed/*.valid.ts` to track near-clean traversal overhead.
 - **Curated zero-message benchmark** against `benchmarks/fixtures/recommended-zero-message.baseline.ts` for a true steady-state baseline.
 - **Preset-focused benchmarks** (`functional-lite`, `functional`, `recommended`, `all`) so regressions are attributable to a current config surface.
-- **Single-rule stress benchmarks** for focused hot-path investigation (`prefer-immutable-is-present`, `prefer-immutable-safe-cast-to`, `prefer-immutable-set-has`, `prefer-immutable-string-split`, `prefer-immutable-arrayable`), including both `fix=false` and `fix=true` for `prefer-immutable-safe-cast-to`.
+- **Single-rule stress benchmarks** in `benchmark/` and targeted scenario blocks in `benchmarks/run-eslint-stats.mjs` for focused hot-path investigation when a specific immutable rule needs isolated measurement.
 
 ## Why this is meaningful
 
