@@ -4,7 +4,7 @@ title: Recommended preset
 
 # 🔵 Recommended
 
-`recommended` is an alias of the `immutable` preset.
+Use this preset as the default low-friction entrypoint focused on high-signal mutation hazards.
 
 ## Config key
 
@@ -20,7 +20,7 @@ import immutable from "eslint-plugin-immutable-2";
 export default [immutable.configs.recommended];
 ```
 
-For stronger functional constraints, move to `functional-lite`, then `functional`, or use `all` for full coverage.
+Move to `immutable` when you also want `no-let`, readonly typing, and warning-level method-signature guidance in your baseline. For stronger functional constraints after that, move to `functional-lite`, then `functional`, or use `all` for full coverage.
 
 ## Rules in this preset
 
@@ -43,10 +43,8 @@ For stronger functional constraints, move to `functional-lite`, then `functional
 | [`no-form-data-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-form-data-mutation)                 |  —  |
 | [`no-headers-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-headers-mutation)                     |  —  |
 | [`no-history-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-history-mutation)                     |  —  |
-| [`no-let`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-let)                                               |  💡 |
 | [`no-location-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-location-mutation)                   |  —  |
 | [`no-map-set-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-map-set-mutation)                     |  —  |
-| [`no-method-signature`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-method-signature)                     |  💡 |
 | [`no-process-env-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-process-env-mutation)             |  —  |
 | [`no-reflect-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-reflect-mutation)                     |  —  |
 | [`no-regexp-lastindex-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-regexp-lastindex-mutation)   |  —  |
@@ -55,5 +53,3 @@ For stronger functional constraints, move to `functional-lite`, then `functional
 | [`no-typed-array-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-typed-array-mutation)             |  —  |
 | [`no-url-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-url-mutation)                             |  —  |
 | [`no-url-search-params-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-url-search-params-mutation) |  —  |
-| [`readonly-array`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-array)                               |  🔧 |
-| [`readonly-keyword`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-keyword)                           |  🔧 |

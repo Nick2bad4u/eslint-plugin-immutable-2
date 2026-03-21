@@ -48,7 +48,7 @@ const noExpressionStatementRule: ReturnType<
         docs: {
             description:
                 "disallow standalone expression statements to avoid side-effect-driven control flow.",
-            recommended: true,
+            recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-expression-statement",
         },
         messages: {

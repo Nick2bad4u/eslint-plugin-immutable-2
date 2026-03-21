@@ -113,7 +113,7 @@ const readonlyKeywordRule: ReturnType<typeof createRule<Options, "generic">> =
             ],
             docs: {
                 description: "require readonly modifiers where possible.",
-                recommended: true,
+                recommended: false,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-keyword",
             },
             fixable: "code",

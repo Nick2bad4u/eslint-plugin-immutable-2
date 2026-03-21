@@ -209,7 +209,7 @@ const noConditionalStatementRule: ReturnType<
         defaultOptions: [{ allowReturningBranches: false }],
         docs: {
             description: "disallow conditional statements.",
-            recommended: true,
+            recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-conditional-statement",
         },
         messages: {

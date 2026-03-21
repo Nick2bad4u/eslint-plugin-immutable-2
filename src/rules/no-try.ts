@@ -20,7 +20,7 @@ const noTryRule: ReturnType<typeof createRule<readonly [], "generic">> =
         meta: {
             docs: {
                 description: "disallow try/catch/finally statements.",
-                recommended: true,
+                recommended: false,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-try",
             },
             messages: {

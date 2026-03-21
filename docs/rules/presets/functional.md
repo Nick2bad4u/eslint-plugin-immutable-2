@@ -20,7 +20,7 @@ import immutable from "eslint-plugin-immutable-2";
 export default [immutable.configs.functional];
 ```
 
-`functional` builds on `functional-lite` and additionally bans classes, `this`, `throw`, `try`, and bare expression statements.
+`functional` builds on `functional-lite` and additionally bans classes, `this`, `throw`, `try`, and bare expression statements while promoting `no-method-signature` from a migration warning to an error.
 
 ## Rules in this preset
 

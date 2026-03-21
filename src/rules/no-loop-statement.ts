@@ -37,7 +37,7 @@ const noLoopStatementRule: ReturnType<
     meta: {
         docs: {
             description: "disallow imperative loop statements.",
-            recommended: true,
+            recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-loop-statement",
         },
         messages: {

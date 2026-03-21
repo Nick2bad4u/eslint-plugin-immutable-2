@@ -27,7 +27,7 @@ const noClassRule: ReturnType<typeof createRule<readonly [], "generic">> =
             docs: {
                 description:
                     "disallow classes to encourage function-based composition.",
-                recommended: true,
+                recommended: false,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-class",
             },
             messages: {

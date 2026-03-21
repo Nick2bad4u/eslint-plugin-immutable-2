@@ -40,7 +40,7 @@ const noRejectRule: ReturnType<typeof createRule<readonly [], "generic">> =
         meta: {
             docs: {
                 description: "disallow `Promise.reject(...)`.",
-                recommended: true,
+                recommended: false,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-reject",
             },
             messages: {

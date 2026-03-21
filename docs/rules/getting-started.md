@@ -21,7 +21,7 @@ export default [
 ];
 ```
 
-`recommended` is an alias of `immutable` and does not require type information.
+`recommended` is the low-friction default preset and does not require type information. Move to `immutable` when you want `no-let`, readonly typing, and the warning-level `no-method-signature` rule in your baseline.
 
 ## Alternative: manual scoped setup
 
@@ -58,10 +58,11 @@ Use this pattern when you only extend rules and want full control over parser se
 ## Recommended rollout
 
 1. Start with `recommended`.
-2. Fix violations in small batches.
-3. Move to `functional-lite` for structural functional constraints such as loop and conditional restrictions.
-4. Move to `functional` once the team is ready for stricter statement, exception, and `this` bans.
-5. Use `all` when you want every immutable rule enabled.
+2. Move to `immutable` when the team is ready for broader declaration and readonly typing discipline.
+3. Fix violations in small batches.
+4. Move to `functional-lite` for structural functional constraints such as loop and conditional restrictions.
+5. Move to `functional` once the team is ready for stricter statement, exception, and `this` bans.
+6. Use `all` when you want every immutable rule enabled.
 
 ## Need a subset instead of a full preset?
 

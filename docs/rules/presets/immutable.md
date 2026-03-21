@@ -4,7 +4,7 @@ title: Immutable preset
 
 # 🟠 Immutable
 
-Use this preset as the low-friction immutable baseline.
+Use this preset when you want the broader immutable baseline beyond `recommended`.
 
 ## Config key
 
@@ -20,7 +20,7 @@ import immutable from "eslint-plugin-immutable-2";
 export default [immutable.configs.immutable];
 ```
 
-This preset focuses on immutable data declarations, mutation guards, and readonly typing rules without the broader functional-style bans in `functional-lite` and `functional`.
+This preset keeps the targeted mutation guards from `recommended` and adds broader declaration and readonly typing discipline such as `no-let`, `readonly-array`, `readonly-keyword`, and warning-level `no-method-signature`, without the broader functional-style bans in `functional-lite` and `functional`.
 
 ## Rules in this preset
 

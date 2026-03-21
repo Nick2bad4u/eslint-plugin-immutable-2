@@ -20,7 +20,7 @@ import immutable from "eslint-plugin-immutable-2";
 export default [immutable.configs["functional-lite"]];
 ```
 
-This preset layers a small set of structural functional rules onto the immutable baseline while still allowing returning branches in conditional expressions.
+This preset keeps the full immutable baseline and layers only a small set of structural functional rules on top of it while still allowing returning branches in conditional expressions. The "lite" label refers to the added functional constraints, not the total number of enabled immutable rules.
 
 ## Rules in this preset
 

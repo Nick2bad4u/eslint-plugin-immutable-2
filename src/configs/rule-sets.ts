@@ -2,8 +2,8 @@ import type { Linter } from "eslint";
 
 type ConfigRules = NonNullable<Linter.Config["rules"]>;
 
-/** Baseline immutable rules shared by `immutable` and `recommended`. */
-export const immutableConfigRules: ConfigRules = {
+/** Low-friction rules enabled by the default `recommended` preset. */
+export const recommendedConfigRules: ConfigRules = {
     "immutable/immutable-data": "error",
     "immutable/no-abort-controller-mutation": "error",
     "immutable/no-atomics-mutation": "error",
@@ -16,10 +16,8 @@ export const immutableConfigRules: ConfigRules = {
     "immutable/no-form-data-mutation": "error",
     "immutable/no-headers-mutation": "error",
     "immutable/no-history-mutation": "error",
-    "immutable/no-let": "error",
     "immutable/no-location-mutation": "error",
     "immutable/no-map-set-mutation": "error",
-    "immutable/no-method-signature": "warn",
     "immutable/no-process-env-mutation": "error",
     "immutable/no-reflect-mutation": "error",
     "immutable/no-regexp-lastindex-mutation": "error",
@@ -28,8 +26,23 @@ export const immutableConfigRules: ConfigRules = {
     "immutable/no-typed-array-mutation": "error",
     "immutable/no-url-mutation": "error",
     "immutable/no-url-search-params-mutation": "error",
+};
+
+/** Additional immutable-discipline rules layered onto `recommended`. */
+export const immutableOnlyRules: ConfigRules = {
+    "immutable/no-let": "error",
+    "immutable/no-method-signature": "warn",
     "immutable/readonly-array": "error",
     "immutable/readonly-keyword": "error",
+};
+
+/**
+ * Baseline immutable rules shared by `immutable`, `functional-lite`, and
+ * stricter presets.
+ */
+export const immutableConfigRules: ConfigRules = {
+    ...recommendedConfigRules,
+    ...immutableOnlyRules,
 };
 
 /** Additional low-churn functional rules layered onto the immutable baseline. */
@@ -53,6 +66,7 @@ export const functionalOnlyRules: ConfigRules = {
     "immutable/no-class": "error",
     "immutable/no-conditional-statement": "error",
     "immutable/no-expression-statement": "error",
+    "immutable/no-method-signature": "error",
     "immutable/no-this": "error",
     "immutable/no-throw": "error",
     "immutable/no-try": "error",
@@ -66,7 +80,6 @@ export const functionalConfigRules: ConfigRules = {
 
 /** Additional `all`-only rules and overrides layered onto `functional`. */
 export const allOnlyRules: ConfigRules = {
-    "immutable/no-method-signature": "error",
     "immutable/no-reject": "error",
 };
 

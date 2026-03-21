@@ -213,7 +213,7 @@ const readonlyArrayRule: ReturnType<
         ],
         docs: {
             description: "require readonly arrays over mutable arrays.",
-            recommended: true,
+            recommended: false,
             requiresTypeChecking: true,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-array",
         },

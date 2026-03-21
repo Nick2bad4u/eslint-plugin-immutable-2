@@ -101,7 +101,7 @@ const noLetRule: ReturnType<
         docs: {
             description:
                 "disallow mutable `let` bindings in favor of `const` and expression-based updates.",
-            recommended: true,
+            recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-let",
         },
         hasSuggestions: true,

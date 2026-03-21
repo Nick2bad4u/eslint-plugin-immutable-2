@@ -20,7 +20,7 @@ import immutable from "eslint-plugin-immutable-2";
 export default [immutable.configs.all];
 ```
 
-`all` builds on `functional` and additionally enables every remaining plugin rule, including `no-reject` and the stricter error-level form of `no-method-signature`.
+`all` builds on `functional` and additionally enables every remaining plugin rule, including `no-reject`.
 
 ## Rules in this preset
 

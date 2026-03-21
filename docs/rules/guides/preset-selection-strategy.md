@@ -18,18 +18,25 @@ Use these checkpoints before choosing a preset:
 
 ## Recommended starting points
 
-### `recommended` (alias of `immutable`)
+### `recommended`
 
 Choose this when:
 
-- You need a low-friction baseline with practical immutable constraints.
+- You need a low-friction baseline focused on high-signal mutation hazards.
 - You want immediate value with low code churn.
+
+### `immutable`
+
+Choose this when:
+
+- You want the full non-structural immutable baseline, including `no-let`, readonly typing, and warning-level method-signature guidance.
+- Your team is ready for broader declaration and type-annotation cleanup without adopting functional control-flow bans yet.
 
 ### `functional-lite`
 
 Choose this when:
 
-- You want structural functional constraints beyond `immutable` without jumping straight to the strictest statement bans.
+- You want a small structural functional layer beyond `immutable` without jumping straight to the strictest statement bans.
 - You want conditional restrictions but still need returning branches to remain legal.
 - You can absorb moderate migration effort.
 

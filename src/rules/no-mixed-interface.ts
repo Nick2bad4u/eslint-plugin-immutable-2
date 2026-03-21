@@ -62,7 +62,7 @@ const noMixedInterfaceRule: ReturnType<
         docs: {
             description:
                 "disallow mixing incompatible member shapes in a single interface declaration.",
-            recommended: true,
+            recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-mixed-interface",
         },
         messages: {

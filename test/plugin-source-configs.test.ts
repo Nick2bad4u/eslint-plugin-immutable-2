@@ -57,10 +57,20 @@ describe("source plugin config wiring", () => {
         expect(Object.keys(recommended.rules)).toEqual(
             expect.arrayContaining([
                 "immutable/immutable-data",
-                "immutable/no-let",
-                "immutable/readonly-array",
-                "immutable/readonly-keyword",
+                "immutable/no-map-set-mutation",
+                "immutable/no-regexp-lastindex-mutation",
+                "immutable/no-stateful-regexp",
             ])
+        );
+        expect(recommended.rules).not.toHaveProperty("immutable/no-let");
+        expect(recommended.rules).not.toHaveProperty(
+            "immutable/no-method-signature"
+        );
+        expect(recommended.rules).not.toHaveProperty(
+            "immutable/readonly-array"
+        );
+        expect(recommended.rules).not.toHaveProperty(
+            "immutable/readonly-keyword"
         );
 
         expect(functionalLite.rules).toHaveProperty(
@@ -88,6 +98,10 @@ describe("source plugin config wiring", () => {
             "immutable/no-conditional-statement",
             "error"
         );
+        expect(functional.rules).toHaveProperty(
+            "immutable/no-method-signature",
+            "error"
+        );
         expect(functional.rules).toHaveProperty("immutable/no-this", "error");
         expect(functional.rules).toHaveProperty("immutable/no-throw", "error");
         expect(functional.rules).toHaveProperty("immutable/no-try", "error");
@@ -97,6 +111,7 @@ describe("source plugin config wiring", () => {
 
     it("keeps preset rule sets layered logically", async () => {
         const plugin = await loadSourcePlugin();
+        const recommendedRuleIds = getRuleIds(plugin.configs.recommended);
         const immutableRuleIds = getRuleIds(plugin.configs.immutable);
         const functionalLiteRuleIds = getRuleIds(
             plugin.configs["functional-lite"]
@@ -104,8 +119,16 @@ describe("source plugin config wiring", () => {
         const functionalRuleIds = getRuleIds(plugin.configs.functional);
         const allRuleIds = getRuleIds(plugin.configs.all);
 
-        expect(immutableRuleIds).toStrictEqual(
-            getRuleIds(plugin.configs.recommended)
+        expect(immutableRuleIds.difference(recommendedRuleIds)).toStrictEqual(
+            new Set([
+                "immutable/no-let",
+                "immutable/no-method-signature",
+                "immutable/readonly-array",
+                "immutable/readonly-keyword",
+            ])
+        );
+        expect(recommendedRuleIds.difference(immutableRuleIds)).toStrictEqual(
+            new Set()
         );
         expect(
             functionalLiteRuleIds.difference(immutableRuleIds)
@@ -133,6 +156,10 @@ describe("source plugin config wiring", () => {
         expect(plugin.configs.immutable.rules).toHaveProperty(
             "immutable/no-method-signature",
             "warn"
+        );
+        expect(plugin.configs.functional.rules).toHaveProperty(
+            "immutable/no-method-signature",
+            "error"
         );
         expect(plugin.configs.all.rules).toHaveProperty(
             "immutable/no-method-signature",

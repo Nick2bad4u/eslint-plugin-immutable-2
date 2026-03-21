@@ -21,7 +21,7 @@ const noThisRule: ReturnType<typeof createRule<readonly [], "generic">> =
             docs: {
                 description:
                     "disallow `this` usage to encourage stateless functions.",
-                recommended: true,
+                recommended: false,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-this",
             },
             messages: {

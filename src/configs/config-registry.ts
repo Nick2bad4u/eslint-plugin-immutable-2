@@ -6,6 +6,7 @@ import allConfig from "./all.js";
 import functionalLiteConfig from "./functional-lite.js";
 import functionalConfig from "./functional.js";
 import immutableConfig from "./immutable.js";
+import recommendedConfig from "./recommended.js";
 
 /** Immutable plugin preset names. */
 export const immutableConfigNames = [
@@ -28,7 +29,7 @@ export const immutableConfigsByName: ImmutableConfigMap = {
     functional: functionalConfig,
     "functional-lite": functionalLiteConfig,
     immutable: immutableConfig,
-    recommended: immutableConfig,
+    recommended: recommendedConfig,
 };
 
 /* eslint-enable canonical/no-re-export -- end intentional preset-map aggregation exception. */
