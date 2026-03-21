@@ -19,7 +19,7 @@ This page acts as the ADR README/index for developer documentation.
 - [ADR 0007: Rule doc footer links to shared guides](./0007-rule-doc-footer-links-to-shared-guides.md)
 - [ADR 0008: TypeDoc generation strategy for CI and local development](./0008-typedoc-generation-ci-local-strategy.md)
 - [ADR 0009: Plugin blog as an official documentation channel](./0009-plugin-blog-as-docs-channel.md)
-- [ADR 0010: Autofix governance and global kill-switch](./0010-autofix-governance-and-global-kill-switch.md)
+- [ADR 0010: Conservative autofix governance without runtime toggles](./0010-autofix-governance-and-global-kill-switch.md)
 - [ADR 0011: Type-aware rule contract and fail-fast behavior](./0011-type-aware-rule-contract-and-fail-fast-behavior.md)
 - [ADR 0012: Internal API surface and stability contract](./0012-internal-api-surface-and-stability-contract.md)
 - [ADR 0013: Docs link integrity and anchor stability policy](./0013-docs-link-integrity-and-anchor-stability-policy.md)

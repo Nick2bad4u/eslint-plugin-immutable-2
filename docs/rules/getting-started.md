@@ -21,7 +21,11 @@ export default [
 ];
 ```
 
-`recommended` is the low-friction default preset and does not require type information. Move to `immutable` when you want `no-let`, readonly typing, and the warning-level `no-method-signature` rule in your baseline.
+`recommended` is the low-friction default preset. It works out of the box with
+the bundled parser wiring, and it gains additional semantic precision when you
+enable typed parser services for rules such as `immutable-data`. Move to
+`immutable` when you want `no-let`, readonly typing, and the warning-level
+`no-method-signature` rule in your baseline.
 
 ## Alternative: manual scoped setup
 
@@ -38,7 +42,7 @@ export default [
             parser: tsParser,
             parserOptions: {
                 ecmaVersion: "latest",
-                // Enable only when using a type-aware preset.
+                // Enable when you want checker-backed precision.
                 // projectService: true,
                 sourceType: "module",
             },

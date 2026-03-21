@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # System architecture overview
 
-This diagram shows how source modules, rule metadata, docs, generated tooling assets, and consumer projects fit together.
+This diagram shows how source modules, preset wiring, docs sync scripts, and consumer integrations fit together.
 
 ```mermaid
 flowchart TB
@@ -17,23 +17,29 @@ flowchart TB
 
     subgraph S[Source Layer]
       R[src/rules/*.ts]
-      I[src/_internal/*.ts]
+      U[src/util/*.ts]
+      CM[src/common/*.ts]
+      CFG[src/configs/*.ts]
       P[src/plugin.ts]
-      C[src/_internal/rule-catalog.ts]
-      M[src/_internal/rule-docs-metadata.ts]
     end
 
     subgraph RT[Runtime Layer]
       ER[ESLint Rule Modules]
       PC[Flat Config Presets]
-      MD[Normalized Rule Metadata]
+      META[Rule metadata in built plugin]
     end
 
     subgraph D[Documentation Layer]
       RD[docs/rules/*.md]
       DD[docs/docusaurus/site-docs/developer/*]
+      SYNC[scripts/sync-*.mjs]
       SB[docs/docusaurus/sidebars*.ts]
-      CSS[docs/docusaurus/src/css/custom.css]
+      RM[README.md]
+    end
+
+    subgraph V[Validation Layer]
+      TESTS[test/docs-*.ts + test/configs*.ts]
+      TASKS[npm lint/test/typecheck/docs:build]
     end
 
     subgraph E[External Integrations]
@@ -45,38 +51,48 @@ flowchart TB
     end
 
     R --> ER
-    I --> ER
-    C --> M
-    M --> MD
+    U --> ER
+    CM --> ER
     P --> PC
+    CFG --> PC
     ER --> PC
-    MD --> P
+    ER --> META
 
+    RD --> SYNC
+    META --> SYNC
+    SYNC --> RD
+    SYNC --> RM
     RD --> SB
     DD --> SB
     SB --> SITE
-    CSS --> SITE
-    MD --> RD
+    RM --> SITE
 
     PC --> CONS
     ER --> IDE
     SITE --> CONS
     PC --> INSP
+    RD --> TESTS
+    RM --> TESTS
+    PC --> TESTS
+    TASKS --> TESTS
     CI --> SITE
     CI --> INSP
     CI --> CONS
 
-    class R,I,P,C,M source
-    class ER,PC,MD runtime
-    class RD,DD,SB,CSS docs
+    class R,U,CM,CFG,P source
+    class ER,PC,META runtime
+    class RD,DD,SYNC,SB,RM docs
+    class TESTS,TASKS docs
     class CONS,CI,SITE,IDE,INSP ext
 ```
 
 ## Notes
 
-- The rule catalog provides stable IDs for traceability (`R001`, `R002`, ...).
-- `createTypedRule` centralizes rule metadata and type-aware wiring.
-- Rule docs and Docusaurus sidebars remain aligned through shared metadata conventions.
+- `src/util/rule.ts` is the shared rule-authoring entry point for docs URL
+  normalization and optional typed lookup.
+- `src/configs/rule-sets.ts` is the canonical preset-membership source.
+- Sync scripts regenerate README and preset matrix sections from the built
+  plugin rather than from hand-maintained duplicate tables.
 
 ## How to read this diagram
 

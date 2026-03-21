@@ -1,53 +1,52 @@
 ---
-title: ADR 0010 - Autofix Governance and Global Kill-Switch
-description: Decision record for governing plugin autofix behavior via default safety semantics and runtime kill-switch settings.
+title: ADR 0010 - Conservative Autofix Governance Without Runtime Toggles
+description: Decision record for keeping autofix policy conservative and rule-local instead of exposing plugin-wide runtime switches.
 sidebar_position: 10
 ---
 
-# ADR 0010: Govern autofix behavior with safe defaults and plugin-level kill switches
+# ADR 0010: Keep autofix governance conservative and rule-local
 
 - Status: Accepted
 - Date: 2026-02-28
 
 ## Context
 
-This plugin includes migration rules where some transformations are fully safe while others are context-sensitive.
+This plugin includes a mix of report-only rules, suggestion-backed migrations,
+and a smaller set of safe local autofixes.
 
-The codebase already implements runtime controls in `settings.immutable` and wraps rule contexts to strip `fix` callbacks when global autofixes are disabled.
-
-Relevant implementation points include:
-
-- `settings.immutable.disableAllAutofixes`
-- `settings.immutable.disableImportInsertionFixes`
-- `createContextWithoutAutofixes(...)` in `src/_internal/typed-rule.ts`
-- parsed/memoized settings in `src/_internal/plugin-settings.ts`
+The current implementation does **not** expose custom `settings.immutable`
+runtime toggles, nor does it perform import insertion or other cross-file
+rewrite orchestration. Fix policy is decided inside each rule through ordinary
+`context.report({ fix })` or `context.report({ suggest })` behavior.
 
 ## Decision
 
-Adopt a formal autofix governance model:
+Adopt a formal autofix governance model with these constraints:
 
 1. Rules should only emit `fix` when safety is deterministic.
 2. Rules should emit `suggest` for behavior-sensitive migrations.
-3. Global settings can suppress autofixes at runtime:
-   - `disableAllAutofixes` removes all `fix` callbacks,
-   - `disableImportInsertionFixes` disables import-insertion helpers.
+3. The plugin should not advertise plugin-wide runtime autofix toggles until a
+   real implementation need exists.
 
 ## Rationale
 
-1. **Operational safety**: large migrations need a hard stop mechanism for automated rewrites.
-2. **Predictable rollout**: teams can start with diagnostics/suggestions before enabling broad fixing.
-3. **Centralized control**: settings-based suppression avoids rule-by-rule ad hoc toggles.
+1. **Operational safety**: today’s fixers are small, local text rewrites that
+   can be governed accurately at rule level.
+2. **Predictable rollout**: teams can already stage adoption through preset
+   choice, severity changes, and `--fix` usage in CI.
+3. **Honest documentation**: exposing nonexistent runtime toggles would make
+   setup docs actively misleading.
 
 ## Consequences
 
-- Fix behavior is intentionally policy-driven, not purely rule-local.
+- Fix behavior is intentionally conservative, but implemented rule-by-rule.
 - Rule authors must classify fixes as deterministic (`fix`) vs contextual (`suggest`).
-- Migration playbooks can use settings to stage risk and reduce churn.
+- Public docs should describe preset choice, rule options, and `--fix` usage as the current rollout controls.
 
 ## Revisit Triggers
 
 Re-evaluate if:
 
+- the plugin adds broader rewrite classes that need shared orchestration,
 - ESLint introduces stronger first-class fix governance primitives,
-- the plugin requires finer-grained per-rule fix policy controls,
-- or contributors report current kill-switch granularity as insufficient.
+- or contributors report a concrete need for plugin-level suppression beyond normal config/severity workflows.

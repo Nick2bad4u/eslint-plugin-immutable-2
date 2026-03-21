@@ -188,7 +188,7 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     id: "developer/charts/rule-catalog-and-doc-sync",
-                    label: "Rule Catalog & Doc Sync",
+                    label: "Rule Source & Doc Sync",
                     type: "doc",
                 },
                 {
@@ -207,8 +207,8 @@ const sidebars: SidebarsConfig = {
                     type: "doc",
                 },
                 {
-                    id: "developer/charts/import-safe-autofix-decision-tree",
-                    label: "Import-Safe Autofix Tree",
+                    id: "developer/charts/autofix-safety-decision-tree",
+                    label: "Autofix Safety Tree",
                     type: "doc",
                 },
                 {

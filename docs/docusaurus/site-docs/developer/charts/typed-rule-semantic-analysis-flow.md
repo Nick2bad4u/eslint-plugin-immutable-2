@@ -1,12 +1,12 @@
 ---
 title: Typed Rule Semantic Analysis Flow
-description: Detailed flow for parser-services acquisition, guarded type operations, and fail-fast behavior in typed rules.
+description: Detailed flow for parser-services acquisition, guarded type operations, and conservative fallback behavior in typed branches.
 sidebar_position: 6
 ---
 
 # Typed rule semantic analysis flow
 
-This chart focuses on the semantic path used by typed rules, including service acquisition, constrained-type lookup fallback, and guarded reporting behavior.
+This chart focuses on the semantic path used by the plugin's current typed branches, especially `immutable-data` and `readonly-array`.
 
 ```mermaid
 flowchart TD
@@ -15,48 +15,42 @@ flowchart TD
     classDef fail fill:#7f1d1d,stroke:#fca5a5,color:#fef2f2,stroke-width:1px
     classDef path fill:#312e81,stroke:#a5b4fc,color:#eef2ff,stroke-width:1px
 
-    A[Rule visitor enters node] --> B{Typed rule required?}
+    A[Rule visitor enters node] --> B{Need semantic type?}
     B -->|No| C[Run syntax-only checks]
-    B -->|Yes| D[getTypedRuleServices]
+    B -->|Yes| D[getTypeOfNode(node, context)]
 
     D --> E{parserServices.program available?}
-    E -->|No| F[Throw explicit typed-context error]
-    E -->|Yes| G[Resolve checker + parserServices]
+    E -->|No| F[Return null]
+    E -->|Yes| G[Resolve checker + ts.Node]
 
-    G --> H[getConstrainedTypeAtLocationWithFallback]
-    H --> I{Constrained lookup succeeded?}
-    I -->|Yes| J[Use constrained semantic type]
-    I -->|No| K[Fallback to esTreeNodeToTSNodeMap + checker.getTypeAtLocation]
+    G --> H[checker.getTypeAtLocation(...)]
+    H --> I[Return semantic type]
 
-    K --> L{Fallback type resolved?}
-    L -->|No| M[Skip semantic branch safely]
-    L -->|Yes| N[Use fallback semantic type]
+    F --> J{Rule-specific fallback available?}
+    J -->|Yes| K[Use assumeTypes or skip implicit inference]
+    J -->|No| L[Continue traversal without semantic branch]
 
-    J --> O[Run rule-specific semantic predicates]
-    N --> O
-    C --> P[Report syntax-only findings]
-    O --> Q{Fix or suggest safe?}
-    Q -->|Fix safe| R[reportWithImmutablePolicy fix]
-    Q -->|Only suggest safe| S[reportWithImmutablePolicy suggest]
-    Q -->|Unsafe rewrite| T[report message only]
+    I --> M[Run rule-specific semantic predicates]
+    C --> N[Report syntax-only findings]
+    K --> O[Report conservative finding or continue]
+    M --> P{Fix or suggest safe?}
+    P -->|Fix safe| Q[context.report with fix]
+    P -->|Only suggest safe| R[context.report with suggestion]
+    P -->|Unsafe rewrite| S[context.report message only]
 
-    F --> U[Fail fast and surface configuration issue]
-    M --> V[Continue traversal without crash]
-
-    class A,B,D,E,H,I,L,Q entry
-    class C,G,J,K,N,O,P,R,S,T path
-    class M,V guard
-    class F,U fail
+    class A,B,D,E,J,P entry
+    class C,G,H,I,K,M,N,O,Q,R,S path
+    class F,L guard
 ```
 
 ## Maintainer interpretation
 
 - Treat semantic calls as a guarded path, not a default path.
-- `getConstrainedTypeAtLocationWithFallback` is the main reliability bridge between ideal type information and resilient fallback behavior.
-- Fail-fast behavior is intentional for typed-rule contexts and should not be replaced with silent degradation.
+- `getTypeOfNode(...)` is the main reliability bridge between ideal type information and resilient fallback behavior.
+- Missing services currently lead to conservative degradation rather than a hard failure.
 
 ## Operational checkpoints
 
-1. If users report typed-rule crashes, verify parser service availability first.
+1. If users report missing typed precision, verify parser service availability first.
 2. If semantic branches become expensive, add syntax-level short-circuits before type operations.
-3. Keep report/fix policy centralized to prevent per-rule drift in rewrite safety.
+3. Keep fix/suggestion decisions conservative and local to the rule.

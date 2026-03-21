@@ -11,11 +11,15 @@ sidebar_position: 1
 
 ## Context
 
-The repository currently uses custom internal utilities to build and maintain rule behavior:
+The repository currently uses small, focused local utilities to build and
+maintain rule behavior:
 
-- `src/_internal/typed-rule.ts` for typed rule creation and parser service/type-checker access.
-- `src/_internal/imported-type-aliases.ts` for type import collection and safe type replacement fixes.
-- `src/_internal/imported-value-symbols.ts` for value import collection, scope-safe replacement names, and import-inserting autofix generation.
+- `src/util/rule.ts` for shared rule creation, canonical docs URLs, and typed
+  node lookup.
+- `src/util/typeguard.ts` and `src/util/tree.ts` for reusable AST and traversal
+  helpers.
+- `src/configs/*.ts` plus `src/plugin.ts` for preset assembly and runtime
+  export wiring.
 
 `@eslint/plugin-kit` (per package README) provides utilities focused on:
 
@@ -24,7 +28,9 @@ The repository currently uses custom internal utilities to build and maintain ru
 - `VisitNodeStep` / `CallMethodStep`
 - `TextSourceCodeBase`
 
-These are primarily for implementing custom language/source-code plumbing (directive parsing, traversal, `SourceCode`-like behavior), not for rule-level import-safe fixer orchestration.
+These are primarily for implementing custom language/source-code plumbing
+(directive parsing, traversal, `SourceCode`-like behavior), not for the current
+rule/preset architecture in this repository.
 
 ## Decision
 
@@ -32,14 +38,17 @@ Do **not** adopt `@eslint/plugin-kit` in this plugin at this time.
 
 ## Rationale
 
-1. **No direct capability overlap** with this repository's highest-complexity internals (typed rule services, safe import insertion, scope-safe symbol replacement).
+1. **No direct capability overlap** with this repository's highest-value local
+   utilities (`createRule(...)`, docs URL normalization, and narrow AST helper
+   modules).
 2. **Would not reduce maintenance burden** in currently hand-rolled areas.
 3. **Would add dependency and migration surface** without meaningful DX/perf/correctness gains.
 
 ## Consequences
 
-- Keep existing internal abstractions in `src/_internal/*`.
-- Continue targeted hardening/tests around import-inserting autofix behavior.
+- Keep existing local abstractions in `src/util/*`, `src/configs/*`, and
+  `src/plugin.ts`.
+- Continue targeted hardening/tests around rule logic and preset layering.
 
 ## Revisit Triggers
 

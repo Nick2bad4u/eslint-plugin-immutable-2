@@ -45,7 +45,7 @@ This section is for contributors and advanced users.
 - Change impact and validation matrix
 - Quality gates and release flow
 - Typed rule semantic analysis flow
-- Import-safe autofix decision tree
+- Autofix safety decision tree
 - Preset composition and rule matrix
 - Docs link integrity and anchor stability
 - Typed rule performance budget and hotspots

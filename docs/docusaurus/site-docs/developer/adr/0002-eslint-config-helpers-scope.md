@@ -25,13 +25,15 @@ Continue using `@eslint/config-helpers` for ESLint flat config composition, and 
 ## Rationale
 
 1. **Current usage is correct and low-risk**: it improves config readability and type-friendly composition.
-2. **No replacement value** for typed rule helpers or import-safe fixer infrastructure.
+2. **No replacement value** for runtime plugin assembly in `src/plugin.ts`,
+   preset layering in `src/configs/*`, or rule implementation modules in
+   `src/rules/*`.
 3. **Separation of concerns**: config authoring helpers should remain in config-layer code.
 
 ## Consequences
 
 - Keep `defineConfig`/`globalIgnores` usage in config files.
-- Do not refactor `src/plugin.ts` or `src/_internal/*` toward config-helper APIs.
+- Do not refactor `src/plugin.ts`, `src/configs/*`, or `src/rules/*` toward config-helper APIs.
 
 ## Revisit Triggers
 
