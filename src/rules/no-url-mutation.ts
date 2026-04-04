@@ -32,8 +32,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** URL instance properties that mutate URL state when assigned/deleted/updated. */
 const urlMutatingProperties: ReadonlySet<string> = new Set([
     "hash",
@@ -297,7 +295,6 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 },
             };
         },
-        defaultOptions,
         meta: {
             defaultOptions: [{}],
             docs: {

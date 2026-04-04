@@ -12,8 +12,6 @@ export const name = "no-expression-statement" as const;
 
 type Options = readonly [IgnorePatternOption];
 
-const defaultOptions: Options = [{}];
-
 const optionsSchema: readonly JSONSchema4[] = [
     {
         additionalProperties: false,
@@ -42,7 +40,6 @@ const noExpressionStatementRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

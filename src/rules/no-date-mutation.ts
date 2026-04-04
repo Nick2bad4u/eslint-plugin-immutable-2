@@ -32,8 +32,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** Date instance methods that mutate the current Date object in place. */
 const dateMutatorMethods = new Set<string>([
     "setDate",
@@ -185,7 +183,6 @@ const noDateMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 },
             };
         },
-        defaultOptions,
         meta: {
             defaultOptions: [{}],
             docs: {

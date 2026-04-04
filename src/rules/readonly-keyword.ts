@@ -27,14 +27,6 @@ type Options = readonly [
         IgnorePatternOption,
 ];
 
-const defaultOptions: Options = [
-    {
-        ignoreClass: false,
-        ignoreInterface: false,
-        ignoreLocal: false,
-    },
-];
-
 const optionsSchema: readonly JSONSchema4[] = [
     {
         additionalProperties: false,
@@ -102,7 +94,6 @@ const readonlyKeywordRule: ReturnType<typeof createRule<Options, "generic">> =
                 },
             };
         },
-        defaultOptions,
         meta: {
             defaultOptions: [
                 {

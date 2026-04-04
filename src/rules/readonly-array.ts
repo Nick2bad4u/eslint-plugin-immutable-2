@@ -27,13 +27,6 @@ type Options = readonly [
     IgnoreLocalOption & IgnorePatternOption & IgnoreReturnTypeOption,
 ];
 
-const defaultOptions: Options = [
-    {
-        ignoreLocal: false,
-        ignoreReturnType: false,
-    },
-];
-
 const optionsSchema: readonly JSONSchema4[] = [
     {
         additionalProperties: false,
@@ -203,7 +196,6 @@ const readonlyArrayRule: ReturnType<
             VariableDeclaration: checkImplicitType,
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [
             {

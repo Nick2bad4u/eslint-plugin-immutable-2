@@ -29,8 +29,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** Storage methods that mutate browser storage state in place. */
 const storageMutatorMethods: ReadonlySet<string> = new Set([
     "clear",
@@ -328,7 +326,6 @@ const noStorageMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

@@ -34,8 +34,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 const getCollectionKindFromConstructor = (
     constructorName: string
 ): CollectionKind | null => {
@@ -279,7 +277,6 @@ const noMapSetMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 },
             };
         },
-        defaultOptions,
         meta: {
             defaultOptions: [{}],
             docs: {

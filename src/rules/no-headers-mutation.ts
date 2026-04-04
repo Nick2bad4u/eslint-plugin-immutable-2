@@ -32,8 +32,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** Headers methods that mutate the current instance in place. */
 const headersMutatorMethods: ReadonlySet<string> = new Set([
     "append",
@@ -173,7 +171,6 @@ const noHeadersMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

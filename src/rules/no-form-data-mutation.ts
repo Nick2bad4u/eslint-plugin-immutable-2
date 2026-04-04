@@ -32,8 +32,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** FormData methods that mutate the current instance in place. */
 const formDataMutatorMethods: ReadonlySet<string> = new Set([
     "append",
@@ -173,7 +171,6 @@ const noFormDataMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

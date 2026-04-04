@@ -33,8 +33,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** Methods on Cache instances that mutate cache entries. */
 const cacheMutatorMethods: ReadonlySet<string> = new Set([
     "add",
@@ -284,7 +282,6 @@ const noCacheApiMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

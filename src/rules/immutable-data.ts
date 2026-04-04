@@ -47,12 +47,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [
-    {
-        assumeTypes: true,
-    },
-];
-
 /** Array methods that mutate an existing array in place. */
 const arrayMutatorMethods = [
     "copyWithin",
@@ -293,7 +287,6 @@ const immutableDataRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 UpdateExpression: checkUpdateExpression,
             };
         },
-        defaultOptions,
         meta: {
             defaultOptions: [{ assumeTypes: true }],
             docs: {

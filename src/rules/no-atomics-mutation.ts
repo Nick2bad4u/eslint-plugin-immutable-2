@@ -28,8 +28,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** `Atomics` methods that mutate shared memory state. */
 const atomicsMutatorMethods: ReadonlySet<string> = new Set([
     "add",
@@ -85,7 +83,6 @@ const noAtomicsMutationRule: ReturnType<
             CallExpression: checkCallExpression,
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

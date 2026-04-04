@@ -28,8 +28,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** DOMTokenList mutator methods. */
 const domTokenListMutatorMethods: ReadonlySet<string> = new Set([
     "add",
@@ -200,7 +198,6 @@ const noDomTokenListMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

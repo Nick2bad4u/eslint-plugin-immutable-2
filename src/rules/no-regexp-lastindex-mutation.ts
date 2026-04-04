@@ -33,8 +33,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 const unwrapExpression = (
     node: Readonly<TSESTree.Expression>
 ): Readonly<TSESTree.Expression> => {
@@ -243,7 +241,6 @@ const noRegexpLastIndexMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

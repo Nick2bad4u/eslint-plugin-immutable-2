@@ -13,8 +13,6 @@ export const name = "no-let" as const;
 
 type Options = readonly [IgnorePatternOption];
 
-const defaultOptions: Options = [{}];
-
 const optionsSchema: readonly JSONSchema4[] = [
     {
         additionalProperties: false,
@@ -95,7 +93,6 @@ const noLetRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

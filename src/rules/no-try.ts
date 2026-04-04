@@ -16,7 +16,6 @@ const noTryRule: ReturnType<typeof createRule<readonly [], "generic">> =
                 },
             };
         },
-        defaultOptions: [],
         meta: {
             docs: {
                 description: "disallow try/catch/finally statements.",

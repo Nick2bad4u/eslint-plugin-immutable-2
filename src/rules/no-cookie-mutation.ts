@@ -28,8 +28,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** CookieStore methods that mutate cookie state. */
 const cookieStoreMutatorMethods: ReadonlySet<string> = new Set([
     "delete",
@@ -300,7 +298,6 @@ const noCookieMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 },
             };
         },
-        defaultOptions,
         meta: {
             defaultOptions: [{}],
             docs: {

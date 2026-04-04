@@ -32,8 +32,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** DataView methods that mutate the underlying buffer. */
 const dataViewMutatorMethods: ReadonlySet<string> = new Set([
     "setBigInt64",
@@ -180,7 +178,6 @@ const noDataViewMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

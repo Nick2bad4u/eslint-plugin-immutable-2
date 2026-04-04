@@ -28,8 +28,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** `Reflect` methods that mutate object state/shape. */
 const reflectMutatorMethods: ReadonlySet<string> = new Set([
     "defineProperty",
@@ -82,7 +80,6 @@ const noReflectMutationRule: ReturnType<
             CallExpression: checkCallExpression,
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

@@ -33,8 +33,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** `Buffer` static factory methods that return new Buffer instances. */
 const bufferFactoryMethods: ReadonlySet<string> = new Set([
     "alloc",
@@ -239,7 +237,6 @@ const noBufferMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 },
             };
         },
-        defaultOptions,
         meta: {
             defaultOptions: [{}],
             docs: {

@@ -28,8 +28,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** Location methods that mutate global navigation state. */
 const locationMutatorMethods: ReadonlySet<string> = new Set([
     "assign",
@@ -267,7 +265,6 @@ const noLocationMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

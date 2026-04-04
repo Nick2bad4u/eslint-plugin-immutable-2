@@ -33,7 +33,6 @@ const noLoopStatementRule: ReturnType<
             WhileStatement: reportLoop,
         };
     },
-    defaultOptions: [],
     meta: {
         docs: {
             description: "disallow imperative loop statements.",

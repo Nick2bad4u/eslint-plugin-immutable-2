@@ -32,8 +32,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 const typedArrayConstructors: ReadonlySet<string> = new Set([
     "BigInt64Array",
     "BigUint64Array",
@@ -189,7 +187,6 @@ const noTypedArrayMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

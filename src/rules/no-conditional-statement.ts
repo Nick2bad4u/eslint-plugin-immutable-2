@@ -17,8 +17,6 @@ type Options = readonly [
     },
 ];
 
-const defaultOptions: Options = [{ allowReturningBranches: false }];
-
 const optionsSchema: readonly JSONSchema4[] = [
     {
         additionalProperties: false,
@@ -204,7 +202,6 @@ const noConditionalStatementRule: ReturnType<
             SwitchStatement: checkSwitchStatement,
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{ allowReturningBranches: false }],
         docs: {

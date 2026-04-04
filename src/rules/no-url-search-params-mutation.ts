@@ -32,8 +32,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** URLSearchParams methods that mutate the current instance in place. */
 const urlSearchParamsMutatorMethods: ReadonlySet<string> = new Set([
     "append",
@@ -179,7 +177,6 @@ const noUrlSearchParamsMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

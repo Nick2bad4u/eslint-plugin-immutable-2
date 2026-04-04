@@ -32,8 +32,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** AbortController instance methods that mutate controller/signal state. */
 const abortControllerMutatorMethods: ReadonlySet<string> = new Set([
     "abort",
@@ -174,7 +172,6 @@ const noAbortControllerMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

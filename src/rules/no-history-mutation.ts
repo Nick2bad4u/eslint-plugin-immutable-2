@@ -28,8 +28,6 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-const defaultOptions: Options = [{}];
-
 /** History methods that mutate browser navigation state. */
 const historyMutatorMethods: ReadonlySet<string> = new Set([
     "back",
@@ -269,7 +267,6 @@ const noHistoryMutationRule: ReturnType<
             },
         };
     },
-    defaultOptions,
     meta: {
         defaultOptions: [{}],
         docs: {

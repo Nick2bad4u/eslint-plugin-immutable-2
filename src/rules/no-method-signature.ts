@@ -43,7 +43,6 @@ const noMethodSignatureRule: ReturnType<
             },
         };
     },
-    defaultOptions: [],
     meta: {
         docs: {
             description:

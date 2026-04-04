@@ -22,7 +22,6 @@ const noClassRule: ReturnType<typeof createRule<readonly [], "generic">> =
                 },
             };
         },
-        defaultOptions: [],
         meta: {
             docs: {
                 description:

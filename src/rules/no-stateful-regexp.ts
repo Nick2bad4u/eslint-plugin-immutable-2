@@ -135,7 +135,6 @@ const noStatefulRegexpRule: ReturnType<
             },
         };
     },
-    defaultOptions: [],
     meta: {
         docs: {
             description:

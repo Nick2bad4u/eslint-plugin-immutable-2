@@ -57,7 +57,6 @@ const noMixedInterfaceRule: ReturnType<
             },
         };
     },
-    defaultOptions: [],
     meta: {
         docs: {
             description:

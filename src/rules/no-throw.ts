@@ -16,7 +16,6 @@ const noThrowRule: ReturnType<typeof createRule<readonly [], "generic">> =
                 },
             };
         },
-        defaultOptions: [],
         meta: {
             docs: {
                 description: "disallow `throw` statements.",

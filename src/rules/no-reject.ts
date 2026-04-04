@@ -36,7 +36,6 @@ const noRejectRule: ReturnType<typeof createRule<readonly [], "generic">> =
                 },
             };
         },
-        defaultOptions: [],
         meta: {
             docs: {
                 description: "disallow `Promise.reject(...)`.",
