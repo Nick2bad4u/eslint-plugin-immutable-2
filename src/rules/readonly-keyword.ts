@@ -102,8 +102,10 @@ const readonlyKeywordRule: ReturnType<typeof createRule<Options, "generic">> =
                     ignoreLocal: false,
                 },
             ],
+            deprecated: false,
             docs: {
                 description: "require readonly modifiers where possible.",
+                frozen: false,
                 recommended: false,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-keyword",
             },

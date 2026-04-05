@@ -279,9 +279,11 @@ const noMapSetMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
         },
         meta: {
             defaultOptions: [{}],
+            deprecated: false,
             docs: {
                 description:
                     "disallow mutating Map and Set collections after creation.",
+                frozen: false,
                 recommended: true,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-map-set-mutation",
             },

@@ -85,9 +85,11 @@ const noAtomicsMutationRule: ReturnType<
     },
     meta: {
         defaultOptions: [{}],
+        deprecated: false,
         docs: {
             description:
                 "disallow mutating shared memory via Atomics write operations.",
+            frozen: false,
             recommended: true,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-atomics-mutation",
         },

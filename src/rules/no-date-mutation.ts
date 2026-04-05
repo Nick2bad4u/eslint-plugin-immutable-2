@@ -185,9 +185,11 @@ const noDateMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
         },
         meta: {
             defaultOptions: [{}],
+            deprecated: false,
             docs: {
                 description:
                     "disallow mutating Date instances with in-place setter methods.",
+                frozen: false,
                 recommended: true,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-date-mutation",
             },

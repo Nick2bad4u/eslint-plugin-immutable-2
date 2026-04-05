@@ -58,9 +58,11 @@ const noMixedInterfaceRule: ReturnType<
         };
     },
     meta: {
+        deprecated: false,
         docs: {
             description:
                 "disallow mixing incompatible member shapes in a single interface declaration.",
+            frozen: false,
             recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-mixed-interface",
         },

@@ -34,8 +34,10 @@ const noLoopStatementRule: ReturnType<
         };
     },
     meta: {
+        deprecated: false,
         docs: {
             description: "disallow imperative loop statements.",
+            frozen: false,
             recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-loop-statement",
         },

@@ -204,8 +204,10 @@ const noConditionalStatementRule: ReturnType<
     },
     meta: {
         defaultOptions: [{ allowReturningBranches: false }],
+        deprecated: false,
         docs: {
             description: "disallow conditional statements.",
+            frozen: false,
             recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-conditional-statement",
         },

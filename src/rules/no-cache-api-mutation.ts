@@ -284,9 +284,11 @@ const noCacheApiMutationRule: ReturnType<
     },
     meta: {
         defaultOptions: [{}],
+        deprecated: false,
         docs: {
             description:
                 "disallow mutating Service Worker Cache API state via Cache/CacheStorage mutators.",
+            frozen: false,
             recommended: true,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-cache-api-mutation",
         },

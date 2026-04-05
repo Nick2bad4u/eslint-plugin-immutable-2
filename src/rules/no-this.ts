@@ -17,9 +17,11 @@ const noThisRule: ReturnType<typeof createRule<readonly [], "generic">> =
             };
         },
         meta: {
+            deprecated: false,
             docs: {
                 description:
                     "disallow `this` usage to encourage stateless functions.",
+                frozen: false,
                 recommended: false,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-this",
             },

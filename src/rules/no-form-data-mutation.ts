@@ -173,8 +173,10 @@ const noFormDataMutationRule: ReturnType<
     },
     meta: {
         defaultOptions: [{}],
+        deprecated: false,
         docs: {
             description: "disallow mutating FormData instances after creation.",
+            frozen: false,
             recommended: true,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-form-data-mutation",
         },

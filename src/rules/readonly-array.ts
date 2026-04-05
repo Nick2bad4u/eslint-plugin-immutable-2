@@ -203,8 +203,10 @@ const readonlyArrayRule: ReturnType<
                 ignoreReturnType: false,
             },
         ],
+        deprecated: false,
         docs: {
             description: "require readonly arrays over mutable arrays.",
+            frozen: false,
             recommended: false,
             requiresTypeChecking: true,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-array",

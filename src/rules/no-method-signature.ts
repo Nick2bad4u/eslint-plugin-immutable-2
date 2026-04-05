@@ -44,9 +44,11 @@ const noMethodSignatureRule: ReturnType<
         };
     },
     meta: {
+        deprecated: false,
         docs: {
             description:
                 "disallow TypeScript method signatures in interfaces; prefer readonly function-valued properties.",
+            frozen: false,
             recommended: false,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-method-signature",
         },

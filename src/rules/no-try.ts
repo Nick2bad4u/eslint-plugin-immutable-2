@@ -17,8 +17,10 @@ const noTryRule: ReturnType<typeof createRule<readonly [], "generic">> =
             };
         },
         meta: {
+            deprecated: false,
             docs: {
                 description: "disallow try/catch/finally statements.",
+                frozen: false,
                 recommended: false,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-try",
             },

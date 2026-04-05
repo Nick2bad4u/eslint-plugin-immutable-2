@@ -300,9 +300,11 @@ const noCookieMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
         },
         meta: {
             defaultOptions: [{}],
+            deprecated: false,
             docs: {
                 description:
                     "disallow mutating cookie state via document.cookie and CookieStore mutators.",
+                frozen: false,
                 recommended: true,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-cookie-mutation",
             },

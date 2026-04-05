@@ -136,9 +136,11 @@ const noStatefulRegexpRule: ReturnType<
         };
     },
     meta: {
+        deprecated: false,
         docs: {
             description:
                 "disallow stateful RegExp flags (`g`/`y`) that mutate `lastIndex`.",
+            frozen: false,
             recommended: true,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-stateful-regexp",
         },

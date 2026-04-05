@@ -289,9 +289,11 @@ const immutableDataRule: ReturnType<typeof createRule<Options, MessageIds>> =
         },
         meta: {
             defaultOptions: [{ assumeTypes: true }],
+            deprecated: false,
             docs: {
                 description:
                     "enforce treating objects and arrays as immutable data.",
+                frozen: false,
                 recommended: true,
                 requiresTypeChecking: true,
                 url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/immutable-data",

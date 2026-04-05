@@ -243,9 +243,11 @@ const noRegexpLastIndexMutationRule: ReturnType<
     },
     meta: {
         defaultOptions: [{}],
+        deprecated: false,
         docs: {
             description:
                 "disallow mutating `RegExp#lastIndex` on regex instances.",
+            frozen: false,
             recommended: true,
             url: "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-regexp-lastindex-mutation",
         },
