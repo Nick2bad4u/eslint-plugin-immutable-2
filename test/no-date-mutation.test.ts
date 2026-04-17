@@ -23,6 +23,21 @@ describe("no-date-mutation rule", () => {
                 code: "const source = new Date(); const alias = source; alias.setUTCMonth(0);",
                 errors: [{ messageId: "generic" }],
             },
+            // TSSatisfiesExpression
+            {
+                code: "const start = new Date(); (start satisfies Date).setFullYear(2026);",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSTypeAssertion
+            {
+                code: "const start = new Date(); (<Date>start).setFullYear(2026);",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSNonNullExpression
+            {
+                code: "const start = new Date(); start!.setFullYear(2026);",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "const start = new Date(); start.getTime();",
@@ -32,6 +47,8 @@ describe("no-date-mutation rule", () => {
                 code: "const mutableDate = new Date(); mutableDate.setMonth(1);",
                 options: [{ ignorePattern: "^mutable" }],
             },
+            // Undeclared variable - not tracked
+            "undeclaredDate.setFullYear(2020);",
         ],
     });
 });

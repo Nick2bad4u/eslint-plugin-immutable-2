@@ -34,6 +34,21 @@ describe("no-url-search-params-mutation rule", () => {
                     code: "new URLSearchParams('x=1').set('x', '2');",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSSatisfiesExpression
+                {
+                    code: "const params = new URLSearchParams('q=1'); (params satisfies URLSearchParams).set('q', '2');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSTypeAssertion
+                {
+                    code: "const params = new URLSearchParams('q=1'); (<URLSearchParams>params).set('q', '2');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSNonNullExpression
+                {
+                    code: "const params = new URLSearchParams('q=1'); params!.set('q', '2');",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "const params = new URLSearchParams('a=1'); params.get('a');",

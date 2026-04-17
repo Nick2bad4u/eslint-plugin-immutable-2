@@ -31,6 +31,11 @@ describe("no-cookie-mutation rule", () => {
                 code: "const store = cookieStore; store.delete('theme');",
                 errors: [{ messageId: "generic" }],
             },
+            // TSSatisfiesExpression
+            {
+                code: "cookieStore!.set('k', 'v');",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "const raw = document.cookie;",

@@ -31,6 +31,21 @@ describe("no-history-mutation rule", () => {
                 code: "delete history.state;",
                 errors: [{ messageId: "generic" }],
             },
+            // TSSatisfiesExpression
+            {
+                code: "(history satisfies History).pushState({}, '', '/next');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSTypeAssertion
+            {
+                code: "(<History>history).pushState({}, '', '/next');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSNonNullExpression
+            {
+                code: "history!.pushState({}, '', '/next');",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "history.state;",

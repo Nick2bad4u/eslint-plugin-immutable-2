@@ -44,6 +44,64 @@ describe("no-conditional-statement rule", () => {
                     errors: [{ messageId: "incompleteBranch" }],
                     options: [{ allowReturningBranches: true }],
                 },
+                // Switch statement - unexpectedSwitch (allowReturningBranches: false)
+                {
+                    code: `
+                        function toNumber(input: string): number {
+                            switch (input) {
+                                case "a": return 1;
+                                default: return 0;
+                            }
+                        }
+                    `,
+                    errors: [{ messageId: "unexpectedSwitch" }],
+                },
+                // Switch statement - incompleteSwitch (ifExhaustive + no default)
+                {
+                    code: `
+                        function toNumber(input: string): number {
+                            switch (input) {
+                                case "a": return 1;
+                                case "b": return 2;
+                            }
+                            return 0;
+                        }
+                    `,
+                    errors: [{ messageId: "incompleteSwitch" }],
+                    options: [{ allowReturningBranches: "ifExhaustive" }],
+                },
+                // Switch statement - incompleteBranch (allowReturningBranches: true, case without return)
+                {
+                    code: `
+                        function handle(input: string): void {
+                            switch (input) {
+                                case "a":
+                                    console.log("side-effect");
+                                    break;
+                                default:
+                                    return;
+                            }
+                        }
+                    `,
+                    errors: [{ messageId: "incompleteBranch" }],
+                    options: [{ allowReturningBranches: true }],
+                },
+                // incompleteBranch for if with block and no return
+                {
+                    code: `
+                        function process(input: string): string {
+                            if (input === "a") {
+                                const x = 1;
+                                const y = 2;
+                            } else {
+                                return "other";
+                            }
+                            return "end";
+                        }
+                    `,
+                    errors: [{ messageId: "incompleteBranch" }],
+                    options: [{ allowReturningBranches: true }],
+                },
             ],
             valid: [
                 {
@@ -72,6 +130,65 @@ describe("no-conditional-statement rule", () => {
                         }
                     `,
                     options: [{ allowReturningBranches: "ifExhaustive" }],
+                },
+                // Switch with returning cases (allowReturningBranches: true)
+                {
+                    code: `
+                        function toNumber(input: string): number {
+                            switch (input) {
+                                case "a": return 1;
+                                case "b": return 2;
+                                default: return 0;
+                            }
+                        }
+                    `,
+                    options: [{ allowReturningBranches: true }],
+                },
+                // Switch with block statements containing returns (getSwitchCaseViolations block path)
+                {
+                    code: `
+                        function toNumber(input: string): number {
+                            switch (input) {
+                                case "a": {
+                                    return 1;
+                                }
+                                default: {
+                                    return 0;
+                                }
+                            }
+                        }
+                    `,
+                    options: [{ allowReturningBranches: true }],
+                },
+                // Switch with empty case (fall-through)
+                {
+                    code: `
+                        function toNumber(input: string): number {
+                            switch (input) {
+                                case "a":
+                                case "b":
+                                    return 1;
+                                default:
+                                    return 0;
+                            }
+                        }
+                    `,
+                    options: [{ allowReturningBranches: true }],
+                },
+                // if with nested if as alternate (valid when that nested if returns)
+                {
+                    code: `
+                        function process(input: string): string {
+                            if (input === "a") {
+                                return "A";
+                            } else if (input === "b") {
+                                return "B";
+                            } else {
+                                return "other";
+                            }
+                        }
+                    `,
+                    options: [{ allowReturningBranches: true }],
                 },
             ],
         }

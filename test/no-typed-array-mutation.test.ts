@@ -38,6 +38,31 @@ describe("no-typed-array-mutation rule", () => {
                     code: "new Uint32Array([1, 2]).fill(0);",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSSatisfiesExpression wrapping typed array
+                {
+                    code: "const bytes = new Uint8Array([1, 2]); (bytes satisfies Uint8Array).fill(0);",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSTypeAssertion (angle bracket) wrapping typed array
+                {
+                    code: "const bytes = new Uint8Array([1, 2]); (<Uint8Array>bytes).fill(0);",
+                    errors: [{ messageId: "generic" }],
+                },
+                // ChainExpression wrapping typed array
+                {
+                    code: "const bytes = new Uint8Array([1, 2]); bytes?.fill(0);",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSNonNullExpression wrapping typed array
+                {
+                    code: "const bytes = new Uint8Array([1, 2]); bytes!.fill(0);",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSAsExpression wrapping typed array
+                {
+                    code: "const bytes = new Uint8Array([1, 2]); (bytes as Uint8Array).fill(0);",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "const bytes = new Uint8Array([1, 2, 3]); const clone = bytes.slice(); clone[0];",
@@ -52,6 +77,8 @@ describe("no-typed-array-mutation rule", () => {
                     options: [{ ignorePattern: "^bytes$" }],
                 },
                 "const bytes = new Uint8Array([1, 2, 3]); let value = bytes; value = getReplacement(); value.fill(0); function getReplacement() { return [9, 9, 9]; }",
+                // Undeclared variable - resolveVariable returns null, not tracked as typed array
+                "undeclaredVar.fill(0);",
             ],
         }
     );

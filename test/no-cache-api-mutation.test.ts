@@ -34,6 +34,11 @@ describe("no-cache-api-mutation rule", () => {
                     code: "async function drop(req) { const cache = await caches.open('v1'); await cache.delete(req); }",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSNonNullExpression
+                {
+                    code: "const cacheStorage = caches; cacheStorage!.delete('v2');",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "caches.keys();",

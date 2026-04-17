@@ -34,6 +34,11 @@ describe("no-data-view-mutation rule", () => {
                     code: "new DataView(new ArrayBuffer(8)).setUint16(0, 8);",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSNonNullExpression
+                {
+                    code: "const view = new DataView(new ArrayBuffer(8)); view!.setUint8(0, 1);",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "const view = new DataView(new ArrayBuffer(8)); view.getUint8(0);",

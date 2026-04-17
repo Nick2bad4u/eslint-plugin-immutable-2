@@ -35,6 +35,21 @@ describe("no-buffer-mutation rule", () => {
                 code: "Buffer.from('abc').write('z');",
                 errors: [{ messageId: "generic" }],
             },
+            // TSSatisfiesExpression
+            {
+                code: "const buffer = Buffer.from('abc'); (buffer satisfies Buffer).write('z');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSTypeAssertion
+            {
+                code: "const buffer = Buffer.from('abc'); (<Buffer>buffer).write('z');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSNonNullExpression
+            {
+                code: "const buffer = Buffer.from('abc'); buffer!.write('z');",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "const buffer = Buffer.from('abc'); buffer.toString('utf8');",
@@ -49,6 +64,8 @@ describe("no-buffer-mutation rule", () => {
                 options: [{ ignorePattern: "^buffer$" }],
             },
             "let buffer = Buffer.from('abc'); buffer = getReplacement(); buffer.write('z'); function getReplacement() { return new Uint8Array([1, 2, 3]); }",
+            // Undeclared variable - not tracked
+            "undeclaredBuffer.write('z');",
         ],
     });
 });

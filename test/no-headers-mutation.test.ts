@@ -31,6 +31,21 @@ describe("no-headers-mutation rule", () => {
                 code: "new Headers().set('accept', 'application/json');",
                 errors: [{ messageId: "generic" }],
             },
+            // TSSatisfiesExpression
+            {
+                code: "const headers = new Headers(); (headers satisfies Headers).set('x-trace-id', 'a1');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSTypeAssertion
+            {
+                code: "const headers = new Headers(); (<Headers>headers).set('x-trace-id', 'a1');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSNonNullExpression
+            {
+                code: "const headers = new Headers(); headers!.set('x-trace-id', 'a1');",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "const headers = new Headers(); headers.get('x-request-id');",

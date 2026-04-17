@@ -34,6 +34,11 @@ describe("no-form-data-mutation rule", () => {
                     code: "new FormData().set('token', 'abc');",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSNonNullExpression
+                {
+                    code: "const payload = new FormData(); payload!.set('token', 'abc');",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "const formData = new FormData(); formData.get('name');",

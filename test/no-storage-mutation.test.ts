@@ -39,6 +39,21 @@ describe("no-storage-mutation rule", () => {
                 code: "const storage = window.localStorage; storage['feature'] = 'enabled';",
                 errors: [{ messageId: "generic" }],
             },
+            // TSSatisfiesExpression
+            {
+                code: "(localStorage satisfies Storage).setItem('k', 'v');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSTypeAssertion
+            {
+                code: "(<Storage>localStorage).setItem('k', 'v');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSNonNullExpression
+            {
+                code: "localStorage!.setItem('k', 'v');",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "localStorage.getItem('theme');",

@@ -31,6 +31,36 @@ describe("no-url-mutation rule", () => {
                 code: "const url = new URL('https://example.com:8080'); delete url.port;",
                 errors: [{ messageId: "generic" }],
             },
+            // TSAsExpression wrapping URL variable
+            {
+                code: "const url = new URL('https://example.com'); (url as URL).hash = '#v2';",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSNonNullExpression wrapping URL variable
+            {
+                code: "const url = new URL('https://example.com'); url!.hash = '#v2';",
+                errors: [{ messageId: "generic" }],
+            },
+            // URL with UpdateExpression (port++ is semantically odd but syntactically valid)
+            {
+                code: "const url = new URL('https://example.com:8080'); url.port++;",
+                errors: [{ messageId: "generic" }],
+            },
+            // searchParams.set via TSAsExpression
+            {
+                code: "const url = new URL('https://example.com'); (url as URL).searchParams.set('k', 'v');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSSatisfiesExpression wrapping URL
+            {
+                code: "const url = new URL('https://example.com'); (url satisfies URL).hash = '#v2';",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSTypeAssertion (angle bracket) wrapping URL
+            {
+                code: "const url = new URL('https://example.com'); (<URL>url).hash = '#v2';",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "const url = new URL('https://example.com'); url.toString();",
@@ -45,6 +75,8 @@ describe("no-url-mutation rule", () => {
                 options: [{ ignoreAccessorPattern: "url.searchParams" }],
             },
             "let url = new URL('https://example.com'); url = getReplacement(); url.hash = '#v2'; function getReplacement() { return { hash: '' }; }",
+            // Non-URL new expression - URLSearchParams or other type
+            "const params = new URLSearchParams('a=1'); params.set('b', '2');",
         ],
     });
 });

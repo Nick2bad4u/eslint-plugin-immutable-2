@@ -38,6 +38,21 @@ describe("no-process-env-mutation rule", () => {
                     code: "process.env.RETRY_COUNT++;",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSSatisfiesExpression wrapping process.env
+                {
+                    code: "(process.env satisfies NodeJS.ProcessEnv).NODE_ENV = 'test';",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSTypeAssertion wrapping process.env
+                {
+                    code: "(<NodeJS.ProcessEnv>process.env).NODE_ENV = 'test';",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSNonNullExpression wrapping process.env
+                {
+                    code: "process.env!.NODE_ENV = 'test';",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "const mode = process.env.NODE_ENV;",

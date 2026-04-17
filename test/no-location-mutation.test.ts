@@ -31,6 +31,56 @@ describe("no-location-mutation rule", () => {
                 code: "delete location.hash;",
                 errors: [{ messageId: "generic" }],
             },
+            // TSAsExpression wrapping location
+            {
+                code: "(location as Location).assign('/path');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSNonNullExpression wrapping location
+            {
+                code: "location!.assign('/path');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSNonNullExpression assignment
+            {
+                code: "location!.href = '/path';",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSAsExpression assignment
+            {
+                code: "(location as Location).href = '/path';",
+                errors: [{ messageId: "generic" }],
+            },
+            // window.location.assign with assignment expression
+            {
+                code: "window.location.href = '/settings';",
+                errors: [{ messageId: "generic" }],
+            },
+            // globalThis.location mutation
+            {
+                code: "globalThis.location.assign('/settings');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSSatisfiesExpression wrapping location (covers TSSatisfiesExpression unwrap path)
+            {
+                code: "(location satisfies Location).assign('/path');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSTypeAssertion (angle bracket cast) wrapping location
+            {
+                code: "(<Location>location).assign('/path');",
+                errors: [{ messageId: "generic" }],
+            },
+            // ChainExpression wrapping location
+            {
+                code: "location?.assign('/path');",
+                errors: [{ messageId: "generic" }],
+            },
+            // Computed property with string literal key
+            {
+                code: "location['href'] = '/path';",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "location.pathname;",
@@ -45,6 +95,12 @@ describe("no-location-mutation rule", () => {
                 options: [{ ignorePattern: "^navLocation$" }],
             },
             "let navLocation = location; navLocation = getMutableLocation(); navLocation.href = '/ok'; function getMutableLocation() { return { href: '' }; }",
+            // Non-mutation method call on location
+            "location.toString();",
+            // Computed method - not a mutation method name
+            "location[getMethod()]('/path');",
+            // Computed property with non-string-literal key (getMemberPropertyName returns null, no mutation match)
+            "location[Symbol.iterator];",
         ],
     });
 });

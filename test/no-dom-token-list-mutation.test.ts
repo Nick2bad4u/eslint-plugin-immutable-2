@@ -30,6 +30,21 @@ describe("no-dom-token-list-mutation rule", () => {
                     code: "element.part.replace('old', 'new');",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSSatisfiesExpression
+                {
+                    code: "const tokens = element.classList; (tokens satisfies DOMTokenList).add('active');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSTypeAssertion
+                {
+                    code: "const tokens = element.classList; (<DOMTokenList>tokens).add('active');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSNonNullExpression
+                {
+                    code: "const tokens = element.classList; tokens!.add('active');",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "element.classList.contains('active');",
@@ -46,6 +61,8 @@ describe("no-dom-token-list-mutation rule", () => {
                     options: [{ ignorePattern: "^tokens$" }],
                 },
                 "let tokens = element.classList; tokens = getTokens(); tokens.toggle('open'); function getTokens() { return { toggle() {} }; }",
+                // Undeclared variable - not tracked
+                "undeclaredTokens.add('active');",
             ],
         }
     );

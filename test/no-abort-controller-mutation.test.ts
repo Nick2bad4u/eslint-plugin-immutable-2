@@ -26,6 +26,21 @@ describe("no-abort-controller-mutation rule", () => {
                     code: "new AbortController().abort();",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSSatisfiesExpression wrapping AbortController
+                {
+                    code: "const controller = new AbortController(); (controller satisfies AbortController).abort();",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSTypeAssertion wrapping AbortController
+                {
+                    code: "const controller = new AbortController(); (<AbortController>controller).abort();",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSNonNullExpression wrapping AbortController
+                {
+                    code: "const controller = new AbortController(); controller!.abort();",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "const controller = new AbortController(); controller.signal;",
@@ -36,6 +51,8 @@ describe("no-abort-controller-mutation rule", () => {
                     options: [{ ignorePattern: "^controller$" }],
                 },
                 "let controller = new AbortController(); controller = getController(); controller.abort(); function getController() { return { abort() {} }; }",
+                // Undeclared variable - not tracked as AbortController
+                "undeclaredController.abort();",
             ],
         }
     );
