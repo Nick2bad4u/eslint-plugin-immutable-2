@@ -13,6 +13,6 @@ type ImmutableTeamConfig = DeepReadonly<TeamConfig>;
 
 declare const teamConfig: ImmutableTeamConfig;
 
-String(teamConfig);
+JSON.stringify(teamConfig);
 
 export const __typedFixtureModule = "typed-fixture-module";

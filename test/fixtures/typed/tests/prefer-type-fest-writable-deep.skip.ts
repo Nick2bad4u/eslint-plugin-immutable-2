@@ -19,7 +19,7 @@ type MutableTeamConfigAlternative = MutableDeep<TeamConfig>;
 declare const teamConfig: MutableTeamConfig;
 declare const teamConfigAlternative: MutableTeamConfigAlternative;
 
-String(teamConfig);
-String(teamConfigAlternative);
+JSON.stringify(teamConfig);
+JSON.stringify(teamConfigAlternative);
 
 export const __typedFixtureModule = "typed-fixture-module";

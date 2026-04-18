@@ -462,13 +462,20 @@ function chunkArray(arr, chunkSize) {
 }
 
 /**
+ * @param {string} a
+ *
+ * @returns {string}
+ */
+const quoteIfNeeded = (a) => (a.includes(" ") ? `"${a}"` : a);
+
+/**
  * @param {string} cmd
  * @param {readonly string[]} args
  *
  * @returns {string}
  */
 function prettyCmd(cmd, args) {
-    return `${cmd} ${args.map((a) => (a.includes(" ") ? `"${a}"` : a)).join(" ")}`;
+    return `${cmd} ${args.map(quoteIfNeeded).join(" ")}`;
 }
 
 /**
@@ -594,20 +601,21 @@ async function main() {
         );
     }
 
+    const forceFlag = options.force ? " with --force" : "";
     const installForceArg = options.force ? ["--force"] : [];
 
-    if (!options.skipInit) {
+    if (options.skipInit) {
+        console.log("Skipping npm init (--skip-init).");
+    } else {
         ensureSafeToInit({ yes: options.yes });
         await runWithRetry(npmCmd, ["init", "-y"], options.retries, {
             timeoutMs: options.timeoutMs,
         });
-    } else {
-        console.log("Skipping npm init (--skip-init).");
     }
 
     if (prod.length > 0) {
         console.log(
-            `\nInstalling ${prod.length} production dependencies${options.force ? " with --force" : ""}...`
+            `\nInstalling ${prod.length} production dependencies${forceFlag}...`
         );
         await runWithRetry(
             npmCmd,
@@ -627,7 +635,7 @@ async function main() {
         const chunks = chunkArray(dev, options.chunkSize);
         console.log(
             `\nInstalling ${dev.length} devDependencies in ${chunks.length} chunk(s) ` +
-                `(chunk size: ${options.chunkSize})${options.force ? " with --force" : ""}...`
+                `(chunk size: ${options.chunkSize})${forceFlag}...`
         );
 
         for (const [i, chunk] of chunks.entries()) {
@@ -654,11 +662,10 @@ async function main() {
     console.log(`\nDone in ${secs}s.`);
 }
 
-main()
-    .then(() => {
-        process.exit(0);
-    })
-    .catch((err) => {
-        console.error("\nERROR:", err instanceof Error ? err.message : err);
-        process.exit(1);
-    });
+try {
+    await main();
+    process.exit(0);
+} catch (err) {
+    console.error("\nERROR:", err instanceof Error ? err.message : err);
+    process.exit(1);
+}

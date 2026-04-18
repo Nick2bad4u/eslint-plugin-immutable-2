@@ -72,10 +72,12 @@ jobs:
 
             - name: Resolve target ref
               id: target_ref
+              env:
+                  INPUTS_REF: ${{ inputs.ref }}
               run: |
                   set -euo pipefail
                   if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-                    branch="${{ inputs.ref }}"
+                    branch="$INPUTS_REF"
                     if [ -z "$branch" ]; then
                       branch="${DEFAULT_RELEASE_BRANCH}"
                     fi

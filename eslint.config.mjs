@@ -105,7 +105,8 @@ const enableJsonSchemaValidation =
 
 const jsonSchemaValidatorPackageName = "eslint-plugin-json-schema-validator";
 
-let eslintPluginJsonSchemaValidator = undefined;
+// eslint-disable-next-line init-declarations, @typescript-eslint/init-declarations -- conditionally assigned below; explicit undefined would be flagged by Sonar S1854
+let eslintPluginJsonSchemaValidator;
 
 if (enableJsonSchemaValidation) {
     eslintPluginJsonSchemaValidator =

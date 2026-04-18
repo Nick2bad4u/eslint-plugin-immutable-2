@@ -12,6 +12,6 @@ interface UserProfile {
 
 declare const shouldBeSkippedInTestFile: ShouldBeSkippedInTestFile;
 
-String(shouldBeSkippedInTestFile);
+JSON.stringify(shouldBeSkippedInTestFile);
 
 export const __typedFixtureModule = "typed-fixture-module";

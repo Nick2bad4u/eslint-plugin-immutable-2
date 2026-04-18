@@ -13,6 +13,6 @@ type TeamConfigPatch = DeepPartial<TeamConfig>;
 
 declare const teamConfigPatch: TeamConfigPatch;
 
-String(teamConfigPatch);
+JSON.stringify(teamConfigPatch);
 
 export const __typedFixtureModule = "typed-fixture-module";

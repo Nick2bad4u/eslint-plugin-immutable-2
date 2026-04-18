@@ -13,6 +13,6 @@ type StrictTeamConfig = DeepRequired<TeamConfig>;
 
 declare const teamConfig: StrictTeamConfig;
 
-String(teamConfig);
+JSON.stringify(teamConfig);
 
 export const __typedFixtureModule = "typed-fixture-module";

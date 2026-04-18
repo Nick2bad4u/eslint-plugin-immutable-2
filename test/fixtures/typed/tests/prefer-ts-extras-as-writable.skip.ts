@@ -11,6 +11,6 @@ declare const readonlyRecord: ReadonlyRecord;
 
 const mutableRecord = readonlyRecord as Writable<ReadonlyRecord>;
 
-String(mutableRecord);
+JSON.stringify(mutableRecord);
 
 export const __typedFixtureModule = "typed-fixture-module";

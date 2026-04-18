@@ -276,7 +276,7 @@ const findSectionBoundsByHeadings = (markdown, headingCandidates) => {
  */
 const normalizeMarkdownTableSpacing = (markdown) =>
     markdown
-        .replace(/\r\n/gv, "\n")
+        .replaceAll("\r\n", "\n")
         .split("\n")
         .map((line) => {
             const trimmedLine = line.trimEnd();

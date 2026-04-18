@@ -9,19 +9,19 @@ const input = [
 ];
 
 const readValue = (value = input[0]) => {
-    if (typeof value !== "undefined") {
+    if (value !== undefined) {
         return `${value}-ok`;
     }
 
-    if ("undefined" !== typeof value) {
+    if (value !== undefined) {
         return `${value}-ok-2`;
     }
 
-    if (typeof value === "undefined") {
+    if (value === undefined) {
         return "missing";
     }
 
-    if ("undefined" === typeof value) {
+    if (value === undefined) {
         return "missing-2";
     }
 

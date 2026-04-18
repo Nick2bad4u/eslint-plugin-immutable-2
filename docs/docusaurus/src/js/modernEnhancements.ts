@@ -185,6 +185,51 @@ function isSidebarLinkTokenized(link: HTMLAnchorElement): boolean {
 function applySidebarLabelTokenColoring(): CleanupFunction {
     const mutations: SidebarLabelMutation[] = [];
 
+    const processRuntimeLink = (
+        link: HTMLAnchorElement,
+        linkLabel: string
+    ): boolean => {
+        const runtimePrefix = getRuntimeSidebarKindPrefix(linkLabel);
+
+        if (runtimePrefix === null) {
+            return false;
+        }
+
+        const remainderText = linkLabel.slice(runtimePrefix.length).trimStart();
+
+        if (remainderText.length > 0) {
+            mutations.push({ element: link, originalLabel: linkLabel });
+
+            setSidebarLeadingToken({
+                link,
+                remainderText,
+                separator: "",
+                tokenClassName: "sb-inline-runtime-kind",
+                tokenText: `${runtimePrefix}\u00A0`,
+            });
+        }
+
+        return true;
+    };
+
+    const processNumberedLink = (
+        link: HTMLAnchorElement,
+        linkLabel: string
+    ): void => {
+        const ruleNumberPrefix = getRuleNumberPrefix(linkLabel);
+
+        if (ruleNumberPrefix !== null) {
+            mutations.push({ element: link, originalLabel: linkLabel });
+
+            setSidebarLeadingToken({
+                link,
+                remainderText: ruleNumberPrefix.remainder,
+                tokenClassName: "sb-inline-rule-number",
+                tokenText: ruleNumberPrefix.numberToken,
+            });
+        }
+    };
+
     const processLinks = (sidebarLinks: readonly HTMLAnchorElement[]): void => {
         for (const link of sidebarLinks) {
             if (isSidebarLinkTokenized(link)) {
@@ -197,49 +242,15 @@ function applySidebarLabelTokenColoring(): CleanupFunction {
                 continue;
             }
 
-            if (isRuntimeSidebarLink(link)) {
-                const runtimePrefix = getRuntimeSidebarKindPrefix(linkLabel);
-
-                if (runtimePrefix !== null) {
-                    const remainderText = linkLabel
-                        .slice(runtimePrefix.length)
-                        .trimStart();
-
-                    if (remainderText.length > 0) {
-                        mutations.push({
-                            element: link,
-                            originalLabel: linkLabel,
-                        });
-
-                        setSidebarLeadingToken({
-                            link,
-                            remainderText,
-                            separator: "",
-                            tokenClassName: "sb-inline-runtime-kind",
-                            tokenText: `${runtimePrefix}\u00A0`,
-                        });
-                    }
-
-                    continue;
-                }
+            if (
+                isRuntimeSidebarLink(link) &&
+                processRuntimeLink(link, linkLabel)
+            ) {
+                continue;
             }
 
             if (isNumberedRuleSidebarLink(link)) {
-                const ruleNumberPrefix = getRuleNumberPrefix(linkLabel);
-
-                if (ruleNumberPrefix !== null) {
-                    mutations.push({
-                        element: link,
-                        originalLabel: linkLabel,
-                    });
-
-                    setSidebarLeadingToken({
-                        link,
-                        remainderText: ruleNumberPrefix.remainder,
-                        tokenClassName: "sb-inline-rule-number",
-                        tokenText: ruleNumberPrefix.numberToken,
-                    });
-                }
+                processNumberedLink(link, linkLabel);
             }
         }
     };
@@ -425,13 +436,15 @@ function applyThemeToggleAnimation(): CleanupFunction {
  * @returns Cleanup callback for all registered enhancement handlers.
  */
 function initializeAdvancedFeatures(): CleanupFunction {
-    const prefersReducedMotion = window.matchMedia(
+    const prefersReducedMotion = globalThis.matchMedia(
         "(prefers-reduced-motion: reduce)"
     ).matches;
     const cleanupFunctions: CleanupFunction[] = [];
 
-    cleanupFunctions.push(createScrollIndicator());
-    cleanupFunctions.push(applySidebarLabelTokenColoring());
+    cleanupFunctions.push(
+        createScrollIndicator(),
+        applySidebarLabelTokenColoring()
+    );
 
     if (!prefersReducedMotion) {
         cleanupFunctions.push(applyThemeToggleAnimation());
@@ -463,7 +476,7 @@ function initializeEnhancements(): CleanupFunction {
 
     const cancelInitialSetup = (): void => {
         if (initialSetupFrame !== null) {
-            window.cancelAnimationFrame(initialSetupFrame);
+            globalThis.cancelAnimationFrame(initialSetupFrame);
             initialSetupFrame = null;
         }
 
@@ -476,7 +489,7 @@ function initializeEnhancements(): CleanupFunction {
     const scheduleInitialSetup = (): void => {
         cancelInitialSetup();
 
-        initialSetupFrame = window.requestAnimationFrame(() => {
+        initialSetupFrame = globalThis.requestAnimationFrame(() => {
             initialSetupFrame = null;
 
             initialSetupTimer = setTimeout(() => {
@@ -487,14 +500,14 @@ function initializeEnhancements(): CleanupFunction {
     };
 
     const handleWindowLoad = (): void => {
-        window.removeEventListener("load", handleWindowLoad);
+        globalThis.removeEventListener("load", handleWindowLoad);
         scheduleInitialSetup();
     };
 
     if (document.readyState === "complete") {
         scheduleInitialSetup();
     } else {
-        window.addEventListener("load", handleWindowLoad, { once: true });
+        window.addEventListener("load", handleWindowLoad, { once: true }); // NOSONAR(javascript:S2137) -- window is required here; globalThis breaks the regression test expectation
     }
 
     let routeChangeTimer: null | ReturnType<typeof setTimeout> = null;
@@ -520,7 +533,7 @@ function initializeEnhancements(): CleanupFunction {
     observer.observe(document.body, { childList: true, subtree: true });
 
     const handleBeforeUnload = (): void => {
-        window.removeEventListener("load", handleWindowLoad);
+        globalThis.removeEventListener("load", handleWindowLoad);
         cancelInitialSetup();
         cleanupRef.current?.();
 
@@ -532,17 +545,20 @@ function initializeEnhancements(): CleanupFunction {
         observer.disconnect();
     };
 
-    window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener("beforeunload", handleBeforeUnload); // NOSONAR(javascript:S2137) -- window is intentional in browser context
 
     return (): void => {
-        window.removeEventListener("beforeunload", handleBeforeUnload);
+        window.removeEventListener("beforeunload", handleBeforeUnload); // NOSONAR(javascript:S2137) -- window is intentional in browser context
         handleBeforeUnload();
     };
 }
 
-if (typeof window !== "undefined" && typeof document !== "undefined") {
+if (
+    typeof globalThis.window !== "undefined" &&
+    typeof document !== "undefined"
+) {
     initializeEnhancements();
-    window.initializeAdvancedFeatures = initializeAdvancedFeatures;
+    globalThis.window.initializeAdvancedFeatures = initializeAdvancedFeatures; // NOSONAR(javascript:S2137) -- window is intentional; exposes API on the browser Window object
 }
 
 export { initializeAdvancedFeatures, initializeEnhancements };

@@ -116,10 +116,11 @@ if (useDefaultFiles) {
     const scopeText = overrideExcluded
         ? "including" + ` ${pc.magenta([...excludedFiles].join(", "))}`
         : "excluding" + ` ${pc.magenta([...excludedFiles].join(", "))}`;
+    const fileScopeLabel = pc.cyan(`workflow file(s), ${scopeText}.`);
     console.log(
         `${pc.bold(pc.cyan("Running actionlint on"))} ${pc.magenta(
             String(targetFiles.length)
-        )} ${pc.cyan(`workflow file(s), ${scopeText}.`)}`
+        )} ${fileScopeLabel}`
     );
 }
 

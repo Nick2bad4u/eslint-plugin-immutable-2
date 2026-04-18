@@ -167,10 +167,14 @@ const patchRuleTesterRunWithGeneratedCaseNames = (
     const writableTester = tester as RuleTester;
     const originalRun = writableTester.run.bind(writableTester);
     writableTester.run = ((ruleName, ruleModule, runCases) => {
-        (originalRun as (...args: UnknownArray) => void)(
+        // Cast result to `typeof runCases` because `withGeneratedRuleCaseNames`
+        // returns `RunTests<string, readonly unknown[]>` while the outer lambda's
+        // `runCases` is `RunTests<MessageIds, Options>` — structurally equivalent
+        // but TypeScript cannot verify the generic alignment without help.
+        originalRun(
             ruleName,
             ruleModule,
-            withGeneratedRuleCaseNames(ruleName, runCases)
+            withGeneratedRuleCaseNames(ruleName, runCases) as typeof runCases
         );
     }) as RuleTester["run"];
     return writableTester;

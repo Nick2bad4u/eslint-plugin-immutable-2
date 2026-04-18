@@ -9,6 +9,6 @@ type QueueClientConstructor = new (
 
 type QueueClientFromCtor = InstanceType<QueueClientConstructor>;
 
-String({} as QueueClientFromCtor);
+JSON.stringify({} as QueueClientFromCtor);
 
 export const __typedFixtureModule = "typed-fixture-module";

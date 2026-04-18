@@ -58,6 +58,24 @@ const normalizeNodeVersion = (version) => {
 const isRecord = (value) => typeof value === "object" && value !== null;
 
 /**
+ * Parses a `--version &lt;value>` flag from the argument list.
+ *
+ * @param {readonly string[]} argumentList
+ * @param {number} index
+ *
+ * @returns {{ version: string; newIndex: number }}
+ */
+const parseVersionFlag = (argumentList, index) => {
+    const nextArgument = argumentList[index + 1];
+
+    if (typeof nextArgument !== "string") {
+        throw new TypeError("Expected a version after --version.");
+    }
+
+    return { version: normalizeNodeVersion(nextArgument), newIndex: index + 1 };
+};
+
+/**
  * Parse command-line arguments.
  *
  * Supported options:
@@ -102,14 +120,10 @@ const parseArguments = (argumentList) => {
         }
 
         if (argument === "--version") {
-            const nextArgument = argumentList[index + 1];
+            const { version, newIndex } = parseVersionFlag(argumentList, index);
 
-            if (typeof nextArgument !== "string") {
-                throw new TypeError("Expected a version after --version.");
-            }
-
-            explicitVersion = normalizeNodeVersion(nextArgument);
-            index += 1;
+            explicitVersion = version;
+            index = newIndex;
             continue;
         }
 

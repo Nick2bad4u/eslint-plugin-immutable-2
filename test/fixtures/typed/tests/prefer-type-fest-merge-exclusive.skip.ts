@@ -14,6 +14,6 @@ type UserSelector = XOR<UserQuery, UserLookup>;
 
 declare const selector: UserSelector;
 
-String(selector);
+JSON.stringify(selector);
 
 export const __typedFixtureModule = "typed-fixture-module";

@@ -144,14 +144,17 @@ const noStorageMutationRule: ReturnType<
                 return null;
             }
 
-            const memberName =
-                !node.computed && isIdentifier(node.property)
-                    ? node.property.name
-                    : node.computed &&
-                        node.property.type === "Literal" &&
-                        typeof node.property.value === "string"
-                      ? node.property.value
-                      : null;
+            let memberName: null | string = null;
+
+            if (!node.computed && isIdentifier(node.property)) {
+                memberName = node.property.name;
+            } else if (
+                node.computed &&
+                node.property.type === "Literal" &&
+                typeof node.property.value === "string"
+            ) {
+                memberName = node.property.value;
+            }
 
             if (memberName === null) {
                 return null;
