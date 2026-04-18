@@ -280,8 +280,10 @@ const config = defineConfig({
              */
             // Docusaurus documentation files
             files: [
-                "**/docs/docusaurus/**/*.{css,scss}",
-                "**/docs/docusaurus/**/*.module.{css,scss}",
+                "docs/docusaurus/**/*.{css,scss}",
+                "docs/docusaurus/src/css/custom.css",
+                "docs/docusaurus/src/pages/index.module.css",
+                "docs/docusaurus/**/*.module.{css,scss}",
             ],
             rules: {
                 // Relax accessibility rules for documentation UI elements
