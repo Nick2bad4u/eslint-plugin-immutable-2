@@ -1,6 +1,8 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { arrayAt } from "ts-extras";
+
 import { createRule } from "../util/rule.js";
 import {
     isBlockStatement,
@@ -104,7 +106,7 @@ const getSwitchCaseViolations = (
             isBlockStatement(statement)
         );
         if (everyConsequentIsBlock) {
-            const lastConsequent = branch.consequent.at(-1);
+            const lastConsequent = arrayAt(branch.consequent, -1);
             if (
                 lastConsequent !== undefined &&
                 isBlockStatement(lastConsequent) &&

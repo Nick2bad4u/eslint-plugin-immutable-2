@@ -1,6 +1,7 @@
 /* eslint-disable canonical/no-re-export -- this module intentionally aggregates imported rule modules into one export map. */
 
 import type { TSESLint } from "@typescript-eslint/utils";
+import type { UnknownArray } from "type-fest";
 
 import immutableDataRule, {
     name as immutableDataName,
@@ -136,7 +137,7 @@ export type ImmutableRuleId =
 
 /** Immutable rule module map by bare rule ID. */
 export const rules: Readonly<
-    Record<ImmutableRuleId, TSESLint.RuleModule<string, readonly unknown[]>>
+    Record<ImmutableRuleId, TSESLint.RuleModule<string, Readonly<UnknownArray>>>
 > = {
     [immutableDataName]: immutableDataRule,
     [noAbortControllerMutationName]: noAbortControllerMutationRule,

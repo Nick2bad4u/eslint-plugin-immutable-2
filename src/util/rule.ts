@@ -1,4 +1,5 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
+import type { UnknownArray } from "type-fest";
 import type ts from "typescript";
 
 import { ESLintUtils } from "@typescript-eslint/utils";
@@ -8,7 +9,7 @@ const RULE_DOCS_BASE_URL =
     "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules";
 
 /** Base option tuple type for immutable rule definitions. */
-export type BaseOptions = readonly unknown[];
+export type BaseOptions = Readonly<UnknownArray>;
 
 /** Extended docs metadata shape used by immutable rules. */
 export type ImmutableRuleDocs = {

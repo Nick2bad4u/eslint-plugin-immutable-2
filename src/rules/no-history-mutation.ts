@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -148,7 +150,7 @@ const noHistoryMutationRule: ReturnType<
                 return false;
             }
 
-            return historyHostGlobals.has(node.object.name);
+            return setHas(historyHostGlobals, node.object.name);
         };
 
         const markHistoryVariable = (

@@ -1,6 +1,8 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { arrayFirst, isEmpty, stringSplit   } from "ts-extras";
+
 import type { BaseOptions, RuleContext } from "../util/rule.js";
 
 import { inClass, inFunction, inInterface } from "../util/tree.js";
@@ -147,7 +149,7 @@ const matchesAccessorPattern = (
     accessorPattern: readonly string[] | string
 ): boolean => {
     const patterns = normalizePatterns(accessorPattern);
-    const textParts = text.split(".");
+    const textParts = stringSplit(text, ".");
 
     const findMatch = (
         patternParts: readonly string[],
@@ -157,11 +159,11 @@ const matchesAccessorPattern = (
         const [currentPatternPart, ...restPatternParts] = patternParts;
 
         if (currentPatternPart === undefined) {
-            return allowExtra || remainingTextParts.length === 0;
+            return allowExtra || isEmpty(remainingTextParts);
         }
 
         if (currentPatternPart === "**") {
-            if (remainingTextParts.length === 0) {
+            if (isEmpty(remainingTextParts)) {
                 return findMatch(restPatternParts, [], allowExtra);
             }
 
@@ -195,7 +197,7 @@ const matchesAccessorPattern = (
             );
         }
 
-        const currentTextPart = remainingTextParts[0];
+        const currentTextPart = arrayFirst(remainingTextParts);
         if (currentTextPart === undefined) {
             return false;
         }
@@ -215,7 +217,7 @@ const matchesAccessorPattern = (
         );
     };
 
-    return patterns.some((pattern) => findMatch(pattern.split("."), textParts));
+    return patterns.some((pattern) => findMatch(stringSplit(pattern, "."), textParts));
 };
 
 /**
@@ -307,7 +309,7 @@ export const shouldIgnore = (
     }
 
     const nodeTexts = getNodeTexts(node, context);
-    if (nodeTexts.length === 0) {
+    if (isEmpty(nodeTexts)) {
         return false;
     }
 

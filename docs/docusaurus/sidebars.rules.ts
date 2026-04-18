@@ -6,7 +6,7 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 /** Complete sidebar structure for docs site navigation. */
-const sidebars: SidebarsConfig = {
+const sidebars = {
     rules: [
         {
             className: "sb-doc-overview",
@@ -196,6 +196,6 @@ const sidebars: SidebarsConfig = {
             ],
         },
     ],
-};
+} satisfies SidebarsConfig;
 
 export default sidebars;

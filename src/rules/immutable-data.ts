@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { arrayFirst } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -235,7 +237,7 @@ const immutableDataRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     options.assumeTypes
                 );
                 const propertyName = node.callee.property.name;
-                const targetArgument = node.arguments[0];
+                const targetArgument = arrayFirst(node.arguments);
 
                 if (
                     arrayMutatorMethods.some(isExpected(propertyName)) &&

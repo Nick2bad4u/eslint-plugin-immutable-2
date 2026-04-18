@@ -1,5 +1,7 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 
+import { arrayFirst, arrayJoin, isEmpty   } from "ts-extras";
+
 import { createRule } from "../util/rule.js";
 import { isIdentifier } from "../util/typeguard.js";
 
@@ -33,7 +35,7 @@ const getStaticStringValue = (
         node.expressions.length === 0 &&
         node.quasis.length === 1
     ) {
-        return node.quasis[0]?.value.cooked ?? null;
+        return arrayFirst(node.quasis)?.value.cooked ?? null;
     }
 
     return null;
@@ -78,13 +80,13 @@ const noStatefulRegexpRule: ReturnType<
             flagsText: string
         ): void => {
             const statefulFlags = getStatefulFlags(flagsText);
-            if (statefulFlags.length === 0) {
+            if (isEmpty(statefulFlags)) {
                 return;
             }
 
             context.report({
                 data: {
-                    statefulFlags: statefulFlags.join("") || "<unknown>",
+                    statefulFlags: arrayJoin(statefulFlags, "") || "<unknown>",
                 },
                 messageId: "generic",
                 node,

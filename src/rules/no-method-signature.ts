@@ -1,3 +1,5 @@
+import { arrayJoin } from "ts-extras";
+
 import { createRule } from "../util/rule.js";
 
 /** Rule name exported for config wiring. */
@@ -17,9 +19,8 @@ const noMethodSignatureRule: ReturnType<
                     node.typeParameters === undefined
                         ? ""
                         : sourceCode.getText(node.typeParameters);
-                const parametersText = node.params
-                    .map((parameter) => sourceCode.getText(parameter))
-                    .join(", ");
+                const parametersText = arrayJoin(node.params
+                    .map((parameter) => sourceCode.getText(parameter)), ", ");
                 const returnTypeText =
                     node.returnType === undefined
                         ? "void"

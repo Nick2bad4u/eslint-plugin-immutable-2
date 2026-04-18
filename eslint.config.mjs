@@ -63,6 +63,7 @@ import pluginPromise from "eslint-plugin-promise";
 import pluginRedos from "eslint-plugin-redos";
 import pluginRegexp from "eslint-plugin-regexp";
 import * as pluginJSDoc from "eslint-plugin-require-jsdoc";
+import sdl from "eslint-plugin-sdl-2";
 import pluginSecurity from "eslint-plugin-security";
 import sonarjs, { configs as sonarjsConfigs } from "eslint-plugin-sonarjs";
 import stylelint2 from "eslint-plugin-stylelint-2";
@@ -71,10 +72,10 @@ import eslintPluginToml from "eslint-plugin-toml";
 import pluginTsdoc from "eslint-plugin-tsdoc";
 import tsdocRequire from "eslint-plugin-tsdoc-require-2";
 import typedocPlugin from "eslint-plugin-typedoc";
+import typefest from "eslint-plugin-typefest";
 import pluginUndefinedCss from "eslint-plugin-undefined-css-classes";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import pluginUnusedImports from "eslint-plugin-unused-imports";
-import typefest from "eslint-plugin-typefest";
 import writeGoodComments from "eslint-plugin-write-good-comments-2";
 import eslintPluginYml from "eslint-plugin-yml";
 import globals from "globals";
@@ -83,7 +84,6 @@ import { createRequire } from "node:module";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as tomlEslintParser from "toml-eslint-parser";
-import sdl from "eslint-plugin-sdl-2";
 import * as yamlEslintParser from "yaml-eslint-parser";
 
 /**

@@ -5,6 +5,7 @@
 import type { ESLint, Linter } from "eslint";
 
 import typeScriptParser from "@typescript-eslint/parser";
+import { safeCastTo } from "ts-extras";
 
 import packageJson from "../package.json" with { type: "json" };
 import {
@@ -80,13 +81,13 @@ const withImmutablePlugin = (
 
     const parserOptions = {
         ...defaultParserOptions,
-        ...((parserOptionsInput !== null &&
+        ...(safeCastTo<NonNullable<
+            NonNullable<Linter.Config["languageOptions"]>["parserOptions"]
+        >>(parserOptionsInput !== null &&
         typeof parserOptionsInput === "object" &&
         !Array.isArray(parserOptionsInput)
             ? parserOptionsInput
-            : {}) as NonNullable<
-            NonNullable<Linter.Config["languageOptions"]>["parserOptions"]
-        >),
+            : {})),
     };
 
     return {
