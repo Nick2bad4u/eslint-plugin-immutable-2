@@ -29,7 +29,7 @@ describe("no-let rule", () => {
                 code: "for (let index = 0; index < 3; index += 1) {}",
                 errors: [{ messageId: "generic" }],
             },
-            // let with reassignment (canSafelySuggestConst returns false)
+            // Let with reassignment (canSafelySuggestConst returns false)
             {
                 code: "let count = 0; count = 1;",
                 errors: [
@@ -38,7 +38,7 @@ describe("no-let rule", () => {
                     },
                 ],
             },
-            // let in for-of loop
+            // Let in for-of loop
             {
                 code: "for (let item of [1, 2, 3]) {}",
                 errors: [
@@ -53,7 +53,7 @@ describe("no-let rule", () => {
                     },
                 ],
             },
-            // let with no initializer (declaredVariables.length === 0 check for empty destructure)
+            // Let with no initializer (declaredVariables.length === 0 check for empty destructure)
             {
                 code: "let {} = obj;",
                 errors: [
@@ -62,7 +62,7 @@ describe("no-let rule", () => {
                     },
                 ],
             },
-            // let with destructuring no initializer value
+            // Let with destructuring no initializer value
             {
                 code: "let [] = arr;",
                 errors: [
@@ -71,7 +71,7 @@ describe("no-let rule", () => {
                     },
                 ],
             },
-            // for-in loop with let
+            // For-in loop with let
             {
                 code: "for (let key in obj) {}",
                 errors: [
@@ -93,9 +93,9 @@ describe("no-let rule", () => {
                 code: "let mutableCount = 0;",
                 options: [{ ignorePattern: "^mutable" }],
             },
-            // var is not affected
+            // Var is not affected
             "var count = 0;",
-            // const is already fine
+            // Const is already fine
             "const items = [];",
         ],
     });

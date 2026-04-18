@@ -39,11 +39,28 @@ describe("no-form-data-mutation rule", () => {
                     code: "const payload = new FormData(); payload!.set('token', 'abc');",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSSatisfiesExpression
+                {
+                    code: "const formData = new FormData(); (formData satisfies FormData).set('name', 'nick');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSTypeAssertion
+                {
+                    code: "const formData = new FormData(); (<FormData>formData).set('name', 'nick');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSAsExpression
+                {
+                    code: "const formData = new FormData(); (formData as FormData).set('name', 'nick');",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "const formData = new FormData(); formData.get('name');",
                 "const formData = new FormData(); formData.has('avatar');",
                 "const custom = { append() {} }; custom.append();",
+                // ChainExpression in init - not FormData, valid
+                "const fd = getFormData?.(); fd.set('name', 'nick');",
                 {
                     code: "const formData = new FormData(); formData.set('name', 'nick');",
                     options: [{ ignoreAccessorPattern: "formData" }],

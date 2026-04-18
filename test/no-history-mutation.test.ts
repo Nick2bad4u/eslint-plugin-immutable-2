@@ -46,6 +46,36 @@ describe("no-history-mutation rule", () => {
                 code: "history!.pushState({}, '', '/next');",
                 errors: [{ messageId: "generic" }],
             },
+            // ChainExpression wrapping window.history - unwrapExpression ChainExpression path
+            {
+                code: "(window?.history).pushState({}, '', '/next');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSAsExpression wrapping history - unwrapExpression TSAsExpression path
+            {
+                code: "(history as History).scrollRestoration = 'manual';",
+                errors: [{ messageId: "generic" }],
+            },
+            // Computed string property access - getMemberPropertyName computed branch
+            {
+                code: "window['history'].pushState({}, '', '/next');",
+                errors: [{ messageId: "generic" }],
+            },
+            // globalThis host global
+            {
+                code: "globalThis.history.pushState({}, '', '/next');",
+                errors: [{ messageId: "generic" }],
+            },
+            // Self host global
+            {
+                code: "self.history.pushState({}, '', '/next');",
+                errors: [{ messageId: "generic" }],
+            },
+            // UpdateExpression on history property
+            {
+                code: "history.scrollRestoration++;",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "history.state;",
@@ -60,6 +90,14 @@ describe("no-history-mutation rule", () => {
                 options: [{ ignorePattern: "^navHistory$" }],
             },
             "let navHistory = history; navHistory = getMutableHistory(); navHistory.back(); function getMutableHistory() { return { back() {} }; }",
+            // UnaryExpression with non-delete operator - returns early (operator !== 'delete')
+            "!history.state;",
+            // GetMemberPropertyName returns null - computed non-string property, not a history host
+            "window[0].pushState({}, '', '/');",
+            // Undeclared variable - resolveVariable traverses scope chain (scope.upper) and returns null
+            "undeclaredHistory.pushState({}, '', '/');",
+            // VariableDeclarator where id is destructuring (not Identifier) - rule returns early
+            "const { state } = history;",
         ],
     });
 });

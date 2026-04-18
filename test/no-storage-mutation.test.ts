@@ -54,12 +54,24 @@ describe("no-storage-mutation rule", () => {
                 code: "localStorage!.setItem('k', 'v');",
                 errors: [{ messageId: "generic" }],
             },
+            // ChainExpression (window?.localStorage)
+            {
+                code: "const storage = window?.localStorage; storage.setItem('k', 'v');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSAsExpression as callee.object
+            {
+                code: "const storage = localStorage; (storage as Storage).setItem('k', 'v');",
+                errors: [{ messageId: "generic" }],
+            },
         ],
         valid: [
             "localStorage.getItem('theme');",
             "sessionStorage.length;",
             "const storage = { setItem() {} }; storage.setItem('theme', 'dark');",
             "const localStorage = { setItem() {} }; localStorage.setItem('theme', 'dark');",
+            // Undeclared variable - not tracked as storage
+            "undeclaredStore.setItem('key', 'value');",
             {
                 code: "localStorage.theme = 'dark';",
                 options: [{ ignoreAccessorPattern: "localStorage.**" }],

@@ -79,6 +79,14 @@ describe("no-typed-array-mutation rule", () => {
                 "const bytes = new Uint8Array([1, 2, 3]); let value = bytes; value = getReplacement(); value.fill(0); function getReplacement() { return [9, 9, 9]; }",
                 // Undeclared variable - resolveVariable returns null, not tracked as typed array
                 "undeclaredVar.fill(0);",
+                // ChainExpression in callee.object: unwrapExpression handles ChainExpression case
+                "const bytes = new Uint8Array([1, 2]); (bytes?.subarray(1)).fill(0);",
+                // AssignmentExpression where left is not Identifier (MemberExpression) - rule returns early
+                "const arr = new Uint8Array([1, 2, 3]); arr[0] = 5;",
+                // AssignmentExpression to undeclared variable - resolveVariable returns null in markTypedArrayVariable
+                "undeclaredArr = new Uint8Array([1, 2]);",
+                // VariableDeclarator where id is not Identifier (destructuring) - rule returns early
+                "const [a, b, c] = new Uint8Array([1, 2, 3]);",
             ],
         }
     );

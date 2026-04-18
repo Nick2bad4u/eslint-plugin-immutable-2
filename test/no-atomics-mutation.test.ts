@@ -36,6 +36,8 @@ describe("no-atomics-mutation rule", () => {
             "const view = new Int32Array(new SharedArrayBuffer(8)); Atomics.load(view, 0);",
             "const view = new Int32Array(new SharedArrayBuffer(8)); Atomics.wait(view, 0, 0);",
             "const custom = { store() {} }; custom.store();",
+            // Computed property access - callee.property is not an Identifier, rule returns early
+            "const view = new Int32Array(new SharedArrayBuffer(8)); Atomics['store'](view, 0, 1);",
             {
                 code: "const view = new Int32Array(new SharedArrayBuffer(8)); Atomics.store(view, 0, 1);",
                 options: [{ ignoreAccessorPattern: "Atomics" }],

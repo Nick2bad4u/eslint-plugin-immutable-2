@@ -47,22 +47,22 @@ describe("readonly-keyword rule", () => {
             "class Counter { readonly count: number = 0; }",
             // Type alias with readonly
             "type State = { readonly value: number };",
-            // ignoreClass: true - should skip class properties
+            // IgnoreClass: true - should skip class properties
             {
                 code: "class Counter { count: number = 0; }",
                 options: [{ ignoreClass: true }],
             },
-            // ignoreInterface: true - should skip interface properties
+            // IgnoreInterface: true - should skip interface properties
             {
                 code: "interface State { value: number }",
                 options: [{ ignoreInterface: true }],
             },
-            // ignoreLocal: true - inside function scope
+            // IgnoreLocal: true - inside function scope
             {
                 code: "function create() { type Local = { value: number }; }",
                 options: [{ ignoreLocal: true }],
             },
-            // ignorePattern
+            // IgnorePattern
             {
                 code: "interface State { mutableValue: number }",
                 options: [{ ignorePattern: "^mutable" }],

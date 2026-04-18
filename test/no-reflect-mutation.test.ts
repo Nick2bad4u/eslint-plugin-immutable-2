@@ -36,6 +36,8 @@ describe("no-reflect-mutation rule", () => {
             "const target = { value: 1 }; Reflect.get(target, 'value');",
             "const target = { value: 1 }; Reflect.ownKeys(target);",
             "const custom = { set() {} }; custom.set();",
+            // Computed property access - callee.property is not an Identifier, rule returns early
+            "const target = { value: 1 }; Reflect['set'](target, 'value', 2);",
             {
                 code: "const target = { value: 1 }; Reflect.set(target, 'value', 2);",
                 options: [{ ignoreAccessorPattern: "Reflect" }],

@@ -39,11 +39,28 @@ describe("no-cache-api-mutation rule", () => {
                     code: "const cacheStorage = caches; cacheStorage!.delete('v2');",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSSatisfiesExpression
+                {
+                    code: "const cacheStorage = caches; (cacheStorage satisfies CacheStorage).delete('v2');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSTypeAssertion
+                {
+                    code: "const cacheStorage = caches; (<CacheStorage>cacheStorage).delete('v2');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSAsExpression
+                {
+                    code: "const cacheStorage = caches; (cacheStorage as CacheStorage).delete('v2');",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "caches.keys();",
                 "async function read(req) { const cache = await caches.open('v1'); await cache.match(req); }",
                 "const caches = { delete() {} }; caches.delete('v1');",
+                // ChainExpression in init - not caches, valid
+                "const c = getCaches?.(); c.delete('v1');",
                 {
                     code: "caches.delete('v1');",
                     options: [{ ignorePattern: "^caches$" }],

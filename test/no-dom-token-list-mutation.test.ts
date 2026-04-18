@@ -45,6 +45,21 @@ describe("no-dom-token-list-mutation rule", () => {
                     code: "const tokens = element.classList; tokens!.add('active');",
                     errors: [{ messageId: "generic" }],
                 },
+                // ChainExpression wrapping classList - unwrapExpression ChainExpression path
+                {
+                    code: "(element?.classList).add('active');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSAsExpression wrapping classList - unwrapExpression TSAsExpression path
+                {
+                    code: "(element.classList as DOMTokenList).add('active');",
+                    errors: [{ messageId: "generic" }],
+                },
+                // Computed string property - getMemberPropertyName computed branch
+                {
+                    code: "element['classList'].add('active');",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "element.classList.contains('active');",
@@ -63,6 +78,15 @@ describe("no-dom-token-list-mutation rule", () => {
                 "let tokens = element.classList; tokens = getTokens(); tokens.toggle('open'); function getTokens() { return { toggle() {} }; }",
                 // Undeclared variable - not tracked
                 "undeclaredTokens.add('active');",
+                // Computed non-string property - getMemberPropertyName returns null, not a DOMTokenList property
+                "element[0].add('active');",
+                // AssignmentExpression where left is MemberExpression (not Identifier) - rule returns early
+                "element.classList = null;",
+                // AssignmentExpression to undeclared variable - resolveVariable returns null in
+                // markDomTokenListVariable
+                "undeclaredVar2 = element.classList;",
+                // VariableDeclarator where id is destructuring (not Identifier) - rule returns early
+                "const [a, b] = element.classList;",
             ],
         }
     );

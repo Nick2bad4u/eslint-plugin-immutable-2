@@ -44,6 +44,16 @@ describe("no-regexp-lastindex-mutation rule", () => {
                     code: "const matcher = /foo/; (matcher satisfies RegExp).lastIndex = 3;",
                     errors: [{ messageId: "generic" }],
                 },
+                // TSTypeAssertion
+                {
+                    code: "const matcher = /foo/; (<RegExp>matcher).lastIndex = 3;",
+                    errors: [{ messageId: "generic" }],
+                },
+                // TSAsExpression
+                {
+                    code: "const matcher = /foo/; (matcher as RegExp).lastIndex = 3;",
+                    errors: [{ messageId: "generic" }],
+                },
             ],
             valid: [
                 "const matcher = /foo/; matcher.source;",

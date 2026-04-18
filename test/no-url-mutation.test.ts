@@ -46,7 +46,7 @@ describe("no-url-mutation rule", () => {
                 code: "const url = new URL('https://example.com:8080'); url.port++;",
                 errors: [{ messageId: "generic" }],
             },
-            // searchParams.set via TSAsExpression
+            // SearchParams.set via TSAsExpression
             {
                 code: "const url = new URL('https://example.com'); (url as URL).searchParams.set('k', 'v');",
                 errors: [{ messageId: "generic" }],
@@ -59,6 +59,16 @@ describe("no-url-mutation rule", () => {
             // TSTypeAssertion (angle bracket) wrapping URL
             {
                 code: "const url = new URL('https://example.com'); (<URL>url).hash = '#v2';",
+                errors: [{ messageId: "generic" }],
+            },
+            // ChainExpression wrapping url.searchParams - unwrapExpression ChainExpression path
+            {
+                code: "const url = new URL('https://example.com'); (url?.searchParams).set('q', '1');",
+                errors: [{ messageId: "generic" }],
+            },
+            // Computed string property for searchParams - getMemberPropertyName computed branch
+            {
+                code: "const url = new URL('https://example.com'); url['searchParams'].set('q', '1');",
                 errors: [{ messageId: "generic" }],
             },
         ],
@@ -77,6 +87,22 @@ describe("no-url-mutation rule", () => {
             "let url = new URL('https://example.com'); url = getReplacement(); url.hash = '#v2'; function getReplacement() { return { hash: '' }; }",
             // Non-URL new expression - URLSearchParams or other type
             "const params = new URLSearchParams('a=1'); params.set('b', '2');",
+            // GetMemberPropertyName returns null - computed non-string property
+            "const url = new URL('https://example.com'); url[0].set('q', '1');",
+            // Undeclared variable assignment - resolveVariable traverses scope chain (scope.upper) and returns null
+            "undeclaredUrl.hash = '#v2';",
+            // IsUrlExpression returns false for CallExpression (neither NewExpression nor Identifier)
+            "(getUrl()).searchParams.set('q', '1');",
+            // UnaryExpression with non-delete operator - returns early at operator !== 'delete' check
+            "const url = new URL('https://example.com'); !url.hash;",
+            // Delete on non-URL object - isUrlExpression returns false, no error
+            "const custom = { hash: '' }; delete custom.hash;",
+            // UpdateExpression on non-member - returns early at !isMemberExpression check
+            "let i = 0; i++;",
+            // UpdateExpression on non-URL-property - propertyName not in urlMutatingProperties
+            "const url = new URL('https://example.com'); url.something++;",
+            // VariableDeclarator with destructuring - id is not Identifier, rule returns early
+            "const { hash } = new URL('https://example.com');",
         ],
     });
 });

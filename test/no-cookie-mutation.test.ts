@@ -31,9 +31,39 @@ describe("no-cookie-mutation rule", () => {
                 code: "const store = cookieStore; store.delete('theme');",
                 errors: [{ messageId: "generic" }],
             },
-            // TSSatisfiesExpression
+            // TSNonNullExpression
             {
                 code: "cookieStore!.set('k', 'v');",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSSatisfiesExpression
+            {
+                code: "(document satisfies Document).cookie = 'theme=dark';",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSTypeAssertion
+            {
+                code: "(<Document>document).cookie = 'theme=dark';",
+                errors: [{ messageId: "generic" }],
+            },
+            // TSAsExpression
+            {
+                code: "(document as Document).cookie = 'theme=dark';",
+                errors: [{ messageId: "generic" }],
+            },
+            // ChainExpression (window?.document)
+            {
+                code: "(window?.document).cookie = 'theme=dark';",
+                errors: [{ messageId: "generic" }],
+            },
+            // UpdateExpression
+            {
+                code: "document.cookie++;",
+                errors: [{ messageId: "generic" }],
+            },
+            // MemberExpression path for cookieStore (window.cookieStore)
+            {
+                code: "window.cookieStore.set({ name: 'x', value: 'y' });",
                 errors: [{ messageId: "generic" }],
             },
         ],
@@ -41,6 +71,8 @@ describe("no-cookie-mutation rule", () => {
             "const raw = document.cookie;",
             "cookieStore.get('theme');",
             "const cookieStore = { set() {} }; cookieStore.set('x', 'y');",
+            // CalleObject is CallExpression - not tracked as cookieStore
+            "getCookieStore().set({ name: 'x', value: 'y' });",
             {
                 code: "document.cookie = 'theme=dark';",
                 options: [{ ignorePattern: "^document$" }],

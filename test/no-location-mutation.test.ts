@@ -51,7 +51,7 @@ describe("no-location-mutation rule", () => {
                 code: "(location as Location).href = '/path';",
                 errors: [{ messageId: "generic" }],
             },
-            // window.location.assign with assignment expression
+            // Window.location.assign with assignment expression
             {
                 code: "window.location.href = '/settings';",
                 errors: [{ messageId: "generic" }],

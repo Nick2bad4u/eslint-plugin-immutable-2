@@ -86,7 +86,7 @@ describe("no-conditional-statement rule", () => {
                     errors: [{ messageId: "incompleteBranch" }],
                     options: [{ allowReturningBranches: true }],
                 },
-                // incompleteBranch for if with block and no return
+                // IncompleteBranch for if with block and no return
                 {
                     code: `
                         function process(input: string): string {
@@ -175,7 +175,7 @@ describe("no-conditional-statement rule", () => {
                     `,
                     options: [{ allowReturningBranches: true }],
                 },
-                // if with nested if as alternate (valid when that nested if returns)
+                // If with nested if as alternate (valid when that nested if returns)
                 {
                     code: `
                         function process(input: string): string {

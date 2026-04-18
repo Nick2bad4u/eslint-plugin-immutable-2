@@ -23,27 +23,27 @@ describe("immutable-data rule", () => {
                 code: "Object.assign(existing, patch);",
                 errors: [{ messageId: "object" }],
             },
-            // delete operator (UnaryExpression)
+            // Delete operator (UnaryExpression)
             {
                 code: "delete obj.prop;",
                 errors: [{ messageId: "generic" }],
             },
-            // update expression (++)
+            // Update expression (++)
             {
                 code: "obj.count++;",
                 errors: [{ messageId: "generic" }],
             },
-            // update expression (--)
+            // Update expression (--)
             {
                 code: "obj.count--;",
                 errors: [{ messageId: "generic" }],
             },
-            // prefix update expression
+            // Prefix update expression
             {
                 code: "++obj.count;",
                 errors: [{ messageId: "generic" }],
             },
-            // array mutator methods
+            // Array mutator methods
             {
                 code: "items.pop();",
                 errors: [{ messageId: "array" }],
@@ -81,13 +81,13 @@ describe("immutable-data rule", () => {
                 code: "Object.assign(obj.nested, patch);",
                 errors: [{ messageId: "object" }],
             },
-            // with assumeTypes forArrays
+            // With assumeTypes forArrays
             {
                 code: "items.push(value);",
                 errors: [{ messageId: "array" }],
                 options: [{ assumeTypes: { forArrays: true } }],
             },
-            // with assumeTypes forObjects
+            // With assumeTypes forObjects
             {
                 code: "Object.assign(target, patch);",
                 errors: [{ messageId: "object" }],
@@ -98,24 +98,24 @@ describe("immutable-data rule", () => {
             "const next = { ...obj, value: 2 };",
             "const values = items.concat(value);",
             "const merged = { ...existing, ...patch };",
-            // delete on non-member
+            // Delete on non-member
             "delete localVar;",
-            // update on non-member
+            // Update on non-member
             "count++;",
-            // fresh array literal methods (isInChainCallAndFollowsNew)
+            // Fresh array literal methods (isInChainCallAndFollowsNew)
             "[1, 2, 3].push(4);",
             "[].fill(0);",
             // new Array() chain
             "new Array().push(1);",
             // Array.from() chain (arrayConstructorFunctions)
             "Array.from([1, 2]).push(3);",
-            // array new-object-returning methods chain
+            // Array new-object-returning methods chain
             "items.concat([1]).push(2);",
             "items.filter(Boolean).push(1);",
             "items.map(x => x).push(1);",
             "items.slice(0).push(1);",
             "items.reduce((a, b) => a + b, []).push(1);",
-            // constructor mutation should be valid (inConstructor)
+            // Constructor mutation should be valid (inConstructor)
             {
                 code: `
                     class Counter {
@@ -127,7 +127,7 @@ describe("immutable-data rule", () => {
                 `,
                 options: [{}],
             },
-            // ignorePattern
+            // IgnorePattern
             {
                 code: "mutableObj.value = 2;",
                 options: [{ ignorePattern: "^mutable" }],
@@ -136,46 +136,46 @@ describe("immutable-data rule", () => {
                 code: "mutableItems.push(value);",
                 options: [{ ignorePattern: "^mutable" }],
             },
-            // ignoreAccessorPattern: matches the root object of the member expression
+            // IgnoreAccessorPattern: matches the root object of the member expression
             // (for `state.draft.value = 2`, the text matched is `state.draft`)
             {
                 code: "state.draft.value = 2;",
                 options: [{ ignoreAccessorPattern: "state.draft" }],
             },
-            // ignoreAccessorPattern with ** (covers ignore-options findMatch ** path)
+            // IgnoreAccessorPattern with ** (covers ignore-options findMatch ** path)
             // The accessor pattern matches the object part of the LHS member expression:
             // for `obj.nested.value = 2`, matched text is "obj.nested"
             {
                 code: "obj.nested.value = 2;",
                 options: [{ ignoreAccessorPattern: "**.nested" }],
             },
-            // ignoreAccessorPattern with ** at start (covers ** with remaining text)
+            // IgnoreAccessorPattern with ** at start (covers ** with remaining text)
             // for `a.b.c = 1`, matched text is "a.b"
             {
                 code: "a.b.c = 1;",
                 options: [{ ignoreAccessorPattern: "**.b" }],
             },
-            // ignorePattern as array (covers normalizePatterns array branch)
+            // IgnorePattern as array (covers normalizePatterns array branch)
             {
                 code: "mutableObj.value = 2;",
                 options: [{ ignorePattern: ["^draft", "^mutable"] }],
             },
-            // ignorePattern on update expression (text is "mutableObj.count++" which starts with "mutable")
+            // IgnorePattern on update expression (text is "mutableObj.count++" which starts with "mutable")
             {
                 code: "mutableObj.count++;",
                 options: [{ ignorePattern: "^mutable" }],
             },
-            // assumeTypes: false - no type info available so can't flag arrays
+            // AssumeTypes: false - no type info available so can't flag arrays
             {
                 code: "items.push(value);",
                 options: [{ assumeTypes: false }],
             },
-            // assumeTypes: { forArrays: false }
+            // AssumeTypes: { forArrays: false }
             {
                 code: "items.push(value);",
                 options: [{ assumeTypes: { forArrays: false } }],
             },
-            // assumeTypes: { forObjects: false }
+            // AssumeTypes: { forObjects: false }
             {
                 code: "Object.assign(target, patch);",
                 options: [{ assumeTypes: { forObjects: false } }],

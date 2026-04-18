@@ -60,7 +60,7 @@ describe("readonly-array rule", () => {
             "const value: readonly string[] = [];",
             "type Values = ReadonlyArray<string>;",
             "const pair: readonly [string, number] = ['a', 1];",
-            // ignoreReturnType: true should allow mutable array in return position
+            // IgnoreReturnType: true should allow mutable array in return position
             {
                 code: "function getItems(): string[] { return []; }",
                 options: [{ ignoreReturnType: true }],
@@ -73,12 +73,12 @@ describe("readonly-array rule", () => {
                 code: "const f = (): string[] => [];",
                 options: [{ ignoreReturnType: true }],
             },
-            // ignoreLocal: true should allow mutable array in local function scope
+            // IgnoreLocal: true should allow mutable array in local function scope
             {
                 code: "function process() { const items: string[] = []; }",
                 options: [{ ignoreLocal: true }],
             },
-            // ignorePattern: matches against the type annotation text
+            // IgnorePattern: matches against the type annotation text
             {
                 code: "const items: mutableItems[] = [];",
                 options: [{ ignorePattern: "^mutableItems" }],

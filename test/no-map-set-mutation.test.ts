@@ -102,7 +102,7 @@ describe("no-map-set-mutation rule", () => {
                 code: "let m: Map<string, number>; m = new Map(); m.set('a', 1);",
                 errors: [{ messageId: "generic" }],
             },
-            // ignoreAccessorPattern option - variable NOT matching the pattern
+            // IgnoreAccessorPattern option - variable NOT matching the pattern
             {
                 code: "const map = new Map<string, number>(); map.set('a', 1);",
                 errors: [{ messageId: "generic" }],
@@ -133,7 +133,7 @@ describe("no-map-set-mutation rule", () => {
             "undeclaredMap.set('a', 1);",
             // Variable reassigned to non-collection loses tracking
             "let m = new Map<string, number>(); m = otherValue as any; m.set('a', 1);",
-            // ignoreAccessorPattern covers the variable name
+            // IgnoreAccessorPattern covers the variable name
             {
                 code: "const draftMap = new Map<string, number>(); draftMap.set('a', 1);",
                 options: [{ ignoreAccessorPattern: "draft*" }],
