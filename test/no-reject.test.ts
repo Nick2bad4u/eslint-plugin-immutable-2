@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-reject rule", () => {
     it("exports no-reject rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-reject")).toBeDefined();
     });
 

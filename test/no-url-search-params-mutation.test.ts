@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-url-search-params-mutation rule", () => {
     it("exports no-url-search-params-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-url-search-params-mutation")).toBeDefined();
     });
 

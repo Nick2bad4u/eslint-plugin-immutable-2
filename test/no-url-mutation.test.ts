@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-url-mutation rule", () => {
     it("exports no-url-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-url-mutation")).toBeDefined();
     });
 

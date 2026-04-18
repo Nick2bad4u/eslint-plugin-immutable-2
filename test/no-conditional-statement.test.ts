@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-conditional-statement rule", () => {
     it("exports no-conditional-statement rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-conditional-statement")).toBeDefined();
     });
 

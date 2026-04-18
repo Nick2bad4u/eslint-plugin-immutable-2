@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -130,7 +132,7 @@ const noDomTokenListMutationRule: ReturnType<
             const propertyName = getMemberPropertyName(node);
             return (
                 propertyName !== null &&
-                domTokenListProperties.has(propertyName)
+                setHas(domTokenListProperties, propertyName)
             );
         };
 
@@ -173,7 +175,7 @@ const noDomTokenListMutationRule: ReturnType<
                 }
 
                 const methodName = node.callee.property.name;
-                if (!domTokenListMutatorMethods.has(methodName)) {
+                if (!setHas(domTokenListMutatorMethods, methodName)) {
                     return;
                 }
 

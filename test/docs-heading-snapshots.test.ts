@@ -29,6 +29,8 @@ const ruleCatalogIdPattern = /> \*\*Rule catalog ID:\*\* R\d{3}/v;
 
 describe("rule docs heading snapshots", () => {
     it("enforces canonical immutable docs headings for every exported rule", () => {
+        expect.hasAssertions();
+
         const ruleNames = Object.keys(immutablePlugin.rules).toSorted(
             (left, right) => left.localeCompare(right)
         );
@@ -47,7 +49,7 @@ describe("rule docs heading snapshots", () => {
             expect(
                 headings,
                 `Unexpected heading sequence for ${ruleName}`
-            ).toEqual(canonicalRuleHeadings);
+            ).toStrictEqual(canonicalRuleHeadings);
             expect(
                 markdown,
                 `Missing rule catalog id marker for ${ruleName}`

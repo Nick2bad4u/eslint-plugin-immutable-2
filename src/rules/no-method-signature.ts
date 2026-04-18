@@ -19,8 +19,12 @@ const noMethodSignatureRule: ReturnType<
                     node.typeParameters === undefined
                         ? ""
                         : sourceCode.getText(node.typeParameters);
-                const parametersText = arrayJoin(node.params
-                    .map((parameter) => sourceCode.getText(parameter)), ", ");
+                const parametersText = arrayJoin(
+                    node.params.map((parameter) =>
+                        sourceCode.getText(parameter)
+                    ),
+                    ", "
+                );
                 const returnTypeText =
                     node.returnType === undefined
                         ? "void"

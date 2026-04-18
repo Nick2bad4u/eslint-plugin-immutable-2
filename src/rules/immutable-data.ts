@@ -1,7 +1,7 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
-import { arrayFirst } from "ts-extras";
+import { arrayFirst, isDefined } from "ts-extras";
 
 import {
     type IgnoreAccessorPatternOption,
@@ -85,7 +85,7 @@ const resolveAssumeTypesForArrays = (
         return true;
     }
 
-    if (option === false || option === undefined) {
+    if (option === false || !isDefined(option)) {
         return false;
     }
 
@@ -99,7 +99,7 @@ const resolveAssumeTypesForObjects = (
         return true;
     }
 
-    if (option === false || option === undefined) {
+    if (option === false || !isDefined(option)) {
         return false;
     }
 

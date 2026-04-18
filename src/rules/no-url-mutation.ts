@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -206,7 +208,7 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     const propertyName = getMemberPropertyName(node.left);
                     if (
                         propertyName === null ||
-                        !urlMutatingProperties.has(propertyName) ||
+                        !setHas(urlMutatingProperties, propertyName) ||
                         !isUrlExpression(node.left.object)
                     ) {
                         return;
@@ -225,7 +227,7 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     }
 
                     const methodName = node.callee.property.name;
-                    if (!searchParamsMutatorMethods.has(methodName)) {
+                    if (!setHas(searchParamsMutatorMethods, methodName)) {
                         return;
                     }
 
@@ -255,7 +257,7 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     const propertyName = getMemberPropertyName(node.argument);
                     if (
                         propertyName === null ||
-                        !urlMutatingProperties.has(propertyName) ||
+                        !setHas(urlMutatingProperties, propertyName) ||
                         !isUrlExpression(node.argument.object)
                     ) {
                         return;
@@ -278,7 +280,7 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     const propertyName = getMemberPropertyName(node.argument);
                     if (
                         propertyName === null ||
-                        !urlMutatingProperties.has(propertyName) ||
+                        !setHas(urlMutatingProperties, propertyName) ||
                         !isUrlExpression(node.argument.object)
                     ) {
                         return;

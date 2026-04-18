@@ -164,7 +164,7 @@ const noTypedArrayMutationRule: ReturnType<
                 }
 
                 const methodName = node.callee.property.name;
-                if (!typedArrayMutatorMethods.has(methodName)) {
+                if (!setHas(typedArrayMutatorMethods, methodName)) {
                     return;
                 }
 

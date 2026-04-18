@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-class rule", () => {
     it("exports no-class rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-class")).toBeDefined();
     });
 

@@ -219,7 +219,7 @@ const noHistoryMutationRule: ReturnType<
                 }
 
                 const methodName = node.callee.property.name;
-                if (!historyMutatorMethods.has(methodName)) {
+                if (!setHas(historyMutatorMethods, methodName)) {
                     return;
                 }
 

@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-loop-statement rule", () => {
     it("exports no-loop-statement rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-loop-statement")).toBeDefined();
     });
 

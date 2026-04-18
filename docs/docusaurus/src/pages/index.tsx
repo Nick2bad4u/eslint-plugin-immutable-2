@@ -111,6 +111,11 @@ const homeCards = [
     },
 ] as const satisfies readonly HomeCard[];
 
+/**
+ * Render the Docusaurus docs homepage.
+ *
+ * @returns Home page layout with hero content, badges, and navigation cards.
+ */
 export default function Home() {
     const logoSrc = useBaseUrl("/img/logo.svg");
 

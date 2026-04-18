@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -147,7 +149,7 @@ const noAbortControllerMutationRule: ReturnType<
                 }
 
                 const methodName = node.callee.property.name;
-                if (!abortControllerMutatorMethods.has(methodName)) {
+                if (!setHas(abortControllerMutatorMethods, methodName)) {
                     return;
                 }
 

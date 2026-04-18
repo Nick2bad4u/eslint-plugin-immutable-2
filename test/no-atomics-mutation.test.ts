@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-atomics-mutation rule", () => {
     it("exports no-atomics-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-atomics-mutation")).toBeDefined();
     });
 

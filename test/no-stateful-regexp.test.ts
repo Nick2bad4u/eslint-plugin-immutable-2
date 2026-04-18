@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-stateful-regexp rule", () => {
     it("exports no-stateful-regexp rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-stateful-regexp")).toBeDefined();
     });
 

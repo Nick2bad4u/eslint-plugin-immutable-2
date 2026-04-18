@@ -155,6 +155,20 @@ const config = defineConfig({
     ignoreDisables: false,
 
     /**
+     * File globs excluded from Stylelint analysis.
+     *
+     * @remarks
+     * Generated Docusaurus stylelint-inspector artifacts include minified
+     * bundles and binary font files that are not source-of-truth CSS. These
+     * assets must be excluded to avoid parser noise and false failures.
+     */
+    ignoreFiles: [
+        "docs/docusaurus/static/stylelint-inspector/**",
+        "docs/docusaurus/static/eslint-inspector/**",
+        "**/*.woff2",
+    ],
+
+    /**
      * File-type specific configuration overrides for different CSS syntaxes and
      * contexts.
      *

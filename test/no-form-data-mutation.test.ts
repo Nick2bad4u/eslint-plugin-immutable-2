@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-form-data-mutation rule", () => {
     it("exports no-form-data-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-form-data-mutation")).toBeDefined();
     });
 

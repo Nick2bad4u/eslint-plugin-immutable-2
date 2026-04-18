@@ -444,12 +444,6 @@
 
 /* immutable palette */
 .sb-cat-rules-immutable
-    .theme-doc-sidebar-item-link-level-3:nth-child(6n + 1)
-    > .menu__link {
-    border-inline-start-color: #22c55e;
-}
-
-.sb-cat-rules-immutable
     .theme-doc-sidebar-item-link-level-3:nth-child(6n + 2)
     > .menu__link {
     border-inline-start-color: #16a34a;
@@ -465,18 +459,6 @@
     .theme-doc-sidebar-item-link-level-3:nth-child(6n + 4)
     > .menu__link {
     border-inline-start-color: #14b8a6;
-}
-
-.sb-cat-rules-immutable
-    .theme-doc-sidebar-item-link-level-3:nth-child(6n + 5)
-    > .menu__link {
-    border-inline-start-color: #0d9488;
-}
-
-.sb-cat-rules-immutable
-    .theme-doc-sidebar-item-link-level-3:nth-child(6n)
-    > .menu__link {
-    border-inline-start-color: #059669;
 }
 
 .sb-cat-api-overview .theme-doc-sidebar-item-link-level-2 > .menu__link,
@@ -609,6 +591,9 @@
     > .menu__link,
 .sb-cat-developer-adr
     .theme-doc-sidebar-item-link-level-3:nth-child(4n + 3)
+    > .menu__link,
+.sb-cat-rules-immutable
+    .theme-doc-sidebar-item-link-level-3:nth-child(6n + 1)
     > .menu__link {
     border-inline-start-color: #22c55e;
 }
@@ -655,6 +640,9 @@
     > .menu__link,
 .sb-cat-api-types
     .theme-doc-sidebar-item-link-level-4:nth-child(4n + 3)
+    > .menu__link,
+.sb-cat-rules-immutable
+    .theme-doc-sidebar-item-link-level-3:nth-child(6n + 5)
     > .menu__link {
     border-inline-start-color: #0d9488;
 }
@@ -740,6 +728,9 @@
     > .menu__link,
 .sb-cat-api-runtime
     .theme-doc-sidebar-item-link-level-6:nth-child(4n)
+    > .menu__link,
+.sb-cat-rules-immutable
+    .theme-doc-sidebar-item-link-level-3:nth-child(6n)
     > .menu__link {
     border-inline-start-color: #059669;
 }

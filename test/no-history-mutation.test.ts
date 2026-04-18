@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-history-mutation rule", () => {
     it("exports no-history-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-history-mutation")).toBeDefined();
     });
 

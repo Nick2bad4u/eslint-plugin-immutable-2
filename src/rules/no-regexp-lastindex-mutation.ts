@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { keyIn } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -133,7 +135,7 @@ const noRegexpLastIndexMutationRule: ReturnType<
             expression: Readonly<TSESTree.Expression>
         ): boolean => {
             const node = unwrapExpression(expression);
-            return node.type === "Literal" && "regex" in node;
+            return node.type === "Literal" && keyIn(node, "regex");
         };
 
         const isRegExpExpression = (

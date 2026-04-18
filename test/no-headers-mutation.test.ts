@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-headers-mutation rule", () => {
     it("exports no-headers-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-headers-mutation")).toBeDefined();
     });
 

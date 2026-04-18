@@ -1,6 +1,6 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 
-import { arrayFirst, arrayJoin, isEmpty   } from "ts-extras";
+import { arrayFirst, arrayJoin, isEmpty } from "ts-extras";
 
 import { createRule } from "../util/rule.js";
 import { isIdentifier } from "../util/typeguard.js";

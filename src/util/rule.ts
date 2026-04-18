@@ -35,7 +35,6 @@ type ImmutableRuleCreator = ReturnType<
 >;
 
 const baseCreateRule: ImmutableRuleCreator =
-    // eslint-disable-next-line total-functions/no-hidden-type-assertions -- RuleCreator requires a concrete docs metadata generic to type `meta.docs` across all plugin rules.
     ESLintUtils.RuleCreator<ImmutableRuleDocs>(
         (ruleName) => `${RULE_DOCS_BASE_URL}/${ruleName}`
     );

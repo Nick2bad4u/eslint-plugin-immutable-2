@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("immutable-data rule", () => {
     it("exports immutable-data rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("immutable-data")).toBeDefined();
     });
 

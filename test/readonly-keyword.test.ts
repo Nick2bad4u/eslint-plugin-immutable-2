@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("readonly-keyword rule", () => {
     it("exports readonly-keyword rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("readonly-keyword")).toBeDefined();
     });
 

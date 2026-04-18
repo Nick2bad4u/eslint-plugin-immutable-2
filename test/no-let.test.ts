@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-let rule", () => {
     it("exports no-let rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-let")).toBeDefined();
     });
 

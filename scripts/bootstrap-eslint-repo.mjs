@@ -1,18 +1,20 @@
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import process from "node:process";
 
 /**
- * Executes a shell command and logs its output.
+ * Executes a process with argv-separated arguments and logs its output.
  *
- * @param {string} command - The command to execute.
+ * @param {string} executable - Executable to run.
+ * @param {readonly string[]} args - Arguments to pass to the executable.
  */
-function runCommand(command) {
-    console.log(`Executing: ${command}`);
+function runCommand(executable, args) {
+    console.log(`Executing: ${[executable, ...args].join(" ")}`);
     try {
-        // @ts-expect-error Node types for execSync shell might restrict to string, but boolean is accepted for 'true' to use default shell
-        execSync(command, { stdio: "inherit", shell: true });
+        execFileSync(executable, [...args], { stdio: "inherit" });
     } catch (error) {
-        console.error(`Error executing command: ${command}`);
+        console.error(
+            `Error executing command: ${[executable, ...args].join(" ")}`
+        );
         if (error instanceof Error) {
             console.error(error.message);
         } else {
@@ -381,18 +383,30 @@ console.log("Starting bootstrap process...");
 
 // Install dependencies
 console.log("\n--- Installing Dependencies ---");
-runCommand(`npm install --save --force ${dependencies.join(" ")}`);
+runCommand("npm", [
+    "install",
+    "--save",
+    "--force",
+    ...dependencies,
+]);
 
 // Install dev dependencies
 console.log("\n--- Installing Dev Dependencies ---");
-runCommand(`npm install --save-dev --force ${devDependencies.join(" ")}`);
+runCommand("npm", [
+    "install",
+    "--save-dev",
+    "--force",
+    ...devDependencies,
+]);
 
 // Set scripts in package.json
 console.log("\n--- Setting up package.json scripts ---");
 for (const [name, command] of Object.entries(scriptsToSet)) {
-    // Escaping double quotes for the shell command
-    const escapedCommand = command.replace(/"/g, '\\"');
-    runCommand(`npm pkg set scripts.${name}="${escapedCommand}"`);
+    runCommand("npm", [
+        "pkg",
+        "set",
+        `scripts.${name}=${command}`,
+    ]);
 }
 
 console.log("\nBootstrap process completed successfully!");

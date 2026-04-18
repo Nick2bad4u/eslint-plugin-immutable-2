@@ -1,28 +1,38 @@
 # yaml-language-server: $schema=https://www.schemastore.org/github-workflow.json
 name: Summarize New Issues And Pull Requests
+run-name: Summarize ${{ github.event_name }} by @${{ github.actor }}
 
 on:
     issues:
         types: [opened, edited]
     pull_request:
         types: [opened, edited, synchronize]
+    merge_group:
+        types:
+            - checks_requested
 
 permissions:
-    models: read
     contents: read
+    models: read
+
+concurrency:
+    group: summary-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
     inference:
+        name: Generate AI summary comment
         runs-on: ubuntu-latest
+        timeout-minutes: 20
         if: github.event_name == 'issues' || (github.event_name == 'pull_request' && github.event.pull_request.user.login != 'dependabot[bot]')
         permissions:
-            issues: write
-            pull-requests: write
             contents: read
+            issues: write
             models: read
-        concurrency:
-            group: summary-${{ github.ref }}
-            cancel-in-progress: false
+            pull-requests: write
+        defaults:
+            run:
+                shell: bash
 
         steps:
             - name: Harden the runner (Audit all outbound calls)
@@ -51,19 +61,19 @@ jobs:
                     gh issue comment "$ISSUE_NUMBER" --body "$RESPONSE"
                   fi
               env:
-                  enable-github-mcp: true
-                  model: gpt-5
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  github-mcp-token: ${{ secrets.GITHUB_TOKEN }}
                   ISSUE_NUMBER: ${{ github.event.issue.number }}
                   PR_NUMBER: ${{ github.event.pull_request.number }}
                   RESPONSE: ${{ steps.inference.outputs.response }}
-                  system-prompt-file: ".github/instructions/copilot-instructions.md"
+                  enable-github-mcp: true
                   endpoint: "https://models.github.ai/inference"
+                  github-mcp-token: ${{ secrets.GITHUB_TOKEN }}
                   max-tokens: 2000
+                  model: gpt-5
+                  system-prompt-file: ".github/instructions/copilot-instructions.md"
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Print Output
+            - name: Print output
               id: output
               run: |
                   echo "${{ steps.inference.outputs.response }}"

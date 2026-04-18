@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-buffer-mutation rule", () => {
     it("exports no-buffer-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-buffer-mutation")).toBeDefined();
     });
 

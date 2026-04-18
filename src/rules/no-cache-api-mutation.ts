@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -160,7 +162,7 @@ const noCacheApiMutationRule: ReturnType<
             return (
                 getMemberPropertyName(node) === "caches" &&
                 isIdentifier(node.object) &&
-                cacheHostGlobals.has(node.object.name)
+                setHas(cacheHostGlobals, node.object.name)
             );
         };
 
@@ -256,14 +258,14 @@ const noCacheApiMutationRule: ReturnType<
                 const methodName = node.callee.property.name;
 
                 if (
-                    cacheStorageMutatorMethods.has(methodName) &&
+                    setHas(cacheStorageMutatorMethods, methodName) &&
                     isCacheStorageExpression(node.callee.object)
                 ) {
                     reportMutation(node, methodName, "CacheStorage");
                     return;
                 }
 
-                if (!cacheMutatorMethods.has(methodName)) {
+                if (!setHas(cacheMutatorMethods, methodName)) {
                     return;
                 }
 

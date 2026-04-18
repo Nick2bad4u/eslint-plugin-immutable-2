@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-location-mutation rule", () => {
     it("exports no-location-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-location-mutation")).toBeDefined();
     });
 

@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -160,7 +162,7 @@ const noStorageMutationRule: ReturnType<
                 return null;
             }
 
-            return storageHostGlobals.has(node.object.name)
+            return setHas(storageHostGlobals, node.object.name)
                 ? storageKind
                 : null;
         };
@@ -265,7 +267,7 @@ const noStorageMutationRule: ReturnType<
                 }
 
                 const methodName = node.callee.property.name;
-                if (!storageMutatorMethods.has(methodName)) {
+                if (!setHas(storageMutatorMethods, methodName)) {
                     return;
                 }
 

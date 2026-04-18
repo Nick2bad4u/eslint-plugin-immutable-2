@@ -4,12 +4,14 @@ import immutablePlugin from "../src/plugin";
 
 describe("plugin entry module", () => {
     it("exports default plugin object with rule and config registries", () => {
+        expect.hasAssertions();
         expect(immutablePlugin).toHaveProperty("rules");
         expect(immutablePlugin).toHaveProperty("configs");
         expect(immutablePlugin).toHaveProperty("meta");
     });
 
     it("uses immutable identity metadata", () => {
+        expect.hasAssertions();
         expect(immutablePlugin.meta).toMatchObject({
             name: "eslint-plugin-immutable-2",
             namespace: "immutable",
@@ -18,6 +20,7 @@ describe("plugin entry module", () => {
     });
 
     it("contains all migrated immutable rules", () => {
+        expect.hasAssertions();
         expect(
             Object.keys(immutablePlugin.rules).toSorted((left, right) =>
                 left.localeCompare(right)

@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-this rule", () => {
     it("exports no-this rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-this")).toBeDefined();
     });
 

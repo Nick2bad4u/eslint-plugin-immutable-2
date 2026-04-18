@@ -217,7 +217,7 @@ const noLocationMutationRule: ReturnType<
                 }
 
                 const methodName = node.callee.property.name;
-                if (!locationMutatorMethods.has(methodName)) {
+                if (!setHas(locationMutatorMethods, methodName)) {
                     return;
                 }
 

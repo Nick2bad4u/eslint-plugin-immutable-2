@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -153,7 +155,7 @@ const noDataViewMutationRule: ReturnType<
                 }
 
                 const methodName = node.callee.property.name;
-                if (!dataViewMutatorMethods.has(methodName)) {
+                if (!setHas(dataViewMutatorMethods, methodName)) {
                     return;
                 }
 

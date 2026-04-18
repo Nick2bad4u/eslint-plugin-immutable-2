@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -158,7 +160,7 @@ const noDateMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     }
 
                     const methodName = node.callee.property.name;
-                    if (!dateMutatorMethods.has(methodName)) {
+                    if (!setHas(dateMutatorMethods, methodName)) {
                         return;
                     }
 

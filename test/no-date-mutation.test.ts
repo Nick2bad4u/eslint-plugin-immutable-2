@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-date-mutation rule", () => {
     it("exports no-date-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-date-mutation")).toBeDefined();
     });
 

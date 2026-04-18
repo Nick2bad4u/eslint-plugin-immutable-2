@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("readonly-array rule", () => {
     it("exports readonly-array rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("readonly-array")).toBeDefined();
     });
 

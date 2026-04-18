@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-regexp-lastindex-mutation rule", () => {
     it("exports no-regexp-lastindex-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-regexp-lastindex-mutation")).toBeDefined();
     });
 

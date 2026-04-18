@@ -3,6 +3,7 @@
  * Public plugin entrypoint for eslint-plugin-immutable exports and preset wiring.
  */
 import type { ESLint, Linter } from "eslint";
+import type { Except } from "type-fest";
 
 import typeScriptParser from "@typescript-eslint/parser";
 import { safeCastTo } from "ts-extras";
@@ -44,7 +45,7 @@ type ImmutableConfigsContract = Record<
 >;
 
 /** Fully assembled plugin contract used by the runtime default export. */
-type ImmutablePluginContract = Omit<ESLint.Plugin, "configs" | "rules"> & {
+type ImmutablePluginContract = Except<ESLint.Plugin, "configs" | "rules"> & {
     readonly configs: ImmutableConfigsContract;
     readonly meta: {
         readonly name: string;
@@ -81,13 +82,17 @@ const withImmutablePlugin = (
 
     const parserOptions = {
         ...defaultParserOptions,
-        ...(safeCastTo<NonNullable<
-            NonNullable<Linter.Config["languageOptions"]>["parserOptions"]
-        >>(parserOptionsInput !== null &&
-        typeof parserOptionsInput === "object" &&
-        !Array.isArray(parserOptionsInput)
-            ? parserOptionsInput
-            : {})),
+        ...safeCastTo<
+            NonNullable<
+                NonNullable<Linter.Config["languageOptions"]>["parserOptions"]
+            >
+        >(
+            parserOptionsInput !== null &&
+                typeof parserOptionsInput === "object" &&
+                !Array.isArray(parserOptionsInput)
+                ? parserOptionsInput
+                : {}
+        ),
     };
 
     return {

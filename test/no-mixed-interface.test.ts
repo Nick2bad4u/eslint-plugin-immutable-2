@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-mixed-interface rule", () => {
     it("exports no-mixed-interface rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-mixed-interface")).toBeDefined();
     });
 

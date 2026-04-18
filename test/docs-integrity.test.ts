@@ -6,6 +6,8 @@ import immutablePlugin from "../src/plugin";
 
 describe("immutable rule docs", () => {
     it("every rule exposes a docs url", () => {
+        expect.hasAssertions();
+
         for (const [ruleName, rule] of Object.entries(immutablePlugin.rules)) {
             const url = rule.meta?.docs?.url;
 
@@ -16,6 +18,8 @@ describe("immutable rule docs", () => {
     });
 
     it("every rule has docs/rules/<rule>.md", () => {
+        expect.hasAssertions();
+
         for (const ruleName of Object.keys(immutablePlugin.rules)) {
             const docsPath = path.resolve(
                 process.cwd(),
@@ -32,6 +36,8 @@ describe("immutable rule docs", () => {
     });
 
     it("every rule declares immutable metadata defaults", () => {
+        expect.hasAssertions();
+
         const rulesRequiringTypeChecking = new Set([
             "immutable-data",
             "readonly-array",

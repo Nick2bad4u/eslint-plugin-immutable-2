@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-map-set-mutation rule", () => {
     it("exports no-map-set-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-map-set-mutation")).toBeDefined();
     });
 

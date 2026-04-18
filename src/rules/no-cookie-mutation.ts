@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -145,7 +147,7 @@ const noCookieMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 return (
                     propertyName === "document" &&
                     isIdentifier(node.object) &&
-                    hostGlobals.has(node.object.name)
+                    setHas(hostGlobals, node.object.name)
                 );
             };
 
@@ -171,7 +173,7 @@ const noCookieMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 return (
                     propertyName === "cookieStore" &&
                     isIdentifier(node.object) &&
-                    hostGlobals.has(node.object.name)
+                    setHas(hostGlobals, node.object.name)
                 );
             };
 
@@ -247,7 +249,7 @@ const noCookieMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     }
 
                     const methodName = node.callee.property.name;
-                    if (!cookieStoreMutatorMethods.has(methodName)) {
+                    if (!setHas(cookieStoreMutatorMethods, methodName)) {
                         return;
                     }
 

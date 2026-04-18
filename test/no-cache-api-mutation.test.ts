@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-cache-api-mutation rule", () => {
     it("exports no-cache-api-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-cache-api-mutation")).toBeDefined();
     });
 

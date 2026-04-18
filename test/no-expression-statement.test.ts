@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-expression-statement rule", () => {
     it("exports no-expression-statement rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-expression-statement")).toBeDefined();
     });
 

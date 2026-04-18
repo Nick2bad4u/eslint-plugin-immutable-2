@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-cookie-mutation rule", () => {
     it("exports no-cookie-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-cookie-mutation")).toBeDefined();
     });
 

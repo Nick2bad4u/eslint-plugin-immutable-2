@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-storage-mutation rule", () => {
     it("exports no-storage-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-storage-mutation")).toBeDefined();
     });
 

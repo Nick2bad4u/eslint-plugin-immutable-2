@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-typed-array-mutation rule", () => {
     it("exports no-typed-array-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-typed-array-mutation")).toBeDefined();
     });
 

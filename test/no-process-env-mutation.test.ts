@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-process-env-mutation rule", () => {
     it("exports no-process-env-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-process-env-mutation")).toBeDefined();
     });
 

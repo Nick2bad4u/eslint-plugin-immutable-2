@@ -35,6 +35,8 @@ const immutableConfigNames = [
 
 describe("source plugin config wiring", () => {
     it("builds immutable presets from src/plugin", async () => {
+        expect.hasAssertions();
+
         const plugin = await loadSourcePlugin();
         const all = plugin.configs.all;
         const recommended = plugin.configs.recommended;
@@ -54,7 +56,7 @@ describe("source plugin config wiring", () => {
         );
         expect(Object.keys(all.rules)).toContain("immutable/readonly-array");
 
-        expect(Object.keys(recommended.rules)).toEqual(
+        expect(Object.keys(recommended.rules)).toStrictEqual(
             expect.arrayContaining([
                 "immutable/immutable-data",
                 "immutable/no-map-set-mutation",
@@ -78,7 +80,7 @@ describe("source plugin config wiring", () => {
         );
         expect(
             functionalLite.rules?.["immutable/no-conditional-statement"]
-        ).toEqual(["error", { allowReturningBranches: true }]);
+        ).toStrictEqual(["error", { allowReturningBranches: true }]);
         expect(functionalLite.rules).toHaveProperty(
             "immutable/no-loop-statement",
             "error"
@@ -110,6 +112,8 @@ describe("source plugin config wiring", () => {
     });
 
     it("keeps preset rule sets layered logically", async () => {
+        expect.hasAssertions();
+
         const plugin = await loadSourcePlugin();
         const recommendedRuleIds = getRuleIds(plugin.configs.recommended);
         const immutableRuleIds = getRuleIds(plugin.configs.immutable);
@@ -172,6 +176,8 @@ describe("source plugin config wiring", () => {
     });
 
     it("registers parser defaults, files, and plugin namespace", async () => {
+        expect.hasAssertions();
+
         const plugin = await loadSourcePlugin();
         const recommendedConfig = plugin.configs.recommended;
 
@@ -186,7 +192,9 @@ describe("source plugin config wiring", () => {
         expect(recommendedConfig.languageOptions).toHaveProperty(
             "parserOptions"
         );
-        expect(recommendedConfig.languageOptions?.["parserOptions"]).toEqual({
+        expect(
+            recommendedConfig.languageOptions?.["parserOptions"]
+        ).toStrictEqual({
             ecmaVersion: "latest",
             sourceType: "module",
         });
@@ -195,7 +203,7 @@ describe("source plugin config wiring", () => {
             const parserOptions =
                 plugin.configs[configName].languageOptions?.["parserOptions"];
 
-            expect(parserOptions).toEqual(
+            expect(parserOptions).toStrictEqual(
                 expect.objectContaining({
                     ecmaVersion: "latest",
                     sourceType: "module",

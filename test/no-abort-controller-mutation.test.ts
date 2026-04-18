@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-abort-controller-mutation rule", () => {
     it("exports no-abort-controller-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-abort-controller-mutation")).toBeDefined();
     });
 

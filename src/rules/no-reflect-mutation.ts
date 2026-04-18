@@ -1,6 +1,8 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -63,7 +65,7 @@ const noReflectMutationRule: ReturnType<
             }
 
             const methodName = node.callee.property.name;
-            if (!reflectMutatorMethods.has(methodName)) {
+            if (!setHas(reflectMutatorMethods, methodName)) {
                 return;
             }
 

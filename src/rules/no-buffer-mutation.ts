@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -148,7 +150,10 @@ const noBufferMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
 
                 return (
                     expression.callee.object.name === "Buffer" &&
-                    bufferFactoryMethods.has(expression.callee.property.name)
+                    setHas(
+                        bufferFactoryMethods,
+                        expression.callee.property.name
+                    )
                 );
             };
 
@@ -212,7 +217,7 @@ const noBufferMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     }
 
                     const methodName = node.callee.property.name;
-                    if (!bufferMutatorMethods.has(methodName)) {
+                    if (!setHas(bufferMutatorMethods, methodName)) {
                         return;
                     }
 

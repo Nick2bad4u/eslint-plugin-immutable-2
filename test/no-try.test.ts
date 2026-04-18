@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-try rule", () => {
     it("exports no-try rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-try")).toBeDefined();
     });
 

@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-reflect-mutation rule", () => {
     it("exports no-reflect-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-reflect-mutation")).toBeDefined();
     });
 

@@ -1,7 +1,7 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
-import { arrayFirst, isEmpty, stringSplit   } from "ts-extras";
+import { arrayFirst, isDefined, isEmpty, stringSplit } from "ts-extras";
 
 import type { BaseOptions, RuleContext } from "../util/rule.js";
 
@@ -158,7 +158,7 @@ const matchesAccessorPattern = (
     ): boolean => {
         const [currentPatternPart, ...restPatternParts] = patternParts;
 
-        if (currentPatternPart === undefined) {
+        if (!isDefined(currentPatternPart)) {
             return allowExtra || isEmpty(remainingTextParts);
         }
 
@@ -198,7 +198,7 @@ const matchesAccessorPattern = (
         }
 
         const currentTextPart = arrayFirst(remainingTextParts);
-        if (currentTextPart === undefined) {
+        if (!isDefined(currentTextPart)) {
             return false;
         }
 
@@ -217,7 +217,9 @@ const matchesAccessorPattern = (
         );
     };
 
-    return patterns.some((pattern) => findMatch(stringSplit(pattern, "."), textParts));
+    return patterns.some((pattern) =>
+        findMatch(stringSplit(pattern, "."), textParts)
+    );
 };
 
 /**
@@ -313,7 +315,7 @@ export const shouldIgnore = (
         return false;
     }
 
-    if (ignoreOptions.ignorePattern !== undefined) {
+    if (isDefined(ignoreOptions.ignorePattern)) {
         const patterns = normalizePatterns(ignoreOptions.ignorePattern);
         const allTextsMatchPattern = nodeTexts.every((text) =>
             patterns.some((pattern) => safelyMatchesRegexPattern(pattern, text))
@@ -324,7 +326,7 @@ export const shouldIgnore = (
         }
     }
 
-    if (ignoreOptions.ignoreAccessorPattern !== undefined) {
+    if (isDefined(ignoreOptions.ignoreAccessorPattern)) {
         const accessorPattern = ignoreOptions.ignoreAccessorPattern;
         const allTextsMatchAccessorPattern = nodeTexts.every((text) =>
             matchesAccessorPattern(text, accessorPattern)

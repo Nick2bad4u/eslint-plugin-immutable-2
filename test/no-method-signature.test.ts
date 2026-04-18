@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-method-signature rule", () => {
     it("exports no-method-signature rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-method-signature")).toBeDefined();
     });
 

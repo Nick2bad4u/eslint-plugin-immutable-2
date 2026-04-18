@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { setHas } from "ts-extras";
+
 import {
     type IgnoreAccessorPatternOption,
     ignoreAccessorPatternSchemaProperty,
@@ -152,7 +154,7 @@ const noUrlSearchParamsMutationRule: ReturnType<
                 }
 
                 const methodName = node.callee.property.name;
-                if (!urlSearchParamsMutatorMethods.has(methodName)) {
+                if (!setHas(urlSearchParamsMutatorMethods, methodName)) {
                     return;
                 }
 

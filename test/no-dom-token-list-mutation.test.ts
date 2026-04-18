@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-dom-token-list-mutation rule", () => {
     it("exports no-dom-token-list-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-dom-token-list-mutation")).toBeDefined();
     });
 

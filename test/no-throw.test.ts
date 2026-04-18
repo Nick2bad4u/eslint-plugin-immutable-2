@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-throw rule", () => {
     it("exports no-throw rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-throw")).toBeDefined();
     });
 

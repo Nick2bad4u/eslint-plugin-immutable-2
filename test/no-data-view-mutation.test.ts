@@ -6,6 +6,7 @@ const tester = createRuleTester();
 
 describe("no-data-view-mutation rule", () => {
     it("exports no-data-view-mutation rule module", () => {
+        expect.hasAssertions();
         expect(getPluginRule("no-data-view-mutation")).toBeDefined();
     });
 
