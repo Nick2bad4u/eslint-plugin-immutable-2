@@ -57,7 +57,9 @@ const getIfBranchViolations = (
 ): readonly TSESTree.Node[] => {
     const branches: readonly [
         TSESTree.Statement,
-        null | TSESTree.IfStatement | TSESTree.Statement,
+        (
+            null | TSESTree.IfStatement | TSESTree.Statement
+        ),
     ] = [node.consequent, node.alternate];
 
     const violations: TSESTree.Node[] = [];

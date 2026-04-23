@@ -166,7 +166,7 @@ const patchRuleTesterRunWithGeneratedCaseNames = (
 ): RuleTester => {
     const writableTester = tester as RuleTester;
     const originalRun = writableTester.run.bind(writableTester);
-    writableTester.run = ((ruleName, ruleModule, runCases) => {
+    writableTester.run = (ruleName, ruleModule, runCases) => {
         // Cast result to `typeof runCases` because `withGeneratedRuleCaseNames`
         // returns `RunTests<string, readonly unknown[]>` while the outer lambda's
         // `runCases` is `RunTests<MessageIds, Options>` — structurally equivalent
@@ -176,7 +176,7 @@ const patchRuleTesterRunWithGeneratedCaseNames = (
             ruleModule,
             withGeneratedRuleCaseNames(ruleName, runCases) as typeof runCases
         );
-    });
+    };
     return writableTester;
 };
 

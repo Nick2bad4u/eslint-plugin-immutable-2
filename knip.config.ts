@@ -14,6 +14,10 @@ const knipConfig: KnipConfig = {
     entry: [],
     ignore: [
         "docs/docusaurus/src/css/custom.css.d.ts",
+        // Docusaurus theme swizzle override — loaded at build time by Docusaurus, not statically imported
+        "docs/docusaurus/src/theme/prism-include-languages.js",
+        // Generated TypeDoc Docusaurus sidebar — consumed by Docusaurus at build time
+        "docs/docusaurus/site-docs/developer/api/typedoc-sidebar.cjs",
         "docs/docusaurus/typedoc-plugins/hashToBangLinks.mjs",
         "docs/docusaurus/typedoc-plugins/hashToBangLinksCore.d.mts",
         "docs/docusaurus/typedoc-plugins/hashToBangLinksCore.mjs",
@@ -27,10 +31,13 @@ const knipConfig: KnipConfig = {
         "open-cli",
         // False-positve Knip thinks knip.config.ts is a binary entry point, but it's actually just a config file.
         "knip.config.ts",
+        // Esbuild is used internally by Vite/Vitest, not directly referenced in source
+        "esbuild",
     ],
     ignoreDependencies: [
         ".*prettier.*",
-        "@docusaurus/faster",
+        // @docusaurus/faster is now detected as used (Docusaurus faster config); no longer needs manual ignore
+        // "@docusaurus/faster",
         "@easyops-cn/docusaurus-search-local",
         "@easyops-cn/docusaurus-theme-docusaurus-search-local",
         "@eslint.*",
@@ -51,7 +58,8 @@ const knipConfig: KnipConfig = {
         "@stylelint.*",
         "@types.*",
         "eslint.*",
-        "madge",
+        // Madge is now detected as used; no longer needs manual ignore
+        // "madge",
         "postcss.*",
         "remark.*",
         "stylelint.*",
@@ -69,9 +77,18 @@ const knipConfig: KnipConfig = {
         "leasot",
         "markdown-link-check",
         "sloc",
-        "storybook",
+        // Storybook is now detected as used; no longer needs manual ignore
+        // "storybook",
         "yamllint-js",
         "react",
+        // Stryker mutation testing framework — uses dynamic plugin loading, not statically analysable
+        "@stryker-ignorer/console-all",
+        "@stryker-ignorer/.*",
+        "@stryker-mutator/.*",
+        // Property-based testing library — used in typed test fixtures but not in knip project scope
+        "fast-check",
+        // Commit message linting — loaded by commitlint at runtime, not statically imported
+        "commitlint-config-gitmoji",
     ],
     ignoreExportsUsedInFile: {
         interface: true,
