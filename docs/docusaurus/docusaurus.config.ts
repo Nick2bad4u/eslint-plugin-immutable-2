@@ -162,57 +162,54 @@ const futureConfig = {
         // (CssMinimizer parsing errors -> large chunks of CSS dropped), which
         // makes many Infima (--ifm-*) variables undefined across the site.
         // Re-enable only after verifying the build output CSS is valid.
-        useCssCascadeLayers: false,
         siteStorageNamespacing: true,
         fasterByDefault: true,
         removeLegacyPostBuildHeadAttribute: true,
         mdx1CompatDisabledByDefault: true,
+        useCssCascadeLayers: false,
     },
 } satisfies Config["future"];
 
 /** Full Docusaurus site configuration exported to the build/runtime. */
 const config = {
-    storage: {
-        type: "localStorage",
-        namespace: true,
-    },
     baseUrl,
     baseUrlIssueBanner: true,
+    clientModules: [modernEnhancementsClientModule],
     deploymentBranch: "gh-pages",
     favicon: "img/favicon.ico",
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: futureConfig,
-    clientModules: [modernEnhancementsClientModule],
+    storage: {
+        type: "localStorage",
+        namespace: true,
+    },
     headTags: [
+        // Preconnect to GitHub for faster resource loading
         {
-            attributes: {
-                href: siteOrigin,
-                rel: "preconnect",
-            },
+            attributes: { href: siteOrigin, rel: "preconnect" },
             tagName: "link",
         },
         {
-            attributes: {
-                href: "https://github.com",
-                rel: "preconnect",
-            },
+            attributes: { href: "https://github.com", rel: "preconnect" },
             tagName: "link",
         },
+        // JSON-LD structured data for rich search results
         {
-            attributes: {
-                type: "application/ld+json",
-            },
+            attributes: { type: "application/ld+json" },
             innerHTML: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "WebSite",
+                "@type": "SoftwareApplication",
+                applicationCategory: "DeveloperApplication",
+                author: {
+                    "@type": "Person",
+                    name: organizationName,
+                    url: `https://github.com/${organizationName}`,
+                },
                 description: siteDescription,
                 image: socialCardImageUrl,
-                name: "eslint-plugin-immutable-2",
-                publisher: {
-                    "@type": "Person",
-                    name: "Nick2bad4u",
-                    url: "https://github.com/Nick2bad4u",
-                },
+                license: "https://opensource.org/licenses/MIT",
+                name: projectName,
+                operatingSystem: "Any",
                 url: siteUrl,
             }),
             tagName: "script",

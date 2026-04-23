@@ -864,3 +864,4 @@ eslint.config.bundled_**
 
 # Forked Plugin
 eslint-plugin-ts-immutable/
+docs/docusaurus/static/stylelint-inspector/
