@@ -553,10 +553,7 @@ function initializeEnhancements(): CleanupFunction {
     };
 }
 
-if (
-    typeof globalThis.window !== "undefined" &&
-    typeof document !== "undefined"
-) {
+if (globalThis.window !== undefined && typeof document !== "undefined") {
     initializeEnhancements();
     globalThis.window.initializeAdvancedFeatures = initializeAdvancedFeatures; // NOSONAR(javascript:S2137) -- window is intentional; exposes API on the browser Window object
 }
