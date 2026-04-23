@@ -1,8 +1,9 @@
 import { themes as prismThemes } from "prism-react-renderer";
 
-import type { Config } from "@docusaurus/types";
+import type { Config, PluginModule } from "@docusaurus/types";
 import type { Options as DocsPluginOptions } from "@docusaurus/plugin-content-docs";
 import type * as Preset from "@docusaurus/preset-classic";
+import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 
 /** Route base path where docs site is deployed (GitHub Pages project path). */
@@ -40,11 +41,112 @@ const removeHeadAttrFlagKey = [
     "gacyPostBuildHeadAttribute",
 ].join("");
 
+/** Public origin for the published documentation site. */
+const siteOrigin = "https://nick2bad4u.github.io";
+/** Canonical public site URL including the GitHub Pages project path. */
+const siteUrl = `${siteOrigin}${baseUrl}`;
+/** Global site description used for SEO and social cards. */
+const siteDescription =
+    "ESLint rules for immutable and functional patterns in JavaScript and TypeScript.";
+/** Social preview image used for Open Graph and Twitter cards. */
+const socialCardImagePath = "img/logo.svg";
+/** Absolute social preview image URL. */
+const socialCardImageUrl = new URL(socialCardImagePath, siteUrl).toString();
+
+/** Local require helper rooted at the docs workspace config file location. */
+const requireFromDocsWorkspace = createRequire(import.meta.url);
+
+/** Resolve an optional module specifier without throwing when absent. */
+const resolveOptionalModule = (moduleSpecifier: string): string | undefined => {
+    try {
+        return requireFromDocsWorkspace.resolve(moduleSpecifier);
+    } catch {
+        return undefined;
+    }
+};
+
+/**
+ * Optional ESM entry used to avoid webpack warnings from VS Code CSS language
+ * service packages.
+ */
+const vscodeCssLanguageServiceEsmEntry = resolveOptionalModule(
+    "vscode-css-languageservice/lib/esm/cssLanguageService.js"
+);
+/**
+ * Optional ESM entry used to avoid webpack warnings from VS Code language
+ * server type packages.
+ */
+const vscodeLanguageServerTypesEsmEntry = resolveOptionalModule(
+    "vscode-languageserver-types/lib/esm/main.js"
+);
+
+/**
+ * Alias VS Code language-service packages to their ESM entries when they are
+ * present.
+ *
+ * @remarks
+ * Some transitive editor-style dependencies resolve the UMD build of
+ * `vscode-languageserver-types`, which causes noisy webpack critical-dependency
+ * warnings inside Docusaurus. This plugin only activates when those optional
+ * packages are actually installed in the current workspace.
+ */
+const suppressKnownWebpackWarningsPlugin: PluginModule = () => {
+    return {
+        configureWebpack() {
+            return {
+                ignoreWarnings: [
+                    /**
+                     * Suppress the known webpack critical-dependency warning
+                     * emitted by the UMD build of vscode-languageserver-types.
+                     *
+                     * We already alias to the ESM entry when available, but
+                     * some transitive resolution paths still surface the UMD
+                     * warning during docs builds. This is third-party noise,
+                     * not a site-level problem.
+                     */
+                    (warning: unknown) => {
+                        const warningRecord = warning as
+                            | Readonly<Record<string, unknown>>
+                            | undefined;
+                        const warningMessage = warningRecord?.["message"];
+
+                        return (
+                            typeof warningMessage === "string" &&
+                            warningMessage.includes(
+                                "Critical dependency: require function is used in a way in which dependencies cannot be statically extracted"
+                            )
+                        );
+                    },
+                ],
+                resolve: {
+                    alias: {
+                        ...(vscodeCssLanguageServiceEsmEntry === undefined
+                            ? {}
+                            : {
+                                  "vscode-css-languageservice$":
+                                      vscodeCssLanguageServiceEsmEntry,
+                              }),
+                        ...(vscodeLanguageServerTypesEsmEntry === undefined
+                            ? {}
+                            : {
+                                  "vscode-languageserver-types$":
+                                      vscodeLanguageServerTypesEsmEntry,
+                                  "vscode-languageserver-types/lib/umd/main.js$":
+                                      vscodeLanguageServerTypesEsmEntry,
+                              }),
+                    },
+                },
+            };
+        },
+        name: "suppress-known-webpack-warnings",
+    };
+};
+
 /** Docusaurus future flags, including optional experimental fast path. */
 const futureConfig = {
     ...(enableExperimentalFaster
         ? {
-              experimental_faster: {
+              faster: {
                   mdxCrossCompilerCache: true,
                   rspackBundler: true,
                   rspackPersistentCache: true,
@@ -58,19 +160,62 @@ const futureConfig = {
         // (CssMinimizer parsing errors -> large chunks of CSS dropped), which
         // makes many Infima (--ifm-*) variables undefined across the site.
         // Re-enable only after verifying the build output CSS is valid.
+        siteStorageNamespacing: true,
+        fasterByDefault: true,
+        removeLegacyPostBuildHeadAttribute: true,
+        mdx1CompatDisabledByDefault: true,
         useCssCascadeLayers: false,
     },
 } satisfies Config["future"];
 
 /** Full Docusaurus site configuration exported to the build/runtime. */
 const config = {
-    baseUrl: "/eslint-plugin-immutable-2/",
+    storage: {
+        type: "localStorage",
+        namespace: true,
+    },
+    baseUrl,
     baseUrlIssueBanner: true,
     deploymentBranch: "gh-pages",
     favicon: "img/favicon.ico",
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: futureConfig,
     clientModules: [modernEnhancementsClientModule],
+    headTags: [
+        {
+            attributes: {
+                href: siteOrigin,
+                rel: "preconnect",
+            },
+            tagName: "link",
+        },
+        {
+            attributes: {
+                href: "https://github.com",
+                rel: "preconnect",
+            },
+            tagName: "link",
+        },
+        {
+            attributes: {
+                type: "application/ld+json",
+            },
+            innerHTML: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                description: siteDescription,
+                image: socialCardImageUrl,
+                name: "eslint-plugin-immutable-2",
+                publisher: {
+                    "@type": "Person",
+                    name: "Nick2bad4u",
+                    url: "https://github.com/Nick2bad4u",
+                },
+                url: siteUrl,
+            }),
+            tagName: "script",
+        },
+    ],
     i18n: {
         defaultLocale: "en",
         locales: ["en"],
@@ -93,6 +238,7 @@ const config = {
     onDuplicateRoutes: "warn",
     organizationName,
     plugins: [
+        suppressKnownWebpackWarningsPlugin,
         "docusaurus-plugin-image-zoom",
         [
             "@docusaurus/plugin-pwa",
@@ -175,6 +321,11 @@ const config = {
                     feedOptions: {
                         type: ["rss", "atom"],
                         xslt: true,
+                        title: "eslint-plugin-immutable-2 Blog",
+                        copyright: `Copyright © ${new Date().getFullYear()} eslint-plugin-immutable-2`,
+                        description:
+                            "Updates, architecture notes, and practical guidance for eslint-plugin-immutable-2 maintainers and users.",
+                        language: "en",
                     },
                     onInlineAuthors: "warn",
                     onInlineTags: "warn",
@@ -221,12 +372,12 @@ const config = {
                     showLastUpdateAuthor: true,
                     showLastUpdateTime: true,
                 },
+                debug:
+                    process.env["DOCUSAURUS_PRESET_CLASSIC_DEBUG"] === "true",
                 sitemap: {
-                    changefreq: "weekly",
                     filename: "sitemap.xml",
                     ignorePatterns: ["/tests/**"],
                     lastmod: "datetime",
-                    priority: 0.5,
                 },
                 svgr: {
                     svgrConfig: {
@@ -267,10 +418,22 @@ const config = {
             disableSwitch: false,
             respectPrefersColorScheme: true,
         },
+        liveCodeBlock: {
+            playgroundPosition: "bottom",
+        },
         metadata: [
             {
-                content: "eslint-plugin-immutable-2",
+                content:
+                    "eslint, eslint-plugin, immutable, functional, typescript, javascript",
                 name: "keywords",
+            },
+            {
+                content: "summary_large_image",
+                name: "twitter:card",
+            },
+            {
+                content: "eslint-plugin-immutable-2",
+                property: "og:site_name",
             },
         ],
         footer: {
@@ -548,6 +711,7 @@ const config = {
         },
     } satisfies Preset.ThemeConfig,
     themes: [
+        "@docusaurus/theme-live-codeblock",
         "@docusaurus/theme-mermaid",
         [
             "@easyops-cn/docusaurus-search-local",
@@ -568,7 +732,7 @@ const config = {
                 language: ["en"],
                 removeDefaultStemmer: true,
                 removeDefaultStopWordFilter: false,
-                searchBarPosition: "right",
+                searchBarPosition: "left",
                 searchBarShortcut: true,
                 searchBarShortcutHint: true,
                 searchBarShortcutKeymap: "ctrl+k",
@@ -579,7 +743,7 @@ const config = {
         ],
     ],
     title: "eslint-plugin-immutable-2",
-    trailingSlash: false,
+    trailingSlash: true,
     url: "https://nick2bad4u.github.io",
 } satisfies Config;
 
