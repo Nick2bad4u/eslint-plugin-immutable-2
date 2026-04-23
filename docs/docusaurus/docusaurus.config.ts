@@ -10,8 +10,6 @@ import { fileURLToPath } from "node:url";
 const baseUrl =
     process.env["DOCUSAURUS_BASE_URL"] ?? "/eslint-plugin-immutable-2/";
 /** Opt-in flag for experimental Docusaurus performance features. */
-const enableExperimentalFaster =
-    process.env["DOCUSAURUS_ENABLE_EXPERIMENTAL"] === "true";
 
 /** GitHub organization used for edit links and project metadata. */
 const organizationName = "Nick2bad4u";
@@ -40,6 +38,10 @@ const removeHeadAttrFlagKey = [
     "Le",
     "gacyPostBuildHeadAttribute",
 ].join("");
+
+/** Opt-in flag for experimental Docusaurus performance features. */
+const enableExperimentalFaster =
+    process.env["DOCUSAURUS_ENABLE_EXPERIMENTAL"] === "true";
 
 /** Public origin for the published documentation site. */
 const siteOrigin = "https://nick2bad4u.github.io";
@@ -160,11 +162,11 @@ const futureConfig = {
         // (CssMinimizer parsing errors -> large chunks of CSS dropped), which
         // makes many Infima (--ifm-*) variables undefined across the site.
         // Re-enable only after verifying the build output CSS is valid.
+        useCssCascadeLayers: false,
         siteStorageNamespacing: true,
         fasterByDefault: true,
         removeLegacyPostBuildHeadAttribute: true,
         mdx1CompatDisabledByDefault: true,
-        useCssCascadeLayers: false,
     },
 } satisfies Config["future"];
 
