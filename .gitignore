@@ -865,3 +865,6 @@ eslint.config.bundled_**
 # Forked Plugin
 eslint-plugin-ts-immutable/
 docs/docusaurus/static/stylelint-inspector/
+# Ignore generated doc coverage badges
+docs/docusaurus/static/img/coverage.json
+docs/docusaurus/static/img/coverage.svg
