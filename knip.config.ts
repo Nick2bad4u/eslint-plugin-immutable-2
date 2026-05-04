@@ -14,8 +14,6 @@ const knipConfig: KnipConfig = {
     entry: [],
     ignore: [
         "docs/docusaurus/src/css/custom.css.d.ts",
-        // Docusaurus theme swizzle override — loaded at build time by Docusaurus, not statically imported
-        "docs/docusaurus/src/theme/prism-include-languages.js",
         // Generated TypeDoc Docusaurus sidebar — consumed by Docusaurus at build time
         "docs/docusaurus/site-docs/developer/api/typedoc-sidebar.cjs",
         "docs/docusaurus/typedoc-plugins/hashToBangLinks.mjs",
