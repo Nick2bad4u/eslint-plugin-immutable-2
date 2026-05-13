@@ -815,7 +815,7 @@ const aggregateTimingBreakdown = (lintResults) => {
  * Collect top rules by timing from lint results.
  *
  * @param {LintResults} lintResults - ESLint lint results.
- * @param {number} [topCount=8] - Maximum rule entries to return. Default is `8`
+ * @param {number} [topCount] - Maximum rule entries to return. Default is `8`
  *
  * @returns {RuleTiming[]} Sorted top rule timings.
  */

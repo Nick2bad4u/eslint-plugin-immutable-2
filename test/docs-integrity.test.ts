@@ -12,7 +12,7 @@ describe("immutable rule docs", () => {
             const url = rule.meta?.docs?.url;
 
             expect(url, `Missing docs url for ${ruleName}`).toBeDefined();
-            expect(typeof url).toBe("string");
+            expect(url).toBeTypeOf("string");
             expect(url).toContain(`/rules/${ruleName}`);
         }
     });

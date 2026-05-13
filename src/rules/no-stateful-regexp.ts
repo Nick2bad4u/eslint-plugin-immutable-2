@@ -1,5 +1,6 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 
+import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { arrayFirst, arrayJoin, isEmpty } from "ts-extras";
 
 import { createRule } from "../util/rule.js";
@@ -26,12 +27,15 @@ const getStatefulFlags = (flagsText: string): readonly string[] => {
 const getStaticStringValue = (
     node: Readonly<TSESTree.Expression>
 ): null | string => {
-    if (node.type === "Literal" && typeof node.value === "string") {
+    if (
+        node.type === AST_NODE_TYPES.Literal &&
+        typeof node.value === "string"
+    ) {
         return node.value;
     }
 
     if (
-        node.type === "TemplateLiteral" &&
+        node.type === AST_NODE_TYPES.TemplateLiteral &&
         node.expressions.length === 0 &&
         node.quasis.length === 1
     ) {
@@ -108,7 +112,7 @@ const noStatefulRegexpRule: ReturnType<
             const flagsArgument = node.arguments[1];
             if (
                 flagsArgument === undefined ||
-                flagsArgument.type === "SpreadElement"
+                flagsArgument.type === AST_NODE_TYPES.SpreadElement
             ) {
                 return;
             }

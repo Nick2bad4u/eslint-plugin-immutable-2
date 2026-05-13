@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { AST_NODE_TYPES } from "@typescript-eslint/utils";
+
 import {
     type IgnoreLocalOption,
     ignoreLocalSchemaProperty,
@@ -39,11 +41,11 @@ const optionsSchema: readonly JSONSchema4[] = [
     },
 ];
 
-type ImplicitCandidate = {
+interface ImplicitCandidate {
     readonly id: TSESTree.Node;
     readonly init: null | TSESTree.Node;
     readonly reportNode: TSESTree.Node;
-};
+}
 
 const getImplicitCandidates = (
     node: Readonly<
@@ -53,7 +55,7 @@ const getImplicitCandidates = (
         | TSESTree.VariableDeclaration
     >
 ): readonly ImplicitCandidate[] => {
-    if (node.type === "VariableDeclaration") {
+    if (node.type === AST_NODE_TYPES.VariableDeclaration) {
         return node.declarations.map((declaration) => ({
             id: declaration.id,
             init: declaration.init,
@@ -90,7 +92,6 @@ const readonlyArrayRule: ReturnType<
             }
 
             if (
-                node.parent !== undefined &&
                 isTSTypeOperator(node.parent) &&
                 node.parent.operator === "readonly"
             ) {
@@ -103,10 +104,7 @@ const readonlyArrayRule: ReturnType<
 
             context.report({
                 fix: (fixer): readonly TSESLint.RuleFix[] => {
-                    if (
-                        node.parent !== undefined &&
-                        isTSArrayType(node.parent)
-                    ) {
+                    if (isTSArrayType(node.parent)) {
                         return [
                             fixer.insertTextBefore(node, "(readonly "),
                             fixer.insertTextAfter(node, ")"),

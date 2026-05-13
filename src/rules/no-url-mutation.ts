@@ -1,6 +1,7 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { setHas } from "ts-extras";
 
 import {
@@ -59,23 +60,23 @@ const searchParamsMutatorMethods: ReadonlySet<string> = new Set([
 const unwrapExpression = (
     node: Readonly<TSESTree.Expression>
 ): Readonly<TSESTree.Expression> => {
-    if (node.type === "ChainExpression") {
+    if (node.type === AST_NODE_TYPES.ChainExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSAsExpression") {
+    if (node.type === AST_NODE_TYPES.TSAsExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSNonNullExpression") {
+    if (node.type === AST_NODE_TYPES.TSNonNullExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSSatisfiesExpression") {
+    if (node.type === AST_NODE_TYPES.TSSatisfiesExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSTypeAssertion") {
+    if (node.type === AST_NODE_TYPES.TSTypeAssertion) {
         return unwrapExpression(node.expression);
     }
 
@@ -92,7 +93,7 @@ const getMemberPropertyName = (
 
     if (
         memberExpression.computed &&
-        memberExpression.property.type === "Literal" &&
+        memberExpression.property.type === AST_NODE_TYPES.Literal &&
         typeof memberExpression.property.value === "string"
     ) {
         return memberExpression.property.value;
@@ -146,7 +147,10 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 expression: Readonly<TSESTree.Expression>
             ): boolean => {
                 const node = unwrapExpression(expression);
-                if (!isMemberExpression(node) || node.object.type === "Super") {
+                if (
+                    !isMemberExpression(node) ||
+                    node.object.type === AST_NODE_TYPES.Super
+                ) {
                     return false;
                 }
 
@@ -200,7 +204,7 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     if (
                         shouldIgnore(node, context, options) ||
                         !isMemberExpression(node.left) ||
-                        node.left.object.type === "Super"
+                        node.left.object.type === AST_NODE_TYPES.Super
                     ) {
                         return;
                     }
@@ -220,7 +224,7 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     if (
                         shouldIgnore(node, context, options) ||
                         !isMemberExpression(node.callee) ||
-                        node.callee.object.type === "Super" ||
+                        node.callee.object.type === AST_NODE_TYPES.Super ||
                         !isIdentifier(node.callee.property)
                     ) {
                         return;
@@ -249,7 +253,7 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
 
                     if (
                         shouldIgnore(node.argument, context, options) ||
-                        node.argument.object.type === "Super"
+                        node.argument.object.type === AST_NODE_TYPES.Super
                     ) {
                         return;
                     }
@@ -272,7 +276,7 @@ const noUrlMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
 
                     if (
                         shouldIgnore(node.argument, context, options) ||
-                        node.argument.object.type === "Super"
+                        node.argument.object.type === AST_NODE_TYPES.Super
                     ) {
                         return;
                     }

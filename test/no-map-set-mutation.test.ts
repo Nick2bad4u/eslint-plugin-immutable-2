@@ -137,7 +137,7 @@ describe("no-map-set-mutation rule", () => {
             // IgnoreAccessorPattern covers the variable name
             {
                 code: "const draftMap = new Map<string, number>(); draftMap.set('a', 1);",
-                options: [{ ignoreAccessorPattern: "draft*" }],
+                options: [{ ignorePattern: "^draft" }],
             },
         ],
     });

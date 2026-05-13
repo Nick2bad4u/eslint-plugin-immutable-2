@@ -1,6 +1,7 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { setHas } from "ts-extras";
 
 import {
@@ -68,45 +69,66 @@ const bufferMutatorMethods: ReadonlySet<string> = new Set([
     "writeIntBE",
     "writeIntLE",
     "writeUInt8",
-    "writeUInt16BE",
-    "writeUInt16LE",
-    "writeUInt32BE",
-    "writeUInt32LE",
-    "writeUIntBE",
-    "writeUIntLE",
     "writeUint8",
+    "writeUInt16BE",
     "writeUint16BE",
+    "writeUInt16LE",
     "writeUint16LE",
+    "writeUInt32BE",
     "writeUint32BE",
+    "writeUInt32LE",
     "writeUint32LE",
+    "writeUIntBE",
     "writeUintBE",
+    "writeUIntLE",
     "writeUintLE",
 ] as const);
 
 const unwrapExpression = (
     node: Readonly<TSESTree.Expression>
 ): Readonly<TSESTree.Expression> => {
-    if (node.type === "ChainExpression") {
+    if (node.type === AST_NODE_TYPES.ChainExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSAsExpression") {
+    if (node.type === AST_NODE_TYPES.TSAsExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSNonNullExpression") {
+    if (node.type === AST_NODE_TYPES.TSNonNullExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSSatisfiesExpression") {
+    if (node.type === AST_NODE_TYPES.TSSatisfiesExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSTypeAssertion") {
+    if (node.type === AST_NODE_TYPES.TSTypeAssertion) {
         return unwrapExpression(node.expression);
     }
 
     return node;
+};
+
+const isBufferFactoryCall = (
+    expression: Readonly<TSESTree.CallExpression>
+): boolean => {
+    if (!isMemberExpression(expression.callee)) {
+        return false;
+    }
+
+    if (
+        expression.callee.object.type === AST_NODE_TYPES.Super ||
+        !isIdentifier(expression.callee.object) ||
+        !isIdentifier(expression.callee.property)
+    ) {
+        return false;
+    }
+
+    return (
+        expression.callee.object.name === "Buffer" &&
+        setHas(bufferFactoryMethods, expression.callee.property.name)
+    );
 };
 
 /** `no-buffer-mutation` rule implementation. */
@@ -131,30 +153,6 @@ const noBufferMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
                 }
 
                 return null;
-            };
-
-            const isBufferFactoryCall = (
-                expression: Readonly<TSESTree.CallExpression>
-            ): boolean => {
-                if (!isMemberExpression(expression.callee)) {
-                    return false;
-                }
-
-                if (
-                    expression.callee.object.type === "Super" ||
-                    !isIdentifier(expression.callee.object) ||
-                    !isIdentifier(expression.callee.property)
-                ) {
-                    return false;
-                }
-
-                return (
-                    expression.callee.object.name === "Buffer" &&
-                    setHas(
-                        bufferFactoryMethods,
-                        expression.callee.property.name
-                    )
-                );
             };
 
             const isBufferExpression = (
@@ -210,7 +208,7 @@ const noBufferMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
 
                     if (
                         !isMemberExpression(node.callee) ||
-                        node.callee.object.type === "Super" ||
+                        node.callee.object.type === AST_NODE_TYPES.Super ||
                         !isIdentifier(node.callee.property)
                     ) {
                         return;

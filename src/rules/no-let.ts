@@ -1,6 +1,8 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { AST_NODE_TYPES } from "@typescript-eslint/utils";
+
 import {
     type IgnorePatternOption,
     ignorePatternSchemaProperty,
@@ -26,7 +28,9 @@ const optionsSchema: readonly JSONSchema4[] = [
 /** `no-let` rule implementation. */
 const isLetInClassicForLoopInit = (
     node: Readonly<TSESTree.VariableDeclaration>
-): boolean => node.parent?.type === "ForStatement" && node.parent.init === node;
+): boolean =>
+    node.parent.type === AST_NODE_TYPES.ForStatement &&
+    node.parent.init === node;
 
 const canSafelySuggestConst = (
     node: Readonly<TSESTree.VariableDeclaration>,

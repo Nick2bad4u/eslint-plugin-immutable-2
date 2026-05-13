@@ -27,7 +27,10 @@ export const parseMarkdownHeadingsAtLevel = (
 
         if (trimmedStartLine.startsWith(CODE_FENCE_DELIMITER)) {
             isInsideFencedCodeBlock = !isInsideFencedCodeBlock;
-        } else if (
+            continue;
+        }
+
+        if (
             !isInsideFencedCodeBlock &&
             trimmedStartLine.startsWith(headingPrefixWithSpace) &&
             !trimmedStartLine.startsWith(`${headingPrefix}#`)

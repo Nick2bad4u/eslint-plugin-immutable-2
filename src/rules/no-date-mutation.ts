@@ -1,6 +1,7 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { setHas } from "ts-extras";
 
 import {
@@ -57,23 +58,23 @@ const dateMutatorMethods = new Set<string>([
 const unwrapExpression = (
     node: Readonly<TSESTree.Expression>
 ): Readonly<TSESTree.Expression> => {
-    if (node.type === "ChainExpression") {
+    if (node.type === AST_NODE_TYPES.ChainExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSAsExpression") {
+    if (node.type === AST_NODE_TYPES.TSAsExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSNonNullExpression") {
+    if (node.type === AST_NODE_TYPES.TSNonNullExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSSatisfiesExpression") {
+    if (node.type === AST_NODE_TYPES.TSSatisfiesExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSTypeAssertion") {
+    if (node.type === AST_NODE_TYPES.TSTypeAssertion) {
         return unwrapExpression(node.expression);
     }
 
@@ -153,7 +154,7 @@ const noDateMutationRule: ReturnType<typeof createRule<Options, MessageIds>> =
 
                     if (
                         !isMemberExpression(node.callee) ||
-                        node.callee.object.type === "Super" ||
+                        node.callee.object.type === AST_NODE_TYPES.Super ||
                         !isIdentifier(node.callee.property)
                     ) {
                         return;

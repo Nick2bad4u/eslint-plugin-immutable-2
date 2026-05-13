@@ -1,6 +1,7 @@
 import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { setHas } from "ts-extras";
 
 import {
@@ -48,23 +49,23 @@ const storageHostGlobals: ReadonlySet<string> = new Set([
 const unwrapExpression = (
     node: Readonly<TSESTree.Expression>
 ): Readonly<TSESTree.Expression> => {
-    if (node.type === "ChainExpression") {
+    if (node.type === AST_NODE_TYPES.ChainExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSAsExpression") {
+    if (node.type === AST_NODE_TYPES.TSAsExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSNonNullExpression") {
+    if (node.type === AST_NODE_TYPES.TSNonNullExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSSatisfiesExpression") {
+    if (node.type === AST_NODE_TYPES.TSSatisfiesExpression) {
         return unwrapExpression(node.expression);
     }
 
-    if (node.type === "TSTypeAssertion") {
+    if (node.type === AST_NODE_TYPES.TSTypeAssertion) {
         return unwrapExpression(node.expression);
     }
 
@@ -82,6 +83,24 @@ const getStorageKindFromName = (nameToCheck: string): null | StorageKind => {
             return null;
         }
     }
+};
+
+const getMutationNameFromMember = (
+    memberExpression: Readonly<TSESTree.MemberExpression>
+): string => {
+    if (!memberExpression.computed && isIdentifier(memberExpression.property)) {
+        return memberExpression.property.name;
+    }
+
+    if (
+        memberExpression.computed &&
+        memberExpression.property.type === AST_NODE_TYPES.Literal &&
+        typeof memberExpression.property.value === "string"
+    ) {
+        return memberExpression.property.value;
+    }
+
+    return "<computed>";
 };
 
 /** `no-storage-mutation` rule implementation. */
@@ -140,22 +159,21 @@ const noStorageMutationRule: ReturnType<
                     : null;
             }
 
-            if (!isMemberExpression(node) || node.object.type === "Super") {
+            if (
+                !isMemberExpression(node) ||
+                node.object.type === AST_NODE_TYPES.Super
+            ) {
                 return null;
             }
 
-            let memberName: null | string = null;
-
-            if (!node.computed && isIdentifier(node.property)) {
-                memberName = node.property.name;
-            } else if (
-                node.computed &&
-                node.property.type === "Literal" &&
-                typeof node.property.value === "string"
-            ) {
-                memberName = node.property.value;
-            }
-
+            const memberName =
+                !node.computed && isIdentifier(node.property)
+                    ? node.property.name
+                    : node.computed &&
+                        node.property.type === AST_NODE_TYPES.Literal &&
+                        typeof node.property.value === "string"
+                      ? node.property.value
+                      : null;
             if (memberName === null) {
                 return null;
             }
@@ -212,27 +230,6 @@ const noStorageMutationRule: ReturnType<
             });
         };
 
-        const getMutationNameFromMember = (
-            memberExpression: Readonly<TSESTree.MemberExpression>
-        ): string => {
-            if (
-                !memberExpression.computed &&
-                isIdentifier(memberExpression.property)
-            ) {
-                return memberExpression.property.name;
-            }
-
-            if (
-                memberExpression.computed &&
-                memberExpression.property.type === "Literal" &&
-                typeof memberExpression.property.value === "string"
-            ) {
-                return memberExpression.property.value;
-            }
-
-            return "<computed>";
-        };
-
         return {
             AssignmentExpression(node): void {
                 if (isIdentifier(node.left)) {
@@ -243,7 +240,7 @@ const noStorageMutationRule: ReturnType<
                 if (
                     shouldIgnore(node, context, options) ||
                     !isMemberExpression(node.left) ||
-                    node.left.object.type === "Super"
+                    node.left.object.type === AST_NODE_TYPES.Super
                 ) {
                     return;
                 }
@@ -263,7 +260,7 @@ const noStorageMutationRule: ReturnType<
                 if (
                     shouldIgnore(node, context, options) ||
                     !isMemberExpression(node.callee) ||
-                    node.callee.object.type === "Super" ||
+                    node.callee.object.type === AST_NODE_TYPES.Super ||
                     !isIdentifier(node.callee.property)
                 ) {
                     return;
@@ -285,7 +282,7 @@ const noStorageMutationRule: ReturnType<
                 if (
                     node.operator !== "delete" ||
                     !isMemberExpression(node.argument) ||
-                    node.argument.object.type === "Super" ||
+                    node.argument.object.type === AST_NODE_TYPES.Super ||
                     shouldIgnore(node.argument, context, options)
                 ) {
                     return;
@@ -305,7 +302,7 @@ const noStorageMutationRule: ReturnType<
             UpdateExpression(node): void {
                 if (
                     !isMemberExpression(node.argument) ||
-                    node.argument.object.type === "Super" ||
+                    node.argument.object.type === AST_NODE_TYPES.Super ||
                     shouldIgnore(node.argument, context, options)
                 ) {
                     return;

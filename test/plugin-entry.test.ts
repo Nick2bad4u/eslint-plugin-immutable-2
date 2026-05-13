@@ -16,7 +16,7 @@ describe("plugin entry module", () => {
             name: "eslint-plugin-immutable-2",
             namespace: "immutable",
         });
-        expect(typeof immutablePlugin.meta.version).toBe("string");
+        expect(immutablePlugin.meta.version).toBeTypeOf("string");
     });
 
     it("contains all migrated immutable rules", () => {

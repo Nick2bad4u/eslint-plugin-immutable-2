@@ -10,40 +10,25 @@ import { afterAll, describe, it } from "vitest";
 
 import immutablePlugin from "../../src/plugin";
 
-type UnknownArray = readonly unknown[];
 type UnknownRecord = Readonly<Record<string, unknown>>;
 
-/**
- * Assert that a dynamic runtime value is callable for RuleTester hook wiring.
- *
- * @param candidate - Dynamic value under validation.
- * @param hookName - Human-readable hook label for diagnostics.
- */
-const assertRuleTesterHook: (
-    candidate: unknown,
-    hookName: string
-) => asserts candidate is (...arguments_: UnknownArray) => unknown = (
-    candidate,
-    hookName
-) => {
-    if (typeof candidate !== "function") {
-        throw new TypeError(
-            `Expected Vitest hook '${hookName}' to be a function for RuleTester wiring.`
-        );
-    }
+RuleTester.afterAll = (...arguments_) => {
+    Reflect.apply(afterAll, undefined, arguments_);
 };
 
-assertRuleTesterHook(afterAll, "afterAll");
-RuleTester.afterAll = afterAll;
-assertRuleTesterHook(describe, "describe");
-RuleTester.describe = describe;
-assertRuleTesterHook(it, "it");
-RuleTester.it = it;
-const vitestItOnly: unknown = Reflect.get(it, "only");
-assertRuleTesterHook(vitestItOnly, "it.only");
-RuleTester.itOnly = (
-    ...arguments_: readonly [...Parameters<typeof RuleTester.itOnly>]
-) => {
+RuleTester.describe = (...arguments_) => {
+    Reflect.apply(describe, undefined, arguments_);
+};
+
+RuleTester.it = (...arguments_) => {
+    Reflect.apply(it, undefined, arguments_);
+};
+
+const vitestItOnly = Reflect.get(it, "only");
+if (typeof vitestItOnly !== "function") {
+    throw new TypeError("Expected vitest it.only hook to be callable.");
+}
+RuleTester.itOnly = (...arguments_) => {
     Reflect.apply(vitestItOnly, undefined, arguments_);
 };
 

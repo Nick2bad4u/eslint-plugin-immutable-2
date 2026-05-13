@@ -1,6 +1,7 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
+import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { setHas } from "ts-extras";
 
 import {
@@ -53,7 +54,7 @@ const noReflectMutationRule: ReturnType<
 
             if (
                 !isMemberExpression(node.callee) ||
-                node.callee.object.type === "Super" ||
+                node.callee.object.type === AST_NODE_TYPES.Super ||
                 !isIdentifier(node.callee.object) ||
                 !isIdentifier(node.callee.property)
             ) {

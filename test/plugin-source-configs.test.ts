@@ -27,10 +27,10 @@ const getRuleIds = (config: Readonly<PluginConfig>): Set<string> =>
 
 const immutableConfigNames = [
     "all",
-    "recommended",
-    "immutable",
     "functional",
     "functional-lite",
+    "immutable",
+    "recommended",
 ] as const;
 
 describe("source plugin config wiring", () => {
@@ -92,6 +92,14 @@ describe("source plugin config wiring", () => {
         expect(functionalLite.rules).not.toHaveProperty("immutable/no-class");
         expect(functionalLite.rules).not.toHaveProperty("immutable/no-this");
         expect(functionalLite.rules).not.toHaveProperty("immutable/no-throw");
+    });
+
+    it("enables strict functional rules and plugin metadata", async () => {
+        expect.hasAssertions();
+
+        const plugin = await loadSourcePlugin();
+        const functional = plugin.configs.functional;
+
         expect(functional.rules).toHaveProperty(
             "immutable/no-expression-statement"
         );
@@ -107,7 +115,6 @@ describe("source plugin config wiring", () => {
         expect(functional.rules).toHaveProperty("immutable/no-this", "error");
         expect(functional.rules).toHaveProperty("immutable/no-throw", "error");
         expect(functional.rules).toHaveProperty("immutable/no-try", "error");
-
         expect(plugin.meta.name).toBe("eslint-plugin-immutable-2");
     });
 

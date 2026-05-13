@@ -1,5 +1,7 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 
+import { objectHasOwn } from "ts-extras";
+
 import {
     isClassLike,
     isFunctionLike,
@@ -7,6 +9,12 @@ import {
     isMethodDefinition,
     isTSInterfaceBody,
 } from "./typeguard.js";
+
+const isNode = (value: unknown): value is Readonly<TSESTree.Node> =>
+    typeof value === "object" &&
+    value !== null &&
+    objectHasOwn(value, "type") &&
+    objectHasOwn(value, "parent");
 
 /** Check whether a node is inside a function-like scope. */
 export const inFunction = (node: Readonly<TSESTree.Node>): boolean => {
@@ -76,13 +84,15 @@ export const inConstructor = (node: Readonly<TSESTree.Node>): boolean => {
  * Check whether a node sits within a function return-type annotation.
  */
 export const isInReturnType = (node: Readonly<TSESTree.Node>): boolean => {
-    let cursor: null | Readonly<TSESTree.Node> = node;
+    let cursor: Readonly<TSESTree.Node> = node;
 
-    while (cursor !== null) {
-        const parent: Readonly<TSESTree.Node> | undefined = cursor.parent;
-        if (parent === undefined) {
+    while (true) {
+        const parentCandidate: unknown = cursor.parent;
+        if (!isNode(parentCandidate)) {
             return false;
         }
+
+        const parent = parentCandidate;
 
         if (isFunctionLike(parent) && parent.returnType === cursor) {
             return true;
@@ -90,6 +100,4 @@ export const isInReturnType = (node: Readonly<TSESTree.Node>): boolean => {
 
         cursor = parent;
     }
-
-    return false;
 };

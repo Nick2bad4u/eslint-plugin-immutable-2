@@ -1,7 +1,14 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
-import { arrayFirst, isDefined, isEmpty, stringSplit } from "ts-extras";
+import {
+    arrayFirst,
+    arrayJoin,
+    isDefined,
+    isEmpty,
+    setHas,
+    stringSplit,
+} from "ts-extras";
 
 import type { BaseOptions, RuleContext } from "../util/rule.js";
 
@@ -25,34 +32,34 @@ export type AllIgnoreOptions = IgnoreAccessorPatternOption &
     IgnorePatternOption;
 
 /** Option to ignore by accessor glob-like pattern(s). */
-export type IgnoreAccessorPatternOption = {
+export interface IgnoreAccessorPatternOption {
     readonly ignoreAccessorPattern?: readonly string[] | string;
-};
+}
 
 /** Option to ignore nodes that appear in class scopes. */
-export type IgnoreClassOption = {
+export interface IgnoreClassOption {
     readonly ignoreClass?: boolean;
-};
+}
 
 /** Option to ignore nodes that appear in interface scopes. */
-export type IgnoreInterfaceOption = {
+export interface IgnoreInterfaceOption {
     readonly ignoreInterface?: boolean;
-};
+}
 
 /** Option to ignore local (function-scoped) nodes. */
-export type IgnoreLocalOption = {
+export interface IgnoreLocalOption {
     readonly ignoreLocal?: boolean;
-};
+}
 
 /** Option to ignore by identifier/member-access regex pattern(s). */
-export type IgnorePatternOption = {
+export interface IgnorePatternOption {
     readonly ignorePattern?: readonly string[] | string;
-};
+}
 
 /** Option to ignore return-type positions. */
-export type IgnoreReturnTypeOption = {
+export interface IgnoreReturnTypeOption {
     readonly ignoreReturnType?: boolean;
-};
+}
 
 /** Shared JSON schema property for `ignoreLocal`. */
 export const ignoreLocalSchemaProperty: Readonly<Record<string, JSONSchema4>> =
@@ -125,9 +132,33 @@ const normalizePatterns = (
     return [...patterns];
 };
 
+const regExpMetaCharacters: ReadonlySet<string> = new Set([
+    "$",
+    "(",
+    ")",
+    "*",
+    "+",
+    ".",
+    "?",
+    "[",
+    "\\",
+    "]",
+    "^",
+    "{",
+    "|",
+    "}",
+] as const);
+
 /** Escape regex metacharacters so user text can be matched literally. */
 const escapeRegExp = (value: string): string =>
-    value.replaceAll(/[$()*+.?[\\\]^{|}]/gu, String.raw`\$&`);
+    arrayJoin(
+        Array.from(value, (character) =>
+            setHas(regExpMetaCharacters, character)
+                ? `\\${character}`
+                : character
+        ),
+        ""
+    );
 
 /**
  * Safely test a regex pattern string against text.
@@ -202,7 +233,7 @@ const matchesAccessorPattern = (
             return false;
         }
 
-        const escapedAsterisk = String.raw`\*`;
+        const escapedAsterisk = "*";
         const escapedSegment = escapeRegExp(currentPatternPart).replaceAll(
             escapedAsterisk,
             ".*"
