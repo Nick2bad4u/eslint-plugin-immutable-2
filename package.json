@@ -81,7 +81,7 @@
         "build:types:cjs": "node -e \"require('node:fs').copyFileSync('dist/plugin.d.ts','dist/plugin.d.cts')\"",
         "changelog:generate": "git-cliff --config cliff.toml --output CHANGELOG.md",
         "changelog:preview": "git-cliff --config cliff.toml --unreleased",
-        "changelog:release-notes": "git-cliff --config cliff.toml --latest --strip all",
+        "changelog:release-notes": "git-cliff --config cliff.toml --current --strip all",
         "clean:cache": "node -e \"const fs=require('node:fs');for (const p of [\"dist\",\"coverage\",\"cache\",\".cache\",\".vite\",\".turbo\"]) { try { fs.rmSync(p,{recursive:true,force:true,maxRetries:process.platform==='win32'?10:0}); } catch {} }\"",
         "clean:cache:coverage": "node -e \"const fs=require('node:fs');for (const p of [\"coverage\",\".coverage\"]) { try { fs.rmSync(p,{recursive:true,force:true,maxRetries:process.platform==='win32'?10:0}); } catch {} }\"",
         "clean:cache:dist": "node -e \"const fs=require('node:fs');for (const p of [\"dist\",\"release\"]) { try { fs.rmSync(p,{recursive:true,force:true,maxRetries:process.platform==='win32'?10:0}); } catch {} }\"",
