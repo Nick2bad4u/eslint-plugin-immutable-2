@@ -674,7 +674,12 @@ const config = {
             title: "eslint-plugin-immutable-2",
         },
         prism: {
-            additionalLanguages: ["bash", "json", "yaml", "typescript"],
+            additionalLanguages: [
+                "bash",
+                "json",
+                "yaml",
+                "typescript",
+            ],
             darkTheme: prismThemes.dracula,
             defaultLanguage: "typescript",
             theme: prismThemes.github,
