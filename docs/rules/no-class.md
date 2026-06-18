@@ -19,7 +19,7 @@ Class instances often rely on mutable state. Functional composition with plain o
 
 ```ts
 class Counter {
-  value = 0;
+ value = 0;
 }
 ```
 
@@ -34,19 +34,19 @@ const createCounter = () => ({ value: 0 });
 ```ts
 // ❌ Class expression keeps mutable instance state
 const Store = class {
-    private cache = new Map<string, string>();
+ private cache = new Map<string, string>();
 };
 
 // ✅ Factory returns explicit values and functions
 const setEntry = (
-    cache: ReadonlyMap<string, string>,
-    key: string,
-    value: string,
+ cache: ReadonlyMap<string, string>,
+ key: string,
+ value: string
 ) => new Map([...cache.entries(), [key, value]]);
 
 const createStore = (cache: ReadonlyMap<string, string> = new Map()) => ({
-    get: (key: string) => cache.get(key),
-    set: (key: string, value: string) => createStore(setEntry(cache, key, value)),
+ get: (key: string) => cache.get(key),
+ set: (key: string, value: string) => createStore(setEntry(cache, key, value)),
 });
 ```
 
@@ -56,13 +56,13 @@ const createStore = (cache: ReadonlyMap<string, string> = new Map()) => ({
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-    plugins: { immutable },
-    rules: {
-      "immutable/no-class": "error",
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-class": "error",
   },
+ },
 ];
 ```
 

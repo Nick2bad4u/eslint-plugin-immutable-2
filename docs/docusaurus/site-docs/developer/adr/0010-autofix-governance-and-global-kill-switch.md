@@ -30,7 +30,7 @@ Adopt a formal autofix governance model with these constraints:
 
 ## Rationale
 
-1. **Operational safety**: today’s fixers are small, local text rewrites that
+1. **Operational safety**: today's fixers are small, local text rewrites that
    can be governed accurately at rule level.
 2. **Predictable rollout**: teams can already stage adoption through preset
    choice, severity changes, and `--fix` usage in CI.

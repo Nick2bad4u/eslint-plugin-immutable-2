@@ -34,8 +34,8 @@ analytics.track("checkout_started");
 
 // ✅ Explicit command collection
 const event = {
-    name: "checkout_started",
-    timestamp: Date.now(),
+ name: "checkout_started",
+ timestamp: Date.now(),
 };
 
 return publishAnalytics(event);
@@ -47,13 +47,13 @@ return publishAnalytics(event);
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-expression-statement": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-expression-statement": "error",
+  },
+ },
 ];
 ```
 

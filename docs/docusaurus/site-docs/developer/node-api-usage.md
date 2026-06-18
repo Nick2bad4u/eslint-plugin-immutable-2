@@ -15,22 +15,22 @@ import { ESLint } from "eslint";
 import immutable from "eslint-plugin-immutable-2";
 
 const eslint = new ESLint({
-  overrideConfig: {
-    files: ["**/*.{js,ts}"],
-    plugins: {
-      immutable,
-    },
-    rules: {
-      "immutable/no-let": "error",
-    },
+ overrideConfig: {
+  files: ["**/*.{js,ts}"],
+  plugins: {
+   immutable,
   },
+  rules: {
+   "immutable/no-let": "error",
+  },
+ },
 });
 
 const fileResults = await eslint.lintFiles(["src/**/*.{js,ts}"]);
 
 const textResults = await eslint.lintText(
-  "let total = 0;\nfor (const value of values) total += value;",
-  { filePath: "virtual.js" }
+ "let total = 0;\nfor (const value of values) total += value;",
+ { filePath: "virtual.js" }
 );
 
 const allResults = [...fileResults, ...textResults];

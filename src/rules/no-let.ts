@@ -58,45 +58,38 @@ const canSafelySuggestConst = (
 const noLetRule: ReturnType<
     typeof createRule<Options, "generic" | "suggestConst">
 > = createRule<Options, "generic" | "suggestConst">({
-    create(context, [ignoreOptions]) {
-        return {
-            VariableDeclaration(node) {
-                if (node.kind !== "let") {
-                    return;
-                }
+    create: (context, [ignoreOptions]) => ({
+        VariableDeclaration(node) {
+            if (node.kind !== "let") {
+                return;
+            }
 
-                if (shouldIgnore(node, context, ignoreOptions)) {
-                    return;
-                }
+            if (shouldIgnore(node, context, ignoreOptions)) {
+                return;
+            }
 
-                context.report({
-                    messageId: "generic",
-                    node,
-                    suggest: canSafelySuggestConst(node, context)
-                        ? [
-                              {
-                                  fix: (fixer) => {
-                                      const letToken =
-                                          context.sourceCode.getFirstToken(
-                                              node
-                                          );
-                                      if (letToken === null) {
-                                          return null;
-                                      }
+            context.report({
+                messageId: "generic",
+                node,
+                suggest: canSafelySuggestConst(node, context)
+                    ? [
+                          {
+                              fix: (fixer) => {
+                                  const letToken =
+                                      context.sourceCode.getFirstToken(node);
+                                  if (letToken === null) {
+                                      return null;
+                                  }
 
-                                      return fixer.replaceText(
-                                          letToken,
-                                          "const"
-                                      );
-                                  },
-                                  messageId: "suggestConst",
+                                  return fixer.replaceText(letToken, "const");
                               },
-                          ]
-                        : null,
-                });
-            },
-        };
-    },
+                              messageId: "suggestConst",
+                          },
+                      ]
+                    : null,
+            });
+        },
+    }),
     meta: {
         defaultOptions: [{}],
         deprecated: false,

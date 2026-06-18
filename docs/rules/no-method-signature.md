@@ -18,7 +18,7 @@ Readonly function-valued properties are more explicit and align with immutable i
 
 ```ts
 interface Service {
-  run(input: string): number;
+ run(input: string): number;
 }
 ```
 
@@ -26,7 +26,7 @@ interface Service {
 
 ```ts
 interface Service {
-  readonly run: (input: string) => number;
+ readonly run: (input: string) => number;
 }
 ```
 
@@ -35,12 +35,12 @@ interface Service {
 ```ts
 // ❌ Optional method signature
 interface Formatter {
-  format?(value: string): string;
+ format?(value: string): string;
 }
 
 // ✅ Optional readonly function property
 interface Formatter {
-  readonly format?: (value: string) => string;
+ readonly format?: (value: string) => string;
 }
 ```
 
@@ -50,13 +50,13 @@ interface Formatter {
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    files: ["**/*.{ts,tsx,mts,cts}"],
-    plugins: { immutable },
-    rules: {
-      "immutable/no-method-signature": "error",
-    },
+ {
+  files: ["**/*.{ts,tsx,mts,cts}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-method-signature": "error",
   },
+ },
 ];
 ```
 

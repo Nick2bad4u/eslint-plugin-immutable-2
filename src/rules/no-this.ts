@@ -6,16 +6,14 @@ export const name = "no-this" as const;
 /** `no-this` rule implementation. */
 const noThisRule: ReturnType<typeof createRule<readonly [], "generic">> =
     createRule<readonly [], "generic">({
-        create(context) {
-            return {
-                ThisExpression(node) {
-                    context.report({
-                        messageId: "generic",
-                        node,
-                    });
-                },
-            };
-        },
+        create: (context) => ({
+            ThisExpression(node) {
+                context.report({
+                    messageId: "generic",
+                    node,
+                });
+            },
+        }),
         meta: {
             deprecated: false,
             docs: {

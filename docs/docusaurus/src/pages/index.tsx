@@ -1,28 +1,28 @@
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import GitHubStats from "../components/GitHubStats";
+import Layout from "@theme/Layout";
 
+import GitHubStats from "../components/GitHubStats";
 import styles from "./index.module.css";
 
-type HeroBadge = {
+interface HeroBadge {
     readonly description: string;
     readonly icon: string;
     readonly label: string;
-};
+}
 
-type HeroStat = {
+interface HeroStat {
     readonly description: string;
     readonly headline: string;
-};
+}
 
-type HomeCard = {
+interface HomeCard {
     readonly description: string;
     readonly icon: string;
     readonly title: string;
     readonly to: string;
-};
+}
 
 /**
  * Hero badges Note: These icons are from the "Nerd Font Symbols" font.
@@ -32,19 +32,19 @@ type HomeCard = {
 const heroBadges = [
     {
         description: "Drop-in config for ESLint v9+ and modern repos.",
-        icon: "\uf013",
+        icon: "\u{F013}",
         label: "Flat Config native",
     },
     {
         description:
             "Works in JavaScript today and scales to type-aware analysis in TypeScript.",
-        icon: "\ue628",
+        icon: "\u{E628}",
         label: "JavaScript + TypeScript",
     },
     {
         description:
             "Clear diagnostics with safe autofixes and practical migration guidance.",
-        icon: "\uf0ad",
+        icon: "\u{F0AD}",
         label: "Actionable rule docs",
     },
 ] as const satisfies readonly HeroBadge[];
@@ -57,15 +57,15 @@ const heroBadges = [
 const heroStats = [
     {
         description: "Core immutable and functional rules for everyday code.",
-        headline: "\uf0ca 14 Core Rules",
+        headline: "\u{F0CA} 14 Core Rules",
     },
     {
         description: "Start small, then scale to stricter coverage.",
-        headline: "\ue690 5 Presets",
+        headline: "\u{E690} 5 Presets",
     },
     {
         description: "Safe rewrites where semantics are preserved.",
-        headline: "\udb80\udc68 Safe Autofix & Suggestions",
+        headline: "\u{F0068} Safe Autofix & Suggestions",
     },
 ] as const satisfies readonly HeroStat[];
 
@@ -74,10 +74,10 @@ const heroStats = [
  *
  * @see https://www.nerdfonts.com/cheat-sheet for available icons in the "Nerd Font Symbols" font
  */
-const overviewButtonIcon = "\udb81\udf1d";
-const comparePresetsButtonIcon = "\udb85\udc92";
-const heroKickerIcon = "\uf0ad";
-const heroKickerIcon2 = "\uf135";
+const overviewButtonIcon = "\u{F071D}";
+const comparePresetsButtonIcon = "\u{F1492}";
+const heroKickerIcon = "\u{F0AD}";
+const heroKickerIcon2 = "\u{F135}";
 
 /**
  * Home card icons Note: These icons are from the "Nerd Font Symbols" font,
@@ -89,24 +89,24 @@ const heroKickerIcon2 = "\uf135";
  */
 const homeCards = [
     {
-        icon: "\uf135",
-        title: "Get Started",
         description:
             "Install the plugin, enable a preset, and start enforcing immutable patterns in JavaScript or TypeScript.",
+        icon: "\u{F135}",
+        title: "Get Started",
         to: "/docs/rules/getting-started",
     },
     {
-        icon: "\ue690",
-        title: "Presets",
         description:
             "Choose the right rollout path: functional-lite, functional, immutable, recommended, or all.",
+        icon: "\u{E690}",
+        title: "Presets",
         to: "/docs/rules/presets",
     },
     {
-        icon: "\uf02d",
-        title: "Rule Reference",
         description:
             "Browse every rule with concrete incorrect/correct examples and migration guidance.",
+        icon: "\u{F02D}",
+        title: "Rule Reference",
         to: "/docs/rules",
     },
 ] as const satisfies readonly HomeCard[];
@@ -121,8 +121,8 @@ export default function Home() {
 
     return (
         <Layout
-            title="eslint-plugin-immutable-2 docs"
             description="Documentation for eslint-plugin-immutable-2"
+            title="eslint-plugin-immutable-2 docs"
         >
             <header className={styles.heroBanner}>
                 <div className={`container ${styles.heroContent}`}>
@@ -156,8 +156,8 @@ export default function Home() {
                             <div className={styles.heroBadgeRow}>
                                 {heroBadges.map((badge) => (
                                     <article
-                                        key={badge.label}
                                         className={styles.heroBadge}
+                                        key={badge.label}
                                     >
                                         <p className={styles.heroBadgeLabel}>
                                             <span
@@ -213,8 +213,8 @@ export default function Home() {
                     <div className={styles.heroStats}>
                         {heroStats.map((stat) => (
                             <article
-                                key={stat.headline}
                                 className={styles.heroStatCard}
+                                key={stat.headline}
                             >
                                 <p className={styles.heroStatHeading}>
                                     {stat.headline}
@@ -232,7 +232,7 @@ export default function Home() {
                 <section className="container">
                     <div className={styles.cardGrid}>
                         {homeCards.map((card) => (
-                            <article key={card.title} className={styles.card}>
+                            <article className={styles.card} key={card.title}>
                                 <div className={styles.cardHeader}>
                                     <p className={styles.cardIcon}>
                                         {card.icon}

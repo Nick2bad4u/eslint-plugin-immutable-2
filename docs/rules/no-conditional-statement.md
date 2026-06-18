@@ -19,7 +19,7 @@ Expression-oriented branching is easier to compose and test in immutable-style c
 
 ```ts
 if (enabled) {
-  return a;
+ return a;
 }
 return b;
 ```
@@ -35,19 +35,19 @@ return enabled ? a : b;
 ```ts
 // ❌ Switch statement branching
 switch (status) {
-  case "idle":
-    return "Ready";
-  case "loading":
-    return "Loading…";
-  default:
-    return "Done";
+ case "idle":
+  return "Ready";
+ case "loading":
+  return "Loading…";
+ default:
+  return "Done";
 }
 
 // ✅ Lookup table expression
 const labels = {
-  done: "Done",
-  idle: "Ready",
-  loading: "Loading…",
+ done: "Done",
+ idle: "Ready",
+ loading: "Loading…",
 } as const;
 
 return labels[status] ?? "Done";
@@ -59,13 +59,13 @@ return labels[status] ?? "Done";
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-    plugins: { immutable },
-    rules: {
-      "immutable/no-conditional-statement": "error",
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-conditional-statement": "error",
   },
+ },
 ];
 ```
 

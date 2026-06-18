@@ -18,9 +18,9 @@ This encourages explicit, value-oriented control flow over exception-based branc
 
 ```ts
 try {
-  run();
+ run();
 } catch {
-  recover();
+ recover();
 }
 ```
 
@@ -29,7 +29,7 @@ try {
 ```ts
 const result = runSafely();
 if (!result.ok) {
-  return recover(result.error);
+ return recover(result.error);
 }
 ```
 
@@ -39,17 +39,17 @@ if (!result.ok) {
 // ❌ try/catch around JSON parsing
 let payload;
 try {
-  payload = JSON.parse(raw);
+ payload = JSON.parse(raw);
 } catch {
-  return { ok: false, error: "Invalid JSON" };
+ return { ok: false, error: "Invalid JSON" };
 }
 
 // ✅ Dedicated safe parser that returns a result
 const parseJson = (text: string) => {
-  const parsed = safeJsonParse(text);
-  return parsed.success
-    ? { ok: true, value: parsed.value }
-    : { ok: false, error: "Invalid JSON" };
+ const parsed = safeJsonParse(text);
+ return parsed.success
+  ? { ok: true, value: parsed.value }
+  : { ok: false, error: "Invalid JSON" };
 };
 
 return parseJson(raw);
@@ -61,13 +61,13 @@ return parseJson(raw);
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-    plugins: { immutable },
-    rules: {
-      "immutable/no-try": "error",
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-try": "error",
   },
+ },
 ];
 ```
 

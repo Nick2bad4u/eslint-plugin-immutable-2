@@ -9,45 +9,40 @@ export const name = "no-method-signature" as const;
 const noMethodSignatureRule: ReturnType<
     typeof createRule<readonly [], "generic" | "suggestReadonlyProperty">
 > = createRule<readonly [], "generic" | "suggestReadonlyProperty">({
-    create(context) {
-        return {
-            TSMethodSignature(node) {
-                const sourceCode = context.sourceCode;
-                const keyText = sourceCode.getText(node.key);
-                const optionalToken = node.optional ? "?" : "";
-                const typeParametersText =
-                    node.typeParameters === undefined
-                        ? ""
-                        : sourceCode.getText(node.typeParameters);
-                const parametersText = arrayJoin(
-                    node.params.map((parameter) =>
-                        sourceCode.getText(parameter)
-                    ),
-                    ", "
-                );
-                const returnTypeText =
-                    node.returnType === undefined
-                        ? "void"
-                        : sourceCode.getText(node.returnType.typeAnnotation);
+    create: (context) => ({
+        TSMethodSignature(node) {
+            const sourceCode = context.sourceCode;
+            const keyText = sourceCode.getText(node.key);
+            const optionalToken = node.optional ? "?" : "";
+            const typeParametersText =
+                node.typeParameters === undefined
+                    ? ""
+                    : sourceCode.getText(node.typeParameters);
+            const parametersText = arrayJoin(
+                node.params.map((parameter) => sourceCode.getText(parameter)),
+                ", "
+            );
+            const returnTypeText =
+                node.returnType === undefined
+                    ? "void"
+                    : sourceCode.getText(node.returnType.typeAnnotation);
 
-                const replacement =
-                    `readonly ${keyText}${optionalToken}: ` +
-                    `${typeParametersText}(${parametersText}) => ${returnTypeText};`;
+            const replacement =
+                `readonly ${keyText}${optionalToken}: ` +
+                `${typeParametersText}(${parametersText}) => ${returnTypeText};`;
 
-                context.report({
-                    messageId: "generic",
-                    node,
-                    suggest: [
-                        {
-                            fix: (fixer) =>
-                                fixer.replaceText(node, replacement),
-                            messageId: "suggestReadonlyProperty",
-                        },
-                    ],
-                });
-            },
-        };
-    },
+            context.report({
+                messageId: "generic",
+                node,
+                suggest: [
+                    {
+                        fix: (fixer) => fixer.replaceText(node, replacement),
+                        messageId: "suggestReadonlyProperty",
+                    },
+                ],
+            });
+        },
+    }),
     meta: {
         deprecated: false,
         docs: {

@@ -9,7 +9,7 @@ Use this preset as the default low-friction entrypoint focused on high-signal mu
 ## Config key
 
 ```ts
-immutable.configs.recommended
+immutable.configs.recommended;
 ```
 
 ## Flat Config example

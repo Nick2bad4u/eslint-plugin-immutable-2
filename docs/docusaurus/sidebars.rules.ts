@@ -26,14 +26,6 @@ const sidebars = {
             customProps: {
                 badge: "guides",
             },
-            type: "category",
-            label: "🧭 Adoption & Rollout",
-            link: {
-                type: "generated-index",
-                title: "Adoption & Rollout",
-                description:
-                    "Shared migration, rollout, and fix-safety guidance for rule adoption.",
-            },
             items: [
                 {
                     id: "guides/adoption-checklist",
@@ -61,18 +53,20 @@ const sidebars = {
                     type: "doc",
                 },
             ],
+            label: "🧭 Adoption & Rollout",
+            link: {
+                description:
+                    "Shared migration, rollout, and fix-safety guidance for rule adoption.",
+                title: "Adoption & Rollout",
+                type: "generated-index",
+            },
+            type: "category",
         },
         {
             className: "sb-cat-presets",
             collapsed: true,
             customProps: {
                 badge: "presets",
-            },
-            type: "category",
-            label: "Presets",
-            link: {
-                type: "doc",
-                id: "presets/index",
             },
             items: [
                 {
@@ -106,21 +100,18 @@ const sidebars = {
                     type: "doc",
                 },
             ],
+            label: "Presets",
+            link: {
+                id: "presets/index",
+                type: "doc",
+            },
+            type: "category",
         },
         {
             className: "sb-cat-rules",
             collapsed: true,
             customProps: {
                 badge: "rules",
-            },
-            type: "category",
-            label: "Rules",
-            link: {
-                type: "generated-index",
-                title: "Rule Reference",
-                slug: "/",
-                description:
-                    "Rule documentation for every eslint-plugin-immutable-2 rule.",
             },
             items: [
                 {
@@ -194,6 +185,15 @@ const sidebars = {
                     type: "doc",
                 },
             ],
+            label: "Rules",
+            link: {
+                description:
+                    "Rule documentation for every eslint-plugin-immutable-2 rule.",
+                slug: "/",
+                title: "Rule Reference",
+                type: "generated-index",
+            },
+            type: "category",
         },
     ],
 } satisfies SidebarsConfig;

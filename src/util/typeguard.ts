@@ -2,6 +2,7 @@ import type { TSESTree } from "@typescript-eslint/utils";
 import type ts from "typescript";
 
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
+import { arrayIncludes } from "ts-extras";
 
 /** TypeScript `ArrayConstructor` symbol type. */
 export type ArrayConstructorType = ts.Type & {
@@ -68,9 +69,14 @@ export const isFunctionLike = (
     | TSESTree.ArrowFunctionExpression
     | TSESTree.FunctionDeclaration
     | TSESTree.FunctionExpression =>
-    node.type === AST_NODE_TYPES.ArrowFunctionExpression ||
-    node.type === AST_NODE_TYPES.FunctionDeclaration ||
-    node.type === AST_NODE_TYPES.FunctionExpression;
+    arrayIncludes(
+        [
+            AST_NODE_TYPES.ArrowFunctionExpression,
+            AST_NODE_TYPES.FunctionDeclaration,
+            AST_NODE_TYPES.FunctionExpression,
+        ],
+        node.type
+    );
 
 /** Guard for identifiers. */
 export const isIdentifier = (

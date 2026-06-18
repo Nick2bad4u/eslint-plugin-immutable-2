@@ -57,9 +57,7 @@ const getIfBranchViolations = (
 ): readonly TSESTree.Node[] => {
     const branches: readonly [
         TSESTree.Statement,
-        (
-            null | TSESTree.IfStatement | TSESTree.Statement
-        ),
+        null | TSESTree.IfStatement | TSESTree.Statement,
     ] = [node.consequent, node.alternate];
 
     const violations: TSESTree.Node[] = [];
@@ -104,10 +102,10 @@ const getSwitchCaseViolations = (
             continue;
         }
 
-        const everyConsequentIsBlock = branch.consequent.every((statement) =>
+        const isEveryConsequentIsBlock = branch.consequent.every((statement) =>
             isBlockStatement(statement)
         );
-        if (everyConsequentIsBlock) {
+        if (isEveryConsequentIsBlock) {
             const lastConsequent = arrayAt(branch.consequent, -1);
             if (
                 lastConsequent !== undefined &&

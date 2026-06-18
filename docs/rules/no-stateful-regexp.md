@@ -47,13 +47,13 @@ const matcher = new RegExp("token", "m");
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-stateful-regexp": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-stateful-regexp": "error",
+  },
+ },
 ];
 ```
 

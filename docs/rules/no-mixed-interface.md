@@ -19,8 +19,8 @@ Consistent member style improves readability and avoids accidental API shape dri
 
 ```ts
 interface Api {
-  run(): void;
-  readonly label: string;
+ run(): void;
+ readonly label: string;
 }
 ```
 
@@ -28,8 +28,8 @@ interface Api {
 
 ```ts
 interface Api {
-  readonly run: () => void;
-  readonly label: string;
+ readonly run: () => void;
+ readonly label: string;
 }
 ```
 
@@ -38,14 +38,14 @@ interface Api {
 ```ts
 // ❌ Mixed member styles in one interface
 interface Repository {
-  find(id: string): Promise<Item>;
-  readonly save: (item: Item) => Promise<void>;
+ find(id: string): Promise<Item>;
+ readonly save: (item: Item) => Promise<void>;
 }
 
 // ✅ Uniform function-property member style
 interface Repository {
-  readonly find: (id: string) => Promise<Item>;
-  readonly save: (item: Item) => Promise<void>;
+ readonly find: (id: string) => Promise<Item>;
+ readonly save: (item: Item) => Promise<void>;
 }
 ```
 
@@ -55,13 +55,13 @@ interface Repository {
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    files: ["**/*.{ts,tsx,mts,cts}"],
-    plugins: { immutable },
-    rules: {
-      "immutable/no-mixed-interface": "error",
-    },
+ {
+  files: ["**/*.{ts,tsx,mts,cts}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-mixed-interface": "error",
   },
+ },
 ];
 ```
 

@@ -38,12 +38,12 @@ const mode = process.env.NODE_ENV ?? "development";
 // ❌ Deletes shared global process state
 const shouldReset = true;
 if (shouldReset) {
-    delete process.env.DEBUG;
+ delete process.env.DEBUG;
 }
 
 // ✅ Derives immutable config from environment
 const config = {
-    debug: process.env.DEBUG === "1",
+ debug: process.env.DEBUG === "1",
 };
 ```
 
@@ -53,13 +53,13 @@ const config = {
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-process-env-mutation": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-process-env-mutation": "error",
+  },
+ },
 ];
 ```
 

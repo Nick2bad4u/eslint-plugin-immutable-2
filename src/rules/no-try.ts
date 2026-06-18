@@ -6,16 +6,14 @@ export const name = "no-try" as const;
 /** `no-try` rule implementation. */
 const noTryRule: ReturnType<typeof createRule<readonly [], "generic">> =
     createRule<readonly [], "generic">({
-        create(context) {
-            return {
-                TryStatement(node) {
-                    context.report({
-                        messageId: "generic",
-                        node,
-                    });
-                },
-            };
-        },
+        create: (context) => ({
+            TryStatement(node) {
+                context.report({
+                    messageId: "generic",
+                    node,
+                });
+            },
+        }),
         meta: {
             deprecated: false,
             docs: {

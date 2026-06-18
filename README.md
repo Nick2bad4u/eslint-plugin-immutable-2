@@ -1,6 +1,6 @@
 # eslint-plugin-immutable-2
 
-[![npm license.](https://flat.badgen.net/npm/license/eslint-plugin-immutable-2?color=purple)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/blob/main/LICENSE) [![npm total downloads.](https://flat.badgen.net/npm/dt/eslint-plugin-immutable-2?color=pink)](https://www.npmjs.com/package/eslint-plugin-immutable-2) [![latest GitHub release.](https://flat.badgen.net/github/release/Nick2bad4u/eslint-plugin-immutable-2?color=cyan)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/releases) [![GitHub stars.](https://flat.badgen.net/github/stars/Nick2bad4u/eslint-plugin-immutable-2?color=yellow)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/stargazers) [![GitHub forks.](https://flat.badgen.net/github/forks/Nick2bad4u/eslint-plugin-immutable-2?color=green)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/forks) [![GitHub open issues.](https://flat.badgen.net/github/open-issues/Nick2bad4u/eslint-plugin-immutable-2?color=red)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues) [![codecov.](https://codecov.io/gh/Nick2bad4u/eslint-plugin-immutable-2/branch/main/graph/badge.svg)](https://codecov.io/gh/Nick2bad4u/eslint-plugin-immutable-2) [![Mutation testing badge.](https://img.shields.io/endpoint?style=flat-square\&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FNick2bad4u%2Feslint-plugin-immutable-2%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/Nick2bad4u/eslint-plugin-immutable-2/main)
+[![npm license.](https://flat.badgen.net/npm/license/eslint-plugin-immutable-2?color=purple)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/blob/main/LICENSE) [![npm total downloads.](https://flat.badgen.net/npm/dt/eslint-plugin-immutable-2?color=pink)](https://www.npmjs.com/package/eslint-plugin-immutable-2) [![latest GitHub release.](https://flat.badgen.net/github/release/Nick2bad4u/eslint-plugin-immutable-2?color=cyan)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/releases) [![GitHub stars.](https://flat.badgen.net/github/stars/Nick2bad4u/eslint-plugin-immutable-2?color=yellow)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/stargazers) [![GitHub forks.](https://flat.badgen.net/github/forks/Nick2bad4u/eslint-plugin-immutable-2?color=green)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/forks) [![GitHub open issues.](https://flat.badgen.net/github/open-issues/Nick2bad4u/eslint-plugin-immutable-2?color=red)](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/issues) [![codecov.](https://codecov.io/gh/Nick2bad4u/eslint-plugin-immutable-2/branch/main/graph/badge.svg)](https://codecov.io/gh/Nick2bad4u/eslint-plugin-immutable-2) [![Mutation testing badge.](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FNick2bad4u%2Feslint-plugin-immutable-2%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/Nick2bad4u/eslint-plugin-immutable-2/main)
 
 ESLint plugin for teams that want TypeScript-first immutability and
 functional-style conventions in modern flat config projects.
@@ -62,20 +62,20 @@ This plugin intentionally exports five presets:
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  // Default low-friction starting point.
-  immutable.configs.recommended,
+ // Default low-friction starting point.
+ immutable.configs.recommended,
 
-  // Broader immutable baseline with readonly typing and declaration discipline.
-  // immutable.configs.immutable,
+ // Broader immutable baseline with readonly typing and declaration discipline.
+ // immutable.configs.immutable,
 
-  // Small structural functional step-up on top of the immutable baseline.
-  // immutable.configs["functional-lite"],
+ // Small structural functional step-up on top of the immutable baseline.
+ // immutable.configs["functional-lite"],
 
-  // Strict functional-style coverage without enabling every rule.
-  // immutable.configs.functional,
+ // Strict functional-style coverage without enabling every rule.
+ // immutable.configs.functional,
 
-  // Every rule in the plugin.
-  // immutable.configs.all,
+ // Every rule in the plugin.
+ // immutable.configs.all,
 ];
 ```
 
@@ -100,16 +100,16 @@ import immutable from "eslint-plugin-immutable-2";
 const recommended = immutable.configs.recommended;
 
 export default [
-  {
-    ...recommended,
-    languageOptions: {
-      ...recommended.languageOptions,
-      parserOptions: {
-        ...recommended.languageOptions?.parserOptions,
-        projectService: true,
-      },
-    },
+ {
+  ...recommended,
+  languageOptions: {
+   ...recommended.languageOptions,
+   parserOptions: {
+    ...recommended.languageOptions?.parserOptions,
+    projectService: true,
+   },
   },
+ },
 ];
 ```
 
@@ -126,16 +126,16 @@ extend a preset with typed parser services:
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    ...recommended,
-    languageOptions: {
-      ...recommended.languageOptions,
-      parserOptions: {
-        ...recommended.languageOptions?.parserOptions,
-        projectService: true,
-      },
-    },
+ {
+  ...recommended,
+  languageOptions: {
+   ...recommended.languageOptions,
+   parserOptions: {
+    ...recommended.languageOptions?.parserOptions,
+    projectService: true,
+   },
   },
+ },
 ];
 ```
 
@@ -175,11 +175,11 @@ switches. Behavior is controlled through preset choice and per-rule options.
 | [`no-form-data-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-form-data-mutation)                 |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
 | [`no-headers-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-headers-mutation)                     |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
 | [`no-history-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-history-mutation)                     |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
-| [`no-let`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-let)                                               |  💡 | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                             |
+| [`no-let`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-let)                                               | 💡  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                             |
 | [`no-location-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-location-mutation)                   |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
 | [`no-loop-statement`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-loop-statement)                         |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                                                                                                                       |
 | [`no-map-set-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-map-set-mutation)                     |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
-| [`no-method-signature`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-method-signature)                     |  💡 | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                             |
+| [`no-method-signature`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-method-signature)                     | 💡  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                             |
 | [`no-mixed-interface`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-mixed-interface)                       |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                                                                                                                       |
 | [`no-process-env-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-process-env-mutation)             |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
 | [`no-reflect-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-reflect-mutation)                     |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
@@ -193,8 +193,8 @@ switches. Behavior is controlled through preset choice and per-rule options.
 | [`no-typed-array-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-typed-array-mutation)             |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
 | [`no-url-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-url-mutation)                             |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
 | [`no-url-search-params-mutation`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/no-url-search-params-mutation) |  —  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🔵](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/recommended) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all) |
-| [`readonly-array`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-array)                               |  🔧 | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                             |
-| [`readonly-keyword`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-keyword)                           |  🔧 | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                             |
+| [`readonly-array`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-array)                               | 🔧  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                             |
+| [`readonly-keyword`](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/readonly-keyword)                           | 🔧  | [🟢](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional-lite) [🟡](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/functional) [🟠](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/immutable) [🟣](https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules/presets/all)                                                                                             |
 
 ## Contributors ✨
 

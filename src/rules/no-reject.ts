@@ -7,35 +7,33 @@ export const name = "no-reject" as const;
 /** `no-reject` rule implementation. */
 const noRejectRule: ReturnType<typeof createRule<readonly [], "generic">> =
     createRule<readonly [], "generic">({
-        create(context) {
-            return {
-                CallExpression(node) {
-                    const { callee } = node;
-                    if (!isMemberExpression(callee)) {
-                        return;
-                    }
+        create: (context) => ({
+            CallExpression(node) {
+                const { callee } = node;
+                if (!isMemberExpression(callee)) {
+                    return;
+                }
 
-                    if (
-                        !isIdentifier(callee.object) ||
-                        !isIdentifier(callee.property)
-                    ) {
-                        return;
-                    }
+                if (
+                    !isIdentifier(callee.object) ||
+                    !isIdentifier(callee.property)
+                ) {
+                    return;
+                }
 
-                    if (
-                        callee.object.name !== "Promise" ||
-                        callee.property.name !== "reject"
-                    ) {
-                        return;
-                    }
+                if (
+                    callee.object.name !== "Promise" ||
+                    callee.property.name !== "reject"
+                ) {
+                    return;
+                }
 
-                    context.report({
-                        messageId: "generic",
-                        node,
-                    });
-                },
-            };
-        },
+                context.report({
+                    messageId: "generic",
+                    node,
+                });
+            },
+        }),
         meta: {
             deprecated: false,
             docs: {

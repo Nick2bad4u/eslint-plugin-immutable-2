@@ -49,13 +49,13 @@ const signal = source.signal;
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-abort-controller-mutation": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-abort-controller-mutation": "error",
+  },
+ },
 ];
 ```
 

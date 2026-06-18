@@ -16,9 +16,7 @@ Enable one preset in your Flat Config:
 ```ts
 import immutable from "eslint-plugin-immutable-2";
 
-export default [
-    immutable.configs.recommended,
-];
+export default [immutable.configs.recommended];
 ```
 
 `recommended` is the low-friction default preset. It works out of the box with
@@ -36,24 +34,24 @@ import tsParser from "@typescript-eslint/parser";
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{ts,tsx,mts,cts}"],
-        languageOptions: {
-            parser: tsParser,
-            parserOptions: {
-                ecmaVersion: "latest",
-                // Enable when you want checker-backed precision.
-                // projectService: true,
-                sourceType: "module",
-            },
-        },
-        plugins: {
-            immutable,
-        },
-        rules: {
-            ...immutable.configs.recommended.rules,
-        },
-    },
+ {
+  files: ["**/*.{ts,tsx,mts,cts}"],
+  languageOptions: {
+   parser: tsParser,
+   parserOptions: {
+    ecmaVersion: "latest",
+    // Enable when you want checker-backed precision.
+    // projectService: true,
+    sourceType: "module",
+   },
+  },
+  plugins: {
+   immutable,
+  },
+  rules: {
+   ...immutable.configs.recommended.rules,
+  },
+ },
 ];
 ```
 

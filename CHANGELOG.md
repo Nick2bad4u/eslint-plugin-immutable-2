@@ -1,14 +1,13 @@
 <!-- markdownlint-disable -->
 <!-- eslint-disable markdown/no-missing-label-refs -->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-
 [b6f5319...26b2124](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/compare/b6f531911579f6b4c17f0506765941720d4a6ead...26b2124c54c5d0b8bc0853429651577e9cc79503)
-
 
 ### ✨ Features
 
@@ -30,7 +29,6 @@ All notable changes to this project will be documented in this file.
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
 - [`c5bfd7f`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/c5bfd7f24517c4aef5a696efbd0cda097c69459a) — ✨ [feat] (sync) Add canonical metadata for README preset icon rendering
 
 - Introduced `immutableConfigMetadataByName` for icon and order mapping
@@ -40,7 +38,6 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 - Implemented `immutableConfigReferenceToName` for supported config references
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
-
 
 - [`adeab26`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/adeab26f93c9172fd879f9e8f4363bdaba1cb540) — ✨ [feat] Add rules to prevent state mutations in various APIs
 
@@ -57,7 +54,6 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 - Added comprehensive tests for each new rule to validate functionality and ensure correct error reporting.
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
-
 
 - [`e720155`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/e7201550f353e86f7c116563aec8df27ad2be30e) — ✨ [feat] (rules) Introduce new rules to prevent mutations of global objects and properties
 
@@ -79,7 +75,6 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
 - [`d8a12d0`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/d8a12d0bbb50fcf59169a6a4814a050e4708dc7e) — ✨ [feat] Add mutation prevention rules for various data types
 
 - Introduced rules to prevent mutations on atomic types, buffers, data views, dates, form data, headers, maps, process environment, reflect, stateful regex, storage, typed arrays, URLs, and URL search parameters.
@@ -89,7 +84,6 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 - Updated plugin entry to include new mutation rules for better enforcement of immutability in code.
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
-
 
 - [`73bd838`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/73bd838d2913238469e3c2161afb750fd801487c) — ✨ [feat] Enhance rule implementations and suggestions
 
@@ -111,7 +105,6 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
 - [`ff927dc`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/ff927dc18a047336502e63a5c0ee044108e974f8) — ✨ [feat] Enhance documentation and examples for immutability rules
 
 - 📝 [docs] Add additional examples for `immutable-data`, `no-class`, `no-conditional-statement`, `no-expression-statement`, `no-let`, `no-loop-statement`, `no-method-signature`, `no-mixed-interface`, `no-reject`, `no-this`, `no-throw`, `no-try`, `readonly-array`, and `readonly-keyword` rules
@@ -126,7 +119,6 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
 - [`2530f4a`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/2530f4a3df9c78ba678680eec6125a8adaed956f) — ✨ [feat] Add favicon and touch icons for improved branding
 
 - Introduced multiple favicon sizes (16x16, 24x24, 32x32, 48x48, 64x64, 128x128, 192x192, 256x256, 512x512) for better compatibility across platforms
@@ -135,24 +127,16 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
 - [`0a48267`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/0a48267efb2f8d1b26877939541401cf7484ce97) — ✨ [feat] Update TypeScript configuration files to include declaration files
 
-
-- Added inclusion of declaration files (*.d.ts) in multiple TypeScript configuration files:
-  
+- Added inclusion of declaration files (\*.d.ts) in multiple TypeScript configuration files:
 - `tsconfig.build.json`: Included `src/**/*.d.ts` to ensure declaration files are considered during the build process.
-  
 - `tsconfig.eslint.json`: Included `src/**/*.d.ts` and `*.d.cts` for ESLint checks, enhancing type safety in linting.
-  
 - `tsconfig.js.json`: Included `*.d.cts` and `*.cjs` to support CommonJS and declaration files in JavaScript configurations.
-  
 - `tsconfig.json`: Included `src/**/*.d.ts` to ensure declaration files are part of the main TypeScript project.
-  
 - `tsconfig.vitest-typecheck.json`: Included `src/**/*.d.ts` to ensure type checking includes declaration files during testing.
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
-
 
 - [`0da1029`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/0da102938a3b683fd60000636f8a64aeed8e705b) — ✨ [feat] Add ESLint plugin repository bootstrapper prompt
 
@@ -166,13 +150,9 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
-
 ### 🛠️ Other Changes
 
 - [`b6f5319`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b6f531911579f6b4c17f0506765941720d4a6ead) — Initial commit
-
-
 
 ### 📝 Documentation
 
@@ -190,7 +170,6 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
 - [`83fe451`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/83fe4512e486b9953d9d2ac8e30523eb9f3564b7) — 📝 [docs] Update ESLint plugin bootstrapper instructions for configuration adaptation
 
 - Clarified that existing configuration files should be adapted rather than deleted and recreated.
@@ -201,20 +180,15 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
-
 ### 🎨 Styling
 
 - [`5e11e41`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/5e11e41d98c440cb057ae09be07a4a6eb34045e3) — 🎨 [style] Update task configurations to run in the foreground
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
-
 ### 🧪 Testing
 
 - [`b1dcb6f`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/b1dcb6f941a6fa4456d68b215cedef60e5bc027b) — 🧪 [test] Enhance rule tests and remove deprecated tests
-
 
 - ✨ [feat] Add module export tests for rules: no-reject, no-this, no-throw, no-try, readonly-array, and readonly-keyword.
 
@@ -228,12 +202,9 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
-
 ### 🧹 Chores
 
 - [`284ab68`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/284ab68d6c3558e6b330a190c2d95a32d4e90bb3) — 🧹 [chore] Clean up presets and documentation
-
 
 - 🔵 Update recommended preset documentation to clarify its purpose and aliasing with the immutable preset.
 
@@ -247,9 +218,7 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
 - [`968ed11`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/968ed11e0b3fc73da0d53414c3b7059c143be661) — 🧹 [chore] Remove outdated tests and improve rule coverage
-
 
 - 🔥 Delete `presets-rules-matrix-sync.test.ts` and `readme-rules-table-sync.test.ts` as they are no longer needed.
 
@@ -259,20 +228,17 @@ Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
 - [`df0fd49`](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/commit/df0fd4956a59f64bcb1d1224db557fcd2bcd619f) — 🧹 [chore] Update ignore files for forked plugin eslint-plugin-ts-immutable
 
 - Added eslint-plugin-ts-immutable to .gitignore, .markdownlintignore, .prettierignore, .remarkignore, .secretlintignore, and .stylelintignore
 
 Signed-off-by: Nick2bad4u <20943337+Nick2bad4u@users.noreply.github.com>
 
-
-
-
-
-
 ## Contributors
+
 Thanks to all the [contributors](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/graphs/contributors) for their hard work!
+
 ## License
+
 This project is licensed under the [UnLicense](https://github.com/Nick2bad4u/eslint-plugin-immutable-2/blob/main/LICENSE)
-*This changelog was automatically generated with [git-cliff](https://github.com/orhun/git-cliff).*
+_This changelog was automatically generated with [git-cliff](https://github.com/orhun/git-cliff)._

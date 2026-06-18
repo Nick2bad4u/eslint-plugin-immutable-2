@@ -26,20 +26,18 @@ const optionsSchema: readonly JSONSchema4[] = [
 const noExpressionStatementRule: ReturnType<
     typeof createRule<Options, "generic">
 > = createRule<Options, "generic">({
-    create(context, [ignoreOptions]) {
-        return {
-            ExpressionStatement(node) {
-                if (shouldIgnore(node, context, ignoreOptions)) {
-                    return;
-                }
+    create: (context, [ignoreOptions]) => ({
+        ExpressionStatement(node) {
+            if (shouldIgnore(node, context, ignoreOptions)) {
+                return;
+            }
 
-                context.report({
-                    messageId: "generic",
-                    node,
-                });
-            },
-        };
-    },
+            context.report({
+                messageId: "generic",
+                node,
+            });
+        },
+    }),
     meta: {
         defaultOptions: [{}],
         deprecated: false,

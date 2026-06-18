@@ -20,7 +20,7 @@ Readonly properties communicate immutability at the type level and prevent accid
 
 ```ts
 interface State {
-  value: number;
+ value: number;
 }
 ```
 
@@ -28,7 +28,7 @@ interface State {
 
 ```ts
 interface State {
-  readonly value: number;
+ readonly value: number;
 }
 ```
 
@@ -37,20 +37,20 @@ interface State {
 ```ts
 // ❌ Mutable class field and index signature
 class Settings {
-  theme = "dark";
+ theme = "dark";
 }
 
 interface Cache {
-  [key: string]: string;
+ [key: string]: string;
 }
 
 // ✅ Readonly members communicate intent
 class Settings {
-  readonly theme = "dark";
+ readonly theme = "dark";
 }
 
 interface Cache {
-  readonly [key: string]: string;
+ readonly [key: string]: string;
 }
 ```
 
@@ -60,13 +60,13 @@ interface Cache {
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    files: ["**/*.{ts,tsx,mts,cts}"],
-    plugins: { immutable },
-    rules: {
-      "immutable/readonly-keyword": "error",
-    },
+ {
+  files: ["**/*.{ts,tsx,mts,cts}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/readonly-keyword": "error",
   },
+ },
 ];
 ```
 

@@ -31,7 +31,7 @@ describe("immutable rule docs", () => {
             expect(
                 existsSync(docsPath),
                 `Missing docs file for ${ruleName}`
-            ).toBeTruthy();
+            ).toBe(true);
         }
     });
 
@@ -54,19 +54,18 @@ describe("immutable rule docs", () => {
             expect(
                 rule.meta?.deprecated,
                 `Missing deprecated flag for ${ruleName}`
-            ).toBeFalsy();
-            expect(
-                frozen,
-                `Missing frozen docs flag for ${ruleName}`
-            ).toBeFalsy();
+            ).toBe(false);
+            expect(frozen, `Missing frozen docs flag for ${ruleName}`).toBe(
+                false
+            );
 
-            const expectedRequiresTypeChecking =
+            const isExpectedRequiresTypeChecking =
                 rulesRequiringTypeChecking.has(ruleName);
 
             expect(
                 requiresTypeChecking,
                 `Unexpected requiresTypeChecking for ${ruleName}`
-            ).toBe(expectedRequiresTypeChecking);
+            ).toBe(isExpectedRequiresTypeChecking);
         }
     });
 });

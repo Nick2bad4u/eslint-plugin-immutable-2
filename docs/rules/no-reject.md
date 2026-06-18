@@ -31,18 +31,18 @@ return { ok: false, error: "boom" };
 ```ts
 // ❌ Rejecting promise for expected validation outcome
 const loadUser = async (id: string) => {
-    if (!id) {
-        return Promise.reject(new Error("Missing user id"));
-    }
-    return fetchUser(id);
+ if (!id) {
+  return Promise.reject(new Error("Missing user id"));
+ }
+ return fetchUser(id);
 };
 
 // ✅ Return a value-level failure object
 const loadUser = async (id: string) => {
-    if (!id) {
-        return { ok: false, error: "Missing user id" };
-    }
-    return { ok: true, value: await fetchUser(id) };
+ if (!id) {
+  return { ok: false, error: "Missing user id" };
+ }
+ return { ok: true, value: await fetchUser(id) };
 };
 ```
 
@@ -52,13 +52,13 @@ const loadUser = async (id: string) => {
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-reject": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-reject": "error",
+  },
+ },
 ];
 ```
 

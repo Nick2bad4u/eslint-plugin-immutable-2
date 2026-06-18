@@ -31,11 +31,11 @@ const increment = (value: number) => value + 1;
 ```ts
 // ❌ Implicit dependency on this-context
 const account = {
-    balance: 100,
-    withdraw(amount: number) {
-        this.balance -= amount;
-        return this.balance;
-    },
+ balance: 100,
+ withdraw(amount: number) {
+  this.balance -= amount;
+  return this.balance;
+ },
 };
 
 // ✅ Explicit state transition function
@@ -49,13 +49,13 @@ const nextBalance = withdraw(100, 25);
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-this": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-this": "error",
+  },
+ },
 ];
 ```
 

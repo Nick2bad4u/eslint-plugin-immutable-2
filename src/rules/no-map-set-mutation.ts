@@ -2,6 +2,7 @@ import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
+import { arrayIncludes } from "ts-extras";
 
 import {
     type IgnoreAccessorPatternOption,
@@ -85,27 +86,33 @@ const isMutatingMethodForKind = (
 ): boolean => {
     switch (collectionKind) {
         case "Map": {
-            return (
-                methodName === "clear" ||
-                methodName === "delete" ||
-                methodName === "set"
+            return arrayIncludes(
+                [
+                    "clear",
+                    "delete",
+                    "set",
+                ],
+                methodName
             );
         }
 
         case "Set": {
-            return (
-                methodName === "add" ||
-                methodName === "clear" ||
-                methodName === "delete"
+            return arrayIncludes(
+                [
+                    "add",
+                    "clear",
+                    "delete",
+                ],
+                methodName
             );
         }
 
         case "WeakMap": {
-            return methodName === "delete" || methodName === "set";
+            return arrayIncludes(["delete", "set"], methodName);
         }
 
         case "WeakSet": {
-            return methodName === "add" || methodName === "delete";
+            return arrayIncludes(["add", "delete"], methodName);
         }
 
         default: {

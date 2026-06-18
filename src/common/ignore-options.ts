@@ -166,7 +166,9 @@ const escapeRegExp = (value: string): string =>
 const safelyMatchesRegexPattern = (pattern: string, text: string): boolean => {
     try {
         // eslint-disable-next-line security/detect-non-literal-regexp -- user-supplied ignore patterns are intentionally compiled and guarded by try/catch.
-        return new RegExp(pattern, "u").test(text);
+        const regex = new RegExp(pattern, "u");
+
+        return regex.test(text);
     } catch {
         return false;
     }
@@ -348,22 +350,22 @@ export const shouldIgnore = (
 
     if (isDefined(ignoreOptions.ignorePattern)) {
         const patterns = normalizePatterns(ignoreOptions.ignorePattern);
-        const allTextsMatchPattern = nodeTexts.every((text) =>
+        const isAllTextsMatchPattern = nodeTexts.every((text) =>
             patterns.some((pattern) => safelyMatchesRegexPattern(pattern, text))
         );
 
-        if (allTextsMatchPattern) {
+        if (isAllTextsMatchPattern) {
             return true;
         }
     }
 
     if (isDefined(ignoreOptions.ignoreAccessorPattern)) {
         const accessorPattern = ignoreOptions.ignoreAccessorPattern;
-        const allTextsMatchAccessorPattern = nodeTexts.every((text) =>
+        const isAllTextsMatchAccessorPattern = nodeTexts.every((text) =>
             matchesAccessorPattern(text, accessorPattern)
         );
 
-        if (allTextsMatchAccessorPattern) {
+        if (isAllTextsMatchAccessorPattern) {
             return true;
         }
     }

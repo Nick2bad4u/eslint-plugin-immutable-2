@@ -23,40 +23,37 @@ const isFunctionPropertySignature = (
 const noMixedInterfaceRule: ReturnType<
     typeof createRule<readonly [], "generic">
 > = createRule<readonly [], "generic">({
-    create(context) {
-        return {
-            TSInterfaceDeclaration(node) {
-                let previousMemberType: null | TSESTree.TypeElement["type"] =
-                    null;
-                let previousMemberWasFunctionProperty = false;
+    create: (context) => ({
+        TSInterfaceDeclaration(node) {
+            let previousMemberType: null | TSESTree.TypeElement["type"] = null;
+            let isPreviousMemberWasFunctionProperty = false;
 
-                for (const member of node.body.body) {
-                    const currentMemberType = member.type;
-                    const currentMemberIsFunctionProperty =
-                        isFunctionPropertySignature(member);
+            for (const member of node.body.body) {
+                const currentMemberType = member.type;
+                const isCurrentMemberIsFunctionProperty =
+                    isFunctionPropertySignature(member);
 
-                    const isMixedType =
-                        previousMemberType !== null &&
-                        (previousMemberType !== currentMemberType ||
-                            (previousMemberWasFunctionProperty !==
-                                currentMemberIsFunctionProperty &&
-                                (previousMemberWasFunctionProperty ||
-                                    currentMemberIsFunctionProperty)));
+                const isMixedType =
+                    previousMemberType !== null &&
+                    (previousMemberType !== currentMemberType ||
+                        (isPreviousMemberWasFunctionProperty !==
+                            isCurrentMemberIsFunctionProperty &&
+                            (isPreviousMemberWasFunctionProperty ||
+                                isCurrentMemberIsFunctionProperty)));
 
-                    if (isMixedType) {
-                        context.report({
-                            messageId: "generic",
-                            node: member,
-                        });
-                    }
-
-                    previousMemberType = currentMemberType;
-                    previousMemberWasFunctionProperty =
-                        currentMemberIsFunctionProperty;
+                if (isMixedType) {
+                    context.report({
+                        messageId: "generic",
+                        node: member,
+                    });
                 }
-            },
-        };
-    },
+
+                previousMemberType = currentMemberType;
+                isPreviousMemberWasFunctionProperty =
+                    isCurrentMemberIsFunctionProperty;
+            }
+        },
+    }),
     meta: {
         deprecated: false,
         docs: {

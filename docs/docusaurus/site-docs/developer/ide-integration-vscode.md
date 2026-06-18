@@ -27,15 +27,15 @@ Recommended checks:
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    files: ["**/*.{ts,tsx}"],
-    plugins: {
-      immutable,
-    },
-    rules: {
-      ...immutable.configs.recommended.rules,
-    },
+ {
+  files: ["**/*.{ts,tsx}"],
+  plugins: {
+   immutable,
   },
+  rules: {
+   ...immutable.configs.recommended.rules,
+  },
+ },
 ];
 ```
 

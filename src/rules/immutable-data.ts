@@ -230,10 +230,10 @@ const immutableDataRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     return;
                 }
 
-                const assumeTypesForArrays = resolveAssumeTypesForArrays(
+                const isAssumeTypesForArrays = resolveAssumeTypesForArrays(
                     options.assumeTypes
                 );
-                const assumeTypesForObjects = resolveAssumeTypesForObjects(
+                const isAssumeTypesForObjects = resolveAssumeTypesForObjects(
                     options.assumeTypes
                 );
                 const propertyName = node.callee.property.name;
@@ -244,11 +244,11 @@ const immutableDataRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     !isInChainCallAndFollowsNew(
                         node.callee,
                         context,
-                        assumeTypesForArrays
+                        isAssumeTypesForArrays
                     ) &&
                     isArrayType(
                         getTypeOfNode(node.callee.object, context),
-                        assumeTypesForArrays,
+                        isAssumeTypesForArrays,
                         node.callee.object
                     )
                 ) {
@@ -271,7 +271,7 @@ const immutableDataRule: ReturnType<typeof createRule<Options, MessageIds>> =
                     hasMutableAssignTarget &&
                     isObjectConstructorType(
                         getTypeOfNode(node.callee.object, context),
-                        assumeTypesForObjects,
+                        isAssumeTypesForObjects,
                         node.callee.object
                     )
                 ) {

@@ -31,20 +31,20 @@ return { ok: false, error: "fail" };
 ```ts
 // ❌ Throwing during parsing
 const parsePort = (value: string) => {
-    const port = Number(value);
-    if (!Number.isInteger(port) || port <= 0) {
-        throw new Error("Invalid port");
-    }
-    return port;
+ const port = Number(value);
+ if (!Number.isInteger(port) || port <= 0) {
+  throw new Error("Invalid port");
+ }
+ return port;
 };
 
 // ✅ Returning explicit parse outcome
 const parsePort = (value: string) => {
-    const port = Number(value);
-    if (!Number.isInteger(port) || port <= 0) {
-        return { ok: false, error: "Invalid port" };
-    }
-    return { ok: true, value: port };
+ const port = Number(value);
+ if (!Number.isInteger(port) || port <= 0) {
+  return { ok: false, error: "Invalid port" };
+ }
+ return { ok: true, value: port };
 };
 ```
 
@@ -54,13 +54,13 @@ const parsePort = (value: string) => {
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-throw": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-throw": "error",
+  },
+ },
 ];
 ```
 

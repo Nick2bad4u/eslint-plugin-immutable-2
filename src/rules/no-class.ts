@@ -6,22 +6,20 @@ export const name = "no-class" as const;
 /** `no-class` rule implementation. */
 const noClassRule: ReturnType<typeof createRule<readonly [], "generic">> =
     createRule<readonly [], "generic">({
-        create(context) {
-            return {
-                ClassDeclaration(node) {
-                    context.report({
-                        messageId: "generic",
-                        node,
-                    });
-                },
-                ClassExpression(node) {
-                    context.report({
-                        messageId: "generic",
-                        node,
-                    });
-                },
-            };
-        },
+        create: (context) => ({
+            ClassDeclaration(node) {
+                context.report({
+                    messageId: "generic",
+                    node,
+                });
+            },
+            ClassExpression(node) {
+                context.report({
+                    messageId: "generic",
+                    node,
+                });
+            },
+        }),
         meta: {
             deprecated: false,
             docs: {

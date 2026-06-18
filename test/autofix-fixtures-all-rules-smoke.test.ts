@@ -12,7 +12,7 @@ import { describe, expect, it } from "vitest";
 import immutablePlugin from "../src/plugin";
 
 /** Process environment alias for lint-safe environment access. */
-const processEnvironment = globalThis.process.env;
+const processEnvironment = process.env;
 
 /** `true` when tests are running in a CI environment. */
 const isCiEnvironment = processEnvironment["CI"] === "true";
@@ -312,6 +312,10 @@ describe.runIf(shouldRunFixtureAutofixSmoke)(
             const existingAllowDefaultProject = collectStringEntries(
                 projectServiceOptions["allowDefaultProject"]
             );
+            const mergedAllowDefaultProject = [
+                ...existingAllowDefaultProject,
+                ...allowDefaultProject,
+            ];
 
             const eslint = new ESLint({
                 cwd: repositoryRootPath,
@@ -326,12 +330,8 @@ describe.runIf(shouldRunFixtureAutofixSmoke)(
                                 ...parserOptions,
                                 projectService: {
                                     ...projectServiceOptions,
-                                    allowDefaultProject: [
-                                        ...new Set([
-                                            ...existingAllowDefaultProject,
-                                            ...allowDefaultProject,
-                                        ]),
-                                    ],
+                                    allowDefaultProject:
+                                        mergedAllowDefaultProject,
                                     defaultProject: "tsconfig.eslint.json",
                                 },
                                 sourceType: "module",

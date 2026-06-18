@@ -79,7 +79,7 @@ describe("no-storage-mutation rule", () => {
             },
             {
                 code: "const storage = localStorage; storage.theme = 'dark';",
-                options: [{ ignorePattern: String.raw`^storage$` }],
+                options: [{ ignorePattern: "^storage$" }],
             },
             "let storage = localStorage; storage = getMutableStore(); storage.theme = 'dark'; function getMutableStore() { return { theme: '' }; }",
         ],

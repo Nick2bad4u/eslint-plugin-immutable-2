@@ -42,14 +42,14 @@ state.user.preferences.theme = "dark";
 
 // ✅ Builds a new nested object graph
 const nextState = {
-    ...state,
-    user: {
-        ...state.user,
-        preferences: {
-            ...state.user.preferences,
-            theme: "dark",
-        },
-    },
+ ...state,
+ user: {
+  ...state.user,
+  preferences: {
+   ...state.user.preferences,
+   theme: "dark",
+  },
+ },
 };
 ```
 
@@ -59,13 +59,13 @@ const nextState = {
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/immutable-data": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/immutable-data": "error",
+  },
+ },
 ];
 ```
 

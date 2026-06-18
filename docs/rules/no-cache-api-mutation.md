@@ -37,14 +37,14 @@ caches.keys();
 ```ts
 // ❌ Mutates cache entries in place
 async function hydrate(req: Request, res: Response): Promise<void> {
-    const cache = await caches.open("v1");
-    await cache.put(req, res);
+ const cache = await caches.open("v1");
+ await cache.put(req, res);
 }
 
 // ✅ Read-only cache access
 async function read(req: Request): Promise<Response | undefined> {
-    const cache = await caches.open("v1");
-    return await cache.match(req) ?? undefined;
+ const cache = await caches.open("v1");
+ return (await cache.match(req)) ?? undefined;
 }
 ```
 
@@ -54,13 +54,13 @@ async function read(req: Request): Promise<Response | undefined> {
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-cache-api-mutation": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-cache-api-mutation": "error",
+  },
+ },
 ];
 ```
 

@@ -32,7 +32,7 @@ const total = 0;
 // ❌ Reassignment with let
 let runningTotal = 0;
 for (const value of values) {
-    runningTotal += value;
+ runningTotal += value;
 }
 
 // ✅ Declarative accumulation
@@ -45,13 +45,13 @@ const runningTotal = values.reduce((sum, value) => sum + value, 0);
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/no-let": "error",
-        },
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-let": "error",
+  },
+ },
 ];
 ```
 

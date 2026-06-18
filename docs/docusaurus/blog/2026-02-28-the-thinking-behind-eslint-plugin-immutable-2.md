@@ -2,13 +2,13 @@
 slug: thinking-behind-eslint-plugin-immutable-2
 title: The Thinking Behind eslint-plugin-immutable-2
 authors:
-  - nick
+ - nick
 tags:
-  - eslint
-  - typescript
-  - immutability
-  - functional-programming
-  - architecture
+ - eslint
+ - typescript
+ - immutability
+ - functional-programming
+ - architecture
 description: Why this plugin exists, what constraints shaped it, and how we balance strictness with developer experience.
 ---
 

@@ -18,7 +18,7 @@ Declarative transforms (`map`, `filter`, `reduce`) are usually easier to reason 
 
 ```ts
 for (const item of items) {
-  sum += item;
+ sum += item;
 }
 ```
 
@@ -34,15 +34,15 @@ const sum = items.reduce((acc, item) => acc + item, 0);
 // ❌ Imperative loop with mutable accumulator
 let totalByUser = 0;
 for (const order of orders) {
-  if (order.userId === currentUserId) {
-    totalByUser += order.total;
-  }
+ if (order.userId === currentUserId) {
+  totalByUser += order.total;
+ }
 }
 
 // ✅ Composed filter + reduce pipeline
 const totalByUser = orders
-  .filter((order) => order.userId === currentUserId)
-  .reduce((sum, order) => sum + order.total, 0);
+ .filter((order) => order.userId === currentUserId)
+ .reduce((sum, order) => sum + order.total, 0);
 ```
 
 ## ESLint flat config example
@@ -51,13 +51,13 @@ const totalByUser = orders
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
-    plugins: { immutable },
-    rules: {
-      "immutable/no-loop-statement": "error",
-    },
+ {
+  files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/no-loop-statement": "error",
   },
+ },
 ];
 ```
 

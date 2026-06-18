@@ -34,11 +34,12 @@ const values: readonly unknown[] = [1, 2, 3];
 
 ```ts
 // ❌ Mutable function parameter
-const total = (values: number[]) => values.reduce((sum, value) => sum + value, 0);
+const total = (values: number[]) =>
+ values.reduce((sum, value) => sum + value, 0);
 
 // ✅ Readonly parameter prevents accidental writes
 const total = (values: readonly number[]) =>
-    values.reduce((sum, value) => sum + value, 0);
+ values.reduce((sum, value) => sum + value, 0);
 ```
 
 ## ESLint flat config example
@@ -47,13 +48,13 @@ const total = (values: readonly number[]) =>
 import immutable from "eslint-plugin-immutable-2";
 
 export default [
-    {
-        files: ["**/*.{ts,tsx,mts,cts}"],
-        plugins: { immutable },
-        rules: {
-            "immutable/readonly-array": "error",
-        },
-    },
+ {
+  files: ["**/*.{ts,tsx,mts,cts}"],
+  plugins: { immutable },
+  rules: {
+   "immutable/readonly-array": "error",
+  },
+ },
 ];
 ```
 

@@ -6,16 +6,14 @@ export const name = "no-throw" as const;
 /** `no-throw` rule implementation. */
 const noThrowRule: ReturnType<typeof createRule<readonly [], "generic">> =
     createRule<readonly [], "generic">({
-        create(context) {
-            return {
-                ThrowStatement(node) {
-                    context.report({
-                        messageId: "generic",
-                        node,
-                    });
-                },
-            };
-        },
+        create: (context) => ({
+            ThrowStatement(node) {
+                context.report({
+                    messageId: "generic",
+                    node,
+                });
+            },
+        }),
         meta: {
             deprecated: false,
             docs: {

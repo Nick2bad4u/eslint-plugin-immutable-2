@@ -1,6 +1,7 @@
 /* eslint-disable canonical/no-re-export -- registry modules intentionally compose imported presets into exported maps. */
 
 import type { Linter } from "eslint";
+import type { ArrayValues } from "type-fest";
 
 import allConfig from "./all.js";
 import functionalLiteConfig from "./functional-lite.js";
@@ -18,7 +19,7 @@ export const immutableConfigNames = [
 ] as const;
 
 /** Immutable plugin preset name union. */
-export type ImmutableConfigName = (typeof immutableConfigNames)[number];
+export type ImmutableConfigName = ArrayValues<typeof immutableConfigNames>;
 
 /** Immutable config map by preset name. */
 type ImmutableConfigMap = Record<ImmutableConfigName, Linter.Config>;
