@@ -4,9 +4,7 @@ export interface PresetsRuleModule {
               readonly docs?:
                   | {
                         readonly immutableConfigs?:
-                            | readonly string[]
-                            | string
-                            | undefined;
+                            readonly string[] | string | undefined;
                         readonly url?: string | undefined;
                     }
                   | undefined;

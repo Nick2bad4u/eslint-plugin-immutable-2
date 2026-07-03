@@ -198,8 +198,23 @@ const snapshotFixtureSourceByPath = (
 const toRelativePath = (absolutePath: string): string =>
     path.relative(repositoryRootPath, absolutePath);
 
+type ReadonlyLintMessage = ReadonlyLintResult["messages"][number];
 /** Build fatal diagnostic strings from lint results. */
 type ReadonlyLintResult = Readonly<ESLint.LintResult>;
+
+const formatFatalDiagnostic = (
+    lintResult: ReadonlyLintResult,
+    message: ReadonlyLintMessage
+): string | undefined => {
+    if (message.fatal !== true) {
+        return undefined;
+    }
+
+    const line = typeof message.line === "number" ? message.line : 0;
+    const column = typeof message.column === "number" ? message.column : 0;
+
+    return `${toRelativePath(lintResult.filePath)}:${line}:${column} ${message.message}`;
+};
 
 /** Build fatal diagnostic strings from lint results. */
 const collectFatalDiagnostics = (
@@ -209,15 +224,10 @@ const collectFatalDiagnostics = (
 
     for (const lintResult of lintResults) {
         for (const message of lintResult.messages) {
-            if (message.fatal === true) {
-                const line =
-                    typeof message.line === "number" ? message.line : 0;
-                const column =
-                    typeof message.column === "number" ? message.column : 0;
+            const diagnostic = formatFatalDiagnostic(lintResult, message);
 
-                diagnostics.push(
-                    `${toRelativePath(lintResult.filePath)}:${line}:${column} ${message.message}`
-                );
+            if (diagnostic !== undefined) {
+                diagnostics.push(diagnostic);
             }
         }
     }

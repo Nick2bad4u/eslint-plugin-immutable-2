@@ -1,11 +1,5 @@
 type SkippedPrimitive =
-    | bigint
-    | boolean
-    | null
-    | number
-    | string
-    | symbol
-    | undefined;
+    bigint | boolean | null | number | string | symbol | undefined;
 
 declare const skippedPrimitive: SkippedPrimitive;
 

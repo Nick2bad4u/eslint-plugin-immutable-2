@@ -26,11 +26,7 @@ import builtPlugin from "../dist/plugin.js";
 /** @typedef {Readonly<Record<string, ReadmeRuleModule>>} ReadmeRulesMap */
 
 /**
- * @typedef {"all"
- *     | "functional"
- *     | "functional-lite"
- *     | "immutable"
- *     | "recommended"} PresetName
+ * @typedef {"all" | "functional" | "functional-lite" | "immutable" | "recommended"} PresetName
  */
 
 /**

@@ -26,11 +26,7 @@ import builtPlugin from "../dist/plugin.js";
 /** @typedef {Readonly<Record<string, RuleModule>>} RulesMap */
 
 /**
- * @typedef {"all"
- *     | "functional"
- *     | "functional-lite"
- *     | "recommended"
- *     | "immutable"} PresetConfigName
+ * @typedef {"all" | "functional" | "functional-lite" | "recommended" | "immutable"} PresetConfigName
  */
 
 const matrixSectionHeading = "## Rule matrix";
