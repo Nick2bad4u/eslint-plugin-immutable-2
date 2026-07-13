@@ -31,7 +31,10 @@ import {
 /** Rule name exported for config wiring. */
 export const name = "immutable-data" as const;
 
-type MessageIds = "array" | "generic" | "object";
+type MessageIds =
+    | "array"
+    | "generic"
+    | "object";
 
 type Options = readonly [
     AssumeTypesOption & IgnoreAccessorPatternOption & IgnorePatternOption,

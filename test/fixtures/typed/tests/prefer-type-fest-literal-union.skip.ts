@@ -1,4 +1,7 @@
-type EnvironmentName = "dev" | "prod" | string; // NOSONAR(typescript:S3512) -- intentional: this is the pattern the rule detects
+type EnvironmentName =
+    | "dev"
+    | "prod"
+    | string; // NOSONAR(typescript:S3512) -- intentional: this is the pattern the rule detects
 
 const environment: EnvironmentName = "dev";
 

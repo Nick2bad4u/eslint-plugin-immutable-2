@@ -22,7 +22,11 @@ import {
 /** Rule name exported for config wiring. */
 export const name = "no-map-set-mutation" as const;
 
-type CollectionKind = "Map" | "Set" | "WeakMap" | "WeakSet";
+type CollectionKind =
+    | "Map"
+    | "Set"
+    | "WeakMap"
+    | "WeakSet";
 type MessageIds = "generic";
 type Options = readonly [IgnoreAccessorPatternOption & IgnorePatternOption];
 

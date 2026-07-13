@@ -111,6 +111,8 @@ const config = [
             "unicorn/no-incorrect-template-string-interpolation": "off",
             "unicorn/no-unnecessary-global-this": "off",
             "unicorn/prefer-global-this": "off",
+            // Scroll progress requires continuous layout-derived updates rather than visibility changes.
+            "unicorn/prefer-observer-apis": "off",
         },
     },
     {
@@ -150,6 +152,8 @@ const config = [
             "test-signal/no-weak-existence-assertions": "off",
             "test-signal/require-negative-path": "off",
             "unicorn/max-nested-calls": "off",
+            // Tests parse arbitrary thrown values and retain compatibility with supported Node versions.
+            "unicorn/prefer-error-is-error": "off",
         },
     },
     // Add repository-specific config entries below as needed.
