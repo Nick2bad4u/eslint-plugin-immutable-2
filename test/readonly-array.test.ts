@@ -1,8 +1,14 @@
 import { describe, expect, it } from "vitest";
 
 import { createRuleTester, getPluginRule } from "./_internal/ruleTester";
+import {
+    createTypedRuleTester,
+    readTypedFixture,
+    typedFixturePath,
+} from "./_internal/typed-rule-tester";
 
 const tester = createRuleTester();
+const typedTester = createTypedRuleTester();
 
 describe("readonly-array rule", () => {
     it("exports readonly-array rule module", () => {
@@ -96,4 +102,25 @@ describe("readonly-array rule", () => {
             "let items: readonly string[];",
         ],
     });
+
+    typedTester.run(
+        "readonly-array typed inference",
+        getPluginRule("readonly-array"),
+        {
+            invalid: [
+                {
+                    code: readTypedFixture("readonly-array.invalid.ts"),
+                    errors: [{ messageId: "implicit" }],
+                    filename: typedFixturePath("readonly-array.invalid.ts"),
+                    output: "const values: readonly unknown[] = Array.of(1, 2, 3);\n",
+                },
+            ],
+            valid: [
+                {
+                    code: readTypedFixture("readonly-array.valid.ts"),
+                    filename: typedFixturePath("readonly-array.valid.ts"),
+                },
+            ],
+        }
+    );
 });

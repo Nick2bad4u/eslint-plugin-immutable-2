@@ -45,6 +45,11 @@ describe("no-conditional-statement rule", () => {
                     errors: [{ messageId: "incompleteBranch" }],
                     options: [{ allowReturningBranches: true }],
                 },
+                {
+                    code: "if (value > 0) console.log(value);",
+                    errors: [{ messageId: "incompleteBranch" }],
+                    options: [{ allowReturningBranches: true }],
+                },
                 // Switch statement - unexpectedSwitch (allowReturningBranches: false)
                 {
                     code: `
