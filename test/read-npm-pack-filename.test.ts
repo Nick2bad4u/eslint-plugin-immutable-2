@@ -1,3 +1,4 @@
+import * as fc from "fast-check";
 import { spawnSync } from "node:child_process";
 import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -26,6 +27,18 @@ const runParser = async (packMetadata: unknown) => {
     }
 };
 
+const packageNameCharacterArbitrary = fc.constantFrom(
+    ...Array.from(
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._-"
+    )
+);
+const packageNameArbitrary = fc
+    .array(packageNameCharacterArbitrary, { maxLength: 80, minLength: 1 })
+    .map((characters) => characters.join(""));
+const tarballFilenameArbitrary = packageNameArbitrary.map(
+    (packageName) => `${packageName}.tgz`
+);
+
 describe("read npm pack filename", () => {
     it("reads npm 12 object-shaped metadata", async () => {
         expect.assertions(3);
@@ -51,6 +64,51 @@ describe("read npm pack filename", () => {
         expect(result.status).toBe(0);
         expect(result.stderr).toBe("");
         expect(result.stdout).toBe("eslint-plugin-immutable-2-1.2.5.tgz");
+    });
+
+    it("accepts generated safe tarball basenames in both metadata shapes", async () => {
+        expect.hasAssertions();
+
+        await fc.assert(
+            fc.asyncProperty(
+                tarballFilenameArbitrary,
+                fc.boolean(),
+                async (filename, useObjectShape) => {
+                    const packMetadata = useObjectShape
+                        ? { package: { filename } }
+                        : [{ filename }];
+                    const result = await runParser(packMetadata);
+
+                    expect(result.status).toBe(0);
+                    expect(result.stderr).toBe("");
+                    expect(result.stdout).toBe(filename);
+                }
+            ),
+            { numRuns: 30 }
+        );
+    });
+
+    it("rejects generated path-bearing tarball filenames", async () => {
+        expect.hasAssertions();
+
+        await fc.assert(
+            fc.asyncProperty(
+                packageNameArbitrary,
+                fc.constantFrom("/", "\\"),
+                tarballFilenameArbitrary,
+                async (directory, separator, filename) => {
+                    const result = await runParser([
+                        { filename: `${directory}${separator}${filename}` },
+                    ]);
+
+                    expect(result.status).not.toBe(0);
+                    expect(result.stderr).toContain(
+                        "Unexpected npm pack --json output."
+                    );
+                }
+            ),
+            { numRuns: 30 }
+        );
     });
 
     it.each([
