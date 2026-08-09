@@ -93,10 +93,8 @@ jobs:
                       exit 1
                     fi
                     echo "ref=$branch" >> "$GITHUB_OUTPUT"
-                    echo "branch=$branch" >> "$GITHUB_OUTPUT"
                   else
                     echo "ref=${GITHUB_REF}" >> "$GITHUB_OUTPUT"
-                    echo "branch=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
                   fi
 
             - name: "Checkout repository"
@@ -147,7 +145,7 @@ jobs:
                   go install github.com/zricethezav/gitleaks/v8@latest
                   echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
 
-            - name: "Configure Git for release automation"
+            - name: "Configure Git for release tagging"
               if: "github.event_name == 'workflow_dispatch'"
               run: |
                   set -euo pipefail
@@ -196,11 +194,10 @@ jobs:
               run: "npm run release:check"
 
             - name: "Ensure verification did not modify tracked files"
-              if: "startsWith(github.ref, 'refs/tags/v')"
               run: |
                   set -euo pipefail
                   if ! git diff --quiet || ! git diff --cached --quiet; then
-                    echo "release:check modified files on a tag-triggered release. Ensure main is clean before tagging." >&2
+                    echo "release:check modified tracked files. Ensure the selected release ref is clean before tagging." >&2
                     git status --short
                     exit 1
                   fi
@@ -213,16 +210,30 @@ jobs:
               run: |
                   set -euo pipefail
 
+                  package_version=$(node -p "require('./package.json').version")
                   if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
                     explicit_version="${EXPLICIT_VERSION:-}"
                     if [ -n "$explicit_version" ]; then
-                      npm version "$explicit_version" --no-git-tag-version
-                      version="$explicit_version"
+                      expected_version="$explicit_version"
                     else
                       release_type="${RELEASE_TYPE:-patch}"
-                      npm version "$release_type" --no-git-tag-version
-                      version=$(node -p "require('./package.json').version")
+                      latest_tag=$(git tag --list "v[0-9]*.[0-9]*.[0-9]*" --sort=-v:refname | sed -n "1p")
+                      if [ -z "$latest_tag" ]; then
+                        echo "No existing semantic version tag was found. Provide an explicit version." >&2
+                        exit 1
+                      fi
+
+                      latest_version="${latest_tag#v}"
+                      expected_version=$(node scripts/get-next-semver.mjs "$latest_version" "$release_type")
                     fi
+
+                    if [ "$package_version" != "$expected_version" ]; then
+                      echo "package.json version $package_version does not match the requested release version $expected_version." >&2
+                      echo "Commit the version change through a reviewed pull request before dispatching the release." >&2
+                      exit 1
+                    fi
+
+                    version="$package_version"
                   else
                     tag="${GITHUB_REF_NAME}"
                     version="${tag#v}"
@@ -264,28 +275,25 @@ jobs:
                   echo "Version ${VERSION} is already published. Choose a new release type/version." >&2
                   exit 1
 
-            - name: "Commit and push release version + tag"
+            - name: "Create and push release tag"
               if: "github.event_name == 'workflow_dispatch'"
               env:
-                  BRANCH: "${{ steps.target_ref.outputs.branch }}"
                   TAG: "${{ steps.version.outputs.tag }}"
               run: |
                   set -euo pipefail
 
                   if git rev-parse "$TAG" >/dev/null 2>&1; then
-                    echo "Tag $TAG already exists locally." >&2
-                    exit 1
+                    tag_commit=$(git rev-parse "${TAG}^{commit}")
+                    head_commit=$(git rev-parse HEAD)
+                    if [ "$tag_commit" != "$head_commit" ]; then
+                      echo "Tag $TAG points to $tag_commit instead of release commit $head_commit." >&2
+                      exit 1
+                    fi
+                    echo "Tag $TAG already points to the release commit; reusing it."
+                  else
+                    git tag -a "$TAG" -m "$TAG"
                   fi
 
-                  git add -A
-                  if git diff --cached --quiet; then
-                    echo "No staged changes found for release commit." >&2
-                    exit 1
-                  fi
-
-                  git commit -m "chore: release ${TAG}"
-                  git tag -a "$TAG" -m "$TAG"
-                  git push origin "HEAD:${BRANCH}"
                   git push origin "$TAG"
 
             - name: "Generate release notes from git-cliff"
