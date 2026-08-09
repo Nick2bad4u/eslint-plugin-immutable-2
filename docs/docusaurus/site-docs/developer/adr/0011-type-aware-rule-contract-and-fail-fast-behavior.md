@@ -1,10 +1,8 @@
 ---
-title: ADR 0011 - Type-Aware Rule Contract and Fail-Fast Behavior
+title: "ADR 0011: Require parser services for typed rules and fail fast when unavailable"
 description: Decision record for requiring parser services in typed rules and failing fast when type-aware lint context is missing.
 sidebar_position: 11
 ---
-
-# ADR 0011: Require parser services for typed rules and fail fast when unavailable
 
 - Status: Accepted
 - Date: 2026-02-28

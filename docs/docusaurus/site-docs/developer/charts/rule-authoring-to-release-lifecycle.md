@@ -1,10 +1,8 @@
 ---
-title: Rule Authoring to Release Lifecycle
+title: "Rule authoring to release lifecycle"
 description: End-to-end lifecycle from rule proposal through implementation, validation, docs, and publish readiness.
 sidebar_position: 13
 ---
-
-# Rule authoring to release lifecycle
 
 This chart gives contributors a single map for the full rule delivery process, including docs and release gates.
 

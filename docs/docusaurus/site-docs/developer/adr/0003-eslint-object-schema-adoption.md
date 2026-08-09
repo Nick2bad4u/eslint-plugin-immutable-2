@@ -1,10 +1,8 @@
 ---
-title: ADR 0003 - @eslint/object-schema Adoption
+title: "ADR 0003: Do not adopt @eslint/object-schema for plugin internals"
 description: Decision record for whether eslint-plugin-immutable-2 should adopt @eslint/object-schema in plugin internals.
 sidebar_position: 3
 ---
-
-# ADR 0003: Do not adopt `@eslint/object-schema` for plugin internals
 
 - Status: Accepted
 - Date: 2026-02-22

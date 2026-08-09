@@ -1,10 +1,8 @@
 ---
-title: Change Impact and Validation Matrix
+title: "Change impact and validation matrix"
 description: Decision flow for selecting the right validation depth based on what changed.
 sidebar_position: 5
 ---
-
-# Change impact and validation matrix
 
 This flowchart helps maintainers choose the minimum safe validation set for each class of change.
 

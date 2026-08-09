@@ -1,10 +1,8 @@
 ---
-title: Developer docs
+title: "Developer docs"
 description: Contributor-oriented architecture, operations, API, and diagnostics references for eslint-plugin-immutable-2.
 sidebar_position: 1
 ---
-
-# Developer docs
 
 This section is for contributors and advanced users.
 

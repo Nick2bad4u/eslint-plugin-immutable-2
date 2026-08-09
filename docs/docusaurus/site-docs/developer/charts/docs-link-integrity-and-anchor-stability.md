@@ -1,10 +1,8 @@
 ---
-title: Docs Link Integrity and Anchor Stability
+title: "Docs link integrity and anchor stability"
 description: Validation loop for preventing broken links and unstable anchor references across docs and generated API pages.
 sidebar_position: 9
 ---
-
-# Docs link integrity and anchor stability
 
 This chart captures how documentation links should be authored, validated, and repaired to keep navigation trustworthy across manual and generated pages.
 

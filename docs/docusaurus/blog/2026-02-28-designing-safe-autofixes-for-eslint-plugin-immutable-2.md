@@ -16,8 +16,6 @@ Autofix is one of the biggest quality-of-life features in ESLint, but it is also
 
 <!-- truncate -->
 
-# Designing safe autofixes
-
 In this plugin, a fix is not accepted just because it is convenient. A fix must be safe.
 
 That matters especially in `eslint-plugin-immutable-2`, where most reports are about mutation-heavy code paths that teams often adopt gradually. A bad rewrite can easily turn a trust-building rollout into a source of churn.

@@ -1,9 +1,7 @@
 ---
-title: Type-aware linting readiness
+title: "Type-aware linting readiness"
 description: Checklist and rollout playbook for enabling type-aware eslint-plugin-immutable-2 rules safely.
 ---
-
-# Type-aware linting readiness
 
 Use this guide when you want the full checker-backed behavior of the plugin's
 typed branches.

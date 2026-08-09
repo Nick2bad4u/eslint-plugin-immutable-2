@@ -9,6 +9,9 @@ import { safeCastTo } from "ts-extras";
 const RULE_DOCS_BASE_URL =
     "https://nick2bad4u.github.io/eslint-plugin-immutable-2/docs/rules";
 
+/** ESLint language identifier supported by every immutable rule. */
+const RULE_LANGUAGES = ["js/js"] as const;
+
 /** Base option tuple type for immutable rule definitions. */
 export type BaseOptions = Readonly<UnknownArray>;
 
@@ -58,17 +61,22 @@ export const createRule: typeof baseCreateRule = (rule) => {
               ? docs.requiresTypechecking
               : false;
 
+    const normalizedMeta = {
+        ...rule.meta,
+        deprecated: rule.meta.deprecated ?? false,
+        docs: {
+            ...docs,
+            frozen: docs.frozen ?? false,
+            requiresTypeChecking,
+        },
+        languages: RULE_LANGUAGES,
+    };
+
     return baseCreateRule({
         ...rule,
-        meta: {
-            ...rule.meta,
-            deprecated: rule.meta.deprecated ?? false,
-            docs: {
-                ...docs,
-                frozen: docs.frozen ?? false,
-                requiresTypeChecking,
-            },
-        },
+        // @typescript-eslint/utils has not yet exposed ESLint 10.2's
+        // `meta.languages` field, so keep the compatibility cast at this edge.
+        meta: safeCastTo<typeof rule.meta>(normalizedMeta),
     });
 };
 

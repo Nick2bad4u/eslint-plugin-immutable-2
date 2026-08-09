@@ -1,10 +1,8 @@
 ---
-title: ADR 0001 - @eslint/plugin-kit Adoption
+title: "ADR 0001: Do not adopt @eslint/plugin-kit for rule/runtime internals"
 description: Decision record for whether eslint-plugin-immutable-2 should adopt @eslint/plugin-kit for rule/runtime internals.
 sidebar_position: 1
 ---
-
-# ADR 0001: Do not adopt `@eslint/plugin-kit` for rule/runtime internals
 
 - Status: Accepted
 - Date: 2026-02-22

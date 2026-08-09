@@ -1,8 +1,6 @@
 ---
-title: Immutable preset
+title: "🟠 Immutable"
 ---
-
-# 🟠 Immutable
 
 Use this preset when you want the broader immutable baseline beyond `recommended`.
 

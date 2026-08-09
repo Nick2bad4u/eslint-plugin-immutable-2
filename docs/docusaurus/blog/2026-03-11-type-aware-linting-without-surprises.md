@@ -16,8 +16,6 @@ Type-aware rules are powerful, but they become noisy fast when parser-service as
 
 <!-- truncate -->
 
-# Type-aware linting without surprises
-
 The goal is not “run typed rules everywhere immediately.” The goal is predictable behavior under real project conditions.
 
 ## The contract we want

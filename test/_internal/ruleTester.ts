@@ -12,24 +12,24 @@ import immutablePlugin from "../../src/plugin";
 
 type UnknownRecord = Readonly<Record<string, unknown>>;
 
-RuleTester.afterAll = (...arguments_) => {
-    Reflect.apply(afterAll, undefined, arguments_);
+RuleTester.afterAll = (...hookArguments) => {
+    Reflect.apply(afterAll, undefined, hookArguments);
 };
 
-RuleTester.describe = (...arguments_) => {
-    Reflect.apply(describe, undefined, arguments_);
+RuleTester.describe = (...hookArguments) => {
+    Reflect.apply(describe, undefined, hookArguments);
 };
 
-RuleTester.it = (...arguments_) => {
-    Reflect.apply(it, undefined, arguments_);
+RuleTester.it = (...hookArguments) => {
+    Reflect.apply(it, undefined, hookArguments);
 };
 
 const vitestItOnly = Reflect.get(it, "only");
 if (typeof vitestItOnly !== "function") {
     throw new TypeError("Expected vitest it.only hook to be callable.");
 }
-RuleTester.itOnly = (...arguments_) => {
-    Reflect.apply(vitestItOnly, undefined, arguments_);
+RuleTester.itOnly = (...hookArguments) => {
+    Reflect.apply(vitestItOnly, undefined, hookArguments);
 };
 
 /** Rule module parameter type accepted by `RuleTester#run`. */

@@ -30,6 +30,14 @@ const config = [
             "stryker.config.mjs",
         ],
     },
+    {
+        name: "Repository Security Configuration",
+        rules: {
+            // GitHub only supports nonempty path exclusions in secret_scanning.yml;
+            // this repository intentionally scans every path.
+            "repo-compliance/require-secret-scanning-config": "off",
+        },
+    },
 
     // Local Plugin Config
     // This lets us use the plugin's rules in this repository without needing to publish the plugin first.
@@ -42,6 +50,16 @@ const config = [
         rules: {
             // Only turn on for testing rules in this repository, not for the entire plugin
             // ...immutable.configs.all.rules,
+        },
+    },
+    {
+        files: ["src/rules/**/*.{ts,mts,cts}"],
+        name: "Rule Definition Contracts",
+        rules: {
+            // The createRule factory applies `meta.languages` centrally; the static rule cannot follow that wrapper.
+            "eslint-plugin/require-meta-languages": "off",
+            // ESTree visitor keys are API-defined PascalCase node names, not ordinary method names.
+            "sonarjs/function-name": "off",
         },
     },
     {

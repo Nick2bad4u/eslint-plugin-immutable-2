@@ -16,8 +16,6 @@ Documentation drift is one of the easiest ways to lose trust in a lint plugin.
 
 <!-- truncate -->
 
-# Keeping rule docs and presets in sync
-
 This repository treats metadata-to-doc synchronization as a first-class quality gate, not a best-effort cleanup task.
 
 ## The core principle

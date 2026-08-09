@@ -1,10 +1,8 @@
 ---
-title: Node.js ESLint API Usage
+title: "Node.js ESLint API Usage"
 description: Programmatic ESLint examples using lintFiles, lintText, outputFixes, and formatters.
 sidebar_position: 23
 ---
-
-# Node.js ESLint API Usage
 
 Use this pattern when embedding linting in scripts, custom tooling, or release checks.
 

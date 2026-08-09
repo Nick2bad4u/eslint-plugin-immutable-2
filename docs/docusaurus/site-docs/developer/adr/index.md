@@ -1,10 +1,8 @@
 ---
-title: Architecture Decision Records (ADR) Index
+title: "Architecture Decision Records (ADR) Index"
 description: Index of architecture decisions for eslint-plugin-immutable-2 maintainers and contributors.
 sidebar_position: 0
 ---
-
-# Architecture Decision Records (ADR) Index
 
 This page acts as the ADR README/index for developer documentation.
 

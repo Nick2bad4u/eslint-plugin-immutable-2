@@ -1,8 +1,6 @@
 ---
-title: Functional Lite preset
+title: "🟢 Functional Lite"
 ---
-
-# 🟢 Functional Lite
 
 Use this preset when you want a moderate functional step up from `immutable`.
 

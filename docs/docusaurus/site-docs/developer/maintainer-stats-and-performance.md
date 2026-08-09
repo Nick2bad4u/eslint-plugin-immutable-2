@@ -1,10 +1,8 @@
 ---
-title: Maintainer Performance Profiling with --stats
+title: "Maintainer Performance Profiling with --stats"
 description: Use ESLint CLI stats output to profile rule performance and catch regressions before release.
 sidebar_position: 20
 ---
-
-# Maintainer Performance Profiling with `--stats`
 
 Use this workflow whenever linting performance regresses in CI or local development.
 

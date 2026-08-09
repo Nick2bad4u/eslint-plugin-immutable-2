@@ -1,10 +1,8 @@
 ---
-title: Diagnostics and Regression Triage Loop
+title: "Diagnostics and regression triage loop"
 description: End-to-end workflow for moving from failing diagnostics to root-cause fixes and confidence revalidation.
 sidebar_position: 11
 ---
-
-# Diagnostics and regression triage loop
 
 This chart captures the expected maintainer response when lint/type/test/docs gates report regressions.
 

@@ -1,9 +1,7 @@
 ---
-title: Rollout and fix safety
+title: "Rollout and fix safety"
 description: Guidance for phased rollout, fix safety, and manual verification.
 ---
-
-# Rollout and fix safety
 
 This page centralizes rollout guidance used across rule migrations.
 

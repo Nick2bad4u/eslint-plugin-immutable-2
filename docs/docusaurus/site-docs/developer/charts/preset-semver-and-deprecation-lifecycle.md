@@ -1,10 +1,8 @@
 ---
-title: Preset Semver and Deprecation Lifecycle
+title: "Preset semver and deprecation lifecycle"
 description: Lifecycle for adding, reclassifying, deprecating, or removing rules in presets with semver-aware release handling.
 sidebar_position: 12
 ---
-
-# Preset semver and deprecation lifecycle
 
 This chart defines the expected semver-aware flow when preset membership changes are proposed.
 

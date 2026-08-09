@@ -86,4 +86,12 @@ describe("plugin entry module", () => {
             "readonly-keyword",
         ]);
     });
+
+    it("declares the supported ESLint language for every rule", () => {
+        expect.hasAssertions();
+
+        for (const rule of Object.values(immutablePlugin.rules)) {
+            expect(rule?.meta?.languages).toStrictEqual(["js/js"]);
+        }
+    });
 });

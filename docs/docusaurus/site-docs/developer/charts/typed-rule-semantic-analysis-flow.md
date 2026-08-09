@@ -1,10 +1,8 @@
 ---
-title: Typed Rule Semantic Analysis Flow
+title: "Typed rule semantic analysis flow"
 description: Detailed flow for parser-services acquisition, guarded type operations, and conservative fallback behavior in typed branches.
 sidebar_position: 6
 ---
-
-# Typed rule semantic analysis flow
 
 This chart focuses on the semantic path used by the plugin's current typed branches, especially `immutable-data` and `readonly-array`.
 

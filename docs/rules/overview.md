@@ -1,9 +1,7 @@
 ---
-title: Overview
+title: "eslint-plugin-immutable-2"
 description: README-style overview for eslint-plugin-immutable-2.
 ---
-
-# eslint-plugin-immutable-2
 
 ESLint plugin for teams that want consistent immutable and functional TypeScript conventions.
 

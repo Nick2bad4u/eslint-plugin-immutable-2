@@ -1,9 +1,7 @@
 ---
-title: Presets
+title: "Presets"
 description: Preset reference and selection guide for eslint-plugin-immutable-2.
 ---
-
-# Presets
 
 Use one of these presets based on how strongly you want to enforce immutable and functional patterns.
 

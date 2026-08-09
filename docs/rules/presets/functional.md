@@ -1,8 +1,6 @@
 ---
-title: Functional preset
+title: "🟡 Functional"
 ---
-
-# 🟡 Functional
 
 Use this preset when you want strict functional-style constraints as your default.
 

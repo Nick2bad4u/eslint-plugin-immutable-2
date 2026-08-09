@@ -1,10 +1,8 @@
 ---
-title: Autofix Safety Decision Tree
+title: "Autofix safety decision tree"
 description: Decision tree for when eslint-plugin-immutable-2 should emit a fix, a suggestion, or a diagnostic-only report.
 sidebar_position: 7
 ---
-
-# Autofix safety decision tree
 
 This chart explains how rule authors should decide whether a report gets a fix, a suggestion, or no rewrite at all.
 

@@ -1,9 +1,7 @@
 ---
-title: Rule adoption checklist
+title: "Rule adoption checklist"
 description: Practical checklist for adopting eslint-plugin-immutable-2 rules with low risk.
 ---
-
-# Rule adoption checklist
 
 Use this checklist when rolling out one or more rules across an existing codebase.
 

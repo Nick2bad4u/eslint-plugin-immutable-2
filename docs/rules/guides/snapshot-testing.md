@@ -1,9 +1,7 @@
 ---
-title: Snapshot testing guidance
+title: "Snapshot testing guidance"
 description: How to use Vitest snapshots safely and effectively in eslint-plugin-immutable-2.
 ---
-
-# Snapshot testing guidance
 
 This guide explains where snapshot tests add value in this repository, where
 they do not, and how to keep snapshots stable and reviewable.

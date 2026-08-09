@@ -1,10 +1,8 @@
 ---
-title: ADR 0009 - Plugin Blog as an Official Documentation Channel
+title: "ADR 0009: Enable and maintain a first-party plugin blog in Docusaurus"
 description: Decision record for enabling and maintaining the Docusaurus blog as part of the plugin's documentation architecture.
 sidebar_position: 9
 ---
-
-# ADR 0009: Enable and maintain a first-party plugin blog in Docusaurus
 
 - Status: Accepted
 - Date: 2026-02-28

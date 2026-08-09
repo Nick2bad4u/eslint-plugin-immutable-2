@@ -1,10 +1,8 @@
 ---
-title: ADR 0004 - Rule Docs Specificity and Shared Guides
+title: "ADR 0004: Keep rule pages rule-specific and move shared rollout guidance to dedicated guide pages"
 description: Decision record for how rule documentation should balance rule-specific guidance with shared rollout/adoption content.
 sidebar_position: 4
 ---
-
-# ADR 0004: Keep rule pages rule-specific and move shared rollout guidance to dedicated guide pages
 
 - Status: Accepted
 - Date: 2026-02-25

@@ -1,10 +1,8 @@
 ---
-title: ADR 0014 - Typed Rule Performance Budget and Instrumentation
+title: "ADR 0014: Enforce typed-rule performance budgets with hotspot-oriented instrumentation"
 description: Decision record for budgeting semantic-rule cost and requiring hotspot-aware instrumentation for non-trivial typed-rule changes.
 sidebar_position: 14
 ---
-
-# ADR 0014: Enforce typed-rule performance budgets with hotspot-oriented instrumentation
 
 - Status: Accepted
 - Date: 2026-03-09

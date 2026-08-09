@@ -1,10 +1,8 @@
 ---
-title: ADR 0012 - Internal API Surface and Stability Contract
+title: "ADR 0012: Document internal helper APIs with explicit stability boundaries"
 description: Decision record for documenting internal helper APIs while keeping plugin-consumer contracts explicitly separated.
 sidebar_position: 12
 ---
-
-# ADR 0012: Document internal helper APIs with explicit stability boundaries
 
 - Status: Accepted
 - Date: 2026-03-09

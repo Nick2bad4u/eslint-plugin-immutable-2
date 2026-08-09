@@ -1,10 +1,8 @@
 ---
-title: ADR 0015 - Preset Semver and Deprecation Policy
+title: "ADR 0015: Govern preset evolution with semver-aware deprecation policy"
 description: Decision record for classifying preset changes under semver and requiring explicit migration guidance for disruptive transitions.
 sidebar_position: 15
 ---
-
-# ADR 0015: Govern preset evolution with semver-aware deprecation policy
 
 - Status: Accepted
 - Date: 2026-03-09
