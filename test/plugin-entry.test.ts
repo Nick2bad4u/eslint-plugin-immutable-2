@@ -10,6 +10,15 @@ const packageVersion: unknown =
     typeof packageJsonValue === "object" && packageJsonValue !== null
         ? Reflect.get(packageJsonValue, "version")
         : undefined;
+const packagePeerDependencies: unknown =
+    typeof packageJsonValue === "object" && packageJsonValue !== null
+        ? Reflect.get(packageJsonValue, "peerDependencies")
+        : undefined;
+const packageTypeScriptPeerRange: unknown =
+    typeof packagePeerDependencies === "object" &&
+    packagePeerDependencies !== null
+        ? Reflect.get(packagePeerDependencies, "typescript")
+        : undefined;
 
 describe("plugin entry module", () => {
     it("exports default plugin object with rule and config registries", () => {
@@ -26,6 +35,11 @@ describe("plugin entry module", () => {
             namespace: "immutable",
         });
         expect(immutablePlugin.meta.version).toBe(packageVersion);
+    });
+
+    it("does not advertise TypeScript versions unsupported by its parser", () => {
+        expect.hasAssertions();
+        expect(packageTypeScriptPeerRange).toBe(">=5.0.0 <6.1.0");
     });
 
     it("contains all migrated immutable rules", () => {
