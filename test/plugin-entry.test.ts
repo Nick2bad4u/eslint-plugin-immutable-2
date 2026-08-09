@@ -1,6 +1,15 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 import immutablePlugin from "../src/plugin";
+
+const packageJsonValue: unknown = JSON.parse(
+    readFileSync(new URL("../package.json", import.meta.url), "utf8")
+);
+const packageVersion: unknown =
+    typeof packageJsonValue === "object" && packageJsonValue !== null
+        ? Reflect.get(packageJsonValue, "version")
+        : undefined;
 
 describe("plugin entry module", () => {
     it("exports default plugin object with rule and config registries", () => {
@@ -16,7 +25,7 @@ describe("plugin entry module", () => {
             name: "eslint-plugin-immutable-2",
             namespace: "immutable",
         });
-        expect(immutablePlugin.meta.version).toBeTypeOf("string");
+        expect(immutablePlugin.meta.version).toBe(packageVersion);
     });
 
     it("contains all migrated immutable rules", () => {

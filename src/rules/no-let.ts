@@ -30,7 +30,7 @@ const isLetInClassicForLoopInit = (
     node: Readonly<TSESTree.VariableDeclaration>
 ): boolean =>
     node.parent.type === AST_NODE_TYPES.ForStatement &&
-    node.parent.init === node;
+    node.parent.init?.type === AST_NODE_TYPES.VariableDeclaration;
 
 const canSafelySuggestConst = (
     node: Readonly<TSESTree.VariableDeclaration>,

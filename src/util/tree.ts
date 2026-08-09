@@ -1,6 +1,6 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 
-import { objectHasOwn } from "ts-extras";
+import { arrayFirst, arrayLast, objectHasOwn } from "ts-extras";
 
 import {
     isClassLike,
@@ -94,8 +94,15 @@ export const isInReturnType = (node: Readonly<TSESTree.Node>): boolean => {
 
         const parent = parentCandidate;
 
-        if (isFunctionLike(parent) && parent.returnType === cursor) {
-            return true;
+        if (isFunctionLike(parent)) {
+            const returnTypeRange = parent.returnType?.range;
+            if (
+                returnTypeRange !== undefined &&
+                arrayFirst(returnTypeRange) === arrayFirst(cursor.range) &&
+                arrayLast(returnTypeRange) === arrayLast(cursor.range)
+            ) {
+                return true;
+            }
         }
 
         cursor = parent;
