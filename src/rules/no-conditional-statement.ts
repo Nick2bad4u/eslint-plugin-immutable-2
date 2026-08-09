@@ -52,6 +52,30 @@ type MessageIds =
     | "unexpectedIf"
     | "unexpectedSwitch";
 
+const isNonReturningBranchStatement = (
+    statement: Readonly<TSESTree.Statement>
+): boolean => !isReturnStatement(statement) && !isIfStatement(statement);
+
+const isNotReturnStatement = (
+    statement: Readonly<TSESTree.Statement>
+): boolean => !isReturnStatement(statement);
+
+const isIfBranchViolation = (
+    branch: null | Readonly<TSESTree.Statement>
+): branch is TSESTree.Statement => {
+    if (branch === null || isReturnStatement(branch) || isIfStatement(branch)) {
+        return false;
+    }
+
+    if (!isBlockStatement(branch)) {
+        return true;
+    }
+
+    return branch.body.every((statement) =>
+        isNonReturningBranchStatement(statement)
+    );
+};
+
 const getIfBranchViolations = (
     node: Readonly<TSESTree.IfStatement>
 ): readonly TSESTree.Node[] => {
@@ -62,69 +86,40 @@ const getIfBranchViolations = (
         | TSESTree.Statement,
     ] = [node.consequent, node.alternate];
 
-    const violations: TSESTree.Node[] = [];
-    for (const branch of branches) {
-        if (branch === null) {
-            continue;
-        }
+    return branches.filter(isIfBranchViolation);
+};
 
-        if (isReturnStatement(branch) || isIfStatement(branch)) {
-            continue;
-        }
-
-        if (
-            isBlockStatement(branch) &&
-            branch.body.some(
-                (statement) =>
-                    isReturnStatement(statement) || isIfStatement(statement)
-            )
-        ) {
-            continue;
-        }
-
-        violations.push(branch);
+const isSwitchCaseViolation = (
+    branch: Readonly<TSESTree.SwitchCase>
+): boolean => {
+    if (
+        branch.consequent.length === 0 ||
+        branch.consequent.some((statement) => isReturnStatement(statement))
+    ) {
+        return false;
     }
 
-    return violations;
+    const blockConsequents = branch.consequent.filter((statement) =>
+        isBlockStatement(statement)
+    );
+    if (blockConsequents.length !== branch.consequent.length) {
+        return true;
+    }
+
+    const lastConsequent = arrayAt(branch.consequent, -1);
+    if (lastConsequent === undefined || !isBlockStatement(lastConsequent)) {
+        return true;
+    }
+
+    return lastConsequent.body.every((statement) =>
+        isNotReturnStatement(statement)
+    );
 };
 
 const getSwitchCaseViolations = (
     node: Readonly<TSESTree.SwitchStatement>
-): readonly TSESTree.SwitchCase[] => {
-    const violations: TSESTree.SwitchCase[] = [];
-
-    for (const branch of node.cases) {
-        if (branch.consequent.length === 0) {
-            continue;
-        }
-
-        if (
-            branch.consequent.some((statement) => isReturnStatement(statement))
-        ) {
-            continue;
-        }
-
-        const isEveryConsequentIsBlock = branch.consequent.every((statement) =>
-            isBlockStatement(statement)
-        );
-        if (isEveryConsequentIsBlock) {
-            const lastConsequent = arrayAt(branch.consequent, -1);
-            if (
-                lastConsequent !== undefined &&
-                isBlockStatement(lastConsequent) &&
-                lastConsequent.body.some((statement) =>
-                    isReturnStatement(statement)
-                )
-            ) {
-                continue;
-            }
-        }
-
-        violations.push(branch);
-    }
-
-    return violations;
-};
+): readonly TSESTree.SwitchCase[] =>
+    node.cases.filter((branch) => isSwitchCaseViolation(branch));
 
 const isExhaustiveIfViolation = (
     node: Readonly<TSESTree.IfStatement>

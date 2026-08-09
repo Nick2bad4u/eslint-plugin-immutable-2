@@ -1,10 +1,8 @@
 ---
-title: Rule Source and Docs Synchronization
+title: "Rule catalog and docs synchronization"
 description: How rule source files, preset definitions, docs pages, and sync scripts stay aligned in eslint-plugin-immutable-2.
 sidebar_position: 4
 ---
-
-# Rule catalog and docs synchronization
 
 Use this diagram to understand how a single rule change propagates through runtime metadata, hand-authored docs, generated tables, and validation tests.
 

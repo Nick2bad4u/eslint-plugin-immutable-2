@@ -1,10 +1,8 @@
 ---
-title: System Architecture Overview
+title: "System architecture overview"
 description: High-level architecture of eslint-plugin-immutable-2 runtime, rules, docs, and integration layers.
 sidebar_position: 1
 ---
-
-# System architecture overview
 
 This diagram shows how source modules, preset wiring, docs sync scripts, and consumer integrations fit together.
 

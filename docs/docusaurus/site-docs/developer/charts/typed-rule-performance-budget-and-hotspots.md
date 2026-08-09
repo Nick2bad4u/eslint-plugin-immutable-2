@@ -1,10 +1,8 @@
 ---
-title: Typed Rule Performance Budget and Hotspots
+title: "Typed rule performance budget and hotspots"
 description: Performance budget model for typed rules, highlighting hot paths, cache points, and escalation thresholds.
 sidebar_position: 10
 ---
-
-# Typed rule performance budget and hotspots
 
 Use this chart to reason about where semantic rules spend time and where to place guardrails before regressions land in CI.
 

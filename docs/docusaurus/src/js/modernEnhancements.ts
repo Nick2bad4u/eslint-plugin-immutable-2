@@ -56,7 +56,7 @@ function applySidebarLabelTokenColoring(): CleanupFunction {
     const mutations: SidebarLabelMutation[] = [];
 
     const processRuntimeLink = (
-        link: HTMLAnchorElement,
+        link: Readonly<HTMLAnchorElement>,
         linkLabel: string
     ): boolean => {
         const runtimePrefix = getRuntimeSidebarKindPrefix(linkLabel);
@@ -83,7 +83,7 @@ function applySidebarLabelTokenColoring(): CleanupFunction {
     };
 
     const processNumberedLink = (
-        link: HTMLAnchorElement,
+        link: Readonly<HTMLAnchorElement>,
         linkLabel: string
     ): void => {
         const ruleNumberPrefix = getRuleNumberPrefix(linkLabel);
@@ -100,27 +100,22 @@ function applySidebarLabelTokenColoring(): CleanupFunction {
         }
     };
 
-    const processLinks = (sidebarLinks: readonly HTMLAnchorElement[]): void => {
+    const processLinks = (
+        sidebarLinks: readonly Readonly<HTMLAnchorElement>[]
+    ): void => {
         for (const link of sidebarLinks) {
-            if (isSidebarLinkTokenized(link)) {
-                continue;
-            }
+            const linkLabel = link.textContent.trim();
+            if (!isSidebarLinkTokenized(link) && linkLabel.length > 0) {
+                const isProcessedRuntimeLink =
+                    isRuntimeSidebarLink(link) &&
+                    processRuntimeLink(link, linkLabel);
 
-            const linkLabel = link.textContent?.trim();
-
-            if (!linkLabel) {
-                continue;
-            }
-
-            if (
-                isRuntimeSidebarLink(link) &&
-                processRuntimeLink(link, linkLabel)
-            ) {
-                continue;
-            }
-
-            if (isNumberedRuleSidebarLink(link)) {
-                processNumberedLink(link, linkLabel);
+                if (
+                    !isProcessedRuntimeLink &&
+                    isNumberedRuleSidebarLink(link)
+                ) {
+                    processNumberedLink(link, linkLabel);
+                }
             }
         }
     };
@@ -428,7 +423,7 @@ function initializeEnhancements(): CleanupFunction {
     if (document.readyState === "complete") {
         scheduleInitialSetup();
     } else {
-        window.addEventListener("load", handleWindowLoad, { once: true }); // NOSONAR(JavaScript:S2137) -- window is required here; globalThis breaks the regression test expectation
+        globalThis.addEventListener("load", handleWindowLoad, { once: true });
     }
 
     let routeChangeTimer: null | ReturnType<typeof setTimeout> = null;
@@ -466,10 +461,10 @@ function initializeEnhancements(): CleanupFunction {
         observer.disconnect();
     };
 
-    window.addEventListener("beforeunload", handleBeforeUnload); // NOSONAR(JavaScript:S2137) -- window is intentional in browser context
+    globalThis.addEventListener("beforeunload", handleBeforeUnload);
 
     return (): void => {
-        window.removeEventListener("beforeunload", handleBeforeUnload); // NOSONAR(JavaScript:S2137) -- window is intentional in browser context
+        globalThis.removeEventListener("beforeunload", handleBeforeUnload);
         handleBeforeUnload();
     };
 }
@@ -481,7 +476,9 @@ function initializeEnhancements(): CleanupFunction {
  *
  * @returns `true` when element is an `HTMLElement` instance.
  */
-function isHTMLElement(element: Element | null): element is HTMLElement {
+function isHTMLElement(
+    element: null | Readonly<Element>
+): element is HTMLElement {
     return element instanceof HTMLElement;
 }
 
@@ -492,7 +489,7 @@ function isHTMLElement(element: Element | null): element is HTMLElement {
  *
  * @returns `true` when link is within the Rules sidebar category.
  */
-function isNumberedRuleSidebarLink(link: HTMLAnchorElement): boolean {
+function isNumberedRuleSidebarLink(link: Readonly<HTMLAnchorElement>): boolean {
     return link.closest(".sb-cat-rules") !== null;
 }
 
@@ -503,7 +500,7 @@ function isNumberedRuleSidebarLink(link: HTMLAnchorElement): boolean {
  *
  * @returns `true` when link is under `.sb-cat-api-runtime`.
  */
-function isRuntimeSidebarLink(link: HTMLAnchorElement): boolean {
+function isRuntimeSidebarLink(link: Readonly<HTMLAnchorElement>): boolean {
     return link.closest(".sb-cat-api-runtime") !== null;
 }
 
@@ -514,7 +511,7 @@ function isRuntimeSidebarLink(link: HTMLAnchorElement): boolean {
  *
  * @returns `true` when already tokenized.
  */
-function isSidebarLinkTokenized(link: HTMLAnchorElement): boolean {
+function isSidebarLinkTokenized(link: Readonly<HTMLAnchorElement>): boolean {
     const tokenizedValue = link.dataset[SIDEBAR_TOKENIZED_DATA_KEY];
 
     return tokenizedValue !== undefined && tokenizedValue.length > 0;
@@ -555,7 +552,11 @@ function setSidebarLeadingToken(
 
 if (typeof window !== "undefined" && typeof document !== "undefined") {
     initializeEnhancements();
-    window.initializeAdvancedFeatures = initializeAdvancedFeatures; // NOSONAR(JavaScript:S2137) -- window is intentional; exposes API on the browser Window object
+    Reflect.set(
+        globalThis,
+        "initializeAdvancedFeatures",
+        initializeAdvancedFeatures
+    );
 }
 
 export { initializeAdvancedFeatures, initializeEnhancements };

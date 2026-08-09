@@ -157,30 +157,22 @@ const readonlyArrayRule: ReturnType<
 
             const candidates = getImplicitCandidates(node);
             for (const candidate of candidates) {
-                if (!isIdentifier(candidate.id)) {
-                    continue;
-                }
-
                 if (
-                    candidate.id.typeAnnotation !== undefined ||
-                    candidate.init === null
+                    isIdentifier(candidate.id) &&
+                    candidate.id.typeAnnotation === undefined &&
+                    candidate.init !== null &&
+                    isArrayType(getTypeOfNode(candidate.init, context))
                 ) {
-                    continue;
+                    context.report({
+                        fix: (fixer) =>
+                            fixer.insertTextAfter(
+                                candidate.id,
+                                ": readonly unknown[]"
+                            ),
+                        messageId: "implicit",
+                        node: candidate.reportNode,
+                    });
                 }
-
-                if (!isArrayType(getTypeOfNode(candidate.init, context))) {
-                    continue;
-                }
-
-                context.report({
-                    fix: (fixer) =>
-                        fixer.insertTextAfter(
-                            candidate.id,
-                            ": readonly unknown[]"
-                        ),
-                    messageId: "implicit",
-                    node: candidate.reportNode,
-                });
             }
         };
 

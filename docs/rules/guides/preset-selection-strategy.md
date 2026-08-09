@@ -1,9 +1,7 @@
 ---
-title: Preset selection strategy
+title: "Preset selection strategy"
 description: Choose the right eslint-plugin-immutable-2 preset and roll it out with minimal migration risk.
 ---
-
-# Preset selection strategy
 
 This guide helps teams pick a preset based on migration tolerance, type-checking maturity, and rollout velocity.
 

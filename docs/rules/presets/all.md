@@ -1,8 +1,6 @@
 ---
-title: All preset
+title: "🟣 All"
 ---
-
-# 🟣 All
 
 Use this preset when you want full immutable-plugin coverage.
 

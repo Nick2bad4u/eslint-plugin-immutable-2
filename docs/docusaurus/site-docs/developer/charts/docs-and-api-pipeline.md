@@ -1,10 +1,8 @@
 ---
-title: Docs and API Pipeline
+title: "Docs and API pipeline"
 description: How rule docs, TypeDoc output, sidebars, and the final docs site are produced.
 sidebar_position: 3
 ---
-
-# Docs and API pipeline
 
 This flow highlights the relationship between authored docs, generated API docs, sidebar wiring, and final Docusaurus output.
 

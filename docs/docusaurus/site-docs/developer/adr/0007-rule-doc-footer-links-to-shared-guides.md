@@ -1,10 +1,8 @@
 ---
-title: ADR 0007 - Rule Doc Footer Links to Shared Guides
+title: "ADR 0007: Add shared adoption-guide links at the bottom of each rule page"
 description: Decision record for adding shared adoption/rollout guide links at the bottom of each rule page.
 sidebar_position: 7
 ---
-
-# ADR 0007: Add shared adoption-guide links at the bottom of each rule page
 
 - Status: Accepted
 - Date: 2026-02-25

@@ -1,10 +1,8 @@
 ---
-title: Rule Lifecycle and Autofix Flow
+title: "Rule lifecycle and autofix flow"
 description: End-to-end flow for AST matching, typed checks, diagnostics, and safe autofix/suggestions.
 sidebar_position: 2
 ---
-
-# Rule lifecycle and autofix flow
 
 This sequence diagram models what happens from lint invocation through optional typed lookup, reporting, and fix/suggestion output.
 

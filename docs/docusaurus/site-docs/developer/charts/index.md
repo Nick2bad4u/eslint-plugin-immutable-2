@@ -1,10 +1,8 @@
 ---
-title: Architecture and Operations Charts
+title: "Architecture and operations charts"
 description: Visual architecture and workflow diagrams for maintainers and contributors.
 sidebar_position: 0
 ---
-
-# Architecture and operations charts
 
 This section provides high-signal diagrams for the plugin architecture, rule execution lifecycle, metadata/docs synchronization, validation planning, docs generation pipeline, and release quality gates.
 

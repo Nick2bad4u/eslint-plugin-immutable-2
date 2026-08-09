@@ -1,10 +1,8 @@
 ---
-title: ADR 0008 - TypeDoc Generation Strategy for CI and Local Development
+title: "ADR 0008: Use environment-aware TypeDoc generation (CI direct, local wrapper)"
 description: Decision record for splitting TypeDoc generation behavior between CI-safe direct invocation and Windows-safe local invocation.
 sidebar_position: 8
 ---
-
-# ADR 0008: Use environment-aware TypeDoc generation (CI direct, local wrapper)
 
 - Status: Accepted
 - Date: 2026-02-28

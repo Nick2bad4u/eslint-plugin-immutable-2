@@ -1,10 +1,8 @@
 ---
-title: CLI Debugging and Config Inspection
+title: "CLI Debugging and Config Inspection"
 description: Debug ESLint behavior with print-config, strict CI flags, cache controls, and verbose diagnostics.
 sidebar_position: 21
 ---
-
-# CLI Debugging and Config Inspection
 
 Use these commands to troubleshoot config resolution, strict CI behavior, and cache-related issues.
 

@@ -1,10 +1,8 @@
 ---
-title: ADR 0005 - Runtime vs Type-Level Rule Families
+title: "ADR 0005: Keep immutable-data and functional-constraint rules as separate families"
 description: Decision record for keeping immutable-data and functional-constraint rules as distinct families.
 sidebar_position: 5
 ---
-
-# ADR 0005: Keep immutable-data and functional-constraint rules as separate families
 
 - Status: Accepted
 - Date: 2026-02-25

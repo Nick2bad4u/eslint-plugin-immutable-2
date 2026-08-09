@@ -1,10 +1,8 @@
 ---
-title: ADR 0006 - Canonical Rule Doc URLs Use Docusaurus Routes
+title: "ADR 0006: Use Docusaurus rule routes for meta.docs.url"
 description: Decision record for using live Docusaurus rule pages as canonical docs URLs in rule metadata.
 sidebar_position: 6
 ---
-
-# ADR 0006: Use Docusaurus rule routes for `meta.docs.url`
 
 - Status: Accepted
 - Date: 2026-02-25

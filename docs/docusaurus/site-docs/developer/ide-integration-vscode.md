@@ -1,10 +1,8 @@
 ---
-title: IDE Integration (VS Code)
+title: "IDE Integration (VS Code)"
 description: Configure VS Code for reliable Flat Config and type-aware ESLint plugin behavior.
 sidebar_position: 22
 ---
-
-# IDE Integration (VS Code)
 
 This guide focuses on stable, low-noise integration with the VS Code ESLint extension.
 

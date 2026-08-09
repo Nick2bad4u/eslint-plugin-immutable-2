@@ -1,10 +1,8 @@
 ---
-title: ADR 0002 - @eslint/config-helpers Scope
+title: "ADR 0002: Keep @eslint/config-helpers scoped to config authoring"
 description: Decision record to keep @eslint/config-helpers usage scoped to ESLint config authoring.
 sidebar_position: 2
 ---
-
-# ADR 0002: Keep `@eslint/config-helpers` scoped to config authoring
 
 - Status: Accepted
 - Date: 2026-02-22

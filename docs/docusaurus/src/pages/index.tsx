@@ -1,3 +1,5 @@
+import type { ReactElement } from "react";
+
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Heading from "@theme/Heading";
@@ -116,7 +118,7 @@ const homeCards = [
  *
  * @returns Home page layout with hero content, badges, and navigation cards.
  */
-export default function Home() {
+export default function Home(): ReactElement {
     const logoSrc = useBaseUrl("/img/logo.svg");
 
     return (

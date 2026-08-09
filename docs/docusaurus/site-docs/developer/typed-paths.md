@@ -1,9 +1,7 @@
 ---
-title: Typed service path inventory
+title: "Typed service path inventory"
 description: Inventory of typed parser-service and checker callpaths relevant to eslint-plugin-immutable-2.
 ---
-
-# Typed service path inventory
 
 This page inventories typed callpaths that can reach parser services or the TypeScript checker.
 

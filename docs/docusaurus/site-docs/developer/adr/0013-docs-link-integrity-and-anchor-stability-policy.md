@@ -1,10 +1,8 @@
 ---
-title: ADR 0013 - Docs Link Integrity and Anchor Stability Policy
+title: "ADR 0013: Treat documentation link integrity and anchor stability as quality-critical"
 description: Decision record for treating broken documentation links and anchors as first-class quality signals in maintainer workflows.
 sidebar_position: 13
 ---
-
-# ADR 0013: Treat documentation link integrity and anchor stability as quality-critical
 
 - Status: Accepted
 - Date: 2026-03-09

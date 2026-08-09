@@ -1,10 +1,8 @@
 ---
-title: Preset Composition and Rule Matrix
+title: "Preset composition and rule matrix"
 description: How the recommended → immutable → functional-lite → functional → all ladder is assembled and synchronized into docs.
 sidebar_position: 8
 ---
-
-# Preset composition and rule matrix
 
 This diagram explains how rule source, preset layering, and sync scripts combine into user-facing preset guidance and rule enablement matrices.
 

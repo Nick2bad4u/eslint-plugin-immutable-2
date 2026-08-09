@@ -1,10 +1,8 @@
 ---
-title: Typed Services Guard and Fallback Paths
+title: "Typed services guard and fallback paths"
 description: Visual map of typed-rule guard entry points, fallback branches, and safe-degradation outcomes.
 sidebar_position: 15
 ---
-
-# Typed services guard and fallback paths
 
 This diagram summarizes how checker-backed paths are entered, guarded, and degraded safely when full services are unavailable.
 

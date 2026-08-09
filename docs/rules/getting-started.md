@@ -1,9 +1,7 @@
 ---
-title: Getting Started
+title: "Getting Started"
 description: Enable eslint-plugin-immutable-2 quickly in Flat Config.
 ---
-
-# Getting Started
 
 Install the plugin:
 

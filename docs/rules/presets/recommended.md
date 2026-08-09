@@ -1,8 +1,6 @@
 ---
-title: Recommended preset
+title: "🔵 Recommended"
 ---
-
-# 🔵 Recommended
 
 Use this preset as the default low-friction entrypoint focused on high-signal mutation hazards.
 

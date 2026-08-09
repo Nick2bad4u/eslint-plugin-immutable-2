@@ -1,10 +1,8 @@
 ---
-title: ADR 0010 - Conservative Autofix Governance Without Runtime Toggles
+title: "ADR 0010: Keep autofix governance conservative and rule-local"
 description: Decision record for keeping autofix policy conservative and rule-local instead of exposing plugin-wide runtime switches.
 sidebar_position: 10
 ---
-
-# ADR 0010: Keep autofix governance conservative and rule-local
 
 - Status: Accepted
 - Date: 2026-02-28

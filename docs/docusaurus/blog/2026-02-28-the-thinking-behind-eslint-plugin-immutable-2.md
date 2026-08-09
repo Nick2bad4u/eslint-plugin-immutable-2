@@ -16,8 +16,6 @@ description: Why this plugin exists, what constraints shaped it, and how we bala
 
 <!-- truncate -->
 
-# Why this plugin exists
-
 ## The core motivation
 
 Most TypeScript codebases still accumulate mutation in the places where the language and standard library make it easy: object property writes, `let`, mutable array types, exception-style control flow, and host APIs such as `Date`, `URL`, `Map`, `Set`, `Storage`, and `Headers`.

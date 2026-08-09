@@ -38,11 +38,13 @@ describe("source plugin config wiring", () => {
         expect.hasAssertions();
 
         const plugin = await loadSourcePlugin();
-        const all = plugin.configs.all;
-        const recommended = plugin.configs.recommended;
-        const immutable = plugin.configs.immutable;
-        const functional = plugin.configs.functional;
-        const functionalLite = plugin.configs["functional-lite"];
+        const {
+            all,
+            functional,
+            "functional-lite": functionalLite,
+            immutable,
+            recommended,
+        } = plugin.configs;
 
         expect(getRuleEntries(all).length).toBeGreaterThan(0);
         expect(getRuleEntries(recommended).length).toBeGreaterThan(0);

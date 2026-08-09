@@ -4,6 +4,8 @@
  */
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
+const API_OVERVIEW_ITEM_CLASS_NAME = "sb-api-overview-item";
+
 /** Main sidebar configuration for the default docs plugin instance. */
 const sidebars = {
     docs: [
@@ -24,31 +26,31 @@ const sidebars = {
                 "Entry point for generated API docs and typed-path service inventory notes.",
             items: [
                 {
-                    className: "sb-api-overview-item",
+                    className: API_OVERVIEW_ITEM_CLASS_NAME,
                     id: "developer/api/index",
                     label: "🧩 Plugin API index",
                     type: "doc",
                 },
                 {
-                    className: "sb-api-overview-item",
+                    className: API_OVERVIEW_ITEM_CLASS_NAME,
                     id: "developer/typed-paths",
                     label: "🧬 Typed paths inventory",
                     type: "doc",
                 },
                 {
-                    className: "sb-api-overview-item",
+                    className: API_OVERVIEW_ITEM_CLASS_NAME,
                     id: "developer/api/plugin/type-aliases/ImmutablePlugin",
                     label: "🧠 Type aliases · ImmutablePlugin",
                     type: "doc",
                 },
                 {
-                    className: "sb-api-overview-item",
+                    className: API_OVERVIEW_ITEM_CLASS_NAME,
                     id: "developer/api/plugin/variables/immutablePlugin",
                     label: "⚙️ Runtime exports · immutablePlugin",
                     type: "doc",
                 },
                 {
-                    className: "sb-api-overview-item",
+                    className: API_OVERVIEW_ITEM_CLASS_NAME,
                     id: "developer/api/plugin/variables/immutableConfigs",
                     label: "⚙️ Runtime exports · immutableConfigs",
                     type: "doc",

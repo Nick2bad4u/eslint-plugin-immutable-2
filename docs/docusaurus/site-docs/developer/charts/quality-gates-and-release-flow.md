@@ -1,10 +1,8 @@
 ---
-title: Quality Gates and Release Flow
+title: "Quality gates and release flow"
 description: CI quality gates and the release-hardening path for eslint-plugin-immutable-2.
 sidebar_position: 4
 ---
-
-# Quality gates and release flow
 
 This diagram shows the expected quality path from implementation through release readiness, including failure loops.
 

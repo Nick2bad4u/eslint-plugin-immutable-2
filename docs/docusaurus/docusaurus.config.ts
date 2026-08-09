@@ -235,7 +235,7 @@ const config = {
                 ],
                 pwaHead: [
                     {
-                        href: `${baseUrl}manifest.json`,
+                        href: `${baseUrl}site.webmanifest`,
                         rel: "manifest",
                         tagName: "link",
                     },
