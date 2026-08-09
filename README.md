@@ -11,13 +11,13 @@ extra semantic precision.
 
 ## Table of contents
 
-1. [Installation](#installation)
-2. [Quick start (flat config)](#quick-start-flat-config)
-3. [Presets](#presets)
-4. [Configuration examples by preset](#configuration-examples-by-preset)
-5. [Type-aware precision](#type-aware-precision)
-6. [Rules](#rules)
-7. [Contributors ✨](#contributors-)
+- [Installation](#installation)
+- [Quick start (flat config)](#quick-start-flat-config)
+- [Presets](#presets)
+- [Configuration examples by preset](#configuration-examples-by-preset)
+- [Type-aware precision](#type-aware-precision)
+- [Rules](#rules)
+- [Contributors ✨](#contributors-)
 
 ## Installation
 
