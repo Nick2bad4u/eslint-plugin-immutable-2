@@ -9,6 +9,8 @@ The plugin ships focused flat-config presets with parser setup already wired in.
 Typed parser services remain opt-in so consumers can decide when they want the
 extra semantic precision.
 
+> **Oxlint:** Not compatible as a complete plugin (verified with Oxlint 1.80.0). Most syntax-only rules can run, but two of the 35 rules use TypeScript parser services; for example, Oxlint misses `readonly-array`'s typed inference on code that ESLint reports. [Oxlint does not support type-aware JavaScript plugin rules](https://oxc.rs/docs/guide/usage/linter/type-aware.html#type-aware-linting-with-javascript-plugins), so use ESLint for the complete rule and preset behavior.
+
 ## Table of contents
 
 - [Installation](#installation)
