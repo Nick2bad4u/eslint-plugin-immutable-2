@@ -22,6 +22,21 @@ describe("readonly-keyword rule", () => {
                 errors: [{ messageId: "generic" }],
                 output: "interface Dict { readonly [key: string]: number }",
             },
+            {
+                code: 'const key = Symbol("key"); interface Box { [key]?: number; }',
+                errors: [{ messageId: "generic" }],
+                output: 'const key = Symbol("key"); interface Box { readonly [key]?: number; }',
+            },
+            {
+                code: 'const key = Symbol("key"); type Raw = { [key]: true };',
+                errors: [{ messageId: "generic" }],
+                output: 'const key = Symbol("key"); type Raw = { readonly [key]: true };',
+            },
+            {
+                code: 'const key = Symbol("key"); class Holder { public static [/* key */ key] = 1; }',
+                errors: [{ messageId: "generic" }],
+                output: 'const key = Symbol("key"); class Holder { public static readonly [/* key */ key] = 1; }',
+            },
             // Class PropertyDefinition without readonly
             {
                 code: "class Counter { count: number = 0; }",

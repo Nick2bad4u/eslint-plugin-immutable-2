@@ -12,6 +12,8 @@ This rule targets class fields, TypeScript property signatures, and TypeScript i
 - Missing `readonly` on interface/type property signatures
 - Missing `readonly` on index signatures
 
+For a computed property, the autofix inserts `readonly` before the opening bracket of the key.
+
 ## Why this rule exists
 
 Readonly properties communicate immutability at the type level and prevent accidental mutation.
