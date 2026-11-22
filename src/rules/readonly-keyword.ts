@@ -1,7 +1,7 @@
-import type { TSESTree } from "@typescript-eslint/utils";
+import type { TSESLint, TSESTree } from "@typescript-eslint/utils";
 import type { JSONSchema4 } from "@typescript-eslint/utils/json-schema";
 
-import { AST_NODE_TYPES } from "@typescript-eslint/utils";
+import { AST_NODE_TYPES, ASTUtils } from "@typescript-eslint/utils";
 
 import {
     type IgnoreClassOption,
@@ -54,9 +54,21 @@ const hasReadonlyModifier = (node: Readonly<ReadonlyNode>): boolean => {
 };
 
 const getReadonlyInsertionTarget = (
-    node: Readonly<ReadonlyNode>
-): TSESTree.Node =>
-    node.type === AST_NODE_TYPES.TSIndexSignature ? node : node.key;
+    node: Readonly<ReadonlyNode>,
+    sourceCode: Readonly<TSESLint.SourceCode>
+):
+    | null
+    | TSESTree.Node
+    | TSESTree.Token => {
+    if (node.type === AST_NODE_TYPES.TSIndexSignature) {
+        return node;
+    }
+
+    // The key expression's range excludes the brackets and can exclude parentheses.
+    return node.computed
+        ? sourceCode.getTokenBefore(node.key, ASTUtils.isOpeningBracketToken)
+        : node.key;
+};
 
 /** `readonly-keyword` rule implementation. */
 const readonlyKeywordRule: ReturnType<typeof createRule<Options, "generic">> =
@@ -72,11 +84,16 @@ const readonlyKeywordRule: ReturnType<typeof createRule<Options, "generic">> =
                 }
 
                 context.report({
-                    fix: (fixer) =>
-                        fixer.insertTextBefore(
-                            getReadonlyInsertionTarget(node),
-                            "readonly "
-                        ),
+                    fix(fixer) {
+                        const target = getReadonlyInsertionTarget(
+                            node,
+                            context.sourceCode
+                        );
+
+                        return target === null
+                            ? null
+                            : fixer.insertTextBefore(target, "readonly ");
+                    },
                     messageId: "generic",
                     node,
                 });
